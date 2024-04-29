@@ -8,11 +8,12 @@
 </head>
 <body>
     <h1>Carte interactive</h1>
+    <h2>Parcours BD à Bruxelles</h2>
     <nav>
         <ul>
-            <li>Accueil</li>
+          
             <li><a href="?json" target="_blank">API</a> format JSON</li>
-            <li><a href="?connect">Connexion</a></li>
+            <a class="con" href="?connect">Connexion à l'administration</a>
         </ul>
     </nav>
     <div id="content">
