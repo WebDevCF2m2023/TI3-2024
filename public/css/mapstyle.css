@@ -8,7 +8,7 @@
     display: grid;
     width: 80%;
     margin: auto;
-    grid-template-columns: 1fr 0.5fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 
         "map liste";
 
@@ -22,7 +22,7 @@
 #liste{
     grid-area: liste;
     padding: 5px;
-    border: 1px solid black;
+    
     max-height: 800px;
     overflow-y: scroll;
 }
@@ -38,9 +38,6 @@
     padding: 5px 10px 5px 10px;
 }
 
-#liste ul li:nth-child(odd){
-    background-color: rgba(50,50,50,0.2);
-}
 
 #liste ul li:hover{
     background-color: rgba(0,255,0,0.3);
@@ -56,4 +53,44 @@
     #map{
         margin-bottom: 1rem;
     }
+}
+
+
+#welcome-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem;
+}
+
+h2 {
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.5rem;
+}
+
+button {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: goldenrod;
+
+}
+
+hr
+{
+    border: 2px solid #443b3b;
+    opacity: 1.0;
 }
