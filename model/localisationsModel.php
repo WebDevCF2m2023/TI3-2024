@@ -1,7 +1,7 @@
 <?php
 function getAllLocations(PDO $connect) : array | string{
     try {
-        $query = $connect->query("SELECT * FROM localisations ORDER BY id ASC");
+        $query = $connect->query("SELECT * FROM `localisations` ORDER BY id ASC");
         $locations = $query->fetchAll();
         $query->closeCursor();
         return $locations;

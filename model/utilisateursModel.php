@@ -1,38 +1,40 @@
 <?php
 
-# Connexion de l'administrateur en utilisant password_verify
-function administratorConnect(PDO $connect, string $login, string $password): bool|string
-{
-    $sql= "SELECT * FROM utilisateurs WHERE username = ?";
-    $prepare = $connect->prepare($sql);
-    
-    try{
-        $prepare->execute([$login]);
-        if($prepare->rowCount()==0) return "Utilisateur inconnu";
 
+/**
+ * @return bool 
+ * @return array 
+ * @return string
+ */
+function getUserByUsername(PDO $connect, string $username) : array | bool | string{
 
-        $result = $prepare->fetch();
+    $sql = "SELECT * FROM utilisateurs WHERE username = ?";
 
-        if(password_verify($password, $result['passwd'])){
-
-            $_SESSION['idadministrator'] = $result['idadministrator'];
-            $_SESSION['login'] = $login;
-            return true;
-        }else{
-            return false;
-        }
-
-    }catch(Exception $e){
+    try {
+        $prepare = $connect->prepare($sql);
+        $prepare->execute([$username]);
+        if($prepare->rowCount() < 1) return false;
+        return $prepare->fetch();
+    } catch (Exception $e) {
         return $e->getMessage();
     }
-    
+
+    return false;
 }
-# Déconnexion de l'administrateur
 
-function administratorDisconnect(): void
-{
+function administratorConnect(PDO $connect, string $user) : bool|string{
+    $bddUser = getUserByUsername($connect, $user);
+    if(!is_array($bddUser)) return $bddUser;
+    if(!password_verify($_POST['password'], $bddUser['passwd'])) return false;
+    $_SESSION['connected'] = true;
+    header("Location: /");
+    die();
+}
 
-    $_SESSION = [];
+function administratorDisconnect(){
+
+    $_SESSION = array();
+
 
     if (ini_get("session.use_cookies")) {
         $params = session_get_cookie_params();
@@ -41,9 +43,9 @@ function administratorDisconnect(): void
             $params["secure"], $params["httponly"]
         );
     }
+    
+
     session_destroy();
-
-    header("Location: ./");
-    exit();
-
+    header("Location: /");
+    die();
 }

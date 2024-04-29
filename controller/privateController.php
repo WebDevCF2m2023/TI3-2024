@@ -3,7 +3,7 @@
 if(isset($_GET['disconnect'])){
     administratorDisconnect();
 }elseif(isset($_GET['administration'])){
-    $locations = getAllLocations($db);
+    $locations = getAllLocations($connect);
     require("../view/private/admin.html.php");
 }elseif(isset($_GET['update']) && ctype_digit($_GET['update'])){
     $id = (int) $_GET['update'];
@@ -16,7 +16,7 @@ if(isset($_GET['disconnect'])){
     }
 
     $update = getLocationByID($connect, $id);
-    require("../view/private/admin.update.html.php");
+    require("../view/private/admin.modif.html.php");
 }elseif(isset($_GET['delete']) && ctype_digit($_GET['delete'])){
     $id = (int) $_GET['delete'];
 
@@ -37,11 +37,11 @@ if(isset($_GET['disconnect'])){
     if(isset($_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], $_POST['latitude'], $_POST['longitude'])){
         $successAdd = addLocation($connect, $id, $_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], (float) $_POST['latitude'], (float) $_POST['longitude']);
         if(!is_string($successAdd)){
-            header("Location: ./?administration&addOK=$successAdd");
+            header("Location: ./?admin&addOK=$successAdd");
             die();
         } else $error = $successAdd;
     }
-    require("../views/private/administration.add.html.php");
+    require("../view/private/admin.insert.html.php");
 }else{
-    require("../views/private/home.html.php");
+    require("../view/private/homepage.html.php");
 }

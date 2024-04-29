@@ -4,8 +4,8 @@
 if(isset($_GET['login'])){
 
     if(isset($_POST['user'], $_POST['password'])){
-        // userConnect redirige automatiquement
-        $error = administratorConnect($connect, $_POST['user'], $_POST['password']);
+      
+        $error = administratorConnect($connect, $_POST['user'], $_POST['passwd']);
     }
 
     require("../view/public/connection.html.php");
