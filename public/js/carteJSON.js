@@ -24,7 +24,7 @@ fetch("apicarte.php")
         for (let item in liste) {
 
             let unMarqueur = L.marker([liste[item].latitude, liste[item].longitude]).addTo(map);
-            unMarqueur.bindPopup(`<h3>${liste[item].nom}</h3> <p>${liste[item].adresse}</p>`);
+            unMarqueur.bindPopup(`<h3>${liste[item].nom}</h3> <p>${liste[item].adresse}</p> <p>${liste[item].codepostal}</p> <p>${liste[item].ville}</p>`);
             markerTable.push(unMarqueur);
 
         }
@@ -41,7 +41,7 @@ fetch("apicarte.php")
         liste.forEach(function (item, index) {
 
             let li = document.createElement("li");
-            li.innerHTML = `${item.nom} | ${item.adresse}`;
+            li.innerHTML = `${item.nom} | ${item.adresse} | ${item.codepostal} ${item.ville}`;
             li.addEventListener('click', itemClick);
             li.setAttribute("id", `${item.id}`);
             li.setAttribute("latitude", `${item.latitude}`);
