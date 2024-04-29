@@ -30,6 +30,7 @@
     </nav>
 
     <div class="container">
+        <?php /*TODO POST VALUE HAAANNN*/ ?>
         <?php if(is_string($update)): ?>
                 <h2 class="text-center mb-4 text-danger"><?= $update ?></h2>
         <?php else: ?>

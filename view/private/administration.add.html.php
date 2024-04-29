@@ -38,56 +38,56 @@
             <div class="form-group">
                 <label for="name">Nom</label>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Nom" pattern="^.{1,50}$" value="<?= isset($secure) ? $_POST["name"] : "" ?>" required>
-                <div class="checkname invalid-feedback">
+                <div class="invalid-feedback">
                 Le nom ne doit pas être vide ou dépasser 50 caractères
                 </div>
             </div>
             <div class="form-group">
                 <label for="type">Type</label>
                 <input type="text" class="form-control" name="type" id="type" placeholder="Type" pattern="^.{1,20}$" value="<?= isset($secure) ? $_POST["type"] : "" ?>" required>
-                <div class="checktype invalid-feedback">
+                <div class="invalid-feedback">
                 Le type ne doit pas être vide ou dépasser 20 caractères
                 </div>
             </div>
             <div class="form-group">
                 <label for="adresse">Adresse</label>
                 <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse" pattern="^.{1,100}$" value="<?= isset($secure) ? $_POST["adresse"] : "" ?>" required>
-                <div class="checkadresse invalid-feedback">
+                <div class="invalid-feedback">
                 L'adresse ne doit pas être vide ou dépasser 100 caractères
                 </div>
             </div>
             <div class="form-group">
                 <label for="codepostal">Code Postal</label>
                 <input type="text" class="form-control" name="codePostal" id="codepostal" placeholder="Code Postal" pattern="^\d\d\d\d$" value="<?= isset($secure) ? $_POST["codePostal"] : "" ?>" required>
-                <div class="checkcodePostal invalid-feedback">
+                <div class="invalid-feedback">
                 Le Code Postal doit être constitué de 4 chiffres.
                 </div>
             </div>
             <div class="form-group">
                 <label for="country">Ville</label>
                 <input type="text" class="form-control" name="country" id="country" placeholder="Ville" pattern="^.{1,20}$" value="<?= isset($secure) ? $_POST["country"] : "" ?>" required>
-                <div class="checkcountry invalid-feedback">
+                <div class="invalid-feedback">
                 La ville ne doit pas être vide ou dépasser 20 caractères
                 </div>
             </div>
             <div class="form-group">
                 <label for="url">Lien du site</label>
                 <input type="text" class="form-control" name="url" id="url" placeholder="Lien du site" pattern="^.{1,200}$" value="<?= isset($secure) ? $_POST["url"] : "" ?>" required>
-                <div class="checkurl invalid-feedback">
+                <div class="invalid-feedback">
                 Le lien du site ne doit pas être vide ou dépasser 200 caractères
                 </div>
             </div>
             <div class="form-group">
                 <label for="lat">Latitude</label>
-                <input type="text" class="form-control" name="latitude" id="lat" pattern="^-?\d{1,2}(\.\d{1,6})?$" placeholder="Exemple: 50.25647" value="<?= isset($secure) ? $_POST["latitude"] : "" ?>" required>
-                <div class="checklatitude invalid-feedback">
+                <input type="number" class="form-control" name="latitude" id="lat" pattern="^-?\d{1,2}(\.\d{1,6})?$" max="99.999999" min="-99.999999" step="0.000001" placeholder="Exemple: 50.25647" value="<?= isset($secure) ? htmlspecialchars($_POST["latitude"]) : "" ?>" required>
+                <div class="invalid-feedback">
                 Format de latitude incorrect. Exemple a suivre : 5.214578
                 </div>
             </div>
             <div class="form-group">
                 <label for="long">Longitude</label>
-                <input type="text" class="form-control" name="longitude" id="long" pattern="^-?\d{1,2}(\.\d{1,6})?$" placeholder="Exemple: 1.21456" value="<?= isset($secure) ? $_POST["longitude"] : "" ?>" required>
-                <div class="checklongitude invalid-feedback">
+                <input type="number" class="form-control" name="longitude" id="long" pattern="^-?\d{1,2}(\.\d{1,6})?$" max="99.999999" min="-99.999999" step="0.000001" placeholder="Exemple: 1.21456" value="<?= isset($secure) ? htmlspecialchars($_POST["longitude"]) : "" ?>" required>
+                <div class="invalid-feedback">
                 Format de longitude incorrect. Exemple a suivre : 50.214578
                 </div>
             </div>
