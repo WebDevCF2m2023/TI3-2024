@@ -23,10 +23,14 @@ th, td {
 
 </head>
 <body>
-    <?php
-    require_once "../view/inc/navbar.public.php";
-    ?>
-    <div id="content">
+    <div id="navbarhomepage">
+        <h2>Carte interactive</h2>
+        <h4>Parcours DB à Bruxelles</h4>
+        <button><a href="?connect">Connexion à l'administration</a></button>
+    </div>
+    
+    
+    <!--<div id="content">
         <?php
         // datas est une chaîne de caractère : erreur SQL !
         if(is_string($datas)):  
@@ -65,7 +69,7 @@ th, td {
                 <?php endforeach ?>
               
                 <?php endif ?> 
-            </table>
+            </table>-->
 
     <!-- Zone d'affichage de la carte -->
 

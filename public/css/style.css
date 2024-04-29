@@ -19,6 +19,16 @@
     color: white;    
 }
 
+#navbarhomepage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#navbarhomepage button{
+    width: 10rem;
+}
+
 #map { 
     height:100%;
     grid-row: 1 / 3;
