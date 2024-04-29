@@ -23,6 +23,14 @@ try {
 } catch (Exception $e) {
     die($e->getMessage());
 }
+//JSON pour l'API
+if (isset($_GET['json'])) {
+    $datas = getAllLocations($db);
+    if (!is_string($datas)) {
+        echo json_encode($datas);
+    }
+    exit();
+}
 
 if(isset($_SESSION['username'])){
     //On appelle l'adminController
