@@ -9,7 +9,7 @@
                             <!-- J'ai ajouté l'animation ici car sinon, BS fait un bizarre effet -->
                         <thead>
                                 <tr>
-                                    <th data-checkbox="true" data-click-to-select="true">Id</th>
+                                    <th class="text-center"  data-sortable="true">ID</th>
                                     <th class="text-center"  data-sortable="true">Nom</th>
                                     <th class="text-center"  data-sortable="true">Type</th>
                                     <th class="text-center"  data-sortable="true">Adresse</th>

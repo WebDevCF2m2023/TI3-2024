@@ -15,11 +15,11 @@
           <?php
               if(isset($_GET["page"]) && $_GET["page"] !== "home") {
           ?>
-          <a class="nav-link active" aria-current="page" href="?page=home">Home</a>
+          <a class="nav-link active" aria-current="page" href="?page=adminHome">Home</a>
           <?php
             }else {
               ?>
-          <a class="nav-link disabled" aria-current="page" href="?page=home">Home</a>
+          <a class="nav-link disabled" aria-current="page" href="?page=adminHome">Home</a>
               <?php
             }
           ?>
