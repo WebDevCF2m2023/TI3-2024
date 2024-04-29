@@ -15,3 +15,9 @@ try {
 }catch (Exception $e){
     die($e->getMessage());
 }
+
+if (isset($_SESSION["admin"]) && $_SESSION["admin"]){
+    require_once("../controller/privateController.php");
+}else {
+    require_once("../controller/publicController.php");
+}
