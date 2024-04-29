@@ -54,8 +54,14 @@ function tbody_add_location(tbody, location){
     const td5 = document.createElement("td");
     td5.classList.add("text-center");
     const icon_i = document.createElement("i");
-    icon_i.classList.add("fa", "fa-eye", "text-primary")
+    icon_i.classList.add("fa", "fa-eye", "text-primary", "eye-icon")
     td5.insertAdjacentElement("afterbegin", icon_i);
+    //add event when clicking on the icon
+    icon_i.addEventListener("click", ()=>{
+        const marker = markers_hashmap[location.id];
+        marker.openPopup();
+        map.setView(marker.getLatLng(), 17);
+    });
     //insert tds in tr
     tr.insertAdjacentElement("beforeend", td1);
     tr.insertAdjacentElement("beforeend", td2);

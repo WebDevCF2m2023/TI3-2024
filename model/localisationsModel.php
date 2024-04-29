@@ -2,7 +2,7 @@
 
 function get_all_localisations(PDO $db):array|string{
     try {
-        $sql = "SELECT * FROM `localisations` ORDER BY `id` ASC";
+        $sql = "SELECT * FROM `localisations` ORDER BY `id` DESC";
         $query = $db->query($sql);
         $locations = $query->fetchAll(PDO::FETCH_ASSOC);
         $query->closeCursor();

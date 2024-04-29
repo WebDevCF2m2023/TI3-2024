@@ -24,6 +24,9 @@ main {
     width: 80%;
     margin: auto;
 }
+#locations-table .eye-icon:hover {
+    cursor: pointer;
+}
 @media (max-width:1000px) {
     main {
         width: 100%;
