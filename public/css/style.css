@@ -17,3 +17,17 @@ nav ul li{
 h3, h1 {text-align: center;}
 .photo {width:100px;}
 #resultats {display: flex;}
+
+body{
+    background-image: url("../img/backgr.jpg");
+}
+
+#nc {
+    justify-content: center;
+    text-align: center;
+}
+
+#nav1 {
+    justify-content: center;
+    text-align: center;
+}

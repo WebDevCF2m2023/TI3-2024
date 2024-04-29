@@ -90,7 +90,7 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
             $error = $delete;
         }
     }
-    $data = getlocalisations($connect,$idDelete);
+    $data = getOneOurdatas($connect,$idDelete);
     if(is_string($data)) $message = $data;
     elseif(isset($data['error'])) $error = $data['error'];
     // appel de la vue de suppression

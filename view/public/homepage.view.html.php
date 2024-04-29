@@ -12,15 +12,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Homepage</h1>
-    <nav>
+    <h1>carte intéractive</h1>
+    <nav id="nav1">
         <ul>
             <li><a href="./">Accueil</a></li>
             <li><a href="?connect">Connexion</a>
         </ul>
     </nav>
     <div class="content">
-        <h2>Notre carte</h2>
+        <h2 id="nc">Notre carte</h2>
         <?php /* ?>
         <?php if(isset($message)): ?>
                 <h3><?=$message?></h3>
@@ -35,7 +35,7 @@
                 <?php endforeach; ?>
         <?php endif;
         */ ?>
-        <h1>Récupération de données via JSON et PHP</h1>
+        <h1>Les adresses</h1>
         <div id="resultats">
             <div id="map"></div>
             <div id="liste"></div>
