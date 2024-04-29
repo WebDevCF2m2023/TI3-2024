@@ -11,13 +11,10 @@
 <header>
 <div class="navbar">
 <nav>
-<ul>
-<a href="?accueil"><span class="Gnav">G</span><span class="unav">u</span><span class="inav">i</span><span class="gnav">g</span><span class="lnav">l</span><span class="enav">e</span><span class="Mnav">Maps</span></a>
-    <li>
-    <a  href="?accueil">WELCOME</a></li>
-    <li>
-    <a href="?connect">LOGIN</a></li>
-</ul>
+<div class="logo"><a href="?accueil"><span class="Gnav">G</span><span class="unav">u</span><span class="inav">i</span><span class="gnav">g</span><span class="lnav">l</span><span class="enav">e</span><span class="Mnav">Maps</span></a></div>
+    <div class="welcome">
+    <a id="welcome" href="?accueil">WELCOME</a></div>
+    <div class="login"><a id="login" href="?connect">LOGIN</a></div>
 </nav>
 </div>
 </header>
