@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.css">
     <title>Administration</title>
 
     <style>
@@ -16,6 +18,7 @@
         .icon-link-delete:hover .icon-delete {
             fill: red;
         }
+
 
         /* A litle css, sorry magib */
     </style>
@@ -48,7 +51,7 @@
         <?php else: ?>
             <div class="mb-2">
                 <a href="?addLocation">
-                    <button type="button" class="btn btn-success mt-5">
+                    <button type="button" class="btn btn-success mt-3">
                         <svg style="position:relative; top: -1px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-database-fill-add me-1" viewBox="0 0 16 16">
                             <path
@@ -62,13 +65,16 @@
                     </button>
                 </a>
                 <a href="/?">
-                    <button type="button" class="btn btn-warning mt-5">Page d'accueil</button>
-                 </a> 
+                    <button type="button" class="btn btn-warning mt-3">Page d'accueil</button>
+                </a>
                 <a href="/?disconnect">
-                    <button type="button" class="btn btn-danger mt-5">Deconexion</button>
-                 </a> 
+                    <button type="button" class="btn btn-danger mt-3">Deconexion</button>
+                </a>
             </div>
-            <table class="table table-hover table-bordered">
+            <table class="table table-hover table-bordered" data-toggle="table" data-toolbar="#toolbar"
+                data-show-export="true" data-pagination="true" data-page-list="[2, 4, 6, 8, 12, all]" data-page-size="6"
+                data-minimum-count-columns="2" data-show-columns="true" data-show-columns-toggle-all="true"
+                data-search="true">
                 <thead class="table-dark text-center">
                     <tr>
                         <th scope="col">ID</th>
@@ -124,9 +130,18 @@
     </div>
 
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.28.0/tableExport.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.4/dist/bootstrap-table-locale-all.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.4/dist/extensions/export/bootstrap-table-export.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/locale/bootstrap-table-fr-FR.min.js"></script>
 </body>
 
 </html>
