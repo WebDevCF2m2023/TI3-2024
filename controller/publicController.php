@@ -19,7 +19,7 @@ if(isset($_GET['json'])){
 if(isset($_GET['connect'])){
 
     // si on a envoyé le formulaire
-                                                        if(isset($_POST['username'],$_POST['userpwd'])){
+if(isset($_POST['username'],$_POST['userpwd'])){
         // protection du champs qui sera dans la requête
         $username = htmlspecialchars(strip_tags(trim($_POST['username'])),ENT_QUOTES);
         // protecion pour les espaces vide

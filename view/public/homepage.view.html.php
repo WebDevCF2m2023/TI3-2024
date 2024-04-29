@@ -17,6 +17,9 @@
 </head>
 
 <body>
+<?php
+    require_once "../view/inc/navbar.admin.php";
+    ?>
     
     <div id="content">
         <?php
@@ -51,7 +54,6 @@
                 </thead>
                 <?php
                 // tant qu'on a des données
-                // var_dump($datas);
                 foreach($datas as $data):
                 ?>
                 <tbody class="text-center">

@@ -1,10 +1,10 @@
 <?php
 
-function getAllGeoloc(PDO $connection) : array|string
+function getAllGeoloc(PDO $db) : array|string
 {
     $sql = "SELECT * FROM `localisations` ;";
     try{
-        $query = $connection->query($sql);
+        $query = $db->query($sql);
         // si il n'y a pas de résultats, fetchAll est un tableau vide
         $result = $query->fetchAll();
         $query->closeCursor();
