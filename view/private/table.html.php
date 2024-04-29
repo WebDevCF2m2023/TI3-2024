@@ -71,7 +71,7 @@
                                 <div class="d-flex align-items-center">
                                     <img class="rounded-circle" src="img/seb.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <h6 class="fw-normal mb-0">seb send you a message</h6>
                                         <small>15 minutes ago</small>
                                     </div>
                                 </div>
