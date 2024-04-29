@@ -71,7 +71,7 @@ function addLocalisations(
     float $longitude,
     
 ): bool|string {
-    $prepare = $db->prepare("INSERT INTO localisations (nom, adresse, codeposatl, ville, latitude, longitude) VALUES (?,?,?,?,?,?)");
+    $prepare = $db->prepare("INSERT INTO localisations (nom, adresse, codepostal, ville, latitude, longitude) VALUES (?,?,?,?,?,?)");
     $prepare->bindParam(1, $nom);
     $prepare->bindParam(2, $adresse);
     $prepare->bindParam(3, $codepostal);
