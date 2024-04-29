@@ -13,16 +13,28 @@
 </head>
 <body>
     <!--NAVBAR-->
-    <div class="container">
-    <header class="d-flex justify-content-center py-3">
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="./" class="nav-link text-black">Accueil</a></li>
-        <li class="nav-item"><a href="?create" class="nav-link text-black">Ajouter un lieu</a></li>
-        <li class="nav-item"><a href="?disconnect" class="nav-link text-black">Déconnexion</a></li>
-       
-      </ul>
-    </header>
-  </div>
+  <nav class="navbar navbar-expand-lg bg-body-black rounded" aria-label="Twelfth navbar example">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="./">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="?create">Ajouter un lieu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="?disconnect">Déconnexion</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
   <!--Fin NAVBAR-->
   <div id="content">
         <h3 class="text-center mt-5">Administration des datas</h3>
