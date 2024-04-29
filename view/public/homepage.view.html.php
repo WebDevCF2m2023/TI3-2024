@@ -11,7 +11,52 @@
     <title>Accueil</title>
 </head>
 <body>
-    <h1>Accueil</h1>
+<div id="content">
+        <h1 class="titreHomepage">Carte interactive</h1>
+        <h3 class="titreHomepage">Théâtre à Bruxelles</h3>
+         <a href="?connect"> <button value="Connexion" id="btnHomepage">Connexion à l'administration</button></a> 
+        <?php
+        /*
+        // datas est une chaine de caractère : erreur SQL ! 
+        if (is_string($datas)) :
+
+        ?>
+            <h3 id="alert"><?= $datas ?></h3>
+        <?php
+        // Pas encore de `localisations`
+        elseif (empty($datas)) :
+        ?>
+            <h3 id="comment">Pas encore de lieu.</h3>
+        <?php
+        // Nous avons des lieux
+        else :
+            // on compte le nombre de données 
+            $nb = count($datas);
+        ?>
+            <h3>Il y a <?= $nb ?> <?= $nb > 1 ? "lieux" : "lieu" ?></h3>
+
+            <?php
+            // tant qu'on a des données
+            // var_dump($datas);
+            foreach ($datas as $data) :
+            ?>
+                <h4><?= $data['title'] ?></h4>
+                <p><?= $data['geolocdesc'] ?></p>
+                <p><?= $data['latitude'] ?> | <?= $data['longitude'] ?></p>
+                <hr>
+        <?php
+            endforeach;
+        endif;
+        */
+
+        ?>
+
+        <div id="resultat">
+            <div id="map"></div>
+            <div id="liste"></div>
+        </div>
+
+    </div>
 
 <!--JS de Leaflet-->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
