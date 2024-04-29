@@ -118,3 +118,8 @@ if (isset($_GET['update']) && ctype_digit($_GET['update'])) {
     include "../view/private/admin.update.view.html.php";
     exit();
 }
+
+// si on est sur l'accueil chargement de toutes les localisations
+$datas = getAllLocations($db);
+// appel de la vue de l'accueil de l'admin
+include "../view/private/admin.homepage.view.html.php";
