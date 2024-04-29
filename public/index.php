@@ -1,10 +1,12 @@
 <?php
 
+require_once "../view\public\public.view.php";
+
 session_start();
 
 require_once "../config.php";
-require_once "../utilisateursModel.php";
-require_once "../localisationsModel.php";
+require_once "../model\utilisateursModel.php";
+require_once "../model\localisationsModel.php";
 
 try{
     $db = new PDO(DB_DRIVER . ":host=" . DB_HOST . ";dbname=". DB_NAME . ";charset=" . DB_CHARSET .

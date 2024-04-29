@@ -2,7 +2,7 @@
 
 function findThemAll(PDO $connect) : array|string {
 
-    $sql = "SELECT ALL * FROM `localisations`;";
+    $sql = "SELECT * FROM `localisations`;";
 
     try{
         // Lulusia Kingdom ? There was never such a place to begin with.

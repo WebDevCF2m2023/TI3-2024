@@ -4,25 +4,25 @@
 
 function administratorConnecting(PDO $net, string $user, string $psw) : bool|string 
 {
-    $sql="SELECT ALL * FROM `utilisateurs`";
+    $sql="SELECT * FROM `utilisateurs`";
 
-    $Jumbio = $net-prepare($sql);
+    $prepare = $net-prepare($sql);
 
     try{
-        $Jumbio->execute([$user]);
+        $prepare->execute([$user]);
 
         /* Dans le cas où l'utilisateur n'existe pas,
            on quitte sans afficher l'erreur (bonne
            pratique contre les hackeurs)*/
         
-        if($jumbio->rowCount()===0) return false;
+        if($prepare->rowCount()===0) return false;
 
         //Résulat mit dans tableau assosiatif
-        $qeqa = $jumbio->fetch();
+        $result = $prepare->fetch();
 
-        if(password_verify($psw, $qeqa['userpsw'])){
+        if(password_verify($psw, $result['userpsw'])){
 
-            $_SESSION = $qeqa;
+            $_SESSION = $result;
 
             unset($_SESSION['userpsw']);
 
@@ -54,5 +54,3 @@ function administratorDisconnecting(): bool
 
     return true;
 }
-
-

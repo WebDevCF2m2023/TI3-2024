@@ -1,30 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <h1>Connexion</h1>
-    <nav>
-        <ul>
-            <li><a href="./">Accueil</a></li>
-            <li><a href="?json" target="_blank">API</a> format JSON</li>
-            <li>Connexion</li>
-        </ul>
-    </nav>
-    <div id="content">
-        <h3>Connexion à notre administration</h3>
-        <?php if(isset($error)): ?>
-            <h4 id="alert"><?=$error?></h4>
-        <?php endif ?>    
-        <form action="" method="POST" name="connexion">
-            <input type="text" name="username" placeholder="Votre login" required><br>
-            <input type="password" name="userpsw" placeholder="Votre mot de passe" required><br>
-            <input type="submit" value="connexion">
-        </form>
-    </div>
-</body>
-</html>
+<?php
+
+// chargement de configuration
+require_once "config.php";
+
+// connexion à la DB
+try {
+    // création d'une instance de PDO - Connexion à la base de données
+    $db = new PDO(DB_DRIVER . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET . ";port=" . DB_PORT, DB_LOGIN, DB_PWD);
+} catch (Exception $e) {
+    die($e->getMessage());
+}
+
+// afficher le résultat de la requête sous format JSON
+echo json_encode(getLocations($db));
+
+// fermeture de la connexion
+$db = null;
+
+// Chargement de tous les emplacements sur la carte
+function getLocations(PDO $db): array 
+{
+    $sql = "SELECT * FROM localisations ORDER BY id ASC;";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+}
