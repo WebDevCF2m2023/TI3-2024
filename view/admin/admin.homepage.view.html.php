@@ -64,13 +64,13 @@
                                     ?>
 
                                         <tr>
-                                            <td><?= $data['idgeoloc'] ?></td>
-                                            <td><?= $data['title'] ?></td>
-                                            <td><?= $data['geolocdesc'] ?></td>
+                                            <td><?= $data['id'] ?></td>
+                                            <td><?= $data['nom'] ?></td>
+                                            <td><?= $data['adresse'] ?></td>
                                             <td><?= $data['latitude'] ?></td>
                                             <td><?= $data['longitude'] ?></td>
-                                            <td class="text-center"><a href="?update=<?= $data['idgeoloc'] ?>"><img src="../img/editIcone.png" alt="update" /></a></td>
-                                            <td class="text-center"><a href="?delete=<?= $data['idgeoloc'] ?>"><img src="../img/deleteIcon.png" alt="delete" /></a></td>
+                                            <td class="text-center"><a href="?update=<?= $data['id'] ?>"><img src="../img/editIcone.png" alt="update" /></a></td>
+                                            <td class="text-center"><a href="?delete=<?= $data['id'] ?>"><img src="../img/deleteIcon.png" alt="delete" /></a></td>
 
                                         </tr>
 

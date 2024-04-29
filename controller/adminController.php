@@ -124,6 +124,6 @@ if (isset($_GET['update']) && ctype_digit($_GET['update'])) {
 
 
 // si on est sur l'accueil chargement de tous les `geoloc`
-$datas = getAllGeoloc($db);
+$datas = getAllLocalisations($db);
 // appel de la vue de l'accueil de l'admin
 include "../view/admin/admin.homepage.view.html.php";

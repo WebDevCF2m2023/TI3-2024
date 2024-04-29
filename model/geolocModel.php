@@ -3,7 +3,7 @@
 // Fonction qui récupère tous les champs de `geoloc`
 function getAllLocalisations(PDO $connection): array|string
 {
-    $sql = "SELECT * FROM `crud`";
+    $sql = "SELECT * FROM `localisations`";
     try {
         $query = $connection->query($sql);
 
@@ -22,7 +22,7 @@ function getAllLocalisations(PDO $connection): array|string
 
 function getOneGeolocById(PDO $db, int $id): string|bool|array
 {
-    $sql = "SELECT * FROM `crud` WHERE `id` = :id";
+    $sql = "SELECT * FROM `localisations` WHERE `id` = :id";
     $stmt = $db->prepare($sql);
 
     $stmt->bindParam("id", $id, PDO::PARAM_INT);
@@ -46,7 +46,7 @@ function getOneGeolocById(PDO $db, int $id): string|bool|array
 
 function updateOneGeolocById(PDO $db, int $idgeoloc, string $title, string $desc, float $lat, float $lon): string|bool
 {
-    $sql = "UPDATE `crud` SET `nom`= ? , `adresse`= ?, `latitude`= ?, `longitude`= ? WHERE `id`= ?";
+    $sql = "UPDATE `localisations` SET `nom`= ? , `adresse`= ?, `latitude`= ?, `longitude`= ? WHERE `id`= ?";
     $stmt = $db->prepare($sql);
     try {
         $stmt->execute([

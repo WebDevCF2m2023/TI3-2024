@@ -37,8 +37,8 @@
         // Nous avons un lieu
         else :
         ?>
-            <h5 class="text-center mt-5 mb-3">Titre : <span class="fw-normal"> <?= $getOneGeoloc['title'] ?></span></h5>
-            <h5 class="text-center mb-3">Description : <span class="fw-normal"><?= $getOneGeoloc['geolocdesc'] ?></span></h5>
+            <h5 class="text-center mt-5 mb-3">Titre : <span class="fw-normal"> <?= $getOneGeoloc['nom'] ?></span></h5>
+            <h5 class="text-center mb-3">Description : <span class="fw-normal"><?= $getOneGeoloc['adresse'] ?></span></h5>
             <h5 class="text-center mb-3">Latitude : <span class="fw-normal"><?= $getOneGeoloc['latitude'] ?></span></h5>
             <h5 class="text-center mb-3">Longitude : <span class="fw-normal"><?= $getOneGeoloc['longitude'] ?></span></h5>
             <p class="text-center mt-2 fw-bold">Supprimer le lieu</p>

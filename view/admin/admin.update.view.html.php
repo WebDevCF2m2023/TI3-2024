@@ -42,11 +42,11 @@
                         <div class="col-6"></div>
                         <div class="mb-3 w-25">
                             <label for="titre" class=" form-label">Titre</label>
-                            <input type="text" name="title" value="<?= $getOneGeoloc['title'] ?>" class="form-control" id="titre" required>
+                            <input type="text" name="title" value="<?= $getOneGeoloc['nom'] ?>" class="form-control" id="nom" required>
                         </div>
                         <div class="mb-3 w-25">
                             <label for="desc" class="form-label">Description</label>
-                            <textarea name="geolocdesc" class="form-control" id="desc" rows="1"><?= $getOneGeoloc['geolocdesc'] ?></textarea>
+                            <textarea name="adresse" class="form-control" id="adresse" rows="1"><?= $getOneGeoloc['adresse'] ?></textarea>
                         </div>
                         <div class="mb-3 w-25">
                             <label for="latitude" class="form-label">Latitude</label>

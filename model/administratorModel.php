@@ -5,7 +5,7 @@
 function connectAdministrator(PDO $connect, string $user, string $password): bool|string
 {
     // On récupère les valeurs utiles pour l'utilisateur via $user uniquement
-    $sql = "SELECT * FROM `administrator` WHERE username = ?";
+    $sql = "SELECT * FROM `utilisateurs` WHERE username = ?";
 
     // on utilise une requête préparée car il y'a une entrée utilisateur
     $prepare = $connect->prepare($sql);
