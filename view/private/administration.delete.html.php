@@ -7,27 +7,7 @@
     <title>Administration Delete</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4 sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">EX_TI</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" name="name" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/?administration">Panel Administration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/?disconnect">Se deconnecter</a>
-                </li>
-            </ul>
-            </div>
-        </div>
-    </nav>
+
 
     <div class="container">
         <?php if(is_string($delete)): ?>
@@ -38,32 +18,40 @@
             <?php endif; ?>
                 <h2 class="text-center mb-4 text-primary">Supprimer la localisation avec comme ID <?= $delete['id'] ?></h2>
                 <form class="w-50 m-auto" method="GET">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" disabled value="<?= $delete['name'] ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="img_url">Image URL</label>
-                        <input type="text" class="form-control" id="img_url" disabled value="<?= $delete['img_url'] ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="adresse">Adresse</label>
-                        <input type="text" class="form-control" id="adresse" disabled value="<?= $delete['adresse'] ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="long">Longitude</label>
-                        <input type="number" class="form-control" id="long" step="0.0000001" disabled value="<?= $delete['long'] ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="lat">Latitude</label>
-                        <input type="number" class="form-control" id="lat" step="0.0000001" disabled value="<?= $delete['lat'] ?>">
-                    </div>
-                    <input type="hidden" name="delete" value="<?= $delete['id'] ?>">
-                    <div class="">
-                        <button type="submit" class="btn btn-danger mt-3" name="ok">Supprimer</button>
-                        <button type="submit" class="btn btn-primary mt-3 ms-2" name="ko">Ne pas supprimer</button>
-                    </div>
-                </form>
+    <div class="form-group">
+        <label for="nom">Name</label>
+        <input type="text" class="form-control" id="nom" disabled value="<?= $delete['nom'] ?>">
+    </div>
+    <div class="form-group">
+        <label for="adresse">Adresse</label>
+        <input type="text" class="form-control" id="adresse" disabled value="<?= $delete['adresse'] ?>">
+    </div>
+    <div class="form-group">
+        <label for="codepostal">Code Postal</label>
+        <input type="text" class="form-control" id="codepostal" disabled value="<?= $delete['codepostal'] ?>">
+    </div>
+    <div class="form-group">
+        <label for="ville">Ville</label>
+        <input type="text" class="form-control" id="ville" disabled value="<?= $delete['ville'] ?>">
+    </div>
+    <div class="form-group">
+        <label for="nb_velos">Nombre de Vélos</label>
+        <input type="number" class="form-control" id="nb_velos" disabled value="<?= $delete['nb_velos'] ?>">
+    </div>
+    <div class="form-group">
+        <label for="latitude">Latitude</label>
+        <input type="number" class="form-control" id="latitude" step="0.0000001" disabled value="<?= $delete['latitude'] ?>">
+    </div>
+    <div class="form-group">
+        <label for="longitude">Longitude</label>
+        <input type="number" class="form-control" id="longitude" step="0.0000001" disabled value="<?= $delete['longitude'] ?>">
+    </div>
+    <input type="hidden" name="delete" value="<?= $delete['id'] ?>">
+    <div class="">
+        <button type="submit" class="btn btn-danger mt-3" name="ok">Supprimer</button>
+        <button type="submit" class="btn btn-primary mt-3 ms-2" name="ko">Ne pas supprimer</button>
+    </div>
+</form>
         <?php endif ?>
     </div>
     
