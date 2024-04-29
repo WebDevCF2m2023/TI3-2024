@@ -62,6 +62,20 @@ function tbody_add_location(tbody, location){
         marker.openPopup();
         map.setView(marker.getLatLng(), 17);
     });
+    if (document.querySelector("#logout-link")){
+        const edit_a = document.createElement("a");
+        const delete_a = document.createElement("a");
+        edit_a.href=`./?edit=${location.id}`;
+        delete_a.href=`./?delete=${location.id}`;
+        const edit_icon = document.createElement("i");
+        const delete_icon = document.createElement("i");
+        edit_icon.classList.add("fa", "fa-pencil", "text-primary", "eye-icon")
+        delete_icon.classList.add("fa", "fa-trash", "text-primary", "eye-icon")
+        edit_a.insertAdjacentElement("afterbegin", edit_icon);
+        delete_a.insertAdjacentElement("afterbegin", delete_icon);
+        td5.insertAdjacentElement("beforeend", edit_a);
+        td5.insertAdjacentElement("beforeend", delete_a);
+    }
     //insert tds in tr
     tr.insertAdjacentElement("beforeend", td1);
     tr.insertAdjacentElement("beforeend", td2);

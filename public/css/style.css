@@ -4,7 +4,7 @@
 h1, h2 {
     text-align: center;
 }
-#login-link > a {
+#login-link > a, #logout-link > a {
     display: block;
     margin: auto;
     text-align: center;
@@ -15,7 +15,7 @@ h1, h2 {
     background-color: rgb(187, 187, 187);
     color: black;
 }
-#login-link > a:hover {
+#login-link > a:hover, #logout-link > a:hover {
     background-color: rgb(139, 139, 139);
 }
 main {

@@ -8,4 +8,5 @@ if (isset($_GET["p"])){
             die;
     }
 }else {
+    require_once("../view/private/home.php");
 }
