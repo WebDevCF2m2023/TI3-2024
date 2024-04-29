@@ -9,7 +9,7 @@ a #btnHomepage{
  }
  a{
     text-decoration: none;
-    width: 50%;
+    
  }
 #btnHomepage{
     display: flex;
