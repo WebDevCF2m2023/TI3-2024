@@ -40,6 +40,10 @@ function getOneLocationById(PDO $db, int $id): string|bool|array
     }
 }
 
+// Fonction qui  update tous les champs d'un élément de locations grâce à son id
+// En lui passant TOUTES les variables en paramètre
+// nous renvoie false en cas d'échec ou le message d'erreur sql
+// ou un true en cas de succès
 function updateOneLocationById(PDO $db, int $id, string $nom, string $adresse, string $codePostal ,string $telephone ,string $url,float $latitude, float $longitude): string|bool
 {
     $sql = "UPDATE `localisations` SET `nom`= ? , `rue`= ?,`codepostal` = ?,`telephone` = ? ,`url` = ? ,`latitude`= ?, `longitude`= ? WHERE `id`= ?";
@@ -57,6 +61,29 @@ function updateOneLocationById(PDO $db, int $id, string $nom, string $adresse, s
         ]);
         // pas de modification par la requête
         if ($stmt->rowCount() === 0) return false;
+
+        return true;
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+}
+
+//Fonction qui insére un nouveau lieu
+
+function insertOneLocationById(PDO $db, string $nom, string $adresse,string $codePostal,string $telephone,string $url,float $latitude, float $longitude): bool|string
+{
+    $sql = "INSERT INTO `localisations` (`nom`,`rue`,`codepostal`,`telephone`,`url`,`latitude`,`longitude`) VALUES (?,?,?,?,?,?,?);";
+    $prepare = $db->prepare($sql);
+    try {
+        $prepare->execute([
+            $nom,
+            $adresse,
+            $codePostal,
+            $telephone,
+            $url,
+            $latitude,
+            $longitude
+        ]);
 
         return true;
     } catch (Exception $e) {
