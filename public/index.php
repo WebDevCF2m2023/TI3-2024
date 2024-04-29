@@ -18,3 +18,17 @@ try{
 }catch(Exception $e){
     die($e->getMessage());
 }
+
+// router
+
+if(isset($_SESSION['username'])){
+    // appel du contrôleur private
+    require_once "../controller/privateController.php";
+    
+}else{
+
+// appel du contrôleur public
+require_once "../controller/publicController.php";
+}
+
+$db = null;
