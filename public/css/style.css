@@ -33,3 +33,28 @@ body, .bodyClassic {
     background-repeat: repeat-x;
     height: 200vh;
 }
+
+.global {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#theMap {
+    height: 500px;
+    grid-area: mapGrid;
+}
+
+.mainMap {
+    display: grid;   
+    grid-template-columns: auto auto
+    grid-template-rows: 600px;
+    grid-template-areas: 
+    "mapGrid listGrid"
+    ;
+    justify-content: center;
+}
+
+.listDiv {
+    grid-area: listGrid;
+}

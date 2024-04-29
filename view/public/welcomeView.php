@@ -1,7 +1,8 @@
 <?php
+var_dump($_SESSION["showGreeting"]);
 
-
-if (isset($errorMessage)) echo $errorMessage;
+    $_SESSION["showGreeting"] = false;
+ 
 /*
 var_dump($db);
 if (isset($allLocals)) {
@@ -47,11 +48,13 @@ if (isset($allLocals)) {
         <p class="h5 mt-2">Cliquez <a href="?page=home">ici</a> pour continuer</p>
         <p class="h6">&lpar;Cette page ne s'affichera qu'une seule fois&rpar;</p>
 </div>
-
+    <?php
+        include("../view/incShared/footer.php");
+    ?>
     <?php
     include("../view/incShared/cdnJS.php");
     ?>
-        <script src="scripts/colour-script.js"></script>
+        <script src="js/colour-script.js"></script>
         <script src="scripts/checkbox-script.js"></script>
     </body>
     </html>

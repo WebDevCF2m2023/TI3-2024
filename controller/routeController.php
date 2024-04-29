@@ -1,9 +1,10 @@
 <?php
-
-if(isset($_GET["page"])) {
+if($_SESSION["showGreeting"] === true) {
+    include("../view/public/welcomeView.php");
+}else if(isset($_GET["page"])) {
     switch($_GET["page"]) {
         case "home" :
-            $title = "Bienvenue à nouveau";
+            $title = "Carte Interactive";
             include("../view/public/homeView.php");
             break;
             case "create" :
@@ -33,5 +34,5 @@ if(isset($_GET["page"])) {
                     
                 }else {
                     $title = "Bienvenue à mon Projet";
-                    include("../view/public/welcomeView.php");
+                    include("../view/public/homeView.php");
                 }
