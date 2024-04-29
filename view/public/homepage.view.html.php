@@ -10,7 +10,7 @@
 <body>
 <header>
 <div class="navbar">
-<nav>
+<nav class="navaccueil">
 <div class="logo"><a href="?accueil"><span class="Gnav">G</span><span class="unav">u</span><span class="inav">i</span><span class="gnav">g</span><span class="lnav">l</span><span class="enav">e</span><span class="Mnav">Maps</span></a></div>
     <div class="welcome">
     <a id="welcome" href="?accueil">WELCOME</a></div>

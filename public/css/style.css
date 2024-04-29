@@ -71,7 +71,7 @@ a{
   color: black;
 }
 
-nav{
+.navaccueil{
     display: flex;
     align-self: auto;
     margin-left: 10%;
@@ -148,8 +148,10 @@ span{
     font-size: large;
 
 }
+
 .formulaire {
    background-image: url(../img/bg.jpg);
+   background-size: cover;
 }
 
 @media screen and (width <= 576px) {
