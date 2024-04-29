@@ -44,7 +44,9 @@ function getUserByUsername(PDO $db, string $username) : array | bool | string{
         $prepare = $db->prepare($sql);
         $prepare->execute([$username]);
         if($prepare->rowCount() < 1) return false;
-        return $prepare->fetch();
+        $user = $prepare->fetch();
+        $prepare->closeCursor();
+        return $user;
     } catch (Exception $e) {
         return $e->getMessage();
     }

@@ -6,7 +6,7 @@
  */
 function getAllLocations(PDO $db) : array | string{
     try {
-        $query = $db->query("SELECT * FROM `localisations` ORDER BY id ASC");
+        $query = $db->query("SELECT * FROM `localisations` ORDER BY id DESC");
         $locations = $query->fetchAll();
         $query->closeCursor();
         return $locations;
@@ -24,7 +24,9 @@ function getLocationByID(PDO $db, int $id) : array | string{
         $prepare = $db->prepare("SELECT * FROM `localisations` WHERE id = ?");
         $prepare->execute([$id]);
         if($prepare->rowCount() < 1) return "Aucune localisation avec cette ID.";
-        return $prepare->fetch();
+        $location = $prepare->fetch();
+        $prepare->closeCursor();
+        return $location;
     } catch (Exception $e) {
         return $e->getMessage();
     }

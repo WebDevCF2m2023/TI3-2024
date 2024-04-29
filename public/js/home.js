@@ -33,6 +33,13 @@ function addAllToListe(locations){
     const liste = document.getElementById("liste");
     const ul = document.createElement('ul');
 
+    if(locations.length === 0){
+        const p = document.createElement('p');
+        p.textContent = "Pas encore de lieux";
+        liste.appendChild(p);
+        return;
+    }
+
     locations.forEach(i => {
         
         const li = document.createElement('li');
