@@ -35,3 +35,11 @@ if (isset($_GET['connect'])) {
     include "../view/public/connect.view.html.php";
     exit();
 }
+
+// si on est sur l'accueil, on charge toutes les localisations
+
+//Si on obtiens un string, c'est une erreur SQL, un tableau vide = pas de datas
+$datas = getAllLocations($db);
+
+//appel de la vue
+include "../view/public/homepage.view.html.php";
