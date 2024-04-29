@@ -27,7 +27,6 @@ elseif (isset($_GET["edit"])){
     require("../view/private/edit.php");
 }
 elseif (isset($_GET["delete"])){
-    var_dump($_POST);
     $id = (int)$_GET["delete"];
     if (isset($_POST["confirm"])){
         $result = remove_location($db, $id);
@@ -45,6 +44,18 @@ elseif (isset($_GET["delete"])){
         $location = $result;
     }
     require("../view/private/delete.php");
+}
+elseif (isset($_GET["create"])){
+    if (isset($_POST["name"], $_POST["street"], $_POST["postal"], $_POST["telephone"], $_POST["url"], $_POST["latitude"], $_POST["longitude"])){
+        $result = insert_localisation($db, $_POST["name"], $_POST["street"], $_POST["postal"], $_POST["telephone"], $_POST["url"], (float)$_POST["latitude"], (float)$_POST["longitude"]);
+        if ($result===true){
+            header("Location: ./");
+            die;
+        }else{
+            $error = $result;
+        }
+    }
+    require("../view/private/create.php");
 }
 else {
     require_once("../view/private/home.php");
