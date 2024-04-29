@@ -1,14 +1,18 @@
-/* Définition du centre et du zoom de la carte (valeur initiale)  */
-const carte = L.map('map').setView([50.8467139, 4.3525151], 16);
+/* Carte centrée sur la Grand'Place de Bruxelles */
+const carte = L.map('map').setView([50.8467139,4.3525151], 16);
 
-/* Ajout d'un fond de carte (arrière-plan) */
+/* fond de carte */
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(carte);
 
-/* Récupération des données */
-fetch("index.php")
+// Options pour le fetch() qui va récupérer les données
+const fetchOptions = { method:'GET', mode:"cors", cache:'default' };
+
+// Demande de recupération des données
+fetch('./?json', fetchOptions)
+    // si la promesse est résolue, c'est-à-dire qu'on reçoit les données
     .then(function(response){
         response.json().then(function(data){
             console.log(data);
@@ -16,65 +20,91 @@ fetch("index.php")
             afficheListe(data);
         });
     })
+    // si la promesse est rejetée, c'est-à-dire qu'il y a eu un problème
     .catch(function(error){
-        console.log(error.message);
+        console.log('Problèmes avec le fetch : '+error.message);
     });
 
-/* Création d'un tableau de marqueurs pour un affichage optimal avec FeatureGroup */
-const markerTable = [];
 
-function afficheMarqueurs(liste){
-    /* Boucle pour créer les marqueurs de la liste */
-    for (let item in liste){
-        /* créer un marqueur pour chaque élément de la liste */
-        let unMarqueur = L.marker([liste[item].lat, liste[item].long]).addTo(carte);
-        /* mettre le nom de l'item dans un popup */
-        unMarqueur.bindPopup(`<h3>${liste[item].name}</h3><p>${liste[item].adresse}</p><img class='photo' src='${liste[item].img_url}' >`);
 
-        /* ajouter ce marqueur au tableau */
-        markerTable.push(unMarqueur);
+/* Ajout d'un tableau contenant tous les marqueurs pour l'utilisation d'un FeatureGroup */
+/* Ceci permet d'adapter l'affichage en fonction de la position des marqueurs */
+const lesMarqueurs = [];
+
+/* Ajout d'un marqueur centré sur le CF2M */
+const markerCF2M = L.marker([50.825540,4.338905]);
+/* Ajout d'un popup sur le CF2M */
+markerCF2M.bindPopup("<h3>CF2M Vous êtes ici !</h3>");
+
+/* ajout du marqueur au tableau */
+lesMarqueurs.push(markerCF2M);
+
+function afficheMarqueurs(pointsGeo){
+    /* Lire la liste des points du tableau pointsGeo */
+    for (let item in pointsGeo) {
+        /* définition d'un marqueur */
+        // Les coordonnées des points se trouvent dans les champs lat et long (voir dans la DB)
+        let unMarqueur = L.marker([pointsGeo[item].latitude,pointsGeo[item].longitude]).addTo(carte);
+
+        /* ajout d'un popup */
+        // Il faut regarder dans le fichier JSON (ou dans la DB) où se trouvent les différentes infos
+        // le nom du lieu se trouve dans le champ name
+        // l'adresse du lieu se trouve dans le champ adresse
+        // l'URL de l'image se trouve dans le champ img_url
+        unMarqueur.bindPopup(
+            `<h3>${pointsGeo[item].rue}</h3>
+            <h4>${pointsGeo[item].ville}</h4>
+            <p>${pointsGeo[item].codepostal}</p>
+            `);
+
+        /* ajouter aussi ce marqueur au tableau */
+        lesMarqueurs.push(unMarqueur);
     }
 
-/* placer le tableau de marqueurs dans le featureGroup */
-const groupe = new L.featureGroup(markerTable);
+    /* définition du FeatureGroup */
+    const groupe = new L.featureGroup(lesMarqueurs);
 
-/* adapter l'affichage de ma carte en fonction de la position des marqueurs */
-carte.fitBounds(groupe.getBounds(),{padding:[10,10]});
+    /* adaptation des limites de la carte aux positions extrêmes des marqueurs */
+    carte.fitBounds(groupe.getBounds());
 }
 
-function afficheListe(liste){
-    const divliste = document.getElementById("liste");
+/* Cette fonction sert à générer la liste des points à afficher à côté de la carte */
+function afficheListe(donnees){
+    const liste = document.getElementById('liste');
 
+    // création d'une balise <ul> à placer dans le DIV id=liste */
     const UL = document.createElement("ul");
 
-    liste.forEach(function(item,index){
-        // créer l'élément de type <li>
+    // Lire tous les éléments du tableau JSON pour créer les items de la liste
+    donnees.forEach(function(item,index){
+        // créer la balise <li> vide
         let LI = document.createElement("li");
-        // remplir le <li>
-        LI.innerHTML = `${item.name} | ${item.adresse}`;
-        // ajouter un eventListener sur le clic
-        LI.addEventListener('click', itemClick);
-        // ajouter un attribut à cet item LI pour l'identifier
-        LI.setAttribute("id",`${item.id}`);
-        // ajouter des attributs à cet item LI pour stocker les coordonnées
-        LI.setAttribute("latitude",`${item.lat}`);
-        LI.setAttribute("longitude",`${item.long}`);
-        // attacher ce <li> au <ul>
+        // ajouter son contenu
+        LI.innerHTML = `${item.rue} | ${item.codepostal} | ${item.ville}  `;
+        // ajouter des attributs spécifiques à chaque élément pour pouvoir les distinguer
+        LI.setAttribute("lat",`${item.latitude}`);
+        LI.setAttribute("lng",`${item.longitude}`);
+        LI.setAttribute("id",`${item.idourdatas}`);
+        // ajouter un écouteur d'événement pour savoir si on a cliqué sur cet élément
+        LI.addEventListener('click', clicItem);
+        // la relier à la liste
         UL.appendChild(LI);
     });
 
-    // attacher la liste <ul> au DIV
-    divliste.appendChild(UL);
+    // relier la balise <ul> remplie au DIV id=liste
+    liste.appendChild(UL);
 }
 
-function itemClick(){
-    let id = this.getAttribute("id");
-    let latitude = this.getAttribute("latitude");
-    let longitude = this.getAttribute("longitude");
+function clicItem() {
+    console.log('Item cliqué');
+    let latitude = this.getAttribute('lat');
+    let longitude= this.getAttribute('lng');
+    let id= this.getAttribute('id');
+    console.log(`${latitude} ${longitude}`);
 
-    console.log('item cliqué : ' + id);
+    let marqueur = lesMarqueurs[id];
 
-    let marqueur = markerTable[id-1];
-    marqueur.togglePopup();
     carte.flyTo([latitude,longitude],17);
+
+    marqueur.togglePopup();
 }
