@@ -30,3 +30,21 @@ nav ul li {
    background-color: beige;
    height: 500px;
 }
+@media screen and (width <= 1000px) {
+  #content{
+      width: 100%;
+  }
+}
+
+@media screen and (width <= 640px) {
+  #content{
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+              "resultat"
+              "map"
+              "liste";
+  }
+  #map{
+      margin-bottom: 1rem;
+  }
+}

@@ -31,7 +31,7 @@
     <!-- Header -->
     <header style="background-color: #343a40; padding: 3rem 0;">
         <div style="margin: 0 auto; max-width: 1200px; text-align: center;">
-            <h1 style="color: white; font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem;">BD Maps</h1>
+            <h1 style="color: white; font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem;">Les stations Cambio</h1>
             <p style="color: rgba(255, 255, 255, 0.5); font-size: 1.25rem; margin-bottom: 2rem;">Emrah Arpaci CF2000</p>
             <div style="display: flex; justify-content: center;">
                 <a style="background-color: #007bff; color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem;" href="?connect">Connexion</a>
@@ -39,7 +39,7 @@
         </div>
     </header>
     <div id="content" style="text-align: center; margin-top: 3rem;">
-        <h3>Liste des fresques BD</h3>
+        <h3>Liste des stations</h3>
     </div>
     <div id="content">
         <!-- Leaflet Map Section -->
