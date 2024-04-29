@@ -35,12 +35,12 @@ try {
 
 function insertNewItem (PDO $db, string $nom, string $type, string $add, int $code, string $ville, string $url, float $lat, float $lon) {
 
-    $cleanedName = htmlspecialchars(strip_tags(trim($nom)));
-    $cleanedType = htmlspecialchars(strip_tags(trim($type)));
-    $cleanedAdd = htmlspecialchars(strip_tags(trim($add)));
+    $cleanedName = htmlspecialchars(strip_tags(trim($nom)), ENT_QUOTES);
+    $cleanedType = htmlspecialchars(strip_tags(trim($type)), ENT_QUOTES);
+    $cleanedAdd = htmlspecialchars(strip_tags(trim($add)), ENT_QUOTES);
     $cleanedCode = htmlspecialchars(strip_tags(trim($code)));
-    $cleanedVille = htmlspecialchars(strip_tags(trim($ville)));
-    $cleanedUrl = htmlspecialchars(strip_tags(trim($url)));
+    $cleanedVille = htmlspecialchars(strip_tags(trim($ville)), ENT_QUOTES);
+    $cleanedUrl = filter_var($url, FILTER_SANITIZE_URL);
     $cleanedLat = htmlspecialchars(strip_tags(trim($lat)));
     $cleanedLon = htmlspecialchars(strip_tags(trim($lon)));
     
