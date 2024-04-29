@@ -18,25 +18,27 @@
     <h1>Carte interactive</h1>
     <h2>Liste théatres à Bruxelles</h2>
     <p id="login-link"><a href="./?p=login">Connexion à l'administration</a></p>
-    <div id="map"></div>
-    <!-- table -->
-    <div class="container-lg">
-        <div class="table-responsive">
-            <table class="table table-striped" data-click-to-select="true" data-toggle="table" data-show-columns="true" data-pagination="true" id="locations-table">
-                <thead>
-                    <tr>
-                        <th data-sortable="true">Nom</th>
-                        <th>Adresse</th>
-                        <th>Telephone</th>
-                        <th>Url</th>
-                        <th>Voir le lieux sur la map</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+    <main>
+        <div id="map"></div>
+        <!-- table -->
+        <div class="container-lg">
+            <div class="table-responsive">
+                <table class="table table-striped" data-click-to-select="true" data-toggle="table" data-show-columns="true" data-pagination="true" id="locations-table">
+                    <thead>
+                        <tr>
+                            <th data-sortable="true">Nom</th>
+                            <th>Adresse</th>
+                            <th>Telephone</th>
+                            <th>Url</th>
+                            <th>Voir le lieux sur la map</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
+    </main>
     <!-- leaflet -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <!-- local script -->
