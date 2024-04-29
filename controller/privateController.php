@@ -15,6 +15,7 @@ if(isset($_GET['create'])){
     if(isset(
         $_POST['rue'],
         $_POST['ville'],
+        $_POST['codepostal'],
         $_POST['latitude'],
         $_POST['longitude']
     )){
@@ -77,6 +78,7 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
     if(isset(
              $_POST['rue'],
              $_POST['ville'],
+             $_POST['codepostal'],
              $_POST['latitude'],
              $_POST['longitude']
     )){
