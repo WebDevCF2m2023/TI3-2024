@@ -1,6 +1,8 @@
-const map = L.map('map').setView([0.0, 0.0], 2);
+const map = L.map('map').setView([50.830200, 4.338000], 13);
 
 const markers = {};
+let bounds = L.latLngBounds(); // Create an empty bounds object
+
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -13,7 +15,7 @@ fetch('?json')
     .then(handleResponse)
     .catch(error=>console.error("Error: ", error));
 
-    console.log("test");
+
 
 function handleResponse(localisations)  {
     if(localisations.error !== undefined) {
@@ -22,6 +24,8 @@ function handleResponse(localisations)  {
     }
     addAllMarkersByLocations(localisations);
     addAllToListe(localisations);
+    map.fitBounds(bounds); // Fit the map to the bounds
+
 }
 
 function addAllToListe(localisations) {

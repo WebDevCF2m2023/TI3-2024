@@ -11,19 +11,20 @@
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
         "map liste";
+        margin-bottom: 100px;
 
 }
 
 #map {
     grid-area: map;
-    height: 800px;
+    height: 700px;
  }
 
 #liste{
     grid-area: liste;
     padding: 5px;
     
-    max-height: 800px;
+    max-height: 700px;
     overflow-y: scroll;
 }
 
@@ -43,8 +44,8 @@
     background-color: rgba(0,255,0,0.3);
 }
 
-@media screen and (width <= 576px) {
-    #container{
+@media screen and (max-width: 640px) {
+    #homepage-container{
         grid-template-columns: 1fr;
         grid-template-areas: 
                 "map"
