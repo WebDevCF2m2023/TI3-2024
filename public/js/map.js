@@ -1,10 +1,17 @@
-const map = L.map('map').setView([50.845347, 4.350323], 4);
+const map = L.map('map').setView([50.845347, 4.350323], 11);
 const markers = {};
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">sebbymap</a>'
 }).addTo(map);
 
+
+var greenIcon = L.icon({
+    iconUrl: '../img/epingle.png',
+    iconSize:     [25, 25], // size of the icon
+
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
 fetch("?json")
     .then(response=>response.json())
@@ -55,7 +62,7 @@ function addAllToListe(locations){
  */
 function addAllMarkersByLocations(locations){
     locations.forEach(information => {
-        const marker = L.marker([information.latitude, information.longitude]).addTo(map);
+        const marker = L.marker([information.latitude, information.longitude],{icon: greenIcon}).addTo(map);
         markers[information.id] = marker;
         marker.bindPopup(`<b>${information.nom}</b><br><p>${information.adresse} - ${information.numero} - ${information.ville} - ${information.codepostal}</p><img width='100''>`);
     });
