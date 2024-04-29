@@ -3,63 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-    <title>Admin Update</title>
+    <title>Homepage</title>
+    <!-- CSS de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <!-- ma CSS -->
+    <link rel="stylesheet" href="css/carteJSON.css">
 </head>
 <body>
-<div class="antialiased text-gray-900 px-6">
-    <div class="max-w-xl mx-auto py-12 divide-y md:max-w-8xl">
-        <div class="py-8">
-            <h1 class="text-4xl font-bold">Admin Update</h1>
-            <p class="mt-2 text-lg text-gray-800">
-                Mettre à jour un lieu dans la DB.
-            </p>
+    <h1>Homepage</h1>
+    <nav>
+        <ul>
+            <li><a href="./">Accueil</a></li>
+            <li><a href="?connect">Connexion</a>
+        </ul>
+    </nav>
+    <div class="content">
+        <h2>Nos datas</h2>
+        <?php /* ?>
+        <?php if(isset($message)): ?>
+                <h3><?=$message?></h3>
+        <?php elseif(isset($error)): ?>
+                <h3 class="error"><?=$error?></h3>
+        <?php else:
+                foreach($ourDatas as $item): ?>
+                    <h4><?=$item['title']?></h4>
+                    <p><?=$item['ourdesc']?></p>
+                    <p>Latitude : <?=$item['latitude']?></p>
+                    <p>Longitude : <?=$item['longitude']?></p>
+                <?php endforeach; ?>
+        <?php endif;
+        */ ?>
+        <h1>Récupération de données via JSON et PHP</h1>
+        <div id="resultats">
+            <div id="carte"></div>
+            <div id="liste"></div>
         </div>
-        <nav class="flex sm:col-span-1">
-            <ol role="list" class="flex items-center space-x-2 sm:space-x-5">
-                <li class="flex items-center">
-                    <div>
-                        <a href="./">Accueil Admin</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex items-center">
-                        <a href="?insert">Ajouter une data</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex items-center">
-                        <a href="?disconnect">Déconnexion</a>
-                    </div>
-                </li>
-            </ol>
-        </nav>
-        <div class="py-12">
-            <h2 class="text-2xl font-bold">Update d'une data</h2>
-        <?php if(isset($error)) echo "<h3>$error</h3>"; ?>
-            <br>
-            <div class="grid grid-cols-1 gap-6">
-
-       <form action="" name="ourdatas" method="POST">
-           <label class="block">
-               <span class="text-gray-700">Title</span>
-        <input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="title" placeholder="title" value="<?=$data['title']?>" required>
-           </label>
-           <label class="block">
-               <span class="text-gray-700">description</span>
-        <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="ourdesc" placeholder="Descrition" required><?=$data['ourdesc']?></textarea>
-           </label>
-           <label class="block">
-               <span class="text-gray-700">latitude</span>
-        <input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" step="0.00000000001" name="latitude" placeholder="latitude" value="<?=$data['latitude']?>" required>
-           </label>
-           <label class="block">
-               <span class="text-gray-700">longitude</span>
-        <input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" step="0.00000000001" name="longitude" placeholder="longitude" value="<?=$data['longitude']?>" required>
-           </label>
-        <input type="hidden" name="id" value="<?=$data['idourdatas']?>" />
-        <input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="submit" value="Modifier" />
-       </form>
     </div>
+    <!-- JS de Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <!-- monJS -->
+    <script src="js/carteJSON.js"></script>
 </body>
 </html>

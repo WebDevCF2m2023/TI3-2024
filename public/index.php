@@ -5,8 +5,8 @@ session_start();
 // chargement du fichier de configuration
 require_once '../config.php';
 // chargement de dépendances
-require_once "../model/administratorModel.php";
-require_once "../model/ourdatasModel.php";
+require_once "../model/localisationsModel.php";
+require_once "../model/utilisateursModel.php";
 
 // Connexion
 try{
