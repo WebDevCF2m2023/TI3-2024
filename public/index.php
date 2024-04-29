@@ -1,27 +1,36 @@
 <?php
+// ouverture / continuation de session
 session_start();
 
-require_once("../config.php");
-require_once("../model/utilisateursModel.php");
-require_once("../model/localisationsModel.php");
+// chargement du fichier de configuration
+require_once '../config.php';
+
+// chargement de dépendances
+require_once "../model/administratorModel.php";
+require_once "../model/ourdatasModel.php";
 
 
-$dsn = DB_DRIVER . ":host=" . DB_HOST . ";charset=" . DB_CHARSET . ";port=" . DB_PORT . ";dbname=". DB_NAME;
-
-try {
-    $db = new PDO($dsn, DB_USER, DB_PASS, [
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]);
-} catch (Exception $e) {
+// Connexion
+try{
+    $connect = new PDO(
+        DB_DRIVER.":host=".DB_HOST.";port=".DB_PORT.";dbname=".DB_NAME.";charset=".DB_CHARSET,
+        DB_LOGIN,
+        DB_MDP,
+        [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
+);
+}catch(Exception $e){
     die($e->getMessage());
 }
 
-if(isset($_GET['json'])){
-    require("../controller/ApiController.php");
-}else if(isset($_SESSION['connected'])){
-    require("../controller/PrivateController.php");
+// si on est connecté (existance d'une variable de session attendue)
+if(isset($_SESSION['login'])){
+    // chargement du contrôleur privé
+    require_once "../controller/privateController.php";
+    
 }else{
-    require("../controller/PublicController.php");
+
+    // chargement du contrôleur publique
+    require_once "../controller/publicController.php";
 }
 
-$db = null;
+$connect = null;
