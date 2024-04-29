@@ -4,7 +4,7 @@ body, .bodyClassic {
     background: -moz-linear-gradient(-90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
     background: -webkit-linear-gradient(-90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
     background-repeat: repeat-x;
-    height: 200vh;
+    height: 300vh;
 }
 
 .bodyGreen {
@@ -13,7 +13,7 @@ body, .bodyClassic {
     background: -moz-linear-gradient(-90deg, hsla(157, 14%, 57%, 1) 0%, hsla(152, 17%, 94%, 1) 100%);
     background: -webkit-linear-gradient(-90deg, hsla(157, 14%, 57%, 1) 0%, hsla(152, 17%, 94%, 1) 100%);
     background-repeat: repeat-x;
-    height: 200vh;
+    height: 300vh;
 }
 
 .bodyBlue {
@@ -22,7 +22,7 @@ body, .bodyClassic {
     background: -moz-linear-gradient(-90deg, hsla(217, 14%, 57%, 1) 0%, hsla(212, 17%, 94%, 1) 100%);
     background: -webkit-linear-gradient(-90deg, hsla(217, 14%, 57%, 1) 0%, hsla(212, 17%, 94%, 1) 100%);
     background-repeat: repeat-x;
-    height: 200vh;
+    height: 300vh;
 }
 
 .bodyRed {
@@ -31,23 +31,25 @@ body, .bodyClassic {
     background: -moz-linear-gradient(-90deg, hsla(22, 14%, 57%, 1) 0%, hsla(17, 17%, 94%, 1) 100%);
     background: -webkit-linear-gradient(-90deg, hsla(22, 14%, 57%, 1) 0%, hsla(17, 17%, 94%, 1) 100%);
     background-repeat: repeat-x;
-    height: 200vh;
+    height: 300vh;
 }
 
 .global {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 #theMap {
-    height: 500px;
+    height: 600px;
+    width: 800px;
     grid-area: mapGrid;
+    margin-right: 50px;
 }
 
 .mainMap {
     display: grid;   
-    grid-template-columns: auto auto
+    grid-template-columns: 80% 20%;
     grid-template-rows: 600px;
     grid-template-areas: 
     "mapGrid listGrid"
@@ -57,4 +59,9 @@ body, .bodyClassic {
 
 .listDiv {
     grid-area: listGrid;
+}
+
+.listTable {
+    display: flex;
+    flex-flow: column wrap;
 }

@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php       // Un moyen pratique de cacher la pollution visuelle que représentent les CDN
     include("../view/incShared/cdnLeaf-css.php");
+ //   include("../view/incShared/cdnBS.php");
 ?>
     <link rel="stylesheet" href="css/style.css">
     <title><?=$title?></title>
@@ -17,7 +18,7 @@
     <header>
     <h1>Carte Interactive</h1>
     <h2>Parcours Ciné à Bruxelles</h2>
-    <p>Cliquez <a href="?page=home&action=login">ici</a> pour vous connecter</p>
+    <p>Cliquez <a href="?page=login">ici</a> pour vous connecter</p>
     </header>
     <div class = "mainMap">
         <div id = "theMap" class = "mapDiv">
@@ -28,12 +29,43 @@
                 <h3>Liste des locations</h3>
                 <h5>Cliquez sur un nom du Cinéma ci-dessous pour la situer sur la carte</h5>
             </div>
+            <table class = "listTable">
+                <tr>
+                    <th>Nom</th>
+                </tr>
+                <?php
+                $i=0;
+                    foreach ($allLocals as $loc) {
+
+                ?>
+                    <tr>
+                        <td><a href="?page=home&lat=<?=$loc["latitude"]?>&lon=<?=$loc["longitude"]?>&nom=<?=$loc["nom"]?>&id=<?=$loc["id"]?>" class="mapLink"><?=$loc["nom"]?></a></a></td>
+                    </tr>
+
+                <?php
+                }            
+                ?>
+            </table>
+        </div>
+
+
+    </div>
+
+    <div class = "listDiv">
+            <div class="listHead">
+                <h3>Liste des locations</h3>
+                <h5>Cliquez sur un nom du Cinéma ci-dessous pour la situer sur la carte</h5>
+            </div>
             <table>
                 <tr>
                     <th>Nom</th>
                     <th>Type</th>
                     <th>Adresse</th>
-                    <th>Voir Plus</th>
+                    <th>Code Postale</th>
+                    <th>Ville</th>
+                    <th>Latitude</th>
+                    <th>Logitude</th>
+                    <th>URL</th>
                 </tr>
                 <?php
                     foreach ($allLocals as $loc) {
@@ -55,16 +87,11 @@
         </div>
 
 
-    </div>
-
-
-
-
 
 
 
     <?php
-        include("../view/incShared/footer.php");
+ //       include("../view/incShared/footer.php");
     ?>
     </div>
 <?php       // Un moyen pratique de cacher la pollution visuelle que représentent les CDN

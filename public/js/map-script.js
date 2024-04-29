@@ -2,7 +2,7 @@ const URL_SearchParams = new URLSearchParams(window.location.search);
     flyLat = URL_SearchParams.get("lat");
     flyLon = URL_SearchParams.get("lon");
 
-const theMap       = L.map('theMap').setView([50.82563, 4.33859], 19);
+const theMap       = L.map('theMap').setView([50.82563, 4.33859], 14);
 const mapLink   = document.querySelectorAll('.mapLink');
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

@@ -1,26 +1,5 @@
 <?php
-var_dump($_SESSION["showGreeting"]);
-
     $_SESSION["showGreeting"] = false;
- 
-/*
-var_dump($db);
-if (isset($allLocals)) {
-    foreach ($allLocals as $local) {    ?>
-        <p>ID : <?=$local["id"]?></p>
-        <p>NOM : <?=$local["nom"]?></p>
-        <p>TYPE : <?=$local["type"]?></p>
-        <p>ADRESSE : <?=$local["adresse"]?></p>
-        <p>CODEPOST : <?=$local["codepostal"]?></p>
-        <p>Ville : <?=$local["ville"]?></p>
-        <p>URL : <?=$local["url"]?></p>
-        <p>LATITUDE : <?=$local["latitude"]?></p>
-        <p>LONGITUDE :<?=$local["longitude"]?></p>
-
-        <?php
-    }
-}
-*/
 ?>
 <!DOCTYPE html>
 <html lang="fr">
