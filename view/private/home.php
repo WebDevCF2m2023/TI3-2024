@@ -18,6 +18,7 @@
     <h1>Carte interactive</h1>
     <h2>Liste théatres à Bruxelles</h2>
     <p id="logout-link"><a href="./?p=logout">Se déconnecter</a></p><p id="create-link"><a href="./?create">Insérer un nouvel élement</a></p>
+    <h4 id="nb-locations"></h4>
     <main>
         <div id="map"></div>
         <!-- table -->
