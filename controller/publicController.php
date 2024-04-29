@@ -1,2 +1,2 @@
 <?php
-require("../view/public/home.html.php");
+require("../view/public/login.html.php");
