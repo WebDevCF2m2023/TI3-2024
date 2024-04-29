@@ -16,7 +16,8 @@ function handle_res(locations){
     //add markers to map
     locations.forEach((location)=>{
         add_marker_location(location);
-    })
+    });
+    //center zoom
     const group = new L.featureGroup(markers);
     map.fitBounds(group.getBounds());
     //add locations to list
@@ -67,6 +68,7 @@ function tbody_add_location(tbody, location){
         marker.openPopup();
         map.setView(marker.getLatLng(), 17);
     });
+    //if modo show icons to edit and delete
     if (document.querySelector("#logout-link")){
         const edit_a = document.createElement("a");
         const delete_a = document.createElement("a");

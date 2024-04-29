@@ -16,8 +16,8 @@ function connection_admin(PDO $db, string $username, string $password):string|tr
     }
 }
 
-# Déconnexion de l'administrateur
-function logout_admin(){
+# administrator logout
+function logout_admin():void{
     $_SESSION = array();
 
     if (ini_get("session.use_cookies")) {

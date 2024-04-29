@@ -31,15 +31,15 @@ function get_localisation_by_id(PDO $db, int $id):array|string{
 
 function check_fields(string $name, string $street, string $postal_code, string $phone_number, string $url):true|string{
     $name = htmlspecialchars(strip_tags(trim($name)),ENT_QUOTES);
-    if ($name==="")return "name ne peut pas être vide";
+    if ($name==="")return "le champ `Nom` ne peut pas être vide";
     $street = htmlspecialchars(strip_tags(trim($street)),ENT_QUOTES);
-    if ($street==="")return "street ne peut pas être vide";
+    if ($street==="")return "le champ `Rue` ne peut pas être vide";
     $postal_code = htmlspecialchars(strip_tags(trim($postal_code)),ENT_QUOTES);
-    if ($postal_code==="")return "postal_code ne peut pas être vide";
+    if ($postal_code==="")return "le champ `Code postal` ne peut pas être vide";
     $phone_number = htmlspecialchars(strip_tags(trim($phone_number)),ENT_QUOTES);
-    if ($phone_number==="")return "phone_number ne peut pas être vide";
+    if ($phone_number==="")return "le champ `Telephone` ne peut pas être vide";
     $url = htmlspecialchars(strip_tags(trim($url)),ENT_QUOTES);
-    if ($url==="")return "url ne peut pas être vide";
+    if ($url==="")return "le champ `Url` ne peut pas être vide";
     return true;
 }
 
@@ -48,7 +48,8 @@ function update_localisation_by_id(PDO $db, int $id, string $name, string $stree
     if ($check!==true)return $check;
 
     try {
-        $sql = "UPDATE `localisations` SET
+        $sql = "UPDATE `localisations`
+            SET
                 `nom`=?,
                 `rue`=?,
                 `codepostal`=?,
