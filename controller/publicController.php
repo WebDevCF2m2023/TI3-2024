@@ -1,13 +1,13 @@
 <?php
 
 
-// si on essaie de se connecter
+
 if(isset($_GET['connect'])){
 
-    // si on clique sur connexion
+   
     if(isset($_POST['username'],$_POST['passwd'])){
 
-        // on met dans une variable la tentative de connexion
+        
         $connection = administratorConnect($connect,$_POST['username'],$_POST['passwd']);
 
 
@@ -18,7 +18,7 @@ if(isset($_GET['connect'])){
 
     }
 
-    // appel de la vue
+    
     require "../view/public/connect.html.php";
     exit();
 }

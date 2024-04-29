@@ -31,7 +31,7 @@ function getOneLocalisations(PDO $db, int $id): array|string
     }
 }
 
-// mettre à jour une donnée
+
 function updateLocalisations(
     PDO $db,
     string $nom,
@@ -60,7 +60,7 @@ function updateLocalisations(
     }
 }
 
-// ajoutez avec une requête préparée la nouvelle data
+
 function addLocalisations(
     PDO $db,
     string $nom,
@@ -86,7 +86,7 @@ function addLocalisations(
     }
 }
 
-// supprimer une donnée
+
 
 function deleteLocalisations(PDO $db, int $id): bool|string
 {
