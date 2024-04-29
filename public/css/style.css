@@ -1,3 +1,10 @@
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 .G{
     color: rgb(31, 106, 247);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

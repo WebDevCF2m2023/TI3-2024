@@ -26,7 +26,7 @@ include "../view/inc/connect.php";
 <div class="container">
         <div class="row">
             <div class="col p-5">
-        <h1 class="text-center">AdminInsert</h1>
+        <h1 class="text-center">AdminInsert.</h1>
         <?php if(isset($error)): ?>
                 <h3 class="error"><?=$error?></h3>
         <?php endif ?>
