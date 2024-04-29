@@ -53,7 +53,11 @@
 
         <div id="resultat">
             <div id="map"></div>
-            <div id="liste"></div>
+            <div id="liste">
+                <h2 class="titreHomepage">Listes des théâtres</h2>
+                <p  class="titreHomepage">Cliquez sur un élément dans la liste ci-dessous pour le situer sur la carte</p>
+                <hr>
+            </div>
         </div>
 
     </div>
