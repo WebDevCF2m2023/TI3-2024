@@ -29,7 +29,7 @@ function getUserByUsername(PDO $db, string $username) : array | bool | string{
 function userConnect(PDO $db, string $user) : bool|string{
     $bddUser = getUserByUsername($db, $user);
     if(!is_array($bddUser)) return $bddUser;
-    if(!password_verify($_POST['passwd'], $bddUser['passwd'])) return false;
+    if(!password_verify($_POST['password'], $bddUser['passwd'])) return false;
     $_SESSION['connected'] = true;
     header("Location: /");
     die();

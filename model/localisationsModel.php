@@ -15,7 +15,9 @@ function getlocalisationsByID(PDO $db, int $id) : array | string{
         $prepare = $db->prepare("SELECT * FROM localisations WHERE id = ?");
         $prepare->execute([$id]);
         if($prepare->rowCount() < 1) return "Aucune localisations avec cette ID.";
-        return $prepare->fetch();
+       $lo= $prepare->fetch();
+       $prepare->closeCursor();
+       return $lo;
     } catch (Exception $e) {
         return $e->getMessage();
     }

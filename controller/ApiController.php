@@ -1,6 +1,6 @@
 <?php
-$locations = getAllLocations($db);
+$localisations = getAlllocalisations($db);
 
-if(is_string($locations)) { // error
-    echo json_encode(['error' => $locations]);
-}else echo json_encode($locations);
+if(is_string($localisations)) { // error
+    echo json_encode(['error' => $localisations]);
+}else echo json_encode($localisations);
