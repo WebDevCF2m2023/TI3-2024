@@ -61,8 +61,25 @@ function addAllToListe(locations){
  * @param {object[]} locations
  */
 function addAllMarkersByLocations(locations){
+    const cinemaIcon = L.icon({
+        iconUrl: '../img/cinema.png',
+        iconSize: [35,35], // size of the icon
+    });
+
+    const cineclubIcon = L.icon({
+        iconUrl: '../img/cineclub.png',
+        iconSize: [35,35], // size of the icon
+    });
+
+    const cultureIcon = L.icon({
+        iconUrl: '../img/culture.png',
+        iconSize: [35,35], // size of the icon
+    });
+    
     locations.forEach(information => {
-        const marker = L.marker([information.latitude, information.longitude]).addTo(map);
+        const marker = L.marker([information.latitude, information.longitude], {
+            icon: information.type === "cinéma" ? cinemaIcon : information.type === "ciné-club" ? cineclubIcon : cultureIcon
+                }).addTo(map);
         markers[information.id] = marker;
         marker.bindPopup(`<b>${information.nom}</b><br><p>${information.adresse}</p><a href='${information.url}' target="_blank">${information.url}</a>`);
         featureGroup.addLayer(marker);

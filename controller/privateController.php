@@ -48,7 +48,7 @@ function secureValueFromForm() : bool{
         return false;
     }
 
-    $url = $_POST['url'];
+    $url = $_POST['url']; // TODO FILTER VAR URL
     if(strlen($url) === 0 || strlen($url) > 200){
         return false;
     }
