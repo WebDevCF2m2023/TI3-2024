@@ -32,7 +32,7 @@ function getOneOurdatasByID(PDO $db, int $id): array|string
     }
 }
 
-function updateOurdatasByID(PDO $db, int $idourdatas, string $titre, string $description, string $ville, int $codepostal, float $latitude, float $longitude) : bool|string
+function updateOurdatasByID(PDO $db, int $idourdatas, string $titre, string $description, string $ville, string $codepostal, float $latitude, float $longitude) : bool|string
 {
   $sql = "UPDATE `localisations` SET `nom` = ?, `adresse` = ?, `codepostal` = ?, `ville` = ?, `latitude` = ?, `longitude` = ? WHERE `id` = ?";
   $prepare = $db->prepare($sql);
@@ -57,7 +57,7 @@ function updateOurdatasByID(PDO $db, int $idourdatas, string $titre, string $des
 }
 }
 
-function addOurdatas(PDO $db, string $titre, string $description, string $ville, int $codepostal, float $latitude,float $longitude) : bool|string
+function addOurdatas(PDO $db, string $titre, string $description, string $ville, string $codepostal, float $latitude,float $longitude) : bool|string
 {
     $sql = "INSERT INTO `localisation` (`nom`, `adresse`, `codepostal`, `ville`, `latitude`, `longitude`) 
             VALUES(?,?,?,?,?,?);";

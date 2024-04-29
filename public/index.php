@@ -13,7 +13,7 @@ try{
 require_once "../model/utilisateursModel.php";
 require_once "../model/localisationsModel.php";
 require_once "../controller/privateController.php";
-require_once "../controller/adminControl.php";
+require_once "../controller/publicController.php";
 
 if (isset($_GET["page"])) {
     switch ($_GET["page"]) {
@@ -28,6 +28,6 @@ if (isset($_GET["page"])) {
     include ("../view/public/connect.view.html.php");
 
 
-    
+
 }
     
