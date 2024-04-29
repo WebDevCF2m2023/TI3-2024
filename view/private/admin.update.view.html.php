@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update d'un article</title>
-    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
     <h1>Update d'un article</h1>
@@ -38,7 +38,7 @@
         ?>
         <form method="POST" name="localisation" action="">
                 <input type="text" name="rue" value="<?=$getOneGeoloc['rue']?>" required><br>
-                <textarea name="codepostal"><?=$getOneGeoloc['codepostal']?></textarea><br>
+                <textarea name="ville"><?=$getOneGeoloc['ville']?></textarea><br>
                 <input type="number" name="latitude" step="0.000000001" value="<?=$getOneGeoloc['latitude']?>" required>
                 <input type="number" name="longitude" step="0.000000001" value="<?=$getOneGeoloc['longitude']?>" required>
                 <input type="submit" value="Update">

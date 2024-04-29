@@ -14,17 +14,19 @@ if(isset($_GET['create'])){
     // si on a cliqué sur insérer
     if(isset(
         $_POST['rue'],
-        $_POST['codepostal'],
+        $_POST['ville'],
         $_POST['latitude'],
         $_POST['longitude']
     )){
 
        $rue = htmlspecialchars(strip_tags(trim($_POST['rue'])),ENT_QUOTES);
-       $codepostal = htmlspecialchars(trim($_POST['geolocdesc']),ENT_QUOTES);
+       $codepostal = htmlspecialchars(strip_tags(trim($_POST['codepostal'])),ENT_QUOTES);
+       $ville = htmlspecialchars(trim($_POST['ville']),ENT_QUOTES);
        $latitude = (float) $_POST['latitude'];
        $longitude = (float) $_POST['longitude'];
 
-       $insert = insertOneGeolocByID($db,$rue,$codepostal,$latitude, $longitude);
+
+       $insert = insertOneGeolocByID($db,$rue,$codepostal,$ville,$latitude, $longitude);
 
        if($insert === true){
         header("Location: ./");
@@ -34,7 +36,7 @@ if(isset($_GET['create'])){
     }
 
     // chargement de la vue
-    include "../view/admin/admin.insert.view.html.php";
+    include "../view/private/admin.insert.view.html.php";
     exit();
 }
 
@@ -61,7 +63,7 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
     $getOneGeoloc = getOneGeolocByID($db, $idDelete);
 
     // chargement de la vue
-    include "../view/admin/admin.delete.view.html.php";
+    include "../view/private/admin.delete.view.html.php";
     exit();
 }
 
@@ -73,20 +75,21 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
     // si on a modifié le formulaire (non obligatoire de vérifier tous les champs, mais dans le isset la virgule équivaut à &&)
     if(isset(
-             $_POST['title'],
-             $_POST['geolocdesc'],
+             $_POST['rue'],
+             $_POST['ville'],
              $_POST['latitude'],
              $_POST['longitude']
     )){
 
-            $idgeoloc = $idUpdate;
-            $title = htmlspecialchars(strip_tags(trim($_POST['rue'])),ENT_QUOTES);
-            $geolocdesc = htmlspecialchars(trim($_POST['codepostal']),ENT_QUOTES);
+            $id = $idUpdate;
+            $rue = htmlspecialchars(strip_tags(trim($_POST['rue'])),ENT_QUOTES);
+            $codepostal = htmlspecialchars(strip_tags(trim($_POST['codepostal'])),ENT_QUOTES);
+            $ville= htmlspecialchars(trim($_POST['ville']),ENT_QUOTES);
             $latitude = (float) $_POST['latitude'];
             $longitude = (float) $_POST['longitude'];
 
             // fonction qui update la mise à jour
-            $update = updateOneGeolocByID($db,$idgeoloc,$title,$geolocdesc,$latitude,   $longitude);
+            $update = updateOneGeolocByID($db,$id,$rue,$codepostal,$ville,$latitude,$longitude);
             //var_dump($update);
             // update ok
             if($update===true){

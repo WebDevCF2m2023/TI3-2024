@@ -18,3 +18,15 @@ h2{
     margin-left: 33%;
     margin-right: 33%;
   }
+
+  #map { width: 50%; height: 700px; }
+  
+  .rouge, .rouge a {color:red;}
+        
+    h3, h1 {text-align: center;}
+        
+    .photo {width:100px;}
+        
+    #resultats { display:flex; }
+        
+    #liste { width:40%; height:700px; overflow-y: scroll;}

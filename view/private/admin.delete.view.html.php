@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suppression d'un lieu</title>
-    <link rel="stylesheet" href="css/style.css">
+  
 </head>
 <body>
     <h1>Suppression d'un lieu</h1>
@@ -38,11 +38,12 @@
         else:
         ?>
         <h4>Titre : <?=$getOneGeoloc['rue']?></h4>
-        <p><?=$getOneGeoloc['codepostal']?></p>
+        <p><?=$getOneGeoloc['ville']?></p>
         <h4>Voulez-vous vraiment supprimer cet article</h4>
         <a href="?delete=<?=$idDelete?>&ok"><button value="supprimer">supprimer</button></a> | <a href="./"><button value="Non">Ne pas supprimer</button></a>
                 
         <?php endif ?>   
     </div>
+    
 </body>
 </html>

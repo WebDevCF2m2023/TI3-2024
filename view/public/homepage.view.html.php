@@ -16,6 +16,21 @@
             <a class="con" href="?connect">Connexion à l'administration</a>
         </ul>
     </nav>
+   
+    <!-- Zone d'affichage de la carte -->
+
+    <div id="resultats">
+        <div id="map"></div>
+        <div id="liste"></div>
+    </div>
+    
+    <!-- JS de Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+     
+    <!-- mon JS -->
+    
     <div id="content">
         <h3>Liste de nos lieux</h3>
         <?php
@@ -50,5 +65,6 @@
         endif;
         ?>   
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

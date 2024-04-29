@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insertion d'un lieu</title>
-    <link rel="stylesheet" href="css/style.css">
+   
 </head>
 <body>
     <h1>Insertion d'un lieu</h1>
@@ -18,8 +18,9 @@
     <div id="content">
 
         <form method="POST" name="geo" action="">
-                <input type="text" name="title" value="" placeholder="title" required><br>
-                <textarea name="geolocdesc" placeholder="description"></textarea><br>
+                <input type="text" name="rue" value="" placeholder="rue" required><br>
+                <input type="number" name="codepostal" value="" placeholder="codepostal" required><br>
+                <textarea name="ville" placeholder="ville"></textarea><br>
                 <input type="number" placeholder="latitude" name="latitude" step="0.000000001" value="" required>
                 <input type="number" name="longitude" placeholder="longitude" step="0.000000001" value="" required>
                 <input type="submit" value="Insérer">

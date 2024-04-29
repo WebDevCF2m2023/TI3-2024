@@ -20,7 +20,7 @@ function getAllGeoloc(PDO $connection) : array|string
 function getOneGeolocByID(PDO $db, int $getIt) : string|bool|array
 
 {
-    $sql = "SELECT * FROM localisations WHERE id = :id";
+    $sql = "SELECT * FROM `localisations` WHERE id = :id";
     $stmt = $db->prepare($sql);
     $stmt->bindParam("id", $getIt, PDO::PARAM_INT);
     try{
