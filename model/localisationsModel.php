@@ -39,3 +39,27 @@ function getOneLocationById(PDO $db, int $id): string|bool|array
         return $e->getMessage();
     }
 }
+
+function updateOneLocationById(PDO $db, int $id, string $nom, string $adresse, string $codePostal ,string $telephone ,string $url,float $latitude, float $longitude): string|bool
+{
+    $sql = "UPDATE `localisations` SET `nom`= ? , `rue`= ?,`codepostal` = ?,`telephone` = ? ,`url` = ? ,`latitude`= ?, `longitude`= ? WHERE `id`= ?";
+    $stmt = $db->prepare($sql);
+    try {
+        $stmt->execute([
+            $nom,
+            $adresse,
+            $codePostal,
+            $telephone,
+            $url,
+            $latitude,
+            $longitude,
+            $id
+        ]);
+        // pas de modification par la requête
+        if ($stmt->rowCount() === 0) return false;
+
+        return true;
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+}
