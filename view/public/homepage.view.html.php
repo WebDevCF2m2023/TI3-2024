@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 <body>
+<div class="maincontent">
 <header>
 <div class="navbar">
 <nav class="navaccueil">
@@ -30,6 +31,8 @@
     <div id="liste"></div>
 </div>
 </main>
+
+</div>
 
 
 <footer>
