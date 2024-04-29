@@ -1,15 +1,16 @@
 <?php
 
 # administrator connection
-function connection_admin(PDO $db, string $username, string $password){
+function connection_admin(PDO $db, string $username, string $password):string|true{
     try {
-        $sql = "SELECT `passwd` FROM `localisations` WHERE `username`=?";
+        $sql = "SELECT `passwd` FROM `utilisateurs` WHERE `username`=?";
         $prepare = $db->prepare($sql);
         $prepare->execute([$username]);
         $user = $prepare->fetch();
         $prepare->closeCursor();
         if (!$user || !password_verify($password, $user["passwd"]))return "username ou mot de passe incorrect";
         $_SESSION["admin"] = true;
+        return true;
     }catch (Exception $e){
         return $e->getMessage();
     }

@@ -4,6 +4,7 @@ session_start();
 
 require_once("../config.php");
 require_once("../model/localisationsModel.php");
+require_once("../model/utilisateursModel.php");
 
 try {
     $dsn = DB_DRIVER.":host=".DB_HOST.";port=".DB_PORT.";dbname=".DB_NAME.";charset=".DB_CHARSET;
@@ -21,3 +22,5 @@ if (isset($_SESSION["admin"]) && $_SESSION["admin"]){
 }else {
     require_once("../controller/publicController.php");
 }
+
+$db = null;
