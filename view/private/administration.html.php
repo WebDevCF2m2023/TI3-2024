@@ -19,7 +19,7 @@
                     <a class="nav-link" href="/">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Panel Administration</a>
+                    <a class="nav-link active" href="/?administration">Panel Administration</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/?disconnect">Se deconnecter</a>
@@ -31,16 +31,16 @@
 
     <div class="container">
         <?php if(isset($_GET['updateOK'])) : ?>
-            <h2 class="text-center mb-4 text-success">La location avec comme ID <strong class="text-primary"><?=$_GET['updateOK']?></strong> a bien été modifié.</h2>
+            <h2 class="text-center mb-4 text-success">La localisation avec comme ID <strong class="text-primary"><?=$_GET['updateOK']?></strong> a bien été modifié.</h2>
         <?php endif ?>
         <?php if(isset($_GET['deleteOK'])) : ?>
-            <h2 class="text-center mb-4 text-success">La location avec comme ID <strong class="text-primary"><?=$_GET['deleteOK']?></strong> a bien été <strong class="text-danger">supprimé</strong>.</h2>
+            <h2 class="text-center mb-4 text-success">La localisation avec comme ID <strong class="text-primary"><?=$_GET['deleteOK']?></strong> a bien été <strong class="text-danger">supprimé</strong>.</h2>
         <?php endif ?>
         <?php if(isset($_GET['deleteKO'])) : ?>
-            <h2 class="text-center mb-4 text-success">La location avec comme ID <strong class="text-primary"><?=$_GET['deleteKO']?></strong> <strong class="text-danger">n'a pas</strong> été supprimé.</h2>
+            <h2 class="text-center mb-4 text-success">La localisation avec comme ID <strong class="text-primary"><?=$_GET['deleteKO']?></strong> <strong class="text-danger">n'a pas</strong> été supprimé.</h2>
         <?php endif ?>
         <?php if(isset($_GET['addOK'])) : ?>
-            <h2 class="text-center mb-4 text-success">La location avec comme ID <strong class="text-primary"><?=$_GET['addOK']?></strong> a bien été crée.</h2>
+            <h2 class="text-center mb-4 text-success">La localisation avec comme ID <strong class="text-primary"><?=$_GET['addOK']?></strong> a bien été crée.</h2>
         <?php endif ?>
         <?php if(is_string($locations)) : ?>
             <h2 class="text-danger text-center"><?= $locations ?></h2>

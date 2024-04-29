@@ -23,7 +23,7 @@ function getLocationByID(PDO $db, int $id) : array | string{
     try {
         $prepare = $db->prepare("SELECT * FROM `localisations` WHERE id = ?");
         $prepare->execute([$id]);
-        if($prepare->rowCount() < 1) return "Aucune location avec cette ID.";
+        if($prepare->rowCount() < 1) return "Aucune localisation avec cette ID.";
         return $prepare->fetch();
     } catch (Exception $e) {
         return $e->getMessage();
@@ -38,7 +38,7 @@ function deleteLocationByID(PDO $db, int $id) : bool | string{
     try {
         $prepare = $db->prepare("DELETE FROM `localisations` WHERE `id` = ?");
         $prepare->execute([$id]);
-        if($prepare->rowCount() < 1) return "Aucune location avec cette ID.";
+        if($prepare->rowCount() < 1) return "Aucune localisation avec cette ID.";
         return true;
     } catch (Exception $e) {
         return $e->getMessage();

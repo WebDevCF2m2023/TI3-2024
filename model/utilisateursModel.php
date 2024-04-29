@@ -2,10 +2,10 @@
 
 # Connexion de l'administrateur en utilisant password_verify
 
-function userConnect(PDO $db, string $user) : bool|string{
+function userConnect(PDO $db, string $user, string $password) : bool|string{
     $bddUser = getUserByUsername($db, $user);
     if(!is_array($bddUser)) return $bddUser;
-    if(!password_verify($_POST['password'], $bddUser['passwd'])) return false;
+    if(!password_verify($password, $bddUser['passwd'])) return false;
     $_SESSION['connected'] = true;
     header("Location: /");
     die();
