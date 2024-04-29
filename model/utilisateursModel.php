@@ -2,35 +2,16 @@
 
 # Connexion de l'administrateur en utilisant password_verify
 
-function administratorConnect(PDO $connectDB, string $username, string $password): bool|string
-{
-    $sql = "SELECT * FROM utilisateurs WHERE username = :username";
-    $prepare = $connectDB->prepare($sql);
 
-    try{
-        $prepare->execute([$username]);
 
-        if ($prepare->rowCount() === 0) {
-            return "L'utilisateur n'existe pas";
-        }
-
-        $result = $prepare->fetch();
-
-        if(password_verify($password, $result['passwd'])){
-            $_SESSION['myID'] = session_id();
-            $_SESSION['idutilisateurs'] = $result['idutilisateurs'];
-            $_SESSION['username'] = $username;
-            return true;
-        } else{
-            return false;
-        }
-
-    }catch(Exception $e){
-        return $e->getMessage();
-    }
-    
+function administratorConnect(PDO $connectDB, string $username) : bool|string{
+    $bddUser = getUserByUsername($connectDB, $username);
+    if(!is_array($bddUser)) return $bddUser;
+    if(!password_verify($_POST['password'], $bddUser['password'])) return false;
+    $_SESSION['connected'] = true;
+    header("Location: /");
+    die();
 }
-
 
 
 # Déconnexion de l'administrateur
