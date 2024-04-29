@@ -19,12 +19,12 @@ if(isset($_GET['create'])){
         $_POST['longitude']
     )){
 
-       $nom = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
-       $adresse = htmlspecialchars(trim($_POST['adresse']),ENT_QUOTES);
+       $title = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
+       $geolocdesc = htmlspecialchars(trim($_POST['adresse']),ENT_QUOTES);
        $latitude = (float) $_POST['latitude'];
        $longitude = (float) $_POST['longitude'];
 
-       $insert = insertOneGeolocByID($db,$nom,$adresse,$latitude,$longitude);
+       $insert = insertOneGeolocByID($db,$title,$geolocdesc,$latitude, $longitude);
 
        if($insert === true){
         header("Location: ./");
@@ -79,14 +79,14 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
              $_POST['longitude']
     )){
 
-            $id = $idUpdate;
-            $nom = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
-            $adresse = htmlspecialchars(trim($_POST['adresse']),ENT_QUOTES);
+            $idgeoloc = $idUpdate;
+            $title = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
+            $geolocdesc = htmlspecialchars(trim($_POST['adresse']),ENT_QUOTES);
             $latitude = (float) $_POST['latitude'];
             $longitude = (float) $_POST['longitude'];
 
             // fonction qui update la mise à jour
-            $update = updateOneGeolocByID($db,$id,$nom,$adresse,$latitude,$longitude);
+            $update = updateOneGeolocByID($db,$idgeoloc,$title,$geolocdesc,$latitude,   $longitude);
             //var_dump($update);
             // update ok
             if($update===true){

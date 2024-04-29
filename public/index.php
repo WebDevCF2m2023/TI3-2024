@@ -1,5 +1,11 @@
 <?php
 
+/*
+
+Front Controller 
+
+*/
+
 // lancement de la session
 session_start();
 
@@ -20,42 +26,17 @@ try{
 }
 
 
-
-
-
-
-// afficher le résultat de la requête sous format JSON
-echo json_encode(getLocations($db));
-
-// fermeture de la connexion
-$db = null;
-
-// Chargement de tous les emplacements sur la carte
-function getLocations(PDO $db): array 
-{
-    $sql = "SELECT * FROM localisations ORDER BY id ASC";
-    $query = $db->query($sql);
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    $query->closeCursor();
-    return $result;
-}
-
-
-
-
-
-
-
-
 // router
 
-if(isset($_SESSION['username'])){
-    // appel du contrôleur private
-    require_once "../controller/privateController.php";
+if(isset($_SESSION['json'])){
+    require_once "../controller/publicController.php";
     
-}else{
+}elseif(isset($_SESSION['username'])){
 
-// appel du contrôleur public
+    require_once "../controller/privateController.php";
+    }
+else{
+
 require_once "../controller/publicController.php";
 }
 
