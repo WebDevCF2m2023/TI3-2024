@@ -20,9 +20,10 @@ function get_localisation_by_id(PDO $db, int $id):array|string{
         $sql = "SELECT * FROM `localisations` WHERE `id`=?";
         $prepare = $db->prepare($sql);
         $prepare->execute([$id]);
-        $locations = $prepare->fetch();
+        $locations = $prepare->fetch(PDO::FETCH_ASSOC);
         $prepare->closeCursor();
-        return $locations ||  "Localisation non trouvée";
+        if ($locations)return $locations;
+        return "Localisation non trouvée";
     }catch (Exception $e){
         return $e->getMessage();
     }
