@@ -31,8 +31,7 @@ function get_localisation_by_id(PDO $db, int $id):array|string{
     }
 }
 
-function update_localisation_by_id(PDO $db, int $id, string $name, string $street, string $postal_code, string $phone_number, string $url, float $lat, float $long):true|string{
-    //check the validity of the fields and filter them
+function check_fields(string $name, string $street, string $postal_code, string $phone_number, string $url):true|string{
     $name = htmlspecialchars(strip_tags(trim($name)),ENT_QUOTES);
     if ($name==="")return "name ne peut pas être vide";
     $street = htmlspecialchars(strip_tags(trim($street)),ENT_QUOTES);
@@ -43,6 +42,12 @@ function update_localisation_by_id(PDO $db, int $id, string $name, string $stree
     if ($phone_number==="")return "phone_number ne peut pas être vide";
     $url = htmlspecialchars(strip_tags(trim($url)),ENT_QUOTES);
     if ($url==="")return "url ne peut pas être vide";
+    return true;
+}
+
+function update_localisation_by_id(PDO $db, int $id, string $name, string $street, string $postal_code, string $phone_number, string $url, float $lat, float $long):true|string{
+    $check = check_fields($name, $street, $postal_code, $phone_number, $url);
+    if ($check!==true)return $check;
 
     try {
         $sql = "UPDATE `localisations` SET
@@ -60,6 +65,25 @@ function update_localisation_by_id(PDO $db, int $id, string $name, string $stree
         $prepare->execute([$name, $street, $postal_code, $phone_number, $url, $lat, $long, $id]);
         $prepare->closeCursor();
         return true;
+    }catch (Exception $e){
+        return $e->getMessage();
+    }
+}
+
+function insert_localisation(PDO $db, string $name, string $street, string $postal_code, string $phone_number, string $url, float $lat, float $long){
+    $check = check_fields($name, $street, $postal_code, $phone_number, $url);
+    if ($check!==true)return $check;
+
+    try {
+        $sql = "INSERT INTO `localisations`
+                ( `nom`, `rue`, `codepostal`, `telephone`, `url`, `latitude`, `longitude`)
+                VALUES
+                (?,?,?,?,?,?,?)
+        ;";
+        $prepare = $db->prepare($sql);
+        $success = $prepare->execute([$name, $street, $postal_code, $phone_number, $url, $lat, $long]);
+        $prepare->closeCursor();
+        return $success;
     }catch (Exception $e){
         return $e->getMessage();
     }
