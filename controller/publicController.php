@@ -2,14 +2,6 @@
 
 //Gère le site pour un visiteur non connecté
 
-//JSON pour l'API
-if (isset($_GET['json'])) {
-    $datas = getAllLocations($db);
-    if (!is_string($datas)) {
-        echo json_encode($datas);
-    }
-    exit();
-}
 
 // Si on essaie de se connecter
 
