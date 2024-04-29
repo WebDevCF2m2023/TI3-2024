@@ -23,3 +23,15 @@ try {
 } catch (Exception $e) {
     die($e->getMessage());
 }
+
+if(isset($_SESSION['username'])){
+    //On appelle l'adminController
+    require_once "../controller/privateController.php";
+}else{
+    //On appelle le contrôleur public
+    require_once "../controller/publicController.php";
+}
+
+//Fermeture de la connexion
+
+$db = null;
