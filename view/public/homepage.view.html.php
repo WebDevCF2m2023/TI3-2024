@@ -20,7 +20,7 @@
         </ul>
     </nav>
     <div class="content">
-        <h2>Nos datas</h2>
+        <h2>Notre carte</h2>
         <?php /* ?>
         <?php if(isset($message)): ?>
                 <h3><?=$message?></h3>

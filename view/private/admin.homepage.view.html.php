@@ -24,7 +24,7 @@
                 </li>
                 <li>
                     <div class="flex items-center">
-                        <a href="?insert">Ajouter une data</a>
+                        <a href="?insert">Ajouter une location</a>
                     </div>
                 </li>
                 <li>
@@ -54,7 +54,7 @@
                 <th class="border border-slate-600">Modifier</th>
                 <th class="border border-slate-600">supprimer</th>
             </tr>
-                <?php foreach($ourDatas as $item): ?>
+                <?php foreach($locations as $item): ?>
                     <tr>
                         <td class="text-center"><?=$item['id']?></td>
                         <td><?=$item['nom']?></td>

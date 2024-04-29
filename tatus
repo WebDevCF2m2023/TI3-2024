@@ -1,0 +1,71 @@
+[33mcommit b2fd8c5fa817dc52788593b3ab0a5472ee2f6a96[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Helioz7 <baris.aktas@cf2000.onmicrosoft.com>
+Date:   Mon Apr 29 14:19:05 2024 +0200
+
+    tableau
+
+[33mcommit 5c86be3c71d1070e6435063147d2dda14c4d29ca[m
+Author: Helioz7 <baris.aktas@cf2000.onmicrosoft.com>
+Date:   Mon Apr 29 11:31:23 2024 +0200
+
+    connection
+
+[33mcommit 0c0501efce6cc8d2a09807280b4d28a4fe294c1e[m
+Author: Helioz7 <baris.aktas@cf2000.onmicrosoft.com>
+Date:   Mon Apr 29 10:56:12 2024 +0200
+
+    2
+
+[33mcommit 87c149b1e61f7bd541bfb5127314854ac748c7d3[m
+Author: Helioz7 <baris.aktas@cf2000.onmicrosoft.com>
+Date:   Mon Apr 29 10:34:34 2024 +0200
+
+    2com
+
+[33mcommit de7d28f2422bdc69efe6c73391d93cdc9d6adceb[m
+Author: Helioz7 <baris.aktas@cf2000.onmicrosoft.com>
+Date:   Mon Apr 29 09:37:53 2024 +0200
+
+    config
+
+[33mcommit 96ad569e2257ba0bc4dd70a33fe4500580f26f5b[m
+Author: Michael J. Pitz <michaeljpitz@gmail.com>
+Date:   Mon Apr 29 09:01:44 2024 +0200
+
+    Update README.md
+
+[33mcommit 24dbdb4fcc7a07a913a8df44ddf73b074f2ee5c8[m
+Author: mikhawa <michaeljpitz@gmail.com>
+Date:   Thu Apr 25 14:44:51 2024 +0200
+
+    connexion
+
+[33mcommit fc150e2ccfbda5438f894d9a5b0285e05a5cbb83[m
+Author: mikhawa <michaeljpitz@gmail.com>
+Date:   Wed Apr 24 16:43:11 2024 +0200
+
+    rm
+
+[33mcommit d3eeccb3d669f116c1a250d8ae06aac428aa1954[m
+Author: mikhawa <michaeljpitz@gmail.com>
+Date:   Wed Apr 24 11:30:41 2024 +0200
+
+    compétences
+
+[33mcommit d64e834a42aa51754e0196bac7b8931ba4d283b2[m
+Author: mikhawa <michaeljpitz@gmail.com>
+Date:   Wed Apr 24 10:36:20 2024 +0200
+
+    folders and files
+
+[33mcommit a6d0887f3d3b4b757f402cc932c77abf209624c3[m
+Author: mikhawa <michaeljpitz@gmail.com>
+Date:   Wed Apr 24 10:25:18 2024 +0200
+
+    .gitignore
+
+[33mcommit 8471ee5da0625c09f0965acf47ad268d5825637b[m
+Author: Michael J. Pitz <michaeljpitz@gmail.com>
+Date:   Wed Apr 24 10:15:50 2024 +0200
+
+    Initial commit
