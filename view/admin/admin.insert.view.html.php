@@ -18,11 +18,11 @@
     <div id="content">
         <h2 class="text-center mt-5">Ajoutez un lieu</h2>
         <div class="container ">
-            <div class="row  justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-center">
                 <form method="POST" name="geo" action="">
                     <div class="mb-3 mt-5">
                         <!-- <label for="titre" class=" form-label">Titre</label>-->
-                        <input type=" text" name="title" placeholder="Titre" class="form-control w-25  mx-auto border shadow-lg" id="nom" required>
+                        <input type=" text" name="nom" placeholder="Titre" class="form-control w-25  mx-auto border shadow-lg" id="nom" required>
                     </div>
                     <div class="mb-3 ">
                         <!--  <label for="desc" class="form-label">Description</label>-->

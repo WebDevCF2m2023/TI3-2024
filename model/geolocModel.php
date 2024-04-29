@@ -69,7 +69,7 @@ function updateOneGeolocById(PDO $db, int $idLocalisations, string $nom, string 
 
 function insertOneGeolocById(PDO $db, string $title, string $desc, float $lat, float $lon): bool|string
 {
-    $sql = "INSERT INTO `crud` (`nom`,`adresse`,`latitude`,`longitude`) VALUES (?,?,?,?);";
+    $sql = "INSERT INTO `localisations` (`nom`,`adresse`,`latitude`,`longitude`) VALUES (?,?,?,?);";
     $prepare = $db->prepare($sql);
     try {
         $prepare->execute([
@@ -90,7 +90,7 @@ function insertOneGeolocById(PDO $db, string $title, string $desc, float $lat, f
 
 function deleteOneGeolocById(PDO $db, int $id): bool|string
 {
-    $sql = "DELETE FROM `crud` WHERE `id` = :id";
+    $sql = "DELETE FROM `localisations` WHERE `id` = :id";
     $stmt = $db->prepare($sql);
     $stmt->bindValue("id", $id, PDO::PARAM_INT);
 

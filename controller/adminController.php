@@ -10,7 +10,8 @@ if (isset($_GET['disconnect'])) {
 
 //Si on veut créer un lieu
 if (isset($_GET['create'])) {
-
+   
+    
     /*Si on a cliqué sur insérer et Si on veut créer un lieu :
     On récupère les données du formulaire
     On insère les données dans la base de données
@@ -20,13 +21,15 @@ if (isset($_GET['create'])) {
         $_POST['adresse'], 
         $_POST['latitude'],
         $_POST['longitude']
-    )) {
+        )) {
+       
         $title = htmlspecialchars(strip_tags(trim($_POST['nom'])), ENT_QUOTES);
         $geolocdesc = htmlspecialchars(trim($_POST['adresse']), ENT_QUOTES);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
-
+        
         $insert = insertOneGeolocById($db, $title, $geolocdesc, $latitude, $longitude);
+        
 
         if ($insert === true) {
             header("Location: ./");
