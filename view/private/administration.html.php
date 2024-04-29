@@ -49,9 +49,9 @@
         <?php if (is_string($locations)): ?>
             <h2 class="text-danger text-center"><?= $locations ?></h2>
         <?php else: ?>
-            <div class="mb-2">
+            <div id="toolbar">
                 <a href="?addLocation">
-                    <button type="button" class="btn btn-success mt-3">
+                    <button type="button" class="btn btn-success">
                         <svg style="position:relative; top: -1px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-database-fill-add me-1" viewBox="0 0 16 16">
                             <path
@@ -65,16 +65,24 @@
                     </button>
                 </a>
                 <a href="/?">
-                    <button type="button" class="btn btn-warning mt-3">Page d'accueil</button>
+                    <button type="button" class="btn btn-warning ">Page d'accueil</button>
                 </a>
                 <a href="/?disconnect">
-                    <button type="button" class="btn btn-danger mt-3">Deconexion</button>
+                    <button type="button" class="btn btn-danger">Deconexion</button>
                 </a>
             </div>
-            <table class="table table-hover table-bordered" data-toggle="table" data-toolbar="#toolbar"
-                data-show-export="true" data-pagination="true" data-page-list="[2, 4, 6, 8, 12, all]" data-page-size="6"
-                data-minimum-count-columns="2" data-show-columns="true" data-show-columns-toggle-all="true"
-                data-search="true">
+            <table class="table table-hover table-bordered" 
+                data-toggle="table"
+                data-toolbar="#toolbar"
+                data-show-export="true"
+                data-pagination="true"
+                data-page-list="[2, 4, 6, 8, 12, all]"
+                data-page-size="6"
+                data-minimum-count-columns="2"
+                data-show-columns="true"
+                data-show-columns-toggle-all="true"
+                data-search="true"
+                >
                 <thead class="table-dark text-center">
                     <tr>
                         <th scope="col">ID</th>
