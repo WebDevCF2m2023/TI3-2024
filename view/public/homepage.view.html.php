@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Accueil</h1>
+    <h1>Carte interactive</h1>
     <nav>
         <ul>
             <li>Accueil</li>
