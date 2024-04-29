@@ -4,6 +4,8 @@ session_start();
 
 // Require the config file
 require_once("../config.php");
+require_once("../model/localisationsModel.php");
+
 
 $dsn = DB_DRIVER . ":host=" . DB_HOST . ";charset=" . DB_CHARSET . ";port=" . DB_PORT . ";dbname=". DB_NAME;
 
@@ -15,6 +17,13 @@ try {
     die($e->getMessage());
 }
 
+if(isset($_GET['json'])){
+    require("../controllers/ApiController.php");
+}else if(isset($_SESSION['connected'])){
+    require("../controllers/PrivateController.php");
+}else{
+    require("../controllers/PublicController.php");
+}
 
 
 $db = null;
