@@ -23,7 +23,7 @@ $db = null;
 
 function getLocations(PDO $db): array
 {
-    $sql = "SELECT * FROM crud ORDER BY id ASC";
+    $sql = "SELECT * FROM localisations ORDER BY id ASC";
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();

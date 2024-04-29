@@ -22,11 +22,11 @@
                 <form method="POST" name="geo" action="">
                     <div class="mb-3 mt-5">
                         <!-- <label for="titre" class=" form-label">Titre</label>-->
-                        <input type=" text" name="title" placeholder="Titre" class="form-control w-25  mx-auto border shadow-lg" id="titre" required>
+                        <input type=" text" name="title" placeholder="Titre" class="form-control w-25  mx-auto border shadow-lg" id="nom" required>
                     </div>
                     <div class="mb-3 ">
                         <!--  <label for="desc" class="form-label">Description</label>-->
-                        <textarea name="geolocdesc" class="form-control w-25 mx-auto shadow-lg" id="desc" rows="1" placeholder="description"></textarea>
+                        <textarea name="adresse" class="form-control w-25 mx-auto shadow-lg" id="adresse" rows="1" placeholder="description"></textarea>
                     </div>
                     <div class="mb-3">
                         <!--  <label for="latitude" class="form-label">Latitude</label>-->
