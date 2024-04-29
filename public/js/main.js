@@ -1,5 +1,6 @@
 const map = L.map('map').setView([50.845347, 4.350323], 13);
-const markers = {};
+const markers_hashmap = {};
+const markers = [];
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -15,10 +16,13 @@ function handle_res(locations){
     locations.forEach((location)=>{
         add_marker_location(location);
     })
+    const group = new L.featureGroup(markers);
+    map.fitBounds(group.getBounds());
 }
 
 function add_marker_location(location){
     const marker = L.marker([location.latitude, location.longitude]).addTo(map);
-    markers[location.id] = marker;
-    marker.bindPopup(`<h3>${location.nom}</h3><p>${location.rue}</p><a href=${location.url}">Voir le site</a>`);
+    marker.bindPopup(`<h3>${location.nom}</h3><p>${location.rue} ${location.codepostal} Bruxelles</p><p>tel: ${location.telephone}</p><a href=${location.url}">Voir le site</a>`);
+    markers_hashmap[location.id] = marker;
+    markers.push(marker);
 }
