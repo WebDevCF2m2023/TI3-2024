@@ -70,3 +70,51 @@ if (isset($_GET['delete']) && ctype_digit($_GET['delete'])) {
     include "../view/private/admin.delete.view.html.php";
     exit();
 }
+
+//si on a cliqué sur update et qu'on'accepte que les chiffres dans le string ['update']
+if (isset($_GET['update']) && ctype_digit($_GET['update'])) {
+    //conversion en int
+    $idUpdate = (int) $_GET['update'];
+
+    //Si on a modifier le formulaire (pas obligatoire de vérifier tous les champs, mais dans le isset, la virgule vaut &&)
+    if (isset(
+        $_POST['nom'],
+        $_POST['rue'],
+        $_POST['codepostal'],
+        $_POST['telephone'],
+        $_POST['url'],
+        $_POST['latitude'],
+        $_POST['longitude']
+    )) {
+        // vérification de valeurs
+        $id = $idUpdate;
+        $title = htmlspecialchars(strip_tags(trim($_POST['nom'])), ENT_QUOTES);
+        $adresse = htmlspecialchars(trim($_POST['rue']), ENT_QUOTES);
+        $codePostal = htmlspecialchars(trim($_POST['codepostal']), ENT_QUOTES);
+        $telephone = htmlspecialchars(trim($_POST['telephone']), ENT_QUOTES);
+        $url = htmlspecialchars(trim($_POST['url']), ENT_QUOTES);
+        $latitude = (float) $_POST['latitude'];
+        $longitude = (float) $_POST['longitude'];
+
+        //fonction qui update la mise à jour
+        $update =  updateOneLocationById($db, $id, $title, $adresse, $codePostal,$telephone,$url,$latitude, $longitude);
+        //var_dump($update);
+
+        //Si l'update est bon
+        if ($update === true) {
+            header("Location: ./");
+            exit();
+        } elseif ($update === false) {
+            $errorUpdate = "Cet article n'a pas été modifié";
+        } else {
+            $errorUpdate = $update;
+        }
+    }
+    //Chargement de l'article pour l'update
+    $getOneLocation = getOneLocationById($db, $idUpdate);
+    // var_dump($getOneGeoLoc);
+
+    //chargement de la vue
+    include "../view/private/admin.update.view.html.php";
+    exit();
+}
