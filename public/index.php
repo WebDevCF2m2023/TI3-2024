@@ -27,7 +27,17 @@ if (isset($_GET["page"])) {
 }else if (isset($_GET["connect"])) {
     include ("../view/public/connect.view.html.php");
 
-
+}else if 
+(isset($_GET["bienvenue"])) {
+    include ("../view/private/admin.homepage.html.php");
 
 }
+else if (isset($_GET["update"])) {
+include ("../view/private/admin.update.html.php");
+}else
+{
+include ("../view/public/homepage.view.html.php");
+}
+
+$db = null;
     

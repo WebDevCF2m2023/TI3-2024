@@ -1,3 +1,35 @@
+.G{
+    color: rgb(31, 106, 247);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+}
+.u{
+    color: rgb(243, 37, 23);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+}
+.i{
+    color: rgb(230, 230, 23);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+}
+.g{
+    color: rgb(31, 106, 247);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+}
+.l{
+    color: rgb(41, 161, 41);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+}
+.e{
+    color: rgb(243, 37, 23);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+}
+
+
 #map {
     width: 100%;
     height: 500px;
@@ -10,11 +42,13 @@
     margin: 5% 0% 0% 0%;
     grid-template-areas: 
             "map liste";
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #liste {
     font-family: monospace;
-    font-size: small;
+    font-size: large;
     overflow-y: scroll;
     max-height: 500px;
 }
