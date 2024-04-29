@@ -40,7 +40,7 @@ nav ul li {
   #content{
       grid-template-columns: 1fr;
       grid-template-areas: 
-              "resultat"
+              "header"
               "map"
               "liste";
   }
