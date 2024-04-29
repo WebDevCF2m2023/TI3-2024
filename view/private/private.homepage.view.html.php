@@ -59,8 +59,8 @@
                             <tr class="text-center">
                                 <th data-checkbox="true"></th>
                                 <th>Id</th>
-                                <th>Title</th>
-                                <th>Description</th>
+                                <th>Nom</th>
+                                <th>Adresse</th>
                                 <th>Latitude</th>
                                 <th>Longitude</th>
                                 <th>Update</th>

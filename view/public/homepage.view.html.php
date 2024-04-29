@@ -45,7 +45,7 @@ th, td {
         ?>
             <h3>Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
 
-            <table>
+            <table id="table">
                 <tr>
                     <th>Nom</th>
                     <th>Adresse</th>

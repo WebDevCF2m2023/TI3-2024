@@ -34,7 +34,7 @@
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                      <input type="password" name="userpwd" id="form3Example3c" class="form-control" placeholder="Username"/>
+                      <input type="password" name="userpwd" id="form3Example3c" class="form-control" placeholder="Password"/>
                     </div>
                   </div>
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
