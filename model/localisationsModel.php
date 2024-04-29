@@ -56,4 +56,38 @@ function updateJustOne(PDO $db, int $id): string|bool{
     }
 }
 
-function createJustOne(PDO $db){}
+function createJustOne(PDO $db, int $id, string $nom, string $adresse, string $codepostal, float $lan, float $lon): bool|string{
+
+    $sql = "INSERT INTO `localisations`(`id`, `nom`, `adresse`, `codepostal`, `latitude`, `longitude`) VALUES ('?','?','?','?','?','?');";
+    //Ici, '?' n'est pas correcte pour l'ID, latitude et longitude, mais... vous comprenez le principe.
+    $insertIt = $db->prepare($sql);
+    try{
+        $insertIt->execute([
+            $id,
+            $nom,
+            $adresse,
+            $codepostal,
+            $lat,
+            $lon,
+        ]);
+        return true;
+    }catch(Exception $e){
+        return $e->getMessage();
+    }
+
+}
+
+function deleteJustOne(PDO $db, int $id): bool|string{
+
+    $sql = "DELETE FROM localisations WHERE `localisations`.`id` = 16;";
+    $deleteIt = $db->prepare($sql);
+    $deleteIt->bindValue("id", $id, PDO::PARAM_INT);
+
+    try{
+        $deleteIt->execute();
+        if($deleteIt->rowCount()===0) return false;
+        return true;
+    }catch(Exception $e){
+        return $e->getMessage();
+    }
+}
