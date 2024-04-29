@@ -42,13 +42,13 @@
             <div class="col">
             <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="form3Example1">Title</label>
-                <input type="text" id="form3Example1" class="form-control" name="nom" value="<?=$getOneGeoloc['nom']?>"/>
+                <input type="text" id="form3Example1" class="form-control" name="title" value="<?=$getOneGeoloc['title']?>"/>
             </div>
             </div>
             <div class="col">
             <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="form3Example2">Description</label>
-                <input type="text" name="adresse" id="form3Example2" class="form-control" value="<?=$getOneGeoloc['adresse']?>" />
+                <input type="text" name="geolocdesc" id="form3Example2" class="form-control" value="<?=$getOneGeoloc['geolocdesc']?>" />
             </div>
             </div>
         </div>

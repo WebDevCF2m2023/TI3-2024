@@ -17,27 +17,12 @@
         <div class="row mb-4">
             <div class="col">
             <div data-mdb-input-init class="form-outline">
-                <input type="text" id="form3Example1" class="form-control" name="nom" placeholder="Nom" required/>
+                <input type="text" id="form3Example1" class="form-control" name="title" placeholder="Titre" required/>
             </div>
             </div>
             <div class="col">
             <div data-mdb-input-init class="form-outline">
-                <input type="text" name="adresse" id="form3Example2" class="form-control" placeholder="Adresse"  required/>
-            </div>
-            </div>
-            <div class="col">
-            <div data-mdb-input-init class="form-outline">
-                <input type="number" name="codepostal" id="form3Example2" class="form-control" placeholder="Code Postal"  required/>
-            </div>
-            </div>
-            <div class="col">
-            <div data-mdb-input-init class="form-outline">
-                <input type="text" name="ville" id="form3Example2" class="form-control" placeholder="Ville"  required/>
-            </div>
-            </div>
-            <div class="col">
-            <div data-mdb-input-init class="form-outline">
-                <input type="number" name="nb_velos" id="form3Example2" class="form-control" placeholder="Ville"  required/>
+                <input type="text" name="geolocdesc" id="form3Example2" class="form-control" placeholder="Description"  required/>
             </div>
             </div>
         </div>

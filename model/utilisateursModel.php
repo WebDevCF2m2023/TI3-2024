@@ -1,8 +1,6 @@
 <?php
 
-# Connexion de l'administrateur en utilisant password_verify
-
-
+// tentative de connexion
 function connectAdministrator(PDO $con, string $user, string $password) : bool|string
 {
     // nous allons récupérez les valeurs utiles pour l'utilisateur via $user uniquement
@@ -33,16 +31,16 @@ function connectAdministrator(PDO $con, string $user, string $password) : bool|s
 
     }catch(Exception $e){
         return $e->getMessage();
-    }
+    } 
 }
 
-
-# Déconnexion de l'administrateur
-
+// déconnexion de l'utilisateur
 
 function disconnectAdministrator(): bool
 {
 
+    // la session est lancée dans le CF, sinon décommentez cette ligne
+    // session_start();
 
     // Détruit toutes les variables de session
     $_SESSION = [];
@@ -58,7 +56,7 @@ function disconnectAdministrator(): bool
         );
     }
 
-    //  on détruit la session 
+    // Finalement, on détruit la session (fichier texte côté serveur)
     session_destroy();
 
     return true;

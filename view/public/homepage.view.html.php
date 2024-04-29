@@ -9,18 +9,13 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
-     <style>
-        #map {
-            height: 600px;
-        }
-     </style>
-</head>
 
+
+</head>
 <body>
-<?php
-    require_once "../view/inc/navbar.admin.php";
+    <?php
+    require_once "../view/inc/navbar.public.php";
     ?>
-    
     <div id="content">
         <?php
         // datas est une chaîne de caractère : erreur SQL !
@@ -54,6 +49,7 @@
                 </thead>
                 <?php
                 // tant qu'on a des données
+                // var_dump($datas);
                 foreach($datas as $data):
                 ?>
                 <tbody class="text-center">

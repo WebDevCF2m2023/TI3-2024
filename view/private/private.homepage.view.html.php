@@ -76,13 +76,13 @@
                         ?>
                             <tr>
                                 <td></td>
-                                <td><?=$data['id']?></td>
-                                <td><?=$data['nom']?></td>
-                                <td><?=$data['adresse']?></td>
+                                <td><?=$data['idgeoloc']?></td>
+                                <td><?=$data['title']?></td>
+                                <td><?=$data['geolocdesc']?></td>
                                 <td><?=$data['latitude']?></td>
                                 <td><?=$data['longitude']?></td>
-                                <td><a href="?update=<?=$data['id']?>"><i class="edit bi bi-pen me-4"></i></a></td>
-                                <td><a href="?delete=<?=$data['id']?>"><i class="remove bi bi-trash text-danger"></i></a></td>
+                                <td><a href="?update=<?=$data['idgeoloc']?>"><i class="edit bi bi-pen me-4"></i></a></td>
+                                <td><a href="?delete=<?=$data['idgeoloc']?>"><i class="remove bi bi-trash text-danger"></i></a></td>
                             </tr>
                             <?php endforeach ?>
                         </tbody>
@@ -96,6 +96,7 @@
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
     
     <script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.28.0/tableExport.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.js"></script>

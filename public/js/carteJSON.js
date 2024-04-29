@@ -8,7 +8,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(carte);
 
 /* Récupération des données */
-fetch("index.php")
+fetch("carteJSON.php")
     .then(function(response){
         response.json().then(function(data){
             console.log(data);

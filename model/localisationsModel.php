@@ -1,10 +1,11 @@
 <?php
 
-function getAllGeoloc(PDO $db) : array|string
+// création de la fonction qui récupère tous les champs de `geoloc`
+function getAllGeoloc(PDO $connection) : array|string
 {
     $sql = "SELECT * FROM `localisations` ;";
     try{
-        $query = $db->query($sql);
+        $query = $connection->query($sql);
         // si il n'y a pas de résultats, fetchAll est un tableau vide
         $result = $query->fetchAll();
         $query->closeCursor();
@@ -14,6 +15,18 @@ function getAllGeoloc(PDO $db) : array|string
     }
 }
 
+function getLocations(PDO $db): array 
+{
+    $sql = "SELECT * FROM localisations ORDER BY id ASC";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+}
+
+// on charge tous les champs d'un élément de geoloc grâce à son idgeoloc
+// nous renvoie false en cas d'échec ou le message d'erreur sql
+// ou un tableau associatif en cas de succès
 
 function getOneGeolocByID(PDO $db, int $getIt) : string|bool|array
 
@@ -32,22 +45,23 @@ function getOneGeolocByID(PDO $db, int $getIt) : string|bool|array
     }
 }
 
+// on update tous les champs d'un élément de geoloc grâce à son idgeoloc
+// En lui passant TOUTES les variables en paramètre
+// nous renvoie false en cas d'échec ou le message d'erreur sql
+// ou un true en cas de succès
 
-function updateOneGeolocByID(PDO $db, int $id, string $nom, string $adresse, int $codepostal, string $ville, int $nb_velos, float $lat, float $lon) : string|bool
+function updateOneGeolocByID(PDO $db, int $idgeoloc, string $nom, string $adresse, float $latitude, float $longitude) : string|bool
 
 {
-    $sql = "UPDATE `localisations` SET `nom`= ? , `adresse`= ?, `codepostal`= ?, `ville`= ?, `nb_velos` = ? ,`latitude`= ?, `longitude`= ?  WHERE `id` = ?";
+    $sql = "UPDATE `localisations` SET `nom`= ? , `adresse`= ?, `latitude`= ?, `longitude`= ? WHERE `id` = ?";
     $stmt = $db->prepare($sql);
     try{
         $stmt->execute([
             $nom, 
             $adresse,
-            $codepostal,
-            $ville,
-            $nb_velos,
-            $lat,
-            $lon,
-            $id
+            $latitude,
+            $longitude,
+            $idgeoloc
         ]);
     
         // pas de modification par la requête
@@ -60,21 +74,18 @@ function updateOneGeolocByID(PDO $db, int $id, string $nom, string $adresse, int
     }
 }
 
-
-function insertOneGeolocByID(PDO $db, string $nom, string $adresse, int $codepostal, string $ville, int $nb_velos, float $lat, float $lon):
+// pour insérer un nouveau lieu 
+function insertOneGeolocByID(PDO $db, string $nom, string $adresse, float $latitude, float $longitude):
 bool|string
 {
-    $sql = "INSERT INTO `localisations` (`nom`, `adresse`, `codepostal`, `ville`, `nb_velos`, `latitude`, `longitude`) VALUES (?,?,?,?);";
+    $sql = "INSERT INTO `localisations` (`nom`,`adresse`,`latitude`, `longitude`) VALUES (?,?,?,?);";
     $prepare = $db->prepare($sql);
     try{
         $prepare->execute([
             $nom, 
-            $adresse,
-            $codepostal,
-            $ville,
-            $nb_velos,
-            $lat,
-            $lon,
+            $adresse, 
+            $latitude, 
+            $longitude
         ]);
         return true;
     }catch(Exception $e){
@@ -82,7 +93,7 @@ bool|string
     }
 }
 
-
+// pour supprimer un lieu
 function deleteOneGeolocByID(PDO $db, int $id): bool|string
 {
     $sql = "DELETE FROM `localisations` WHERE `id`= :id ";
