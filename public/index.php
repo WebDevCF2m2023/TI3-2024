@@ -17,7 +17,15 @@ try {
     die($e->getMessage());
 }
 
-if (isset($_SESSION["admin"]) && $_SESSION["admin"]){
+if (isset($_GET["all_datas"])){
+    $locations = get_all_localisations($db);
+
+    //error
+    if(gettype($locations)==="string")echo json_encode(['error' => $locations]);
+    //return datas
+    else echo json_encode($locations);
+}
+else if (isset($_SESSION["admin"]) && $_SESSION["admin"]){
     require_once("../controller/privateController.php");
 }else {
     require_once("../controller/publicController.php");

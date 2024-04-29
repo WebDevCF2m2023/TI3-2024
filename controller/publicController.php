@@ -15,4 +15,5 @@ if (isset($_GET["p"])){
             break;
     }
 }else {
+    require_once("../view/public/home.php");
 }
