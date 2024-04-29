@@ -1,5 +1,6 @@
 <?php
 
+
 if(isset($_GET['login'])){
 
     if(isset($_POST['user'], $_POST['password'])){
@@ -10,4 +11,7 @@ if(isset($_GET['login'])){
     require("../view/public/login.html.php");
 }else{
     require("../view/public/home.html.php");
+    
+
+    
 }
