@@ -22,6 +22,15 @@ try{
     die($e->getMessage());
 }
 
+
+if(isset($_GET['json'])){
+    $ourDatas = getAllOurdatas($connect,"ASC");
+    echo json_encode($ourDatas);
+    exit();
+}
+
+
+
 // si on est connecté (existance d'une variable de session attendue)
 if(isset($_SESSION['login'])){
     // chargement du contrôleur privé

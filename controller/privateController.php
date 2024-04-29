@@ -80,10 +80,10 @@ if(isset($_GET['insert'])){
     )){
 
         $nom = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
-        $adresse = htmlspecialchars(trim($_POST['adresse']),ENT_QUOTES);
-        $numero = htmlspecialchars(trim($_POST['numero']),ENT_QUOTES);
-        $ville = htmlspecialchars(trim($_POST['ville']),ENT_QUOTES);
-        $codepostal = htmlspecialchars(trim($_POST['codepostal']),ENT_QUOTES);
+        $adresse = htmlspecialchars(strip_tags(trim($_POST['adresse'])),ENT_QUOTES);
+        $numero = htmlspecialchars(strip_tags(trim($_POST['numero'])),ENT_QUOTES);
+        $ville = htmlspecialchars(strip_tags(trim($_POST['ville'])),ENT_QUOTES);
+        $codepostal = htmlspecialchars(strip_tags(trim($_POST['codepostal'])),ENT_QUOTES);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
 

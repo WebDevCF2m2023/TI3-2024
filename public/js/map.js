@@ -1,4 +1,4 @@
-const map = L.map('map').setView([50.845347, 4.350323], 13);
+const map = L.map('map').setView([50.845347, 4.350323], 4);
 const markers = {};
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -38,7 +38,7 @@ function addAllToListe(locations){
         
         const li = document.createElement('li');
 
-        li.innerHTML = `${i.nom} - ${i.adresse}- ${i.numero}- ${i.ville}- ${i.codepostal} `;
+        li.innerHTML = `${i.nom} - ${i.adresse} ${i.numero} ${i.ville} ${i.codepostal} `;
         li.dataset.id = i.id;
         
         ul.appendChild(li);
@@ -57,7 +57,7 @@ function addAllMarkersByLocations(locations){
     locations.forEach(information => {
         const marker = L.marker([information.latitude, information.longitude]).addTo(map);
         markers[information.id] = marker;
-        marker.bindPopup(`<b>${information.nom}</b><br><p>${information.adresse}</p><img width='100''>`);
+        marker.bindPopup(`<b>${information.nom}</b><br><p>${information.adresse} - ${information.numero} - ${information.ville} - ${information.codepostal}</p><img width='100''>`);
     });
 
 }
