@@ -54,7 +54,7 @@
                 <th class="border border-slate-600">Modifier</th>
                 <th class="border border-slate-600">supprimer</th>
             </tr>
-                <?php foreach($locations as $item): ?>
+                <?php foreach($ourDatas as $item): ?>
                     <tr>
                         <td class="text-center"><?=$item['id']?></td>
                         <td><?=$item['nom']?></td>

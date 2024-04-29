@@ -9,7 +9,7 @@
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
           crossorigin=""/>
     <!-- ma CSS -->
-    <link rel="stylesheet" href="css/carteJSON.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Homepage</h1>
@@ -37,7 +37,7 @@
         */ ?>
         <h1>Récupération de données via JSON et PHP</h1>
         <div id="resultats">
-            <div id="carte"></div>
+            <div id="map"></div>
             <div id="liste"></div>
         </div>
     </div>

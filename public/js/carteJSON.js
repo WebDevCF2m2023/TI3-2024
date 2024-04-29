@@ -1,5 +1,5 @@
 /* Carte centrée sur la Grand'Place de Bruxelles */
-const carte = L.map('carte').setView([50.8467139,4.3525151], 16);
+const carte = L.map('map').setView([50.8466, 4.3528], 16);
 
 /* fond de carte */
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
