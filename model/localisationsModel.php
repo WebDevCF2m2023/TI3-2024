@@ -20,12 +20,9 @@ function get_localisation_by_id(PDO $db, int $id):array|string{
         $sql = "SELECT * FROM `localisations` WHERE `id`=?";
         $prepare = $db->prepare($sql);
         $prepare->execute([$id]);
-        $locations = $prepare->fetchAll(PDO::FETCH_ASSOC);
+        $locations = $prepare->fetch();
         $prepare->closeCursor();
-        if (count($locations)===0){
-            return "Localisation non trouvée";
-        }
-        return $locations[0];
+        return $locations ||  "Localisation non trouvée";
     }catch (Exception $e){
         return $e->getMessage();
     }
@@ -70,7 +67,7 @@ function update_localisation_by_id(PDO $db, int $id, string $name, string $stree
     }
 }
 
-function insert_localisation(PDO $db, string $name, string $street, string $postal_code, string $phone_number, string $url, float $lat, float $long){
+function insert_localisation(PDO $db, string $name, string $street, string $postal_code, string $phone_number, string $url, float $lat, float $long):true|string{
     $check = check_fields($name, $street, $postal_code, $phone_number, $url);
     if ($check!==true)return $check;
 
@@ -81,9 +78,21 @@ function insert_localisation(PDO $db, string $name, string $street, string $post
                 (?,?,?,?,?,?,?)
         ;";
         $prepare = $db->prepare($sql);
-        $success = $prepare->execute([$name, $street, $postal_code, $phone_number, $url, $lat, $long]);
+        $prepare->execute([$name, $street, $postal_code, $phone_number, $url, $lat, $long]);
         $prepare->closeCursor();
-        return $success;
+        return true;
+    }catch (Exception $e){
+        return $e->getMessage();
+    }
+}
+
+function remove_location(PDO $db, int $id):true|string{
+    try {
+        $sql = "DELETE FROM `localisations` WHERE `id`=?";
+        $prepare = $db->prepare($sql);
+        $prepare->execute([$id]);
+        $prepare->closeCursor();
+        return true;
     }catch (Exception $e){
         return $e->getMessage();
     }
