@@ -16,7 +16,7 @@ function getUserByUsername(PDO $db, string $username) : array | bool | string{
         return $e->getMessage();
     }
 
-    return false;
+
 }
 
 
