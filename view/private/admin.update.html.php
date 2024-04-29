@@ -49,7 +49,7 @@
 
                     <form action="" name="ourdatas" method="POST">
                         <div class="mb-3">
-                            <label for="nom" class="form-label">Nom de la ville</label>
+                            <label for="nom" class="form-label">Nom du lieux</label>
                             <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" value="<?= $data['nom'] ?>" required>
                         </div>
                         <div class="mb-3">
@@ -62,7 +62,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="ville" class="form-label">Ville</label>
-                            <textarea class="form-control" id="ville" name="ourdesc" placeholder="Ville" required><?= $data['ville'] ?></textarea>
+                            <textarea class="form-control" id="ville" name="ville" placeholder="Ville" required><?= $data['ville'] ?></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="latitude" class="form-label">Latitude</label>

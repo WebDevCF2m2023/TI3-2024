@@ -51,7 +51,8 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
         $_POST['latitude'],
         $_POST['longitude'],
         $_POST['id']
-    )){
+        )){
+       
 
         $nom = strip_tags(trim($_POST['nom']));
         $adresse = trim($_POST['adresse']);
@@ -62,7 +63,7 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
         $id = (int) $_POST['id'];
 
       
-        $update = updateLocalisations($connect,$nom,$adresse,$ville,$codepostal,$latitude,$longitude,$id);
+        $update = updateLocalisations($connect,$nom,$adresse,$codepostal, $ville,$latitude,$longitude,$id);
         if($update === true){
             header("Location: ./");
             exit();

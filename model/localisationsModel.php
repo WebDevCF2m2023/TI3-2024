@@ -36,7 +36,7 @@ function updateLocalisations(
     PDO $db,
     string $nom,
     string $adresse,
-    int $codepostal,
+    string $codepostal,
     string $ville,
     float $latitude,
     float $longitude,
@@ -44,6 +44,8 @@ function updateLocalisations(
 
 
 ): bool|string {
+    
+    
     $prepare = $db->prepare("UPDATE localisations SET nom = ?, adresse = ?, codepostal = ?, ville = ? , latitude = ?, longitude = ? WHERE id = ?");
     $prepare->bindParam(1, $nom);
     $prepare->bindParam(2, $adresse);

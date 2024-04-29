@@ -51,7 +51,7 @@
                             </div>
                         <?php else : ?>
                             <div class="mb-4">
-                                <h4 class="text-lg">Nom de la ville : <?= $data['nom'] ?></h4>
+                                <h4 class="text-lg">Nom du lieux : <?= $data['nom'] ?></h4>
                                 <p class="text-lg"><?= $data['adresse'] ?></p>
                                 <p class="text-lg"><?= $data['codepostal'] ?></p>
                                 <p class="text-lg"><?= $data['ville'] ?></p>

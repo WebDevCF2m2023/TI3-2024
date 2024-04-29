@@ -48,7 +48,7 @@
                                 <h2>Ajoutez votre lieu</h2>
                             </div>
                             <div class="form-group">
-                                <label for="nom">Nom de la ville</label>
+                                <label for="nom">Nom du lieux</label>
                                 <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" required>
                             </div>
                             <div class="form-group">
@@ -56,7 +56,7 @@
                                 <textarea class="form-control" id="adresse" name="adresse" rows="3" placeholder="Adresse" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="adresse">Code postal</label>
+                                <label for="codepostal">Code postal</label>
                                 <input type="number" min="1" max="10000" class="form-control" id="codepostal" name="codepostal" rows="3" placeholder="Zip code" required></input>
                             </div>
                             <div class="form-group">

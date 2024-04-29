@@ -1,0 +1,42 @@
+#carte {
+    width:100%;
+    height:800px;
+    margin-bottom: 15px;
+}
+
+.photo {
+    width:100px;
+}
+
+#resultats {
+    width: 70%; 
+    margin: 0 auto; 
+    border: 1px solid #ccc; 
+    padding: 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 15px;
+  }
+  
+  #liste {
+    list-style: none; 
+    padding: 0; 
+    cursor: pointer;
+    
+    
+  }
+  
+  #liste li {
+    margin-bottom: 15px; 
+    padding: 10px; 
+    border-bottom: 1px solid #ddd; 
+    background-color: #f9f9f9; 
+    list-style: none;
+    margin-top: 15px;
+    
+    
+  }
+  
+  #liste li:hover {
+    background-color: #e9e9e9; 
+  }
+  
