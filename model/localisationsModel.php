@@ -49,7 +49,7 @@ function deleteLocationByID(PDO $db, int $id) : bool | string{
  * @return bool true if success
  * @return string if a error is throw
  */
-function updateLocation(PDO $db, int $id, string $name, string $type, string $adresse, string $codePostal, string $country, string $url, float $lat, $long) : bool | string{
+function updateLocation(PDO $db, int $id, string $name, string $type, string $adresse, string $codePostal, string $country, string $url, float $lat, float $long) : bool | string{
     try {
         $prepare = $db->prepare("UPDATE `localisations` SET `nom` = ?, `type` = ?, `adresse` = ?, `codepostal` = ?, `ville` = ?, `url` = ?, `latitude` = ?, `longitude` = ? WHERE `id` = ?");
         $prepare->execute([$name, $type, $adresse, $codePostal, $country, $url, $lat, $long]);
@@ -63,10 +63,10 @@ function updateLocation(PDO $db, int $id, string $name, string $type, string $ad
  * @return int last id inserted in db
  * @return string if a error is throw
  */
-function addLocation(PDO $db, string $name, string $imgUrl, string $adresse, float $long, float $lat) : int | string{
+function addLocation(PDO $db, string $name, string $type, string $adresse, string $codePostal, string $country, string $url, float $lat, float $long) : int | string{
     try {
         $prepare = $db->prepare("INSERT INTO `localisations`(`nom`, `type`, `adresse`, `codepostal`, `ville`, `url`, `latitude`, `longitude`) VALUE(?,?,?,?,?,?,?,?)");
-        $prepare->execute([$name, $adresse, $imgUrl, $long, $lat]);
+        $prepare->execute([$name, $type, $adresse, $codePostal, $country, $url, $lat, $long]);
         return (int) $db->lastInsertId();
     } catch (Exception $e) {
         return $e->getMessage();
