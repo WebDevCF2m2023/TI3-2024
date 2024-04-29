@@ -7,8 +7,7 @@ if(isset($_GET['disconnect'])){
     require("../view/private/administration.html.php");
 }elseif(isset($_GET['update']) && ctype_digit($_GET['update'])){
     $id = (int) $_GET['update'];
-    if(isset($_POST['name'], $_POST['img_url'], $_POST['adresse'], $_POST['long'], $_POST['lat'])){
-        $successUpdate = updateLocationByID($db, $id, $_POST['name'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], $_POST['nb_velos'], (float) $_POST['lat'], (float) $_POST['long']);        if($successUpdate === true){
+    if(isset($_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], $_POST['nb_velos'], $_POST['latitude'], $_POST['longitude'])){        $successUpdate = updateLocationByID($db, $id, $_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], $_POST['nb_velos'], (float) $_POST['lat'], (float) $_POST['long']);        if($successUpdate === true){
             header("Location: ./?administration&updateOK=$id");
             die();
         } else $error = $successUpdate;
@@ -33,9 +32,7 @@ if(isset($_GET['disconnect'])){
     $delete = getLocationByID($db, $id);
     require("../view/private/administration.delete.html.php");
 }elseif(isset($_GET['addLocation'])){
-    if(isset($_POST['name'], $_POST['img_url'], $_POST['adresse'], $_POST['long'], $_POST['lat'])){
-        $successAdd = addLocation($db, $_POST['name'], $_POST['img_url'], $_POST['adresse'], (float) $_POST['long'], (float) $_POST['lat']);
-        if(!is_string($successAdd)){
+    if(isset($_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], $_POST['nb_velos'], $_POST['latitude'], $_POST['longitude'])){        $successAdd = addLocation($db, $_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], $_POST['nb_velos'], (float) $_POST['lat'], (float) $_POST['long']);        if(!is_string($successAdd)){
             header("Location: ./?administration&addOK=$successAdd");
             die();
         } else $error = $successAdd;

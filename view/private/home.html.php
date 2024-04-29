@@ -23,6 +23,13 @@
         <a href="/?login">
             <button>Connexion a l'administration</button>
         </a>
+        <a href="/?administration">
+            <button>Admin Panel</button>
+        </a>   
+        <a href="/?disconnect">
+            <button>Deconexion</button>
+        </a>    
+        
         
     </div>
 
