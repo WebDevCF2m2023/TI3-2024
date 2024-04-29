@@ -35,7 +35,6 @@ const insertForm    = document.getElementById("insertForm"),
         
         (nom == "" || type == "" || add == "" || code == "" || ville == "" || url == "" || lat == "" || lon == "") || (isNaN(code)) || (isNaN(lat) || isNaN(lon)) ?
         insertError.textContent = "Remplissez correctement les champs" :
-        insertError.textContent = "Bien"
         insertForm.submit();   
     }
     
@@ -43,28 +42,36 @@ const insertForm    = document.getElementById("insertForm"),
 
  
 if (document.getElementById("updateForm")) {
-const updateForm    = document.getElementById("updateForm"),
-      nomInpUpdate        = document.getElementById("nomInpUpdate"),
-      typeInpUpdate       = document.getElementById("typeInpUpdate"),
-      latInpUpdate        = document.getElementById("latInpUpdate"),
-      lonInpUpdate        = document.getElementById("lonInpUpdate");
+    const updateForm    = document.getElementById("insertFormUpdate"),
+    nomInp        = document.getElementById("nomInpUpdate"),
+    typeInp       = document.getElementById("typeInpUpdate"),
+    addInp       = document.getElementById("addInpUpdate"),
+    codeInp       = document.getElementById("codeInpUpdate"),
+    villeInp       = document.getElementById("villeInpUpdate"),
+    urlInp       = document.getElementById("urlInpUpdate"),
+    latInp        = document.getElementById("latInpUpdate"),
+    lonInp        = document.getElementById("lonInpUpdate"),
+    insertError   = document.getElementById("insertErrorUpdate");
     
 
 updateForm.addEventListener("submit", function(event) {
     event.preventDefault();
-        validateInputsForUpdate();
+        validateInputs();
 });
 
 function validateInputsForUpdate () {
-       insertError.textContent = ""
-       
-       let nom  = nomInpUpdate.value;
-       let desc = typeInpUpdate.value;
-       let lat  = latInpUpdate.value;
-       let lon  = lonInpUpdate.value;
-
-    (nom == "" || desc == "" || lat == "" || lon == "") || (isNaN(lat) || isNaN(lon)) ?
-        insertError.textContent = "Remplissez correctement les champs" :
-        updateForm.submit();   
+    insertError.textContent = "";
+    let nom  = nomInp.value;
+    let type = typeInp.value;
+    let add = addInp.value;
+    let code = codeInp .value;
+    let ville = villeInp .value;
+    let url = urlInp .value;
+    let lat  = latInp.value;
+    let lon  = lonInp.value;
+    
+    (nom == "" || type == "" || add == "" || code == "" || ville == "" || url == "" || lat == "" || lon == "") || (isNaN(code)) || (isNaN(lat) || isNaN(lon)) ?
+    insertError.textContent = "Remplissez correctement les champs" :
+    updateForm.submit();   
 }
 }
