@@ -2,7 +2,7 @@
 
 // Si vous n'êtes pas de niveau administrateur, il est impossible d'accéder à cette page (la même chose pour toutes les pages qui ne sont pas destinées à être consultées par le public).
 if (!isset($_SESSION["monID"]) || $_SESSION["monID"] !== session_id()) {
-    header("Location: ?page=home");
+    header("Location: ?page=refuse");
     exit();
 }
 ?>
@@ -22,40 +22,44 @@ if (!isset($_SESSION["monID"]) || $_SESSION["monID"] !== session_id()) {
     <title><?=$title?></title>
 </head>
     <body>
-        <div class="container-fluid px-5" id="timeToGo"> <!-- global container -->
-        
-        <?php
+    <div class="container-fluid px-5 text-center" id="timeToGo"> <!-- global container -->
 
-    ?>
-    <div class="container h-25"> <!-- main container -->
-        <p class="h2 text-center">Bonjour, <?=$_SESSION["username"]?>. Ici vous pouvez modifier ou changer des entrées</p>
-    
-    
+<?php
+$_SESSION['pageCount']++;
+if ($_SESSION["pageCount"] < 2) {
+    include("incAdmin/header.php");
+}else {
+    include("incAdmin/header-static.php");
+}
+?>
+<div class="container-fluid h-25"> <!-- main container -->
+<p class="h2 text-center">Bonjour, <?=$_SESSION["username"]?>. Ici vous pouvez modifier ou changer des entrées</p>
+
     <?php
        
        ?>
     <?php
         if (isset($_GET["action"]) && $_GET["action"] === "delete") {
-            include("inc/delete-table.php");
+            include("incAdmin/delete-table.php");
         }else if (isset($_GET["action"]) && $_GET["action"] === "update") {
-            include("inc/update-form.php");
+            include("incAdmin/update-form.php");
         }else {
-            include("inc/admin-table.php");
+            include("incAdmin/admin-table.php");
         }
         ?>
 
+
+
+
     </div> <!-- end main container -->
 
-<?php
-        include("inc/footer-static.php");
+        <?php
+        include("../view/incShared/footer.php");
         ?>
-    
+
+
 </div>  <!-- end global container -->
 
-<?php
- //       include("../view/incShared/footer.php");
-    ?>
-    </div>
 <?php       // Un moyen pratique de cacher la pollution visuelle que représentent les CDN
     include("../view/incShared/cdnJS.php");
     ?>

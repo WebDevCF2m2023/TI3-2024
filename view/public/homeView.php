@@ -18,6 +18,9 @@
     <header>
     <h1>Carte Interactive</h1>
     <h2>Parcours Ciné à Bruxelles</h2>
+    <?php
+
+    ?>
     <p>Cliquez <a href="?page=login">ici</a> pour vous connecter</p>
     </header>
     <div class = "mainMap">

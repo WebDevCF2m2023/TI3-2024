@@ -14,7 +14,11 @@ if($_SESSION["showGreeting"] === true) {
                 case "adminHome" : 
                     $title = "Bienvenue Boss";
                     include ("../view/private/adminView.php");
-                    break;                         
+                    break;  
+                    case "refuse" :
+                        $title = "Nice try, fool :p";
+                        include("../view/public/refuseView.php");
+                        break;                       
                         default :
                         $title = "Page Introuvable";
                         include("../view/public/error404View.php");         

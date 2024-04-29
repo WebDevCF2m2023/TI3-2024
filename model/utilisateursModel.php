@@ -21,6 +21,7 @@ try {
         $_SESSION = $result;
         unset($_SESSION['passwd']);
         $_SESSION['monID'] = session_id();
+        $_SESSION["pageCount"] = 0;
         $_SESSION['showGreeting'] = false;       
         return true;
         
