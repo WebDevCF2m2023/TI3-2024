@@ -10,12 +10,11 @@ if($_SESSION["showGreeting"] === true) {
             case "login" :
                 $title = "Connectez-vous";
                 include("../view/public/loginView.php");
-                break;  
-                case "adminHome" :
-                    $title = "Ajoute un lieu à la table";
-                    include("../view/private/adminView.php");
-                    break;                                    
-                        
+                break; 
+                case "adminHome" : 
+                    $title = "Bienvenue Boss";
+                    include ("../view/private/adminView.php");
+                    break;                         
                         default :
                         $title = "Page Introuvable";
                         include("../view/public/error404View.php");         

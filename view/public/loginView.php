@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php       // Un moyen pratique de cacher la pollution visuelle que représentent les CDN
-    include("../view/incShared/cdnLeaf-css.php");
+//    include("../view/incShared/cdnLeaf-css.php");
     include("../view/incShared/cdnBS.php");
 ?>
     <link rel="stylesheet" href="css/style.css">
@@ -42,7 +42,7 @@
     include("../view/incShared/cdnLeaf-js.php");
     ?>
         <script src="js/colour-script.js"></script>
-        <script src="js/map-script.js"></script>
+ //       <script src="js/map-script.js"></script>
 
     </body>
     </html>
