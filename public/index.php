@@ -2,8 +2,8 @@
 session_start();
 
 require_once("../config.php");
-require_once("../models/usersModel.php");
-require_once("../models/locationsModel.php");
+require_once("../model/utilisateursModel.php");
+require_once("../model/localisationsModel.php");
 
 
 $dsn = DB_DRIVER . ":host=" . DB_HOST . ";charset=" . DB_CHARSET . ";port=" . DB_PORT . ";dbname=". DB_NAME;
@@ -17,11 +17,11 @@ try {
 }
 
 if(isset($_GET['json'])){
-    require("../controllers/apiController.php");
+    require("../controller/apiController.php");
 }else if(isset($_SESSION['connected'])){
-    require("../controllers/privateController.php");
+    require("../controller/privateController.php");
 }else{
-    require("../controllers/publicController.php");
+    require("../controller/publicController.php");
 }
 
 $db = null;
