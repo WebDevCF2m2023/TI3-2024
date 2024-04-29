@@ -58,7 +58,7 @@ function afficheListe(liste) {
         //Ajoute un eventListener sur l'event clic
         li.addEventListener('click', itemClick);
         //ajouter un attribut à cet item li pour l'identifier
-        li.setAttribute("id", `${item.id}`);
+        li.setAttribute("id", `${item.idgeoloc}`);
         //Ajoute un attribut à cet item li pour stocker les coordonnées
         li.setAttribute("latitude", `${item.latitude}`);
         li.setAttribute("longitude", `${item.longitude}`);
