@@ -42,3 +42,31 @@ if (isset($_GET['create'])) {
     include "../view/private/admin.insert.view.html.php";
     exit();
 }
+
+// si on a cliqué sur supprimer un lieu
+if (isset($_GET['delete']) && ctype_digit($_GET['delete'])) {
+
+    //conversion en int
+    $idDelete = (int) $_GET['delete'];
+
+
+    // si on a validé la suppression
+    if (isset($_GET['ok'])) {
+        $delete = deleteOneLocationById($db, $idDelete);
+        if ($delete === true) {
+            header("Location: ./");
+            exit();
+        } elseif ($delete === false) {
+            $error = "Problème avec cette suppression";
+        } else {
+            $error = $delete;
+        }
+    }
+
+    // chargement de l'article pour la suppression
+    $getOneLocation = getOneLocationById($db, $idDelete);
+
+    //chargement de la vue
+    include "../view/private/admin.delete.view.html.php";
+    exit();
+}
