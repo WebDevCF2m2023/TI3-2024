@@ -24,9 +24,9 @@ if(isset($_GET['create'])){
 
        $nom = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
        $adresse = htmlspecialchars(trim($_POST['adresse']),ENT_QUOTES);
-       $codepostal = htmlspecialchars(trim($_POST['codepostal']),ENT_QUOTES);
+       $codepostal = trim($_POST['codepostal']);
        $ville = htmlspecialchars(trim($_POST['ville']),ENT_QUOTES);
-       $nb_velos = htmlspecialchars(trim($_POST['nb_velos']),ENT_QUOTES);
+       $nb_velos = trim($_POST['nb_velos']);
        $latitude = (float) $_POST['latitude'];
        $longitude = (float) $_POST['longitude'];
 
@@ -39,9 +39,9 @@ if(isset($_GET['create'])){
 
     }
 
-                                        // chargement de la vue
-                                        include "../view/admin/admin.insert.view.html.php";
-                                        exit();
+    // chargement de la vue
+    include "../view/private/private.insert.view.html.php";
+    exit();
 }
 
 
@@ -68,9 +68,9 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
     // chargement de l'article pour la suppression
     $getOneGeoloc = getOneGeolocByID($db, $idDelete);
 
-                                                            // chargement de la vue
-                                                            include "../view/admin/admin.delete.view.html.php";
-                                                            exit();
+    // chargement de la vue
+    include "../view/private/private.delete.view.html.php";
+    exit();
 }
 
 
@@ -82,22 +82,26 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
     // si on a modifié le formulaire (non obligatoire de vérifier tous les champs, mais dans le isset la virgule équivaut à &&)
     if(isset(
-             $_POST['title'],
-             $_POST['geolocdesc'],
-             $_POST['latitude'],
-             $_POST['longitude']
+            $_POST['nom'],
+            $_POST['adresse'],
+            $_POST['codepostal'],
+            $_POST['ville'],    
+            $_POST['nb_velos'],
+            $_POST['latitude'],
+            $_POST['longitude'] 
     )){
 
+        $id = $idUpdate;
         $nom = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
         $adresse = htmlspecialchars(trim($_POST['adresse']),ENT_QUOTES);
-        $codepostal = htmlspecialchars(trim($_POST['codepostal']),ENT_QUOTES);
+        $codepostal = trim($_POST['codepostal']);
         $ville = htmlspecialchars(trim($_POST['ville']),ENT_QUOTES);
-        $nb_velos = htmlspecialchars(trim($_POST['nb_velos']),ENT_QUOTES);
+        $nb_velos = trim($_POST['nb_velos']);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
 
             // fonction qui update la mise à jour
-            $update = updateOneGeolocByID($db, $nom, $adresse, $codepostal, $ville, $nb_velos, $latitude, $longitude);
+            $update = updateOneGeolocByID($db, $idgeoloc, $nom, $adresse, $codepostal, $ville, $nb_velos, $latitude, $longitude);
             //var_dump($update);
             // update ok
             if($update===true){
@@ -118,7 +122,12 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
     //var_dump($getOneGeoloc);
 
     // chargement de la vue
-    include "../view/admin/admin.update.view.html.php";
+    include "../view/private/private.update.view.html.php";
     exit();
 }
+
+
+$datas = getAllGeoloc($db); // on obtient un string (Erreur SQL), un tableau vide (Pas de datas), un tableau non vide (On a des datas)
+// appel de la vue de l'accueil de private
+include "../view/private/private.homepage.view.html.php";
 
