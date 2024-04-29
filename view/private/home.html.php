@@ -14,10 +14,13 @@
         <a href="/">TI3_2024</a>
         <ul>
             <li>
-                <a href="/">Accueil</a>
+                <a class="active" href="/">Accueil</a>
             </li>
             <li>
                 <a href="/?administration">Panel administration</a>
+            </li>
+            <li>
+                <a href="/?disconnect">Se deconnecter</a>
             </li>
         </ul>
     </nav>
