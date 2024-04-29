@@ -80,7 +80,7 @@ header button{
     width: 80%;
     margin: 0 auto 1rem auto;
     gap: 5px;
-    grid-template-columns: 1fr 0.7fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 
             "header header"
             "map liste";
@@ -127,6 +127,13 @@ header button{
 
 #liste ul li:hover{
     background-color: rgba(0,255,0,0.3);
+}
+
+
+@media screen and (width <= 1000px) {
+    #container{
+        width: 100%;
+    }
 }
 
 @media screen and (width <= 640px) {

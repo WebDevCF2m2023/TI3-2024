@@ -1,5 +1,6 @@
 const map = L.map('map').setView([50.845347, 4.350323], 13);
 const markers = {};
+const featureGroup = L.featureGroup();
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -44,7 +45,7 @@ function addAllToListe(locations){
         
         const li = document.createElement('li');
 
-        li.innerHTML = `${i.nom} - ${i.adresse} | <a href="${i.url}" target="_blank">Site</a>`;
+        li.innerHTML = `${i.nom} - ${i.type} | Adresse : ${i.adresse} - ${i.codepostal} - ${i.ville} | <a href="${i.url}" target="_blank">Site web</a>`;
         li.dataset.id = i.id;
         
         ul.appendChild(li);
@@ -64,6 +65,7 @@ function addAllMarkersByLocations(locations){
         const marker = L.marker([information.latitude, information.longitude]).addTo(map);
         markers[information.id] = marker;
         marker.bindPopup(`<b>${information.nom}</b><br><p>${information.adresse}</p><a href='${information.url}' target="_blank">${information.url}</a>`);
+        featureGroup.addLayer(marker);
     });
 
 }
@@ -80,3 +82,5 @@ function onClickLI(e){
     map.flyTo([latlng.lat, latlng.lng], 18);
     marker.togglePopup();
 }
+
+map.fitBounds(featureGroup.getBounds());

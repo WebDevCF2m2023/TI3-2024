@@ -37,38 +37,62 @@
                     <h2 class="text-center mb-4 text-danger"><?= $error ?></h2>
             <?php endif; ?>
                 <h2 class="text-center mb-4 text-primary">Modifier la localisation avec comme ID <?= $update['id'] ?></h2>
-                <form class="w-50 m-auto" method="POST">
+                <form class="w-50 m-auto needs-validation <?= isset($secure) ? 'was-validated' : ''?>" novalidate method="POST">
                     <div class="form-group">
                         <label for="name">Nom</label>
-                        <input type="text" class="form-control" name="name" id="name" required value="<?= $update['nom'] ?>">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Nom" pattern="^.{1,50}$" value="<?= $update["nom"]?>" required>
+                        <div class="checkname invalid-feedback">
+                        Le nom ne doit pas être vide ou dépasser 50 caractères
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="type">Type</label>
-                        <input type="text" class="form-control" name="type" id="type" required value="<?= $update['type'] ?>">
+                        <input type="text" class="form-control" name="type" id="type" placeholder="Type" pattern="^.{1,20}$" value="<?= $update["type"]?>" required>
+                        <div class="checktype invalid-feedback">
+                        Le type ne doit pas être vide ou dépasser 20 caractères
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="adresse">Adresse</label>
-                        <input type="text" class="form-control" name="adresse" id="adresse" required value="<?= $update['adresse'] ?>">
+                        <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse" pattern="^.{1,100}$" value="<?= $update["adresse"]?>" required>
+                        <div class="checkadresse invalid-feedback">
+                        L'adresse ne doit pas être vide ou dépasser 100 caractères
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="codepostal">Code Postal</label>
-                        <input type="text" class="form-control" name="codePostal" id="codepostal" required value="<?= $update['codepostal'] ?>">
+                        <input type="text" class="form-control" name="codePostal" id="codepostal" placeholder="Code Postal" pattern="^\d\d\d\d$" value="<?= $update["codepostal"]?>" required>
+                        <div class="checkcodePostal invalid-feedback">
+                        Le Code Postal doit être constitué de 4 chiffres.
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="country">Ville</label>
-                        <input type="text" class="form-control" name="country" id="country" required value="<?= $update['ville'] ?>">
+                        <input type="text" class="form-control" name="country" id="country" placeholder="Ville" pattern="^.{1,20}$" value="<?= $update["ville"]?>" required>
+                        <div class="checkcountry invalid-feedback">
+                        La ville ne doit pas être vide ou dépasser 20 caractères
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="url">Lien du site</label>
-                        <input type="text" class="form-control" name="url" id="url" required value="<?= $update['url'] ?>">
+                        <input type="text" class="form-control" name="url" id="url" placeholder="Lien du site" pattern="^.{1,200}$" value="<?= $update["url"]?>" required>
+                        <div class="checkurl invalid-feedback">
+                        Le lien du site ne doit pas être vide ou dépasser 200 caractères
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="lat">Latitude</label>
-                        <input type="number" class="form-control" name="latitude" id="lat" step="0.0000001" required value="<?= $update['latitude'] ?>">
+                        <input type="text" class="form-control" name="latitude" id="lat" pattern="^-?\d{1,2}(\.\d{1,6})?$" placeholder="Exemple: 50.25647" value="<?= $update["latitude"]?>" required>
+                        <div class="checklatitude invalid-feedback">
+                        Format de latitude incorrect. Exemple a suivre : 5.214578
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="long">Longitude</label>
-                        <input type="number" class="form-control" name="longitude" id="long" step="0.0000001" required value="<?= $update['longitude'] ?>">
+                        <input type="text" class="form-control" name="longitude" id="long" pattern="^-?\d{1,2}(\.\d{1,6})?$" placeholder="Exemple: 1.21456" value="<?= $update["longitude"]?>" required>
+                        <div class="checklongitude invalid-feedback">
+                        Format de longitude incorrect. Exemple a suivre : 50.214578
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary mt-3 w-50 d-block m-auto">Modifier</button>
                 </form>
@@ -77,5 +101,6 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/checkForm.js"></script>
 </body>
 </html>
