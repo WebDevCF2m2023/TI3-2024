@@ -18,7 +18,7 @@
                   <div class="container">
                     <div class="row ms-5  align-items-center">
                       <div class="col-lg-12 col-xl-11">
-                        <div class="text-center text-light mt-5">
+                        <div class="text-center text-light mt-1">
                           <h1>Admin Update</h1>
                             <nav>
                               <ul class="list-unstyled">
@@ -29,7 +29,7 @@
                           </nav>
                         </div>
 
-    <div class="card text-black border border-primary" style="border-radius: 25px;">
+    <div class="card text-black border border-primary mb-4" style="border-radius: 25px;">
                           <div class="card-body p-md-5">
                             <div class="row justify-content-center">
                               <div class="col-md-10 col-lg-6 col-xl-5">
