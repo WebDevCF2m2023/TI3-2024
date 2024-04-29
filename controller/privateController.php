@@ -26,6 +26,26 @@ elseif (isset($_GET["edit"])){
     }
     require("../view/private/edit.php");
 }
+elseif (isset($_GET["delete"])){
+    var_dump($_POST);
+    $id = (int)$_GET["delete"];
+    if (isset($_POST["confirm"])){
+        $result = remove_location($db, $id);
+        if ($result===true){
+            header("Location: ./");
+            die;
+        }else {
+            $error = $result;
+        }
+    }
+    $result = get_localisation_by_id($db, $id);
+    if (gettype($result) === "string"){
+        $error = $result;
+    }else {
+        $location = $result;
+    }
+    require("../view/private/delete.php");
+}
 else {
     require_once("../view/private/home.php");
 }
