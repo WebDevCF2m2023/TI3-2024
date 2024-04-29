@@ -79,7 +79,7 @@ function afficheListe(donnees){
         // créer la balise <li> vide
         let LI = document.createElement("li");
         // ajouter son contenu
-        LI.innerHTML = `${item.title} | ${item.ourdesc} | `;
+        LI.innerHTML = `${item.nom} | ${item.adresse} | `;
         // ajouter des attributs spécifiques à chaque élément pour pouvoir les distinguer
         LI.setAttribute("lat",`${item.latitude}`);
         LI.setAttribute("lng",`${item.longitude}`);

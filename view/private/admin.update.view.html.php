@@ -24,7 +24,7 @@
                 </li>
                 <li>
                 <div class="flex items-center">
-                <a href="?insert">Ajouter une data</a>
+                <a href="?insert">Ajouter une localisation</a>
                 </div>
             </li>
             <li>
@@ -35,17 +35,17 @@
             </ol>
     </nav>
         <?php if(isset($error)) echo "<h3>$error</h3>"; ?>
-        <form action="" name="ourdatas" method="POST">
+        <form action="" name="localisations" method="POST">
         <div class="py-12">
             <h2 class="text-2xl font-bold">Ajoutez votre lieu</h2>
             <div class="mt-8 max-w-md">
                 <div class="grid grid-cols-1 gap-6">
                     <label class="block">
-                        <span class="text-gray-700">Titre</span>
+                        <span class="text-gray-700">nom</span>
         <input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="title" placeholder="title" required>
                     </label>
                     <label class="block">
-                        <span class="text-gray-700">Description</span>
+                        <span class="text-gray-700">adresse</span>
             <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" rows="3" name="ourdesc" placeholder="Descrition" required></textarea>
                     </label>
                     <label class="block">

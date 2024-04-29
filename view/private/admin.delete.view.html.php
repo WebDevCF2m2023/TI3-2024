@@ -41,8 +41,8 @@
         <?php elseif(isset($error)): ?>
                 <h3 class="error"><?=$error?></h3>
         <?php else: ?>
-            <h4 class="text-2xl">Titre : <?=$data['title']?></h4>
-            <p class="text-2xl"><?=$data['ourdesc']?></p>
+            <h4 class="text-2xl">nom : <?=$data['nom']?></h4>
+            <p class="text-2xl"><?=$data['adresse']?></p>
             <p class="text-2xl">Latitude : <?=$data['latitude']?></p>
             <p class="text-2xl">Longitude : <?=$data['longitude']?></p>
             <hr>

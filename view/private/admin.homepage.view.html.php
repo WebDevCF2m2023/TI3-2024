@@ -47,8 +47,8 @@
         <table class="border-collapse border border-slate-600">
             <tr>
                 <th class="border border-slate-600">id</th>
-                <th class="border border-slate-600">title</th>
-                <th class="border border-slate-600">ourdesc</th>
+                <th class="border border-slate-600">nom</th>
+                <th class="border border-slate-600">adresse</th>
                 <th class="border border-slate-600">latitude</th>
                 <th class="border border-slate-600">longitude</th>
                 <th class="border border-slate-600">Modifier</th>
@@ -56,13 +56,13 @@
             </tr>
                 <?php foreach($ourDatas as $item): ?>
                     <tr>
-                        <td class="text-center"><?=$item['idourdatas']?></td>
-                        <td><?=$item['title']?></td>
-                        <td><?=$item['ourdesc']?></td>
+                        <td class="text-center"><?=$item['id']?></td>
+                        <td><?=$item['nom']?></td>
+                        <td><?=$item['adresse']?></td>
                         <td><?=$item['latitude']?></td>
                         <td><?=$item['longitude']?></td>
-                        <td><a href="?update=<?=$item['idourdatas']?>"><img src="img/update.png" width="32" height="32" alt="update" /></a></td>
-                        <td><a href="?delete=<?=$item['idourdatas']?>"><img src="img/delete.png" width="32" height="32" alt="delete" /></a></td>
+                        <td><a href="?update=<?=$item['id']?>"><img src="img/update.png" width="32" height="32" alt="update" /></a></td>
+                        <td><a href="?delete=<?=$item['id']?>"><img src="img/delete.png" width="32" height="32" alt="delete" /></a></td>
                     </tr>
                 <?php endforeach; ?>
         </table>

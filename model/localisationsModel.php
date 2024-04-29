@@ -1,63 +1,92 @@
 <?php
-
-/*
-Connexion de l'administrateur
-*/
-
-function administratorConnect(PDO $connectDB, string $login, string $password): bool|string
+// Sélectionnez toutes les données
+function getlocalisations(PDO $db): array|string
 {
-    // récupération de tous les champs de la table administrator quand le username match : 
-    $sql= "SELECT * FROM administrator WHERE username = ?";
-    $prepare = $connectDB->prepare($sql);
-    
+    $sql ="SELECT * FROM localisations ORDER BY id DESC;";
     try{
-        // on essaye de charger l'utilisateur
-        $prepare->execute([$login]);
-        // Si l'utilisateur n'existe pas, on s'arrête là
-        if($prepare->rowCount()==0) return "Utilisateur inconnu";
+        $query = $db->query($sql);
+        if($query->rowCount()===0) return "Pas encore de localisations";
+        $result = $query->fetchAll();
+        $query->closeCursor();
+        return $result;
 
-        // l'utilisateur existe, on va vérifier son mot de passe
-        // récupération des données
+    }catch(Exception $e){
+        return ['error'=>$e->getMessage()];
+    }
+}
+
+// charger une seule donnée
+function getOneOurdatas(PDO $db, int $id): array|string
+{
+    $sql = "SELECT * FROM localisations WHERE id = ?;";
+    $prepare = $db->prepare($sql);
+    $prepare->bindParam(1,$id,PDO::PARAM_INT);
+    try{
+        $prepare->execute();
+        if($prepare->rowCount()===0) return "Data non existante";
         $result = $prepare->fetch();
+        $prepare->closeCursor();
+        return $result;
+    }catch(Exception $e){
+        return ['error'=>$e->getMessage()];
+    }
+}
 
-        // si le mot de passe entré est valide avec le mot de passe dans le base de donnée (créée avec password_hash())
-        if(password_verify($password, $result['passwd'])){
-
-            // création de la session valide
-            $_SESSION['myID'] = session_id();
-            $_SESSION['idadministrator '] = $result['idadministrator'];
-            $_SESSION['login'] = $login;
-            return true;
-        }else{
-            return false;
-        }
-
+// mettre à jour une donnée
+function updatelocalisations(PDO $db,
+                        string $nom,
+                        string $adresse,
+                        float $latitude,
+                        float $longitude,
+                        int $id
+                        ) : bool|string
+{
+    $prepare = $db->prepare("UPDATE localisations SET nom = ?, adresse = ?, latitude = ?, longitude = ? WHERE id = ?");
+    $prepare->bindParam(1,$nom);
+    $prepare->bindParam(2,$adresse);
+    $prepare->bindParam(3,$latitude);
+    $prepare->bindParam(4,$longitude);
+    $prepare->bindParam(5,$id,PDO::PARAM_INT);
+    try{
+        $prepare->execute();
+        return true;
     }catch(Exception $e){
         return $e->getMessage();
     }
-    
 }
 
-function administratorDisconnect(): void
+// ajoutez avec une requête préparée la nouvelle data
+function addlocalisations(PDO $db, 
+                    string $nom, 
+                    string $adresse, 
+                    float $latitude,
+                    float $longitude
+                    ) : bool|string
 {
-
-    // Destruction des variables de SESSION (remplacement du tableau    associatif par un tableau vide)
-    $_SESSION = [];
-
-    // On met le cookie de session dans le passé, pour le navigateur    le supprime
-    if (ini_get("session.use_cookies")) {
-        $params = session_get_cookie_params();
-        setcookie(session_name(), '', time() - 42000,
-            $params["path"], $params["domain"],
-            $params["secure"], $params["httponly"]
-        );
+    $prepare = $db->prepare("INSERT INTO localisations (nom, adresse, latitude, longitude) VALUES (?,?,?,?)");
+    $prepare->bindParam(1,$nom);
+    $prepare->bindParam(2,$adresse);
+    $prepare->bindParam(3,$latitude);
+    $prepare->bindParam(4,$longitude);
+    try{
+        $prepare->execute();
+        return true;
+    }catch(Exception $e){
+        return $e->getMessage();
     }
+}
 
-    // Finalement, on détruit la session
-    session_destroy();
+// supprimer une donnée
 
-    // Redirection (actualisation)
-    header("Location: ./");
-    exit();
-
+function deletelocalisations(PDO $db, int $id): bool|string
+{
+    $prepare = $db->prepare("DELETE FROM localisations WHERE id = ?");
+    $prepare->bindParam(1,$id,PDO::PARAM_INT);
+    try{
+        $prepare->execute();
+        if($prepare->rowCount()===0) return "Data non existante";
+        return true;
+    }catch(Exception $e){
+        return $e->getMessage();
+    }
 }
