@@ -19,15 +19,31 @@
             fill: red;
         }
 
+        .table-rounded {
+            border-radius: 15px;
+            border-collapse: separate;
+        }
 
-        /* A litle css, sorry magib */
+        .pagination {
+            color:red;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            background-color: #494D5F;
+            color: white;
+        }
+
+ 
+        
     </style>
 </head>
 
-<body>
+<body class="">
 
 
-    <div class="container">
+    <div class="container mt-5">
         <?php if (isset($_GET['updateOK'])): ?>
             <h2 class="text-center mb-4 text-success">La location avec comme ID <strong
                     class="text-primary"><?= $_GET['updateOK'] ?></strong> a bien été modifié.</h2>
@@ -71,19 +87,11 @@
                     <button type="button" class="btn btn-danger">Deconexion</button>
                 </a>
             </div>
-            <table class="table table-hover table-bordered" 
-                data-toggle="table"
-                data-toolbar="#toolbar"
-                data-show-export="true"
-                data-pagination="true"
-                data-page-list="[2, 4, 6, 8, 12, all]"
-                data-page-size="6"
-                data-minimum-count-columns="2"
-                data-show-columns="true"
-                data-show-columns-toggle-all="true"
-                data-search="true"
-                >
-                <thead class="table-dark text-center">
+            <table class="table table-hover table-striped table-bordered table-rounded" data-bs-theme=dark data-toggle="table"
+                data-toolbar="#toolbar" data-show-export="true" data-pagination="true"
+                data-page-list="[2, 4, 6, 8, 12, all]" data-page-size="6" data-minimum-count-columns="2"
+                data-show-columns="true" data-show-columns-toggle-all="true" data-search="true">
+                <thead class="table-secondary text-center">
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col ">Nom</th>
@@ -110,7 +118,7 @@
                             <td><?= $location['longitude'] ?></td>
                             <td class="ps-4">
                                 <a href="?update=<?= $location['id'] ?>" class="icon-link-update">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill=""
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
                                         class="bi bi-pencil-square icon-update" viewBox="0 0 16 16">
                                         <path
                                             d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -121,12 +129,10 @@
                             </td>
                             <td class="ps-4">
                                 <a href="?delete=<?= $location['id'] ?>" class="icon-link-delete">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill=""
-                                        class="bi bi-x-octagon icon-delete" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
+                                        class="bi bi-trash3 icon-delete" viewBox="0 0 16 16">
                                         <path
-                                            d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z" />
-                                        <path
-                                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                                            d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
                                     </svg>
                                 </a>
                             </td>

@@ -36,7 +36,7 @@ function addAllToListe(localisations) {
     localisations.forEach(i => {
         const li = document.createElement('li');
 
-        li.innerHTML = `${i.nom} | ${i.adresse} - ${i.codepostal} ${i.ville}`;
+        li.innerHTML = `${i.nom} | ${i.adresse} - ${i.codepostal} ${i.ville} | Nombre de velos : ${i.nb_velos}`;
         li.dataset.id = i.id;
         
         ul.appendChild(li);
@@ -52,7 +52,7 @@ function addAllMarkersByLocations(localisations){
     localisations.forEach(information => {
         const marker = L.marker([information.latitude, information.longitude]).addTo(map);
         markers[information.id] = marker;
-        marker.bindPopup(`<b>${information.nom}</b><br><p>${information.adresse}`);
+        marker.bindPopup(`<b>${information.nom}</b><br><p>${information.adresse}, ${information.codepostal} ${information.ville}</p><p>Nombre des velos: ${information.nb_velos}</p>`);
     });
 
 }
