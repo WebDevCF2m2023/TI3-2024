@@ -2,8 +2,8 @@
 session_start();
 
 require_once("../config.php");
-require_once("../models/utilisateursModel.php");
-require_once("../models/localisationsModel.php");
+require_once("../model/utilisateursModel.php");
+require_once("../model/localisationsModel.php");
 
 
 try{
@@ -18,11 +18,11 @@ try{
 }
 
 if(isset($_GET['json'])){
-    require("../controllers/ApiController.php");
+    require("../controller/ApiController.php");
 }else if(isset($_SESSION['connected'])){
-    require("../controllers/privateController.php");
+    require("../controller/privateController.php");
 }else{
-    require("../controllers/publicController.php");
+    require("../controller/publicController.php");
 }
 
 $connect = null;
