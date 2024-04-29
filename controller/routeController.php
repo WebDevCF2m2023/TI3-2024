@@ -4,7 +4,7 @@ if(isset($_GET["page"])) {
     switch($_GET["page"]) {
         case "home" :
             $title = "Bienvenue à nouveau";
-            include("../view/public/welcomeView.php");
+            include("../view/public/homeView.php");
             break;
             case "create" :
                 $title = "Ajoute un lieu à la table";
