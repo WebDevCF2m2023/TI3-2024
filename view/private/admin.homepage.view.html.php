@@ -13,7 +13,7 @@
 </head>
 <body>
     <!--NAVBAR-->
-  <nav class="navbar navbar-expand-lg  rounded" aria-label="Twelfth navbar example" id="navbarStyle">
+  <nav class="navbar navbar-expand-lg" aria-label="Twelfth navbar example" id="navbarStyle">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
