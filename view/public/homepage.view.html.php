@@ -12,7 +12,7 @@
 </head>
 <body>
 <div id="content">
-        <h1 class="titreHomepage" id="titreHome">Carte interactive</h1>
+        <h1 class="titreHomepage">Carte interactive</h1>
         <h3 class="titreHomepage">Théâtre à Bruxelles</h3>
          <a href="?connect"> <button value="Connexion" id="btnHomepage">Connexion à l'administration</button></a> 
         <?php
