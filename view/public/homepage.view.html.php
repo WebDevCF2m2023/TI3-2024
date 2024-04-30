@@ -36,24 +36,32 @@
 
 
 <footer>
-  
-<div class="footerback">
+<div class="foot">
       <form action="">
-            <p class="newsletter">
+        <div class="footerback">
+          <div class="">
+            <p class="">
               <strong>Sign up for our newsletter</strong>
             </p>
+          </div>
+
+         
+          <div class="">
               <input class="inputfoot" type="email" id="form5Example2"/>
               <label  for="form5Example2"></label>
             <button type="submit" class="sub">
               Subscribe
             </button> 
-       </form>
-</div>
+          </div>
+      </form>
+  </div>
   
-<div class="logofooter">
+
+  
+  <div class="logofooter">
     <p class="copy">© 2024</p>
     <a href="https://2023.webdev-cf2m.be/Guillaume/"><span class="Gnav">G</span><span class="unav">u</span><span class="inav">i</span><span class="gnav">g</span><span class="lnav">l</span><span class="enav">e</span></a>
-</div>
+  </div>
 
 </footer>
 
