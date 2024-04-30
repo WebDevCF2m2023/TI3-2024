@@ -20,7 +20,7 @@ window.operateEvents = {
         }
     },  
     'click .validEdit': function (e, value, row, index) {
-        if(!checkCanValidateEdit()) return; // TODO MESSAGE
+        if(!checkCanValidate(newValueEdit)) return; // TODO MESSAGE
         postData(`?update=${row.id}`, {
             name: newValueEdit.nom,
             type: newValueEdit.type,
@@ -41,9 +41,32 @@ window.operateEvents = {
             $remove.prop('disabled', true);
             lastValueRow = {};
         });
+    },'click .validInsert': function (e, value, row, index) {
+        if(!checkCanValidate(newValueInsert)) return; // TODO MESSAGE
+        postData(`?addLocation`, {
+            name: newValueInsert.nom,
+            type: newValueInsert.type,
+            adresse: newValueInsert.adresse,
+            codePostal: newValueInsert.codepostal,
+            country: newValueInsert.ville,
+            url: newValueInsert.url,
+            latitude: newValueInsert.latitude,
+            longitude: newValueInsert.longitude,
+            bootstraptable: 1
+        }).then(data=>{
+            console.log(data)
+            $table.bootstrapTable('refresh');
+            $remove.prop('disabled', true);
+        });
     },
     'click .cancelEdit': function (e, value, row, index) {
         resetRowWithLastValue();
+    },
+    'click .cancelInsert': function (e, value, row, index) {
+        $table.bootstrapTable('remove', {
+            field: 'id',
+            values: [-1]
+        });
     },
     'click .edit': function (e, value, row, index) {
         if(lastValueRow.nom !== undefined){
@@ -98,10 +121,10 @@ $remove.click(function () {
 });
 
 $add.click(function () {
-
     $table.bootstrapTable('insertRow', {
         index: 0,
         row: {
+            id: -1,
             nom: `<input type="text" class="form-control is-invalid" name="nomInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checknomInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
             type: `<input type="text" class="form-control is-invalid" name="typeInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checktypeInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
             adresse: `<input type="text" class="form-control is-invalid" name="adresseInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checkadresseInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
@@ -112,16 +135,8 @@ $add.click(function () {
             longitude: `<input type="number" max="99.999999" min="-99.999999" step="0.000001" class="form-control is-invalid" name="longitudeInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checklongitudeInsert">Format incorrect</div><div class="valid-feedback">Correct 😊</div>`,
             actions: `<div class="d-flex justify-content-center gap-3 pb-4"><a href="javascript:void(0)" title="valider"><i class="validInsert bi bi-check text-success fs-4"></i></a><a href="javascript:void(0)" title="annuler"><i class="cancelInsert bi bi-x text-danger fs-4"></i></a></div>`,
         }
-      })
-
-    /*
-    postData(`?addLocation`, {
-        bootstraptable: 1
-    }).then(data=>{
-        $table.bootstrapTable('refresh');
-        $remove.prop('disabled', true);
-    });
-    */
+      });
+    newValueInsert = {};
 });
 function getIdSelections() {
     return $.map($table.bootstrapTable('getSelections'), function (row) {
@@ -218,9 +233,9 @@ function formatBaseActions(a){
     return a === undefined ? baseActions : a;
 }
 
-function checkCanValidateEdit(){
-    for (const key in newValueEdit) {
-        if(checkNewValueInputByName(key, newValueEdit) === true) continue;
+function checkCanValidate(objectToCheck){
+    for (const key in objectToCheck) {
+        if(checkNewValueInputByName(key, objectToCheck) === true) continue;
         return false;
     }
     return true;
@@ -304,8 +319,6 @@ $(function(){
     });
     
     $table.on('page-change.bs.table', function (){
-        if(lastValueRow.name !== undefined){
-            resetRowWithLastValue();
-        }
+        lastValueRow = {};
     });
 });
