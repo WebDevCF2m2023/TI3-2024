@@ -30,7 +30,7 @@ if(isset($_GET['insert'])){
 
     // appel de la vue d'insertion
     require "../view/private/admin.insert.view.html.php";
-    var_dump($_POST);
+    //var_dump($_POST);
     exit();
 }
 

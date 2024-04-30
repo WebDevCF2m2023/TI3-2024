@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Admin Insertion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Admin Update</title>
 </head>
 <body>
 <div class="container py-4">
-    <h1 class="text-center text-4xl font-bold mb-8">Admin Insertion</h1>
-    <p class="text-center text-lg text-gray-800">Insertion d'un nouveau lieu dans la DB.</p>
+    <h1 class="text-center text-4xl font-bold mb-8">Admin Update</h1>
+    <p class="text-center text-lg text-gray-800">Mettre à jour un lieu dans la DB.</p>
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light my-4">
         <div class="container-fluid">
@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="?insert">Ajouter une localisation</a>
+                        <a class="nav-link" href="?insert">Ajouter une data</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?disconnect">Déconnexion</a>
@@ -30,31 +30,37 @@
         </div>
     </nav>
 
-    <?php if(isset($error)) echo "<h3>$error</h3>"; ?>
-    <form action="" name="localisations" method="POST" class="py-12">
-        <h2 class="text-2xl font-bold">Ajoutez votre lieu</h2>
-        <div class="mt-8 max-w-md">
-            <div class="grid grid-cols-1 gap-6">
-                <label class="block">
-                    <span class="text-gray-700">Nom</span>
-                    <input type="text" class="form-control mt-1" name="nom" placeholder="Nom" required>
-                </label>
-                <label class="block">
-                    <span class="text-gray-700">Adresse</span>
-                    <textarea class="form-control mt-1" rows="3" name="adresse" placeholder="Adresse" required></textarea>
-                </label>
-                <label class="block">
-                    <span class="text-gray-700">Latitude</span>
-                    <input type="number" class="form-control mt-1" step="0.00000000001" name="latitude" placeholder="Latitude" required>
-                </label>
-                <label class="block">
-                    <span class="text-gray-700">Longitude</span>
-                    <input type="number" class="form-control mt-1" step="0.00000000001" name="longitude" placeholder="Longitude" required>
-                </label>
-                <input type="submit" class="btn btn-primary mt-4" value="Insérer">
+    <div class="py-12">
+        <h2 class="text-2xl font-bold">Update d'une adresse</h2>
+        <?php if(isset($error)) echo "<h3>$error</h3>"; ?>
+        <br>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form action="" name="id" method="POST">
+                    <div class="mb-3">
+                        <label for="nom" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" value="<?=$data['nom']?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="adresse" class="form-label">Description</label>
+                        <textarea class="form-control" id="adresse" name="adresse" rows="3" placeholder="adresse" required><?=$data['adresse']?></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="latitude" class="form-label">Latitude</label>
+                        <input type="number" class="form-control" id="latitude" name="latitude" step="0.00000000001" placeholder="Latitude" value="<?=$data['latitude']?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="longitude" class="form-label">Longitude</label>
+                        <input type="number" class="form-control" id="longitude" name="longitude" step="0.00000000001" placeholder="Longitude" value="<?=$data['longitude']?>" required>
+                    </div>
+                    <input type="hidden" name="id" value="<?=$data['id']?>" />
+                    <button type="submit" class="btn btn-primary">Modifier</button>
+                </form>
             </div>
         </div>
-    </form>
+    </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-6uAhkp9lKBKZHpP5W
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
