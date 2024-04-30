@@ -30,7 +30,7 @@ include "../view/inc/connect.php";
                 <h2 class="text-center h1">DataAdmin.</h2>
                 <?php if(isset($_GET['404'])): ?>
                     
-                    <h2>Insertion réussie</h2>
+                    <h2 class="text-succes">Insert Done</h2>
                     
                     <?php endif ?>
                     
@@ -101,5 +101,6 @@ include "../view/inc/connect.php";
     <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/locale/bootstrap-table-fr-FR.min.js"></script>
     <script src="../js/carteJSON.js"></script>
+    
 </body>
 </html>

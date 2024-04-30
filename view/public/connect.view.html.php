@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
     <title>Connexion</title>
 </head>
-<body>
+<body class="bg">
 <header>
         <div class="container">
         <div class="row mb-5">
@@ -46,7 +46,7 @@
     </div>
 </div>
 
-<div class="position-absolute bottom-0 w-100">
+
    <?php 
     include "../view/inc/footer.php";
 ?>
