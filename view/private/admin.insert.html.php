@@ -36,7 +36,7 @@
           
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 text-primary">Insérer <br>un data</p>
 
-                                <form action="" name="localisations" method="POST">
+                                <form action="" name="localisations" method="POST" onsubmit="return event.submitter.name === 'ok' ? confirm('Voulez-vous vraiment supprimer ?') : true">
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example3c">nom</label>
