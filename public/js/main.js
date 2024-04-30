@@ -34,7 +34,7 @@ function handle_res(locations){
 
 function add_marker_location(location){
     const marker = L.marker([location.latitude, location.longitude]).addTo(map);
-    marker.bindPopup(`<h3>${location.nom}</h3><p>${location.rue} ${location.codepostal} Bruxelles</p><p>tel: ${location.telephone}</p><a href=${location.url}">Voir le site</a>`);
+    marker.bindPopup(`<h3>${location.nom}</h3><p>${location.rue} ${location.codepostal} Bruxelles</p><p>tel: ${location.telephone}</p><a href=${location.url}" target="_blank">Voir le site</a>`);
     markers_hashmap[location.id] = marker;
     markers.push(marker);
 }
@@ -55,6 +55,7 @@ function tbody_add_location(tbody, location){
     const a4 = document.createElement("a");
     a4.href = location.url;
     a4.textContent = "Voir le site";
+    a4.target = "_blank";
     td4.insertAdjacentElement("afterbegin", a4);
     //icon
     const td5 = document.createElement("td");

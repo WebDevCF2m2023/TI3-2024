@@ -31,7 +31,7 @@
                             <th>Adresse</th>
                             <th>Telephone</th>
                             <th>Url</th>
-                            <th>Voir le lieux sur la map</th>
+                            <th>Voir les lieux sur la map</th>
                         </tr>
                     </thead>
                     <tbody>
