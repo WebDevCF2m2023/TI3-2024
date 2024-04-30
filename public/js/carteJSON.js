@@ -55,7 +55,7 @@ function afficheListe(liste) {
         //Créer l'élément de type li
         let li = document.createElement("li");
         //remplir le li
-        li.innerHTML = "Lieu :" +`${item.nom} | Adresse : ${item.rue} ${item.codepostal} Bruxelles <br> Tél : ${item.telephone} | Site web: ${item.url}`;
+        li.innerHTML = "Lieu :" +`${item.nom} | Adresse : ${item.rue} ${item.codepostal} Bruxelles <br> Tél : ${item.telephone} | Site web: <a href="${item.url}" target="_blank" style="color:#2a454e; font-weight:bold;">${item.url}</a>`;
         //Ajoute un eventListener sur l'event clic
         li.addEventListener('click', itemClick);
         //ajouter un attribut à cet item li pour l'identifier
