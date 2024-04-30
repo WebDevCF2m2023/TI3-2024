@@ -1,107 +1,83 @@
+<!-- 
 
+Si je n'avais pas séparé les sections en "include", cette page ferait 800 lignes de code (HTML, PHP et Bootstrap) et non 50.
 
+-->
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<?php       // Un moyen pratique de cacher la pollution visuelle que représentent les CDN
-    include("../view/incShared/cdnLeaf-css.php");
- //   include("../view/incShared/cdnBS.php");
-?>
+    
+    <?php
+                    include("../view/incShared/cdnCSS.php");
+                ?>
     <link rel="stylesheet" href="css/style.css">
     <title><?=$title?></title>
 </head>
 <body>
-    <div class="global">
-    <header>
-    <h1>Carte Interactive</h1>
-    <h2>Parcours Ciné à Bruxelles</h2>
-    <?php
-
-    ?>
-    <p>Cliquez <a href="?page=login">ici</a> pour vous connecter</p>
-    </header>
-    <div class = "mainMap">
-        <div id = "theMap" class = "mapDiv">
-            <!-- Only map here -->
-        </div>
-        <div class = "listDiv">
-            <div class="listHead">
-                <h3>Liste des locations</h3>
-                <h5>Cliquez sur un nom du Cinéma ci-dessous pour la situer sur la carte</h5>
-            </div>
-            <table class = "listTable">
-                <tr>
-                    <th>Nom</th>
-                </tr>
-                <?php
-                $i=0;
-                    foreach ($allLocals as $loc) {
-
-                ?>
-                    <tr>
-                        <td><a href="?page=home&lat=<?=$loc["latitude"]?>&lon=<?=$loc["longitude"]?>&nom=<?=$loc["nom"]?>&id=<?=$loc["id"]?>" class="mapLink"><?=$loc["nom"]?></a></a></td>
-                    </tr>
-
-                <?php
-                }            
-                ?>
-            </table>
-        </div>
-
-
-    </div>
-
-    <div class = "listDiv">
-            <div class="listHead">
-                <h3>Liste des locations</h3>
-                <h5>Cliquez sur un nom du Cinéma ci-dessous pour la situer sur la carte</h5>
-            </div>
-            <table>
-                <tr>
-                    <th>Nom</th>
-                    <th>Type</th>
-                    <th>Adresse</th>
-                    <th>Code Postale</th>
-                    <th>Ville</th>
-                    <th>Latitude</th>
-                    <th>Logitude</th>
-                    <th>URL</th>
-                </tr>
-                <?php
-                    foreach ($allLocals as $loc) {
-                ?>
-                    <tr>
-                        <td><a href="?page=home&lat=<?=$loc["latitude"]?>&lon=<?=$loc["longitude"]?>&nom=<?=$loc["nom"]?>&id=<?=$loc["id"]?>" class="mapLink"><?=$loc["nom"]?></a></a></td>
-                        <td><?=$loc["type"]?></td>
-                        <td><?=$loc["adresse"]?></td>
-                        <td><?=$loc["codepostal"]?></td>
-                        <td><?=$loc["ville"]?></td>
-                        <td><?=$loc["latitude"]?></td>
-                        <td><?=$loc["longitude"]?></td>
-                        <td><a href="<?=$loc["url"]?>" target="_blank">Visite</td>
-                    </tr>
-                <?php
-                }            
-                ?>
-            </table>
-        </div>
-
-
-
-
+    <div class="container-fluid px-5 text-center" id="timeToGo"> <!-- global container -->
 
     <?php
- //       include("../view/incShared/footer.php");
+    $_SESSION['pageCount']++;
+    if ($_SESSION["pageCount"] < 3) {
+        include("../view/private/inc/header.php");
+    }else {
+        include("../view/private/inc/header-static.php");
+    }
     ?>
-    </div>
-<?php       // Un moyen pratique de cacher la pollution visuelle que représentent les CDN
-    include("../view/incShared/cdnLeaf-js.php");
+    <div class="container h-25"> <!-- main container -->
+
+    <?php
+      if(isset($errorMessage)): ?>
+                <h4 class="text-danger"><?=$errorMessage?></h4>
+            <?php endif ?>
+            <?php
+    if (isset($_GET["login"])){
+
+     include("inc/login-form.php"); 
+    }   else if (isset($errorMessage)) {
+        ?>
+            <p><?=$errorMessage?></p>
+        <?php
+    }else if (!isset($_SESSION["monID"]) || $_SESSION["monID"] != session_id()) {
+        ?>
+        <div class="text-center">
+        <h3>Cliquez <a href="?login">ICI</a> pour vous connecter</h3>
+        </div>
+        <?php
+    }
+
     ?>
+    <?php
+        if (!isset($_SESSION["monID"]) || $_SESSION["monID"] !== session_id()) {
+            include("inc/welcome-message.php");
+        }else if (isset($_SESSION["permission"]) && $_SESSION["permission"] < 8){
+            include("inc/table.php");
+        } 
+        ?>
+        <?php   
+        if (isset($_SESSION["permission"]) && $_SESSION["permission"] > 7) {
+            include("inc/admin-table.php");
+        }
+        ?>
+    
+    
+        </div> <!-- end main container -->
+    
+            <?php
+            include("../view/incShared/footer.php");
+            ?>
+    
+    
+    </div>  <!-- end global container -->
+    
+    <!-- scripts --><!-- scripts --><!-- scripts --><!-- scripts --><!-- scripts --><!-- scripts --><!-- scripts --><!-- scripts --><!-- scripts --><!-- scripts --><!-- scripts -->
+    <?php
+        include("../view/incShared/cdnJS.php");
+        ?>
         <script src="js/colour-script.js"></script>
-        <script src="js/map-script.js"></script>
-
+        <script src="js/checkbox-script.js"></script>
     </body>
-    </html>
+    </html

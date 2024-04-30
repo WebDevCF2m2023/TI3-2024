@@ -13,11 +13,17 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row justify-content-evenly">
         <li class="nav-item">
           <?php
-              if(isset($_GET["page"]) && $_GET["page"] !== "home") {
+        if (!isset($_SESSION["monID"]) || $_SESSION["monID"] != session_id()) {
+          ?>
+          <a class="nav-link active animate__animated animate__delay-1s animate__fadeIn" aria-current="page" href="?page=home">Home</a>
+          <?php
+        
+            }else if(isset($_GET["page"]) && $_GET["page"] !== "home") {
+            
           ?>
           <a class="nav-link active animate__animated animate__delay-1s animate__fadeIn" aria-current="page" href="?page=adminHome">Home</a>
-          <?php
-            }else {
+        <?php    
+        }else {
               ?>
           <a class="nav-link disabled animate__animated animate__delay-1s animate__fadeIn" aria-current="page" href="?page=adminHome">Home</a>
               <?php

@@ -42,7 +42,7 @@ body, .bodyClassic {
 
 #theMap {
     height: 600px;
-    width: 800px;
+ 
     grid-area: mapGrid;
     margin-right: 50px;
 }
