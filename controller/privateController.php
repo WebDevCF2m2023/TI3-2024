@@ -87,11 +87,29 @@ if(isset($_GET['disconnect'])){
                                 $_POST['url'], 
                                 (float) $_POST['latitude'], 
                                 (float) $_POST['longitude']);
-    
-            if($successUpdate === true){
-                header("Location: ./?administration&updateOK=$id");
+            if(isset($_POST['bootstraptable']) && ctype_digit($_POST['bootstraptable'])){
+                header('Content-Type: application/json; charset=utf-8');
+                if($successUpdate === true) echo json_encode([
+                    'success' => true, 
+                    'update' => $id, 
+                    'name' => $_POST['name'], 
+                    'type' => $_POST['type'], 
+                    'adresse' => $_POST['adresse'], 
+                    'codepostal' => $_POST['codePostal'], 
+                    'ville' => $_POST['country'], 
+                    'url' => $_POST['url'], 
+                    'latitude' => $_POST['latitude'], 
+                    'longitude' => $_POST['longitude'],
+                    'index' => (int)$_POST['bootstraptable']
+                ]);
+                else echo json_encode(['error' => $successUpdate, 'update' => $id, 'index' => (int)$_POST['bootstraptable']]);
                 die();
-            } else $error = $successUpdate;
+            }else{
+                if($successUpdate === true){
+                    header("Location: ./?administration&updateOK=$id");
+                    die();
+                } else $error = $successUpdate;
+            }
         }
     }
 
@@ -99,13 +117,29 @@ if(isset($_GET['disconnect'])){
     require("../view/private/administration.update.html.php");
 }elseif(isset($_GET['delete']) && ctype_digit($_GET['delete'])){
     $id = (int) $_GET['delete'];
-
-    if(isset($_GET['ok'])){ // on supprime
-        $successDelete = deleteLocationByID($db, $id);
-        if($successDelete === true){
-            header("Location: ./?administration&deleteOK=$id");
+    if(isset($_GET['multiple'], $_POST['bootstraptable']) && ctype_digit($_POST['bootstraptable'])){
+        if(preg_match("/^(\d+(,\d+)*)?$/", $_GET['multiple'])){
+            $explode = explode(",", $_GET['multiple']);
+            foreach($explode as $value)
+                deleteLocationByID($db, (int)$value);
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode(['success' => true, 'multiple' => $_GET['multiple']]);
             die();
-        } else $error = $successDelete;
+        }
+    }
+    else if(isset($_GET['ok'])){ // on supprime
+        $successDelete = deleteLocationByID($db, $id);
+        if(isset($_POST['bootstraptable']) && ctype_digit($_POST['bootstraptable'])){
+            header('Content-Type: application/json; charset=utf-8');
+            if($successDelete === true) echo json_encode(['success' => true, 'delete' => $id, 'index' => (int)$_POST['bootstraptable']]);
+            else echo json_encode(['error' => $successDelete, 'delete' => $id, 'index' => (int)$_POST['bootstraptable']]);
+            die();
+        }else{
+            if($successDelete === true){
+                header("Location: ./?administration&deleteOK=$id");
+                die();
+            } else $error = $successDelete;
+        }
     }elseif(isset($_GET['ko'])){ // on annule
         header("Location: ./?administration&deleteKO=$id");
         die();
@@ -127,10 +161,29 @@ if(isset($_GET['disconnect'])){
                                 (float) $_POST['latitude'], 
                                 (float) $_POST['longitude']);
     
-            if(!is_string($successAdd)){
-                header("Location: ./?administration&addOK=$successAdd");
+            if(isset($_POST['bootstraptable']) && ctype_digit($_POST['bootstraptable'])){
+                header('Content-Type: application/json; charset=utf-8');
+                if(!is_string($successAdd)) echo json_encode([
+                    'success' => true, 
+                    'add' => $successAdd,
+                    'name' => $_POST['name'], 
+                    'type' => $_POST['type'], 
+                    'adresse' => $_POST['adresse'], 
+                    'codepostal' => $_POST['codePostal'], 
+                    'ville' => $_POST['country'], 
+                    'url' => $_POST['url'], 
+                    'latitude' => $_POST['latitude'], 
+                    'longitude' => $_POST['longitude'],
+                    'index' => (int)$_POST['bootstraptable']
+                ]);
+                else echo json_encode(['error' => $successAdd, 'add' => -1, 'index' => (int)$_POST['bootstraptable']]);
                 die();
-            } else $error = $successAdd;
+            }else{
+                if(!is_string($successAdd)){
+                    header("Location: ./?administration&addOK=$successAdd");
+                    die();
+                } else $error = $successAdd;
+            }
         }
     }
     require("../view/private/administration.add.html.php");

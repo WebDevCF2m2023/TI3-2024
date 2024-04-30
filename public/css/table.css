@@ -1,0 +1,6 @@
+.thmin{
+    min-width: 250px !important;
+}
+.thmin.long, .thmin.lat{
+    min-width: 185px !important;
+}

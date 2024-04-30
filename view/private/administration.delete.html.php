@@ -19,7 +19,7 @@
                     <a class="nav-link" href="/">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/?administration">Panel Administration</a>
+                    <a class="nav-link active" href="/?administration">Panel administration</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/?disconnect">Se deconnecter</a>
