@@ -156,3 +156,8 @@ label[for="longitude"]{
         right: 5%;
     }
 }
+
+#nbLieu{
+    color: #2a454e !important;
+    font-weight: bold;
+}
