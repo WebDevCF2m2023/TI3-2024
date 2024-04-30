@@ -4,12 +4,29 @@
  * @return array All locations
  * @return string if a error is throw
  */
-function getAllLocations(PDO $db) : array | string{
+function getAllLocations(PDO $db, int $offset = null, int $limit = null) : array | string{
     try {
-        $query = $db->query("SELECT * FROM `localisations` ORDER BY id DESC");
+        $sql = "SELECT * FROM `localisations` ORDER BY id DESC" . ($offset !== null && $limit !== null ? " LIMIT $offset, $limit" : "");
+        $query = $db->query($sql);
         $locations = $query->fetchAll();
         $query->closeCursor();
         return $locations;
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+}
+
+/**
+ * @return int total of locations
+ * @return string if a error is throw
+ */
+function getCountTotalLocations(PDO $db) : int | string{
+    try {
+        $sql = "SELECT COUNT(*) as `total` FROM `localisations`";
+        $query = $db->query($sql);
+        $total = $query->fetch();
+        $query->closeCursor();
+        return (int) $total['total'];
     } catch (Exception $e) {
         return $e->getMessage();
     }
