@@ -34,7 +34,7 @@
     </nav>
   <!--Fin NAVBAR-->
   <div id="content">
-        <h3 class="text-center mt-5">Article à modifier</h3>
+        <h3 class="text-center mt-5 mb-5">Article à modifier</h3>
         <?php
         if (isset($errorUpdate)) :
         ?>
@@ -86,7 +86,7 @@
                             <input type="number" name="longitude" value="<?= $getOneLocation['longitude'] ?>" step="0.000000001" class="form-control mx-auto w-25" id="longitude" required>
                         </div>
                         <div class="mb-3 text-center">
-                            <input type="submit" value="Modifier" class="btn btn-outline-success">
+                            <input type="submit" value="Modifier" class="btn btn-outline-success mt-4">
                         </div>
                     </form>
                 </div>
