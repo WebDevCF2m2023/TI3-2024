@@ -14,14 +14,16 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete']))
 
     // si on valide
     if(isset($_GET['ok'])){
-
+    
+        
         $delete = deleteOurdatasByID($connect, $idDelete);
         if($delete===true){
             header("Location: ./?ok");
             die;
         }
     }
-
+    
+    
 
     $delete = getOneOurdatasByID($connect,$idDelete);
 

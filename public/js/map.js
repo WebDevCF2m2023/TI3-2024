@@ -8,7 +8,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 var greenIcon = L.icon({
     iconUrl: '../img/epingle.png',
-    iconSize:     [25, 25], // size of the icon
+    iconSize:     [35, 35], // size of the icon
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
