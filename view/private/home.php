@@ -15,6 +15,17 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.css">
 </head>
 <body>
+    <?php if (isset($_GET["delete_message"])): ?>
+        <div class="alert alert-danger text-center text-danger" role="alert">
+            <?=$_GET["delete_message"]?>
+        </div>
+    <?php endif; ?>
+    <?php if (isset($_GET["create_message"])): ?>
+        <div class="alert alert-success text-center text-success" role="alert">
+            <?=$_GET["create_message"]?>
+        </div>
+    <?php endif; ?>
+    <h3></h3>
     <h1>Carte interactive</h1>
     <h2>Liste théatres à Bruxelles</h2>
     <p id="logout-link"><a href="./?p=logout">Se déconnecter</a></p><p id="create-link"><a href="./?create">Insérer un nouvel élement</a></p>
