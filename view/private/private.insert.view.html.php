@@ -13,9 +13,9 @@
         require_once "../view/inc/navbar.admin.php";
     ?>
     <form method="POST" >
-        <div class="container">
-        <div class="row mb-4">
-            <div class="col">
+        <div class="container border-start border-end border-success rounded-5 p-4">
+        <div class="row mb-4 mt-5">
+            <div class="col">   
                 <div data-mdb-input-init class="form-outline">
                     <input type="text" id="form3Example1" class="form-control" name="nom" placeholder="Nom" required/>
                 </div>
@@ -49,7 +49,9 @@
         <div data-mdb-input-init class="form-outline mb-4">
             <input type="number" step="0.000000001"  name="longitude" id="form3Example4" class="form-control" placeholder="Longitude" required/>
         </div>
-        <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Ajouter</button>
+        <div class="text-center">
+            <button data-mdb-ripple-init type="submit" class="btn btn-outline-success btn-rounded mb-4">Ajouter</button>
+        </div>
     </div>
     </form>   
 

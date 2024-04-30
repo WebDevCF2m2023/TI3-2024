@@ -33,7 +33,7 @@
         ?>
 
     <form method="POST" >
-            <div class="container">
+            <div class="container border-end border-bottom border-primary rounded-5 p-4">
             <div class="row mb-4">
                 <div class="col">
                 <div data-mdb-input-init class="form-outline">
@@ -76,7 +76,9 @@
                 <label class="form-label" for="form3Example4">Longitude</label>
                 <input type="number" step="0.000000001"  name="longitude" id="form3Example4" class="form-control" value="<?=$getOneAdresse['longitude']?>" />
             </div>
-            <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Update</button>
+            <div class="text-center">
+                <button data-mdb-ripple-init type="submit" class="btn btn-outline-primary btn-rounded mb-4">Update</button>
+            </div>
         </div>
     </form>
     <?php endif ?>   

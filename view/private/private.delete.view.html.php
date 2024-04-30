@@ -45,8 +45,8 @@
             <li class="list-group-item px-4"><?=$getOneAdresse['longitude']?></li>
         </ul>
         <div class="card-body">
-            <a href="?delete=<?=$idDelete?>&ok"><button value="supprimer" class="btn btn-success">supprimer</button></a>
-            <a href="./"><button value="Non" class="btn btn-danger">Ne pas supprimer</button></a>
+            <a href="?delete=<?=$idDelete?>&ok"><button value="supprimer" class="btn btn-outline-success btn-rounded">supprimer</button></a>
+            <a href="./"><button value="Non" class="btn btn-outline-danger btn-rounded">Ne pas supprimer</button></a>
         </div>
         </div>
     </div> 

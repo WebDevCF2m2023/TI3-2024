@@ -43,12 +43,12 @@
         ?>
         <h3>Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
 
-        <section class="container my-5">
+        <section class="container mt-3 mb-5 border-bottom border-start border-danger rounded-5 py-4 px-5">
             <div class="row">
                 <div class="col">
                     <div class="table-responsive">
                         <table
-                            class="table mt-3"
+                            class="table my-2"
                             data-toggle="table"
                             data-toolbar="#toolbar"
                             data-show-export="true"

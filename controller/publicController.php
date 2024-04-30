@@ -5,9 +5,9 @@ Gère le site pour un visiteur non connecté
 
 // JSON pour l'API
 if(isset($_GET['json'])){
-    $datas = getLocations($db);
-    if(!is_string($datas)){
-        echo json_encode($datas);
+    $locations = getLocations($db);
+    if(!is_string($locations)){
+        echo json_encode($locations);
     }
     exit();
 }

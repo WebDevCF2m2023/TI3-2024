@@ -25,12 +25,13 @@
             <h3 id="comment">Pas encore de lieu.</h3>
         <?php
         // Nous avons des lieux
-        else:            
+        else:   
+            // on compte le nombre de données 
+            //$nb = count($datas);         
         ?>
-            <h3>Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
+            <!--<h3>Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>-->
         <?php endif ?> 
 
-        
         <h3>Carte Interactive</h3>
         <p>Parcours BD à Bruxelles</p>
         <div id="button">
