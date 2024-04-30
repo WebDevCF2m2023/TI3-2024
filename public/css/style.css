@@ -237,6 +237,11 @@ strong{
 }
 
 @media screen and (width <= 576px) {
+
+    .connectform{
+        margin-top: 4%;
+    }
+
     #resultat{
         grid-template-columns: 1fr;
         grid-template-areas: 
@@ -309,4 +314,13 @@ font-size: large;
 margin-left: 1%;
 }
 
+}
+
+
+@media screen and (width <= 1024px) {
+
+    .connectform{
+        margin-top: 35%;
+    }
+   
 }

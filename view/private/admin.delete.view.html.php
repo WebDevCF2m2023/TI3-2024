@@ -31,6 +31,7 @@ include "../view/inc/connect.php";
         </div>
         </div>
 </div>   
+<div class="connectform">
     <div id="content">
     
         <?php
@@ -65,6 +66,7 @@ include "../view/inc/connect.php";
         </div>
     </div>
     </div>
+    <div class="connectform">
 <?php 
     include "../view/inc/footer.php";
 ?>
