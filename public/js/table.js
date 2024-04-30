@@ -1,13 +1,19 @@
 const $table = $('#table');
 const $remove = $('#remove');
 const $add = $('#add');
+const selectApiMode = document.querySelector(".select-api-mode");
 const baseActions = '<div class="d-flex justify-content-center"><a href="javascript:void(0)" title="editer"><i class="edit bi bi-pen me-4"></i></a><a href="javascript:void(0)" title="supprimer"><i class="remove bi bi-trash text-danger"></i></a></div>';
 let selections;
 let lastValueRow = {};
 let newValueEdit = {};
 let newValueInsert = {};
+let apiMode;
 window.operateEvents = {
     'click .remove': function (e, value, row, index) {
+        if(!apiMode){
+            window.location = `?delete=${row.id}`;
+            return;
+        }
         if(confirm(`Êtes-vous sûre de vouloir supprimer l'élément avec comme ID ${row.id} ?`)){
             postData(`?delete=${row.id}&ok`, {
                 bootstraptable: index
@@ -20,6 +26,10 @@ window.operateEvents = {
         }
     },  
     'click .validEdit': function (e, value, row, index) {
+        if(!apiMode){
+            window.location = `?update=${row.id}`;
+            return;
+        }
         if(!checkCanValidate(newValueEdit)) return; // TODO MESSAGE
         postData(`?update=${row.id}`, {
             name: newValueEdit.nom,
@@ -40,6 +50,10 @@ window.operateEvents = {
             lastValueRow = {};
         });
     },'click .validInsert': function (e, value, row, index) {
+        if(!apiMode){
+            window.location = `?addLocation`;
+            return;
+        }
         if(!checkCanValidate(newValueInsert)) return; // TODO MESSAGE
         postData(`?addLocation`, {
             name: newValueInsert.nom,
@@ -69,6 +83,10 @@ window.operateEvents = {
         });
     },
     'click .edit': function (e, value, row, index) {
+        if(!apiMode){
+            window.location = `?update=${row.id}`;
+            return;
+        }
         if(lastValueRow.nom !== undefined){
             resetRowWithLastValue();
         }
@@ -122,6 +140,10 @@ $remove.click(function () {
 });
 
 $add.click(function () {
+    if(!apiMode){
+        window.location = `?addLocation`;
+        return;
+    }
     $table.bootstrapTable('insertRow', {
         index: 0,
         row: {
@@ -326,7 +348,24 @@ function popup(message, success = true){
         document.body.removeChild(div);
     }, 5 * 1000 /* 5s */);
 }
-  
+
+function selectMode(e){
+    const value = +e.target.value;
+    if(value === 1) setApiMode(true);
+    else setApiMode(false);
+}
+
+function setApiMode(value){
+    apiMode = value;
+    localStorage.setItem("apiMode", value);
+}
+
+function getApiMode(){
+    let store = localStorage.getItem("apiMode");
+    if(store === null) store = true;
+
+    return store === "true";
+}
 
 addEventListener('keydown', e => e.key === "Enter" && $('.validEdit').length!==0 ? $('.validEdit').click() : undefined);
 
@@ -339,4 +378,10 @@ $(function(){
     $table.on('page-change.bs.table', function (){
         lastValueRow = {};
     });
+
+    apiMode = getApiMode();
+    if(!apiMode){
+        selectApiMode.children[0].selected = false;
+        selectApiMode.children[1].selected = true;
+    }
 });
