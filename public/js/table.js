@@ -253,6 +253,7 @@ function formatBaseActions(a){
 
 function checkCanValidate(objectToCheck){
     for (const key in objectToCheck) {
+        if(key === "id") continue;
         if(checkNewValueInputByName(key, objectToCheck) === true) continue;
         return false;
     }
