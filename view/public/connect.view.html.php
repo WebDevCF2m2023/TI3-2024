@@ -26,7 +26,7 @@
 <div class="container">
         <div class="row">
             <div class="col p-5">
-        <h1 class="text-center">AdminConnect.</h1>
+        <h1 class="text-center">  <span class="text-primary">A</span><span class="text-danger">d</span><span class="text-warning">m</span><span class="text-primary">i</span><span class="text-success">n</span>Connect.</h1>
         <?php if(isset($error)): ?>
             <h4 class="text-center text-danger"id="alert"><?=$error?></h4>
         <?php endif ?> 

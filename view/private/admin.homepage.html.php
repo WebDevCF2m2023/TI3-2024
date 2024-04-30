@@ -27,8 +27,8 @@ include "../view/inc/connect.php";
     <div class="container">
         <div class="row">
             <div class="col p-5">
-                <h2 class="text-center h1">DataAdmin.</h2>
-                <?php if(isset($_GET['404'])): ?>
+                <h1 class="text-center h1"><span class="text-primary">A</span><span class="text-danger">d</span><span class="text-warning">m</span><span class="text-primary">i</span><span class="text-success">n</span>Data.</h1>
+                <?php if(isset($_GET['insert'])): ?>
                     
                     <h2 class="text-succes">Insert Done</h2>
                     

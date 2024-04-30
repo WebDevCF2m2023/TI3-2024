@@ -27,7 +27,7 @@ include "../view/inc/connect.php";
 <div class="container">
         <div class="row">
             <div class="col p-5">
-        <h1 class="text-center">DeleteData.</h1>
+        <h1 class="text-center">  <span class="text-primary">A</span><span class="text-danger">d</span><span class="text-warning">m</span><span class="text-primary">i</span><span class="text-success">n</span>DeleteData.</h1>
         </div>
         </div>
 </div>   
