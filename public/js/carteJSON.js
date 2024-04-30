@@ -1,6 +1,6 @@
 // Définition du centre de la carte et du zoom
 
-const map = L.map('map').setView([50.8466, 4.3528], 16);
+const map = L.map('map').setView([50.8466, 4.3528], 15);
 
 //Ajout du fond de carte
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -79,9 +79,10 @@ function itemClick() {
     let latitude = this.getAttribute('latitude');
     let longitude = this.getAttribute('longitude');
     let id = this.getAttribute('id');
-    console.log(`${latitude} ${longitude}`);
+    console.log(`${id} ${latitude} ${longitude}`);
 
-    let marqueur = markerTable[id];
+    let marqueur = markerTable[id-1];
+    console.log(markerTable[id-1]);
 
     map.flyTo([latitude, longitude], 17);
 

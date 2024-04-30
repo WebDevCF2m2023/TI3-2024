@@ -25,7 +25,7 @@ try {
 }
 //JSON pour l'API
 if (isset($_GET['json'])) {
-    $datas = getAllLocations($db);
+    $datas = getLocations($db);
     if (!is_string($datas)) {
         echo json_encode($datas);
     }
