@@ -56,7 +56,7 @@
   <tbody>
     <tr>
 
-      <th scope="row">1</th>
+      <th scope="row"></th>
       <form method="POST" name="localisation" action="">
       <td><input type="text" name="rue" value="<?=$getOneGeoloc['rue']?>" required></td>
       <td><textarea name="ville"><?=$getOneGeoloc['ville']?></textarea></td>

@@ -10,8 +10,8 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </head>
-<body>
-    <h1 class="text-center">Insertion d'un lieu</h1>
+<body class="bg-dark">
+    <h1 class="text-center text-white">Insertion d'un lieu</h1>
     <nav>
        
             <a class="btn btn-info col-4 offset-4 mt-3 text-white" href="./">Accueil de l'administration</a>
@@ -19,16 +19,31 @@
             <a class="btn btn-danger col-4 offset-4 mt-3 text-white" href="?disconnect">Déconnexion</a>
         
     </nav>
-    <div id="content">
-
-        <form method="POST" name="geo" action="">
-                <input type="text" name="rue" value="" placeholder="rue" required><br>
-                <input type="number" name="codepostal" value="" placeholder="codepostal" required><br>
-                <textarea name="ville" placeholder="ville"></textarea><br>
-                <input type="number" placeholder="latitude" name="latitude" step="0.000000001" value="" required>
-                <input type="number" name="longitude" placeholder="longitude" step="0.000000001" value="" required>
-                <input type="submit" value="Insérer">
-        </form>
-    </div>
+   
+    <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Rue</th>
+      <th scope="col">Code postal</th>
+      <th scope="col">Ville</th>
+      <th scope="col">Latitude</th>
+      <th scope="col">Longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <form method="POST" name="geo" action="">
+      <th scope="row"></th>
+      <td><input type="text" name="rue" value="" placeholder="rue" required></td>
+      <td> <input type="number" name="codepostal" value="" placeholder="codepostal" required></td>
+      <td><textarea name="ville" placeholder="ville"></textarea></td>
+      <td><input type="number" placeholder="latitude" name="latitude" step="0.000000001" value="" required></td>
+      <td><input type="number" name="longitude" placeholder="longitude"  step="0.000000001" value="" required></td>
+      <td><input type="submit" value="Insérer"></td>
+    </tr>
+    </form>
+  </tbody>
+</table>
 </body>
 </html>
