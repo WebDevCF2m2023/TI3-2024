@@ -1,0 +1,186 @@
+body{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: auto;
+}
+
+#carte {
+    width:100%;
+    height:800px;
+    margin-bottom: 15px;
+}
+
+.navbar-home h1{
+  color: white;
+}
+
+
+.photo {
+    width:100px;
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.navbar-links li {
+  display: inline;
+  margin-right: 20px;
+  list-style-type: none;
+  
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.connect-btn {
+  background-color: #4ba60a;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute; 
+  right: 40px; 
+  top: 40px;
+  list-style-type: none;
+
+}
+
+.navbar-home button a {
+  text-decoration: none;
+  color: white;
+}
+
+
+.navbar-home {
+  background-color: #49d052;
+  padding: 10px 20px;
+  display: flex;
+  align-items: flex-end; 
+}
+
+#resultats {
+    width: 80%; 
+    margin: 0 auto; 
+    border: 1px solid #ccc; 
+    padding: 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 15px;
+  }
+  
+  #liste {
+    list-style: none; 
+    padding: 0; 
+    cursor: pointer;
+    
+    
+  }
+  
+  #liste li {
+    margin-bottom: 15px; 
+    padding: 10px; 
+    border-bottom: 1px solid #ddd; 
+    background-color: #f9f9f9; 
+    list-style: none;
+    margin-top: 15px;
+    
+    
+  }
+  
+  #liste li:hover {
+    background-color: #e9e9e9; 
+  }
+
+ 
+
+  h1{
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  @media only screen and (min-width: 640px){
+
+
+    #resultats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+     
+    }
+
+
+
+   
+
+    #carte {
+      width:100%;
+      height:800px;
+      margin-bottom: 15px;
+  }
+
+  .navbar-home {
+    background-color: #49d052;
+    padding: 15px;
+    display: flex;
+    align-items: flex-end; 
+    
+  }
+  
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+  
+  h1 {
+    color: #000000;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .navbar-links li {
+    display: inline;
+    margin-right: 20px;
+    list-style-type: none;
+    
+  }
+  
+  .navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    list-style-type: none;
+  }
+  
+  .connect-btn {
+    background-color: #4ba60a;
+    color: #fff;
+    padding: 10px 15px;
+    border: 10pxpx;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute; 
+    right: 40px; 
+    top: 40px; 
+    list-style-type: none;
+
+  }
+
+  .navbar-home button a {
+    text-decoration: none;
+    color: white;
+  }
+  
+
+    
+  }
+  
+  
