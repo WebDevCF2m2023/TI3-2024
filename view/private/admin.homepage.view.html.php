@@ -3,75 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Admin Homepage</title>
+    <style>
+        /* Additional CSS styles if needed */
+    </style>
 </head>
-<body>
-<div class="antialiased text-gray-900 px-6">
-    <div class="max-w-xl mx-auto py-12 divide-y md:max-w-8xl">
-        <div class="py-8">
-            <h1 class="text-4xl font-bold">Admin Homepage</h1>
-            <p class="mt-2 text-lg text-gray-800">
-                Administration des lieux sur notre site.
-            </p>
-        </div>
-        <nav class="flex sm:col-span-1">
-            <ol role="list" class="flex items-center space-x-2 sm:space-x-5">
-                <li class="flex items-center">
-                    <div>
-                        <a href="./">Accueil Admin</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex items-center">
-                        <a href="?insert">Ajouter une location</a>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex items-center">
-                        <a href="?disconnect">Déconnexion</a>
-                    </div>
-                </li>
-            </ol>
-        </nav>
-        <div class="py-12">
-        <h2 class="text-2xl font-bold">Administration de nos datas</h2>
-        <div class="mt-8 max-w-md">
-            <div class="grid grid-cols-1 gap-6">
-        <?php if(isset($message)): ?>
-                <h3><?=$message?></h3>
-        <?php elseif(isset($error)): ?>
-                <h3 class="error"><?=$error?></h3>
-        <?php else: ?>
-        <!-- modèle de tableau à remplir avec le foreach -->
-        <table class="border-collapse border border-slate-600">
-            <tr>
-                <th class="border border-slate-600">id</th>
-                <th class="border border-slate-600">nom</th>
-                <th class="border border-slate-600">adresse</th>
-                <th class="border border-slate-600">latitude</th>
-                <th class="border border-slate-600">longitude</th>
-                <th class="border border-slate-600">Modifier</th>
-                <th class="border border-slate-600">supprimer</th>
-            </tr>
-                <?php foreach($ourDatas as $item): ?>
-                    <tr>
-                        <td class="text-center"><?=$item['id']?></td>
-                        <td><?=$item['nom']?></td>
-                        <td><?=$item['adresse']?></td>
-                        <td><?=$item['latitude']?></td>
-                        <td><?=$item['longitude']?></td>
-                        <td><a href="?update=<?=$item['id']?>"><img src="img/update.png" width="32" height="32" alt="update" /></a></td>
-                        <td><a href="?delete=<?=$item['id']?>"><img src="img/delete.png" width="32" height="32" alt="delete" /></a></td>
-                    </tr>
-                <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
+<body class="bg-gray-100">
+    <div class="container py-4">
+        <h1 class="text-center mb-4">Admin Homepage</h1>
+        <p class="text-center text-lg text-gray-800">Administration des lieux sur notre site.</p>
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light my-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./">Accueil Admin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="?insert">Ajouter une location</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="?disconnect">Déconnexion</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
 
+        <div class="py-12">
+            <h2 class="text-2xl font-bold">Administration de nos données</h2>
+            <div class="mt-8 max-w-md">
+                <div class="grid grid-cols-1 gap-6">
+                    <?php if(isset($message)): ?>
+                        <h3><?=$message?></h3>
+                    <?php elseif(isset($error)): ?>
+                        <h3 class="error"><?=$error?></h3>
+                    <?php else: ?>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Adresse</th>
+                                    <th scope="col">Latitude</th>
+                                    <th scope="col">Longitude</th>
+                                    <th scope="col">Modifier</th>
+                                    <th scope="col">Supprimer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach($ourDatas as $item): ?>
+                                    <tr>
+                                        <td><?=$item['id']?></td>
+                                        <td><?=$item['nom']?></td>
+                                        <td><?=$item['adresse']?></td>
+                                        <td><?=$item['latitude']?></td>
+                                        <td><?=$item['longitude']?></td>
+                                        <td><a href="?update=<?=$item['id']?>"><img src="img/update.png" width="32" height="32" alt="update" /></a></td>
+                                        <td><a href="?delete=<?=$item['id']?>"><img src="img/delete.png" width="32" height="32" alt="delete" /></a></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
-
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-6uAhkp9lKBKZHpP5WfJFLtcveY5gRPfU8Q7i4vE5/5ySA3oW7guQ/nrCk2GOs9Hv" crossorigin="anonymous"></script>
 </body>
 </html>

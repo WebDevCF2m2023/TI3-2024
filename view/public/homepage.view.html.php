@@ -9,36 +9,23 @@
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
           crossorigin=""/>
     <!-- ma CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <style>
+       
+    </style>
 </head>
 <body>
-    <h1>carte intéractive</h1>
+    <h1>Carte interactive</h1>
     <nav id="nav1">
         <ul>
             <li><a href="./">Accueil</a></li>
-            <li><a href="?connect">Connexion</a>
+            <li><a href="?connect">Connexion</a></li>
         </ul>
     </nav>
-    <div class="content">
-        <h2 id="nc">Notre carte</h2>
-        <?php /* ?>
-        <?php if(isset($message)): ?>
-                <h3><?=$message?></h3>
-        <?php elseif(isset($error)): ?>
-                <h3 class="error"><?=$error?></h3>
-        <?php else:
-                foreach($ourDatas as $item): ?>
-                    <h4><?=$item['title']?></h4>
-                    <p><?=$item['ourdesc']?></p>
-                    <p>Latitude : <?=$item['latitude']?></p>
-                    <p>Longitude : <?=$item['longitude']?></p>
-                <?php endforeach; ?>
-        <?php endif;
-        */ ?>
-        <h1>Les adresses</h1>
-        <div id="resultats">
-            <div id="map"></div>
-            <div id="liste"></div>
+    <div class="container">
+        <div id="map"></div>
+        <div id="liste">
+            <h2>Les adresses</h2>
         </div>
     </div>
     <!-- JS de Leaflet -->
