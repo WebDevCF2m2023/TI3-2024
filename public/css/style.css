@@ -4,6 +4,7 @@
 
 .titreHomepage{
     text-align: center;
+    
 }
 
 a #btnHomepage{
@@ -21,8 +22,13 @@ a #btnHomepage{
     align-items: center;
     padding: 10px;
     cursor: pointer;
-    
-   
+    background-color: #2a454e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+  }
+  #btnHomepage:hover{
+    text-shadow: 0 0 10px white;
   }
   
   #alert {
@@ -80,4 +86,8 @@ a #btnHomepage{
         right: 20px;
     }
    
+}
+
+li{
+    margin-bottom: 10px;
 }
