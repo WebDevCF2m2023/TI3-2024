@@ -237,6 +237,14 @@ strong{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.deletemain{
+    margin-top: 2%;
+}
+
+.titredelete{
+    margin-top: 2%;
+}
+
 @media screen and (width <= 576px) {
 
     .connectform{

@@ -32,7 +32,7 @@ include "../view/inc/connect.php";
         </div>
 </div>   
 <div class="connectform">
-    <div id="content">
+    <div class="deletemain" id="content">
     
         <?php
         if(isset($error)):
