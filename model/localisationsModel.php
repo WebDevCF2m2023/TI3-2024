@@ -99,3 +99,15 @@ function remove_location(PDO $db, int $id):true|string{
         return $e->getMessage();
     }
 }
+
+function get_locations_number(PDO $db):int|string{
+    try {
+        $sql = "SELECT COUNT(*) AS nb FROM `localisations`";
+        $query = $db->query($sql);
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        $query->closeCursor();
+        return $result["nb"];
+    }catch (Exception $e){
+        return $e->getMessage();
+    }
+}

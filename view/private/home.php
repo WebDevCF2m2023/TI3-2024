@@ -29,7 +29,11 @@
     <h1>Carte interactive</h1>
     <h2>Liste théatres à Bruxelles</h2>
     <p id="logout-link"><a href="./?p=logout">Se déconnecter</a></p><p id="create-link"><a href="./?create">Insérer un nouvel élement</a></p>
-    <h4 id="nb-locations"></h4>
+    <?php if (isset($nb_page) && $nb_page): ?>
+        <h4 id="nb-locations">Il y a <?=$nb_page?> lieux dans la base de données</h4>
+    <?php elseif (isset($nb_page)): ?>
+        <h4 id="nb-locations">Pas encore de lieux</h4>
+    <?php endif; ?>
     <main>
         <div id="map"></div>
         <!-- table -->
@@ -49,6 +53,47 @@
                     </tbody>
                 </table>
             </div>
+            <!-- pagination -->
+            <?php if (isset($nb_page)): ?>
+                <nav>
+                    <ul class="pagination d-flex justify-content-center">
+                        <li class="page-item">
+                            <?php if (isset($_GET["page"]) && $_GET["page"]!=="2"): ?>
+                                <a class="page-link" href="./?page=<?=(int)$_GET["page"]-1?>">Previous</a>
+                            <?php elseif (isset($_GET["page"])): ?>
+                                <a class="page-link" href="./">Previous</a>
+                            <?php else: ?>
+                                <a class="page-link disabled" href="./">Previous</a>
+                            <?php endif; ?>
+                        </li>
+                        <li class="page-item">
+                            <?php if (isset($_GET["page"])): ?>
+                                <a class="page-link" href="./">1</a>
+                            <?php else: ?>
+                                <a class="page-link disabled" href="./">1</a>
+                            <?php endif; ?>
+                        </li>
+                        <?php for($i=2;$i<=$nb_page;$i++): ?>
+                            <li class="page-item">
+                                <?php if (isset($_GET["page"]) && $_GET["page"]==="$i"): ?>
+                                    <a class="page-link disabled" href="?page=<?=$i?>"><?=$i?></a>
+                                <?php else: ?>
+                                    <a class="page-link" href="?page=<?=$i?>"><?=$i?></a>
+                                <?php endif; ?>
+                            </li>
+                        <?php endfor; ?>
+                        <li class="page-item">
+                            <?php if (isset($_GET["page"]) && (int)$_GET["page"]==$nb_page): ?>
+                                <a class="page-link disabled" href="./">Next</a>
+                            <?php elseif (isset($_GET["page"])): ?>
+                                <a class="page-link" href="./?page=<?=(int)$_GET["page"]+1?>">Next</a>
+                            <?php else: ?>
+                                <a class="page-link" href="./?page=2">Next</a>
+                            <?php endif; ?>
+                        </li>
+                    </ul>
+                </nav>
+            <?php endif; ?>
         </div>
     </main>
     <!-- leaflet -->
