@@ -3,7 +3,7 @@
     <div class="container-fluid">
 
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped animate__animated animate__zoomIn" data-toggle="table" data-show-columns="false" data-search="false" data-pagination="true" data-checkbox-header="false">
+                        <table class="table table-bordered table-striped animate__animated animate__zoomIn" data-toggle="table" data-show-columns="false" data-search="true" data-pagination="true" data-checkbox-header="false">
                             <!-- J'ai ajouté l'animation ici car sinon, BS fait un bizarre effet -->
                         <thead>
                                 <tr>

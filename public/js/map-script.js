@@ -53,7 +53,7 @@ const markerTable = [];
                         url = splitParam[1];
                     }
             });
-
+console.log(url);
 
         markerTable.push({"lat":lat,"lon":lon,"nom":nom,"id":id, "url":url});
     }
@@ -64,7 +64,7 @@ const markerTable = [];
 function placeMarkers(marker){
     for (let item in marker){
         let thisMarker = L.marker([marker[item].lat, marker[item].lon]).addTo(map);
-        thisMarker.bindPopup(`<div class="text-center"><h4>${marker[item].nom}</h4><a href="${marker[item].url}" target="_blank"><h5>Visite</h5></a></div>`);
+        thisMarker.bindPopup(`<div class="markerIcon"><h4>${marker[item].nom}</h4><a href="${marker[item].url}" target="_blank"><h5>Visite</h5></a></div>`);
         markerTable.push(thisMarker);
     }
 

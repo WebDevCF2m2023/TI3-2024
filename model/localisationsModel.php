@@ -132,3 +132,5 @@ function updateItemById (PDO $db, string $name, string $type, string $add, strin
     }
     
 }
+
+

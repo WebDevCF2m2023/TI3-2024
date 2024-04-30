@@ -22,7 +22,10 @@ if(isset($_GET["page"])) {
                             $title = "Voir la Carte";
                             include("../view/public/mapView.php");
                             break;                                          
-                      
+                            case "homeBS" :
+                                $title = "Bienvenue à nouveau";
+                                include("../view/public/homeViewBS.php");
+                                break;
                         
                         default :
                         $title = "Page Introuvable";

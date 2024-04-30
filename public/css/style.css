@@ -1,3 +1,11 @@
+@font-face {
+    font-family: HVNThin;
+    src: url("../assets/helvetica-neue-5/HelveticaNeueThin.otf");
+
+    font-family: HVNRoman;
+    src: url("../assets/helvetica-neue-5/HelveticaNeueRoman.otf");
+  }
+
 body, .bodyClassic {
     background: hsla(197, 14%, 57%, 1);
     background: linear-gradient(-90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
@@ -38,6 +46,8 @@ body, .bodyClassic {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: HVNRoman;
+    text-align: center;
 }
 
 #theMap {
@@ -49,7 +59,7 @@ body, .bodyClassic {
 
 .mainMap {
     display: grid;   
-    grid-template-columns: 80% 20%;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 600px;
     grid-template-areas: 
     "mapGrid listGrid"
@@ -59,9 +69,40 @@ body, .bodyClassic {
 
 .listDiv {
     grid-area: listGrid;
+    display: flex;
+    flex-direction: column;
 }
 
-.listTable {
+.listDivLarge {
+    grid-area: listGridLarge;
+    margin-top: 50px;
+}
+
+
+.normalTable {
+    border: 1px solid black;
+    margin-top: 25px;
+    border-collapse: collapse;
+}
+
+.normalTable td {
+    border: 1px solid black;
+}
+
+.normalTable tr:nth-child(even) td:nth-child(even), .normalTable tr:nth-child(odd) td:nth-child(odd) {
+    background-color: hsla(128, 17%, 86%, 1);
+}
+
+.normalTable tr:nth-child(odd) td:nth-child(even), .normalTable tr:nth-child(even) td:nth-child(odd) {
+    background-color: hsla(45, 40%, 94%, 1);
+}
+
+.markerIcon {
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.markerIcon * {
+    margin: 0;
 }
