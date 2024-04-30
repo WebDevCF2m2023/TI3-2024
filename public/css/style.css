@@ -11,6 +11,10 @@ p {
     text-align: center;
 }
 
+#tophomepage{
+    margin-top: 3vh;
+}
+
 #resultat {
     display: flex;
 }
@@ -26,7 +30,11 @@ nav ul li{
     padding-right: 1em;
 }
 
-#alert{
+#messages h3{
+    color: rebeccapurple;
+}
+
+#alert {
     color: red;
 }
 

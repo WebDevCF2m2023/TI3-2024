@@ -31,7 +31,7 @@
         ?>
             <!--<h3>Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>-->
         <?php endif ?> 
-
+        <div id="tophomepage">
         <h3>Carte Interactive</h3>
         <p>Parcours BD à Bruxelles</p>
         <div id="button">
@@ -39,6 +39,8 @@
                 <a href="?connect">Connexion à l'administration</a>
             </button>
         </div>
+        </div>
+        
             
         <!-- Zone d'affichage de la carte -->
         <div id="resultat">

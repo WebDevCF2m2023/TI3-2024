@@ -41,7 +41,7 @@
             // on compte le nombre de données 
             $nb = count($datas);
         ?>
-        <h3>Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
+            <h3 id="messages">Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
 
         <section class="container mt-3 mb-5 border-bottom border-start border-danger rounded-5 py-4 px-5">
             <div class="row">
@@ -87,8 +87,8 @@
                                 <td><?=$data['nb_velos']?></td>
                                 <td><?=$data['latitude']?></td>
                                 <td><?=$data['longitude']?></td>
-                                <td><a href="?update=<?=$data['id']?>"><i class="edit bi bi-pen me-4"></i></a></td>
-                                <td><a href="?delete=<?=$data['id']?>"><i class="remove bi bi-trash text-danger"></i></a></td>
+                                <td><a href="?update=<?=$data['id']?>"><i class="bi bi-bookmark-plus"></i></a></td>
+                                <td><a href="?delete=<?=$data['id']?>"><i class="bi bi-dash-circle text-danger"></i></a></td>
                             </tr>
                             <?php endforeach ?>
                         </tbody>
