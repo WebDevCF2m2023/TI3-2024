@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-if (!isset($_SESSION["showGreeting"])) {
-    $_SESSION['showGreeting'] = true;
-}
+if (!isset($_SESSION["pageCount"])){
+    $_SESSION['pageCount'] = 0;
+    }
     
 require_once("../config.php");
 require_once("../controller/dbConnectController.php");

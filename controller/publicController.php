@@ -1,14 +1,18 @@
 <?php
-$allLocals = getAllLocals($db);
+$getMaps = getAllMaps($db);
 
 // LOGIN
 if (isset($_POST["userNameInp"], $_POST["userPassInp"])) {
-    $login = attemptAdminLogin($db, $_POST["userNameInp"], $_POST["userPassInp"]);
+    $login = attemptUserLogin($db, $_POST["userNameInp"], $_POST["userPassInp"]);
     if ($login === true) {
             header ("Location: ?page=adminHome");
         }else {
-            $errorMessage = "Saissisez correctement vos détails";
-            header ("Location: ?page=login");
-        }
-
+        $errorMessage = "Saissisez correctement vos détails";
     }
+        include('../view/public/homeView.php');
+        exit();
+}
+
+if (isset($_GET["sort"])) {
+    $getMaps = getMapsByType($db, $_GET["sort"]);
+}

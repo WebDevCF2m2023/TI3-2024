@@ -1,28 +1,29 @@
 <?php
-if($_SESSION["showGreeting"] === true) {
-    include("../view/public/welcomeView.php");
-}else if(isset($_GET["page"])) {
+
+if(isset($_GET["page"])) {
     switch($_GET["page"]) {
         case "home" :
-            $title = "Carte Interactive";
+            $title = "Bienvenue à nouveau";
             include("../view/public/homeView.php");
             break;
-            case "login" :
-                $title = "Connectez-vous";
-                include("../view/public/loginView.php");
-                break; 
-                case "adminHome" : 
-                    $title = "Bienvenue Boss";
-                    include ("../view/private/adminView.php");
-                    break;  
+            case "create" :
+                $title = "Ajoute un lieu à la table";
+                include("../view/private/createView.php");
+                break;  
+                case "adminHome" :
+                    $title = "Ajoute un lieu à la table";
+                    include("../view/private/adminView.php");
+                    break;
                     case "refuse" :
                         $title = "Nice try, fool :p";
                         include("../view/public/refuseView.php");
                         break;
-                        case "create" :
-                            $title = "Insertion d'element";
-                            include("../view/private/createView.php");
-                            break;                         
+                        case "showmap" :
+                            $title = "Voir la Carte";
+                            include("../view/public/mapView.php");
+                            break;                                          
+                      
+                        
                         default :
                         $title = "Page Introuvable";
                         include("../view/public/error404View.php");         
