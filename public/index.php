@@ -1,6 +1,6 @@
 <?php
 
-require_once "../view\public\public.view.php";
+require_once "../public\vuePublique.php";
 
 session_start();
 
@@ -17,4 +17,10 @@ try{
     // No exit here, we just kill.
 }
 
+if (isset($_SESSION['username'])) {
+    require_once "../controller/privateController.php";
+} else {
+    require_once "../controller/publicController.php";
+}
 
+$db = null;
