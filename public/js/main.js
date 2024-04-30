@@ -20,11 +20,20 @@ function handle_res(locations){
     //center zoom
     const group = new L.featureGroup(markers);
     map.fitBounds(group.getBounds());
-    //add locations to list
+    //add locations to table
     const tbody = document.querySelector("#locations-table tbody");
-    locations.forEach((location)=>{
-        tbody_add_location(tbody, location);
-    })
+    if (tbody){
+        locations.forEach((location)=>{
+            tbody_add_location(tbody, location);
+        });
+    }
+    //add locations to list
+    const ul_list = document.querySelector("#locations-list");
+    if (ul_list){
+        locations.forEach((location)=>{
+            ul_add_location(ul_list, location);
+        });
+    }
     //show the number of location
     const nb_locations_h3 = document.querySelector("#nb-locations");
     if (locations.length===0)nb_locations_h3.textContent = "pas encore de lieux";
@@ -37,6 +46,18 @@ function add_marker_location(location){
     marker.bindPopup(`<h3>${location.nom}</h3><p>${location.rue} ${location.codepostal} Bruxelles</p><p>tel: ${location.telephone}</p><a href=${location.url}" target="_blank">Voir le site</a>`);
     markers_hashmap[location.id] = marker;
     markers.push(marker);
+}
+
+function ul_add_location(ul, location){
+    const li = document.createElement("li");
+    const li_html_content = `${location.nom} | ${location.rue} ${location.codepostal} Bruxelles | ${location.telephone} | <a href="${location.url}" target="_blank">Voir le site</a>`;
+    li.innerHTML = li_html_content;
+    ul.insertAdjacentElement("beforeend", li);
+    li.addEventListener("click", (e)=>{
+        const marker = markers_hashmap[location.id];
+        marker.openPopup();
+        map.setView(marker.getLatLng(), 17);
+    });
 }
 
 function tbody_add_location(tbody, location){
@@ -91,5 +112,5 @@ function tbody_add_location(tbody, location){
     tr.insertAdjacentElement("beforeend", td4);
     tr.insertAdjacentElement("beforeend", td5);
     //insert the tr
-    tbody.insertAdjacentElement("afterbegin", tr);
+    tbody.insertAdjacentElement("beforeend", tr);
 }
