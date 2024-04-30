@@ -80,15 +80,69 @@
 
 
 
-    #liste  li  {
-      
-    }
+   
 
     #carte {
       width:100%;
       height:800px;
       margin-bottom: 15px;
   }
+
+  .navbar-home {
+    background-color: #49d052;
+    padding: 10px 20px;
+    display: flex;
+    align-items: flex-end; /* Allinea gli elementi verticalmente in basso */
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    color: #fff;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .navbar-links li {
+    display: inline;
+    margin-right: 20px;
+    list-style-type: none;
+    
+  }
+  
+  .navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    list-style-type: none;
+  }
+  
+  .connect-btn {
+    background-color: #4ba60a;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute; /* Posiziona il pulsante in modo assoluto */
+    right: 20px; /* Posiziona il pulsante a 20px dal bordo destro del contenitore */
+    top: 10px; /* Posiziona il pulsante a 10px dal fondo del contenitore */
+    list-style-type: none;
+
+  }
+
+  .navbar-home button a {
+    text-decoration: none;
+    color: white;
+  }
+  
 
     
   }

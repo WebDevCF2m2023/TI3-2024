@@ -14,15 +14,11 @@
 </head>
 
 <body>
-
-    <nav class="navbar-home">
-
-    <h1>GeoMapper</h1>
-
-    <button><a href="?connect">GGGG</a></button>
-
-
-    </nav>
+<nav class="navbar-home">
+  <div class="container">  <h1>GeoMapper <img src="./img/logo.png" alt="logo" width="25px"></h1>
+    <ul class="navbar-links">  </ul>
+    <button  class="connect-btn"><a href="?connect">Connexion</a></button>  </div>
+</nav>
 
 
 
