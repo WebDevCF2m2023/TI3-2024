@@ -13,10 +13,10 @@ window.operateEvents = {
             postData(`?delete=${row.id}&ok`, {
                 bootstraptable: index
             }).then(data=>{
-                if(data.error !== undefined) return; // TODO MESSAGE
+                if(data.error !== undefined) popup(data.error, false);
+                else popup(`La localisation ${data.delete} a bien été supprimé.`);
                 $table.bootstrapTable('refresh');
                 $remove.prop('disabled', true);
-                popup(`La localisation ${data.delete} a bien été supprimé.`);
             });
         }
     },  
@@ -33,15 +33,11 @@ window.operateEvents = {
             longitude: newValueEdit.longitude,
             bootstraptable: index
         }).then(data=>{
-            console.log(data)
-            if(data.error !== undefined){
-                resetRowWithLastValue();
-                return;
-            } // TODO MESSAGE
+            if(data.error !== undefined) popup(data.error, false);
+            else popup(`La localisation ${data.update} a bien été modifié.`);
             $table.bootstrapTable('refresh');
             $remove.prop('disabled', true);
             lastValueRow = {};
-            popup(`La localisation ${data.update} a bien été modifié.`);
         });
     },'click .validInsert': function (e, value, row, index) {
         if(!checkCanValidate(newValueInsert)) return; // TODO MESSAGE
@@ -56,10 +52,10 @@ window.operateEvents = {
             longitude: newValueInsert.longitude,
             bootstraptable: 1
         }).then(data=>{
-            console.log(data)
+            if(data.error !== undefined) popup(data.error, false);
+            else popup(`La localisation ${data.add} a bien été crée.`);
             $table.bootstrapTable('refresh');
             $remove.prop('disabled', true);
-            popup(`La localisation ${data.add} a bien été crée.`);
         });
     },
     'click .cancelEdit': function (e, value, row, index) {
@@ -116,7 +112,8 @@ $remove.click(function () {
         postData(`?delete=1&multiple=${selections.join(",")}`, {
             bootstraptable: 1
         }).then(data=>{
-            console.log(data);
+            if(data.error !== undefined) popup(data.error, false);
+            else popup(`Les locations ${data.multiple} ont bien été supprimé`)
             $table.bootstrapTable('refresh');
             $remove.prop('disabled', true);
         });
@@ -319,6 +316,7 @@ function popup(message, success = true){
     const div = document.createElement("div");
     div.className = "popup d-flex justify-content-center rounded fw-bold text-light align-items-start position-fixed py-2 px-4 top-0 end-0 me-3 " + (success ? "bg-success border border-success" : "bg-danger border border-danger");
     div.style.minWidth = "300px";
+    div.style.maxWidth = "600px";
     div.textContent = message;
 
     document.body.appendChild(div);
