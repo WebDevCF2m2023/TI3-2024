@@ -62,7 +62,7 @@
             <h5 class="text-center mb-3">Url : <span class="fw-normal"><?= $getOneLocation['url'] ?></span></h5>
             <h5 class="text-center mb-3">Latitude : <span class="fw-normal"><?= $getOneLocation['latitude'] ?></span></h5>
             <h5 class="text-center mb-3">Longitude : <span class="fw-normal"><?= $getOneLocation['longitude'] ?></span></h5>
-            <p class="text-center mt-2 fw-bold">Voulez-vous vraiment supprimer ce lieu ?</p>
+            <p class="text-center mt-4 mb-4 fw-bold">Voulez-vous vraiment supprimer ce lieu ?</p>
             <div class="text-center">
                 <a href=" ?delete=<?= $idDelete ?>&ok"><button value="supprimer" class="btn btn-outline-danger ">supprimer</button></a> | <a href="./"><button value="Non" class="btn btn-outline-info">Ne pas supprimer</button></a>
             </div>
