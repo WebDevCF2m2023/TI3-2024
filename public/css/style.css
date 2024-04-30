@@ -4,13 +4,11 @@
 
 .titreHomepage{
     text-align: center;
-    
 }
 
 a #btnHomepage{
-    margin: 0 auto;
-    
-   
+    margin: 20px auto;
+
  }
  a{
     text-decoration: none;
@@ -22,15 +20,14 @@ a #btnHomepage{
     align-items: center;
     padding: 10px;
     cursor: pointer;
-    background-color: #2a454e;
-    color: white;
-    border: none;
+    background-color: #C0D6DF;
+    color: black;
+    border: 2px solid #2a454e;
     border-radius: 10px;
   }
   #btnHomepage:hover{
     text-shadow: 0 0 10px white;
   }
-  
   #alert {
     color: red;
 }
