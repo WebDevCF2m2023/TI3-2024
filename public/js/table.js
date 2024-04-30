@@ -5,6 +5,7 @@ const baseActions = '<div class="d-flex justify-content-center"><a href="javascr
 let selections;
 let lastValueRow = {};
 let newValueEdit = {};
+let newValueInsert = {};
 window.operateEvents = {
     'click .remove': function (e, value, row, index) {
         console.log(index)
@@ -70,14 +71,14 @@ window.operateEvents = {
         $table.bootstrapTable('updateRow', {
             index: index,
             row: {
-                nom: `<input type="text" value="${row.nom}" class="form-control is-valid" name="nomEdit" oninput="setValueEdit(event)"/><div class="invalid-feedback checknomEdit"></div><div class="valid-feedback">Correct 😊</div>`,
-                type: `<input type="text" value="${row.type}" class="form-control is-valid" name="typeEdit" oninput="setValueEdit(event)"/><div class="invalid-feedback checktypeEdit"></div><div class="valid-feedback">Correct 😊</div>`,
-                adresse: `<input type="text" value="${row.adresse}" class="form-control is-valid" name="adresseEdit" oninput="setValueEdit(event)"/><div class="invalid-feedback checkadresseEdit"></div><div class="valid-feedback">Correct 😊</div>`,
-                codepostal: `<input type="text" value="${row.codepostal}" class="form-control is-valid" name="codepostalEdit" oninput="setValueEdit(event)"/><div class="invalid-feedback checkcodepostalEdit"></div><div class="valid-feedback">Correct 😊</div>`,
-                ville: `<input type="text" value="${row.ville}" class="form-control is-valid" name="villeEdit" oninput="setValueEdit(event)"/><div class="invalid-feedback checkvilleEdit"></div><div class="valid-feedback">Correct 😊</div>`,
-                url: `<input type="text" value="${row.url}" class="form-control is-valid" name="urlEdit" oninput="setValueEdit(event)"/><div class="invalid-feedback checkurlEdit"></div><div class="valid-feedback">Correct 😊</div>`,
-                latitude: `<input type="number" max="99.999999" min="-99.999999" step="0.000001" value="${row.latitude}" class="form-control is-valid" name="latitudeEdit" oninput="setValueEdit(event)"/><div class="invalid-feedback checklatitudeEdit"></div><div class="valid-feedback">Correct 😊</div>`,
-                longitude: `<input type="number" max="99.999999" min="-99.999999" step="0.000001" value="${row.longitude}" class="form-control is-valid" name="longitudeEdit" oninput="setValueEdit(event)"/><div class="invalid-feedback checklongitudeEdit"></div><div class="valid-feedback">Correct 😊</div>`,
+                nom: `<input type="text" value="${row.nom}" class="form-control is-valid" name="nomEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checknomEdit"></div><div class="valid-feedback">Correct 😊</div>`,
+                type: `<input type="text" value="${row.type}" class="form-control is-valid" name="typeEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checktypeEdit"></div><div class="valid-feedback">Correct 😊</div>`,
+                adresse: `<input type="text" value="${row.adresse}" class="form-control is-valid" name="adresseEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checkadresseEdit"></div><div class="valid-feedback">Correct 😊</div>`,
+                codepostal: `<input type="text" value="${row.codepostal}" class="form-control is-valid" name="codepostalEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checkcodepostalEdit"></div><div class="valid-feedback">Correct 😊</div>`,
+                ville: `<input type="text" value="${row.ville}" class="form-control is-valid" name="villeEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checkvilleEdit"></div><div class="valid-feedback">Correct 😊</div>`,
+                url: `<input type="text" value="${row.url}" class="form-control is-valid" name="urlEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checkurlEdit"></div><div class="valid-feedback">Correct 😊</div>`,
+                latitude: `<input type="number" max="99.999999" min="-99.999999" step="0.000001" value="${row.latitude}" class="form-control is-valid" name="latitudeEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checklatitudeEdit"></div><div class="valid-feedback">Correct 😊</div>`,
+                longitude: `<input type="number" max="99.999999" min="-99.999999" step="0.000001" value="${row.longitude}" class="form-control is-valid" name="longitudeEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checklongitudeEdit"></div><div class="valid-feedback">Correct 😊</div>`,
                 actions: `<div class="d-flex justify-content-center gap-3 pb-4"><a href="javascript:void(0)" title="valider"><i class="validEdit bi bi-check text-success fs-4"></i></a><a href="javascript:void(0)" title="annuler"><i class="cancelEdit bi bi-x text-danger fs-4"></i></a></div>`,
             }
         });
@@ -97,49 +98,93 @@ $remove.click(function () {
 });
 
 $add.click(function () {
+
+    $table.bootstrapTable('insertRow', {
+        index: 0,
+        row: {
+            nom: `<input type="text" class="form-control is-invalid" name="nomInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checknomInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
+            type: `<input type="text" class="form-control is-invalid" name="typeInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checktypeInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
+            adresse: `<input type="text" class="form-control is-invalid" name="adresseInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checkadresseInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
+            codepostal: `<input type="text" class="form-control is-invalid" name="codepostalInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checkcodepostalInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
+            ville: `<input type="text" class="form-control is-invalid" name="villeInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checkvilleInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
+            url: `<input type="text" class="form-control is-invalid" name="urlInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checkurlInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
+            latitude: `<input type="number" max="99.999999" min="-99.999999" step="0.000001" class="form-control is-invalid" name="latitudeInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checklatitudeInsert">Format incorrect</div><div class="valid-feedback">Correct 😊</div>`,
+            longitude: `<input type="number" max="99.999999" min="-99.999999" step="0.000001" class="form-control is-invalid" name="longitudeInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checklongitudeInsert">Format incorrect</div><div class="valid-feedback">Correct 😊</div>`,
+            actions: `<div class="d-flex justify-content-center gap-3 pb-4"><a href="javascript:void(0)" title="valider"><i class="validInsert bi bi-check text-success fs-4"></i></a><a href="javascript:void(0)" title="annuler"><i class="cancelInsert bi bi-x text-danger fs-4"></i></a></div>`,
+        }
+      })
+
+    /*
     postData(`?addLocation`, {
         bootstraptable: 1
     }).then(data=>{
         $table.bootstrapTable('refresh');
         $remove.prop('disabled', true);
     });
+    */
 });
 function getIdSelections() {
     return $.map($table.bootstrapTable('getSelections'), function (row) {
         return row.id;
     })
 }
-function setValueEdit(e){
-
-    switch(e.target.name){
-        case "nomEdit":
-            newValueEdit.nom = e.target.value;
+function setValueInput(e){
+    const regex = /(Edit|Insert)/gi;
+    const name = e.target.name.replace(regex, '');
+    console.log(name);
+    switch(name){
+        case "nom":
+            if(e.target.name.includes("Edit"))
+                newValueEdit.nom = e.target.value;
+            else
+                newValueInsert.nom = e.target.value;
             break;
-        case "typeEdit":
-            newValueEdit.type = e.target.value;
+        case "type":
+            if(e.target.name.includes("Edit"))
+                newValueEdit.type = e.target.value;            
+            else
+                newValueInsert.type = e.target.value;
             break;
-        case "adresseEdit":
-            newValueEdit.adresse = e.target.value;
+        case "adresse":
+            if(e.target.name.includes("Edit"))
+                newValueEdit.adresse = e.target.value;            
+            else
+                newValueInsert.adresse = e.target.value;
             break;
-        case "codepostalEdit":
-            newValueEdit.codepostal = e.target.value;
+        case "codepostal":
+            if(e.target.name.includes("Edit"))
+                newValueEdit.codepostal = e.target.value;            
+            else
+                newValueInsert.codepostal = e.target.value;
             break;
-        case "villeEdit":
-            newValueEdit.ville = e.target.value;
+        case "ville":
+            if(e.target.name.includes("Edit"))
+                newValueEdit.ville = e.target.value;            
+            else
+                newValueInsert.ville = e.target.value;
             break;
-        case "urlEdit":
-            newValueEdit.url = e.target.value;
+        case "url":
+            if(e.target.name.includes("Edit"))
+                newValueEdit.url = e.target.value;            
+            else
+                newValueInsert.url = e.target.value;
             break;
-        case "latitudeEdit":
-            newValueEdit.latitude = e.target.value;
+        case "latitude":
+            if(e.target.name.includes("Edit"))
+                newValueEdit.latitude = e.target.value;            
+            else
+                newValueInsert.latitude = e.target.value;
             break;
-        case "longitudeEdit":
-            newValueEdit.longitude = e.target.value;
+        case "longitude":
+            if(e.target.name.includes("Edit"))
+                newValueEdit.longitude = e.target.value;            
+            else
+                newValueInsert.longitude = e.target.value;
             break;
         default: return;
     }
 
-    const check = checkNewValueEditByName(e.target.name);
+    const check = checkNewValueInputByName(name, newValueInsert);
 
     if(check !== true){
         e.target.classList.remove("is-valid");
@@ -150,6 +195,7 @@ function setValueEdit(e){
         e.target.classList.add("is-valid");
     }
 }
+
 function resetRowWithLastValue(){
     $table.bootstrapTable('updateRow', {
         index: lastValueRow.index,
@@ -174,56 +220,54 @@ function formatBaseActions(a){
 
 function checkCanValidateEdit(){
     for (const key in newValueEdit) {
-        if(checkNewValueEditByName(key+"Edit") === true) continue;
-        console.log(key+"Edit");
-        console.log(newValueEdit[key]);
+        if(checkNewValueInputByName(key, newValueEdit) === true) continue;
         return false;
     }
     return true;
 }
 
-function checkNewValueEditByName(name){
+function checkNewValueInputByName(name, objectToCheck){
     switch(name){
-        case "nomEdit":
-            if(newValueEdit.nom.trim().length === 0)
+        case "nom":
+            if(objectToCheck.nom.trim().length === 0)
                 return "Ne dois pas être vide";
-            if(newValueEdit.nom.trim().length > 50)
+            if(objectToCheck.nom.trim().length > 50)
                 return "Ne dois pas dépasser 50 caractères";
             return true;
-        case "typeEdit":
-            if(newValueEdit.type.trim().length === 0)
+        case "type":
+            if(objectToCheck.type.trim().length === 0)
                 return "Ne dois pas être vide";
-            if(newValueEdit.type.trim().length > 20)
+            if(objectToCheck.type.trim().length > 20)
                 return "Ne dois pas dépasser 20 caractères";
             return true;
-        case "adresseEdit":
-            if(newValueEdit.adresse.trim().length === 0)
+        case "adresse":
+            if(objectToCheck.adresse.trim().length === 0)
                 return "Ne dois pas être vide";
-            if(newValueEdit.adresse.trim().length > 100)
+            if(objectToCheck.adresse.trim().length > 100)
                 return "Ne dois pas dépasser 100 caractères";
             return true;
-        case "codepostalEdit":
-            if(/^\d\d\d\d$/.test(newValueEdit.codepostal.trim()))
+        case "codepostal":
+            if(/^\d\d\d\d$/.test(objectToCheck.codepostal.trim()))
                 return true;
             return "Doit être 4 chiffres";
-        case "villeEdit":
-            if(newValueEdit.ville.trim().length === 0)
+        case "ville":
+            if(objectToCheck.ville.trim().length === 0)
                 return "Ne dois pas être vide";
-            if(newValueEdit.ville.trim().length > 20)
+            if(objectToCheck.ville.trim().length > 20)
                 return "Ne dois pas dépasser 20 caractères";
             return true;
-        case "urlEdit":
-            if(newValueEdit.url.trim().length > 200)
+        case "url":
+            if(objectToCheck.url.trim().length > 200)
                 return "Ne dois pas dépasser 200 caractères";
-            if(/^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,190}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/.test(newValueEdit.url.trim()))
+            if(/^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,190}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/.test(objectToCheck.url.trim()))
                 return true
             return "URL incorrect";
-        case "latitudeEdit":
-            if(/^-?\d{1,2}(\.\d{1,6})?$/.test(newValueEdit.latitude.trim()))
+        case "latitude":
+            if(/^-?\d{1,2}(\.\d{1,6})?$/.test(objectToCheck.latitude.trim()))
                 return true;
             return "Format incorrect";
-        case "longitudeEdit":
-            if(/^-?\d{1,2}(\.\d{1,6})?$/.test(newValueEdit.longitude.trim()))
+        case "longitude":
+            if(/^-?\d{1,2}(\.\d{1,6})?$/.test(objectToCheck.longitude.trim()))
                 return true;
             return "Format incorrect"
         default: return;
