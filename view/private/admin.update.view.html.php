@@ -86,7 +86,7 @@
                             <input type="number" name="longitude" value="<?= $getOneLocation['longitude'] ?>" step="0.000000001" class="form-control mx-auto w-25" id="longitude" required>
                         </div>
                         <div class="mb-3 text-center">
-                            <input type="submit" value="Modifier" class="btn btn-outline-success mt-4">
+                            <input type="submit" value="Modifier" class="btn btn-outline-primary mt-4">
                         </div>
                     </form>
                 </div>
