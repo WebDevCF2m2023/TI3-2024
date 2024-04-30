@@ -7,14 +7,14 @@ if(isset($_GET['insert'])){
 
     // si le formulaire est envoyé
     if(isset(
-        $_POST['title'],
-        $_POST['ourdesc'],
+        $_POST['nom'],
+        $_POST['adresse'],
         $_POST['latitude'],
         $_POST['longitude']
     )){
 
-        $title = strip_tags(trim($_POST['nom']));
-        $oudesc = trim($_POST['adresse']);
+        $nom = strip_tags(trim($_POST['nom']));
+        $adresse = trim($_POST['adresse']);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
 
@@ -30,7 +30,7 @@ if(isset($_GET['insert'])){
 
     // appel de la vue d'insertion
     require "../view/private/admin.insert.view.html.php";
-    //var_dump($_POST);
+    var_dump($_POST);
     exit();
 }
 
@@ -40,21 +40,21 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
     // si le formulaire est envoyé
     if(isset(
-        $_POST['title'],
-        $_POST['ourdesc'],
+        $_POST['nom'],
+        $_POST['adresse'],
         $_POST['latitude'],
         $_POST['longitude'],
         $_POST['id']
     )){
 
-        $title = strip_tags(trim($_POST['title']));
-        $oudesc = trim($_POST['ourdesc']);
+        $nom = strip_tags(trim($_POST['nom']));
+        $adresse = trim($_POST['adresse']);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
         $id = (int) $_POST['id'];
 
         // si on récupère true, à cette fonction, il faut rediriger vers l'accueil de l'admin, sinon affichage d'une erreur
-        $update = updatelocalisations($connect,$title,$oudesc,$latitude,$longitude,$id);
+        $update = updatelocalisations($connect,$nom,$adresse,$latitude,$longitude,$id);
         if($update === true){
             header("Location: ./");
             exit();

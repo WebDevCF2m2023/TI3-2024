@@ -37,11 +37,11 @@
             <div class="grid grid-cols-1 gap-6">
                 <label class="block">
                     <span class="text-gray-700">Nom</span>
-                    <input type="text" class="form-control mt-1" name="title" placeholder="Nom" required>
+                    <input type="text" class="form-control mt-1" name="nom" placeholder="Nom" required>
                 </label>
                 <label class="block">
                     <span class="text-gray-700">Adresse</span>
-                    <textarea class="form-control mt-1" rows="3" name="ourdesc" placeholder="Adresse" required></textarea>
+                    <textarea class="form-control mt-1" rows="3" name="adresse" placeholder="Adresse" required></textarea>
                 </label>
                 <label class="block">
                     <span class="text-gray-700">Latitude</span>
