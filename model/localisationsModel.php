@@ -1,54 +1,52 @@
 <?php
-function getAlllocalisations(PDO $db) : array | string{
+function getAllLocations(PDO $connect) : array | string{
     try {
-        $query = $db->query("SELECT * FROM localisations ORDER BY id ASC");
-        $localisations = $query->fetchAll();
+        $query = $connect->query("SELECT * FROM `localisations` ORDER BY id ASC");
+        $locations = $query->fetchAll();
         $query->closeCursor();
-        return $localisations;
+        return $locations;
     } catch (Exception $e) {
         return $e->getMessage();
     }
 }
 
-function getlocalisationsByID(PDO $db, int $id) : array | string{
+function getLocationByID(PDO $connect, int $id) : array | string{
     try {
-        $prepare = $db->prepare("SELECT * FROM localisations WHERE id = ?");
+        $prepare = $connect->prepare("SELECT * FROM localisations WHERE id = ?");
         $prepare->execute([$id]);
-        if($prepare->rowCount() < 1) return "Aucune localisations avec cette ID.";
-       $lo= $prepare->fetch();
-       $prepare->closeCursor();
-       return $lo;
+        if($prepare->rowCount() < 1) return "Aucune location avec cette ID.";
+        return $prepare->fetch();
     } catch (Exception $e) {
         return $e->getMessage();
     }
 }
 
-function deletelocalisationsByID(PDO $db, int $id) : bool | string{
+function deleteLocationByID(PDO $connect, int $id) : bool | string{
     try {
-        $prepare = $db->prepare("DELETE FROM `localisations` WHERE `id` = ?");
+        $prepare = $connect->prepare("DELETE FROM `localisations` WHERE `id` = ?");
         $prepare->execute([$id]);
-        if($prepare->rowCount() < 1) return "Aucune localisations avec cette ID.";
+        if($prepare->rowCount() < 1) return "Aucune location avec cette ID.";
         return true;
     } catch (Exception $e) {
         return $e->getMessage();
     }
 }
 
-function updatelocalisations(PDO $db, int $id, string $name, string $imgUrl, string $adresse, float $long, float $lat) : bool | string{
+function updateLocation(PDO $connect, int $id, string $rue, string $codepostal, string $ville, float $latitude, float $longitude) : bool | string{
     try {
-        $prepare = $db->prepare("UPDATE `localisations` SET `name` = ?, `adresse` = ?, `img_url` = ?, `long` = ?, `lat` = ? WHERE `id` = ?");
-        $prepare->execute([$name, $adresse, $imgUrl, $long, $lat, $id]);
+        $prepare = $connect->prepare("UPDATE `localisations` SET `rue` = ?, `codepostal` = ?, `ville` = ?, `latitude` = ?, `longitude` = ? WHERE `id` = ?");
+        $prepare->execute([$nom, $adresse, $codepostal, $ville, $latitude, $longitude, $id]);
         return true;
     } catch (Exception $e) {
         return $e->getMessage();
     }
 }
 
-function addlocalisations(PDO $db, string $name, string $imgUrl, string $adresse, float $long, float $lat) : int | string{
+function addLocation(PDO $connect, string $rue, string $codepostal, string $ville, float $latitude, float $longitude) : int | string{
     try {
-        $prepare = $db->prepare("INSERT INTO `localisations`(`name`, `adresse`, `img_url`, `long`, `lat`) VALUE(?,?,?,?,?)");
-        $prepare->execute([$name, $adresse, $imgUrl, $long, $lat]);
-        return (int) $db->lastInsertId();
+        $prepare = $connect->prepare("INSERT INTO `localisations`(`rue`, `codepostal`, `ville`, `latitude`, `longitude`) VALUE(?,?,?,?,?)");
+        $prepare->execute([$rue, $adresse, $codepostal, $ville, $latitude, $longitude]);
+        return (int) $connect->lastInsertId();
     } catch (Exception $e) {
         return $e->getMessage();
     }

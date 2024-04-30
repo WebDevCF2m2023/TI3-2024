@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4 sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">TI_3</a>
+            <a class="navbar-brand" href="/">Bornes de recharge</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,7 +39,7 @@
                 <h2 class="text-center mb-4 text-primary">Modifier la localisation avec comme ID <?= $update['id'] ?></h2>
                 <form class="w-50 m-auto" method="POST">
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Rue</label>
                         <input type="text" class="form-control" name="name" id="name" required value="<?= $update['name'] ?>">
                     </div>
                     <div class="form-group">

@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4 sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">TI_3</a>
+            <a class="navbar-brand" href="/">Bornes de recharge</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -36,24 +36,24 @@
         <h2 class="text-center mb-4 text-primary">Ajouter une nouvelle location.</h2>
         <form class="w-50 m-auto" method="POST">
             <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" id="name" required>
+                <label for="name">Rue</label>
+                <input type="text" class="form-control" name="rue" id="rue" required>
             </div>
             <div class="form-group">
-                <label for="img_url">Image URL</label>
-                <input type="text" class="form-control" name="img_url" id="img_url" required>
+                <label for="codepostal">Code Postal</label>
+                <input type="text" class="form-control" name="codepostal" id="codepostal" required>
             </div>
             <div class="form-group">
-                <label for="adresse">Adresse</label>
-                <input type="text" class="form-control" name="adresse" id="adresse" required>
+                <label for="ville">Ville</label>
+                <input type="text" class="form-control" name="ville" id="ville" required>
             </div>
             <div class="form-group">
-                <label for="long">Longitude</label>
-                <input type="number" class="form-control" name="long" id="long" step="0.0000001" required>
+                <label for="latitude">Latitude</label>
+                <input type="number" class="form-control" name="latitude" id="latitude" step="0.0000001" required>
             </div>
             <div class="form-group">
-                <label for="lat">Latitude</label>
-                <input type="number" class="form-control" name="lat" id="lat" step="0.0000001" require>
+                <label for="longitude">Longitude</label>
+                <input type="number" class="form-control" name="longitude" id="longitude" step="0.0000001" require>
             </div>
             <button type="submit" class="btn btn-primary mt-3 w-50 d-block m-auto">Ajouter</button>
         </form>

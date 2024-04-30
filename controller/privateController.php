@@ -1,48 +1,47 @@
 <?php
 
 if(isset($_GET['disconnect'])){
-    userDisconnect();
+    administratorDisconnect();
 }elseif(isset($_GET['administration'])){
-    $localisations = getAlllocalisations($db);
-    require("../view/private/administration.html.php");
+    $locations = getAllLocations($connect);
+    require("../view/private/admin.html.php");
 }elseif(isset($_GET['update']) && ctype_digit($_GET['update'])){
     $id = (int) $_GET['update'];
-    if(isset($_POST['name'], $_POST['img_url'], $_POST['adresse'], $_POST['long'], $_POST['lat'])){
-        $successUpdate = updatelocalisations($db, $id, $_POST['name'], $_POST['img_url'], $_POST['adresse'], (float) $_POST['long'], (float) $_POST['lat']);
+    if(isset($_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], $_POST['latitude'], $_POST['longitude'])){
+        $successUpdate = updateLocation($connect, $id, $_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], (float) $_POST['latitude'], (float) $_POST['longitude']);
         if($successUpdate === true){
-            header("Location: ./?administration&updateOK=$id");
+            header("Location: ./?admin&updateSuccess=$id");
             die();
         } else $error = $successUpdate;
     }
 
-    $update = getlocalisationsByID($db, $id);
-    require("../view/private/administration.update.html.php");
+    $update = getLocationByID($connect, $id);
+    require("../view/private/admin.modif.html.php");
 }elseif(isset($_GET['delete']) && ctype_digit($_GET['delete'])){
     $id = (int) $_GET['delete'];
 
-    if(isset($_GET['good'])){ // on supprime
-        $successDelete = deletelocalisationsByID($db, $id);
+    if(isset($_GET['success'])){
+        $successDelete = deleteLocationByID($connect, $id);
         if($successDelete === true){
-            header("Location: ./?administration&deleteOK=$id");
+            header("Location: ./?admin&deleteSuccess=$id");
             die();
         } else $error = $successDelete;
-    }elseif(isset($_GET['nogood'])){ // on annule
-        header("Location: ./?administration&deleteKO=$id");
+    }elseif(isset($_GET['ko'])){ 
+        header("Location: ./?admin&deleteSuccess=$id");
         die();
     }
 
-    $delete = getlocalisationsByID($db, $id);
-    require("../view/private/administration.delete.html.php");
-}elseif(isset($_GET['addlocalisations'])){
-    if(isset($_POST['name'], $_POST['img_url'], $_POST['adresse'], $_POST['long'], $_POST['lat'])){
-        $successAdd = addlocalisations($db, $_POST['name'], $_POST['img_url'], $_POST['adresse'], (float) $_POST['long'], (float) $_POST['lat']);
+    $delete = getLocationByID($connect, $id);
+    require("../view/private/admin.delete.html.php");
+}elseif(isset($_GET['addLocation'])){
+    if(isset($_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], $_POST['latitude'], $_POST['longitude'])){
+        $successAdd = addLocation($connect, $_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], (float) $_POST['latitude'], (float) $_POST['longitude']);
         if(!is_string($successAdd)){
-            header("Location: ./?administration&addOK=$successAdd");
+            header("Location: ./?admin&addOK=$successAdd");
             die();
         } else $error = $successAdd;
     }
-    require("../view/private/administration.add.html.php");
+    require("../view/private/admin.insert.html.php");
 }else{
     require("../view/private/home.html.php");
 }
-

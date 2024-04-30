@@ -6,22 +6,24 @@ require_once("../model/utilisateursModel.php");
 require_once("../model/localisationsModel.php");
 
 
-$dsn = DB_DRIVER . ":host=" . DB_HOST . ";charset=" . DB_CHARSET . ";port=" . DB_PORT . ";dbname=". DB_NAME;
-
-try {
-    $db = new PDO($dsn, DB_USER, DB_PASS, [
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]);
-} catch (Exception $e) {
+try{
+    $connect = new PDO(
+        DB_DRIVER.":host=".DB_HOST.";port=".DB_PORT.";dbname=".DB_NAME.";charset=".DB_CHARSET,
+        DB_LOGIN,
+        DB_MDP,
+        [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
+);
+}catch(Exception $e){
     die($e->getMessage());
 }
 
 if(isset($_GET['json'])){
     require("../controller/ApiController.php");
 }else if(isset($_SESSION['connected'])){
-    require("../controller/PrivateController.php");
+    require("../controller/privateController.php");
 }else{
-    require("../controller/PublicController.php");
+    require("../controller/publicController.php");
 }
 
-$db = null;
+$connect = null;
+

@@ -57,3 +57,21 @@
         margin-bottom: 1rem;
     }
 }
+
+#welcome-home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#homepage-container {
+    display: grid;
+    width: 80%;
+    margin: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "map liste";
+        margin-bottom: 100px;
+
+}
