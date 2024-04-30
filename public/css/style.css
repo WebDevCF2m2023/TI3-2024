@@ -107,3 +107,29 @@ li{
 .th-inner{
     background-color: #C0D6DF !important;
 }
+.form-label{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 8em;
+}
+label[for="nom"]{
+    position: relative;
+    right: 11%;
+}
+label[for="codepostal"]{
+    position: relative;
+    right: 9%;
+}
+label[for="telephone"]{
+    position: relative;
+    right: 9%;
+}
+label[for="url"]{
+    position: relative;
+    right: 11.5%;
+}
+label[for="longitude"]{
+    position: relative;
+    left: -9.5%;
+}
