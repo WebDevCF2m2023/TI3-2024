@@ -133,3 +133,26 @@ label[for="longitude"]{
     position: relative;
     left: -9.5%;
 }
+
+@media  screen and (max-width:1400px) {
+    label[for="rue"]{
+        position: relative;
+        right: 9%;
+    }
+    label[for="codepostal"]{
+        position: relative;
+        right: 8%;
+    }
+    label[for="telephone"]{
+        position: relative;
+        right: 8%;
+    }
+    label[for="latitude"]{
+        position: relative;
+        right: 9%;
+    }
+    label[for="longitude"]{
+        position: relative;
+        right: 5%;
+    }
+}
