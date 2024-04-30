@@ -52,18 +52,16 @@ body, .bodyClassic {
 
 #theMap {
     height: 600px;
- 
-    grid-area: mapGrid;
+    box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
     margin-right: 50px;
 }
-
 .mainMap {
+    
     display: grid;   
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 5fr 2fr;
     grid-template-rows: 600px;
     grid-template-areas: 
-    "mapGrid listGrid"
-    ;
+    "mapGrid listGrid";
     justify-content: center;
 }
 
@@ -81,14 +79,20 @@ body, .bodyClassic {
 
 .normalTable {
     border: 1px solid black;
+    box-shadow: 0px 2px 4px black, 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black;
     margin-top: 25px;
     border-collapse: collapse;
+
 }
 
 .normalTable td {
     border: 1px solid black;
+    padding: 10px;
 }
-
+.normalTable tr th{
+    border: 2px solid black;
+    background-color: white;
+}
 .normalTable tr:nth-child(even) td:nth-child(even), .normalTable tr:nth-child(odd) td:nth-child(odd) {
     background-color: hsla(128, 17%, 86%, 1);
 }
@@ -116,7 +120,13 @@ body, .bodyClassic {
         "mapGrid"
         "listGrid";
         justify-content: center;
+    }
 
+    #theMap {
+        height: 350px;
+        box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
+        position: relative;
+        margin-right: 50px;
     }
 
     .listDivLarge {

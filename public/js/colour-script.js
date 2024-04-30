@@ -21,10 +21,35 @@ function changeColour() {
 
 function applyColour () {
     let colourPick = sessionStorage.getItem("colour");
+        switch(colourPick) {
+            case "bodyRed" :
+                bootstrapColour = "border-danger";
+                break;
+            case "bodyGreen" :
+                bootstrapColour = "border-success";
+                break;
+            case "bodyBlue" :
+                bootstrapColour = "border-info";
+                break;
+            case "bodyClassic" :
+                bootstrapColour = "border-secondary";
+                break;
+            default :
+            bootstrapColour = "border-secondary";                                    
+        }
 
     body.className = "";  
     body.classList.add(colourPick);
+    
+    for (let i = 0; i < listItem.length; i++) {
+       listItem[i].className = "";
+       listItem[i].classList.add("list-group-item");
+       listItem[i].classList.add("bg-transparent");
+       listItem[i].classList.add("border-bottom");
+       listItem[i].classList.add(bootstrapColour);
     }
+   
+}
 
 applyColour();
 

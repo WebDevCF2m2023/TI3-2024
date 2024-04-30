@@ -52,15 +52,9 @@ Si je n'avais pas séparé les sections en "include", cette page ferait 800 lign
     <?php
         if (!isset($_SESSION["monID"]) || $_SESSION["monID"] !== session_id()) {
             include("inc/welcome-message.php");
-        }else if (isset($_SESSION["permission"]) && $_SESSION["permission"] < 8){
-            include("inc/table.php");
-        } 
-        ?>
-        <?php   
-        if (isset($_SESSION["permission"]) && $_SESSION["permission"] > 7) {
-            include("inc/admin-table.php");
         }
         ?>
+
     
     
         </div> <!-- end main container -->

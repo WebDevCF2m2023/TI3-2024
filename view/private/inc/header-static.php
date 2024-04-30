@@ -11,13 +11,19 @@
 -->
     <div class="collapse-sm navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row justify-content-evenly">
-        <li class="nav-item">
+      <li class="nav-item">
           <?php
-              if(isset($_GET["page"]) && $_GET["page"] !== "adminHome") {
+        if (!isset($_SESSION["monID"]) || $_SESSION["monID"] != session_id()) {
           ?>
-          <a class="nav-link active" aria-current="page" href="?page=adminHome">Home</a>
+          <a class="nav-link active" aria-current="page" href="?page=home">Home</a>
           <?php
-            }else {
+        
+            }else if(isset($_GET["page"]) && $_GET["page"] !== "adminHome") {
+            
+          ?>
+          <a class="nav-link active" aria-current="page" href="?page=home">Home</a>
+        <?php    
+        }else {
               ?>
           <a class="nav-link disabled" aria-current="page" href="?page=adminHome">Home</a>
               <?php
@@ -42,20 +48,26 @@
           </ul>
         </li>
 -->
-        <li class="nav-item">
-          <?php
+<li class="nav-item">
+        <?php
             if (isset($_SESSION["monID"])) {
               ?>
-          <a class="nav-link animate__animated animate__delay-2s animate__fadeIn" href="?logout" tabindex="-1" aria-disabled="true">Déconnexion</a>
+          <a class="nav-link" href="?logout" tabindex="-1" aria-disabled="true">Déconnexion</a>
+          <?php
+            }else if (!isset($_SESSION["monID"]) && isset($_GET["login"])) {
+              ?>
+              <a class="nav-link disabled" href="?login" tabindex="-1" aria-disabled="true">Connexion</a>
+              <?php
+            
+            ?>
               <?php
             }else  {
           ?>
-          <a class="nav-link animate__animated animate__delay-2s animate__fadeIn" href="?login" tabindex="-1" aria-disabled="true">Connexion</a>
+          <a class="nav-link" href="?login" tabindex="-1" aria-disabled="true">Connexion</a>
           <?php
           }
           ?>
         </li>
-      </ul>
       <!--
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

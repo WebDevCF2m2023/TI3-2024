@@ -9,7 +9,7 @@ if (isset($_POST["userNameInp"], $_POST["userPassInp"])) {
         }else {
         $errorMessage = "Saissisez correctement vos détails";
     }
-        include('../view/public/homeView.php');
+        include('Location: ?page=homeBS&login');
         exit();
 }
 

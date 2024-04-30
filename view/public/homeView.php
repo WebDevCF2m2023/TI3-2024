@@ -74,8 +74,8 @@
                     <th>Code Postale</th>
                     <th>Ville</th>
                     <th>Latitude</th>
-                    <th>Logitude</th>
-                    <th>URL</th>
+                    <th>Longitude</th>
+                    <th>Visite</th>
                 </tr>
                 <?php
                     foreach ($getMaps as $map) {
@@ -88,7 +88,7 @@
                         <td><?=$map["ville"]?></td>
                         <td><?=$map["latitude"]?></td>
                         <td><?=$map["longitude"]?></td>
-                        <td><a href="<?=$map["url"]?>" target="_blank">Visite</td>
+                        <td><a href="<?=$map["url"]?>" target="_blank"><img src="img/link.svg" alt=""></td>
                     </tr>
                 <?php
                 }            

@@ -4,11 +4,7 @@
 </div>
 <nav class="navbar">
 <div class="container-fluid">
-<!--
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
--->
+
     <div class="collapse-sm navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row justify-content-evenly">
         <li class="nav-item">
@@ -21,7 +17,7 @@
             }else if(isset($_GET["page"]) && $_GET["page"] !== "adminHome") {
             
           ?>
-          <a class="nav-link active animate__animated animate__delay-1s animate__fadeIn" aria-current="page" href="?page=adminHome">Home</a>
+          <a class="nav-link active animate__animated animate__delay-1s animate__fadeIn" aria-current="page" href="?page=home">Home</a>
         <?php    
         }else {
               ?>
@@ -36,23 +32,19 @@
         <li class="nav-item">
           <a class="nav-link animate__animated animate__delay-3s animate__fadeIn" href="?page=create">Ajouter un Lieu</a>
         </li>
- <!--       <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle animate__animated animate__delay-3s animate__fadeIn" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
--->
+
         <li class="nav-item">
         <?php
             if (isset($_SESSION["monID"])) {
               ?>
           <a class="nav-link animate__animated animate__delay-2s animate__fadeIn" href="?logout" tabindex="-1" aria-disabled="true">Déconnexion</a>
+          <?php
+            }else if (!isset($_SESSION["monID"]) && isset($_GET["login"])) {
+              ?>
+              <a class="nav-link disabled animate__animated animate__delay-2s animate__fadeIn" href="?login" tabindex="-1" aria-disabled="true">Connexion</a>
+              <?php
+            
+            ?>
               <?php
             }else  {
           ?>
@@ -60,6 +52,7 @@
           <?php
           }
           ?>
+        </li>
       </ul>
       <!--
       <form class="d-flex">
