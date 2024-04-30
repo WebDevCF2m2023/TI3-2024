@@ -30,6 +30,12 @@ nav ul li {
    background-color: beige;
    height: 500px;
 }
+
+/* 
+c est ce qui ma pris le plus de temp !!!!!!
+mediascreen beuuurk !!!! */
+
+
 @media screen and (max-width: 1000px) {
   #content{
       /* width: 100%; */
