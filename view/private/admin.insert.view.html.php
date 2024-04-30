@@ -10,7 +10,7 @@
 </head>
 <body>
     <!--NAVBAR-->
-  <nav class="navbar navbar-expand-lg  rounded" aria-label="Twelfth navbar example" id="navbarStyle">
+  <nav class="navbar navbar-expand-lg" aria-label="Twelfth navbar example" id="navbarStyle">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -67,7 +67,7 @@
                         <input type="number" name="longitude" placeholder="longitude" step="0.000000001" class="form-control w-25 mx-auto shadow-lg" id="longitude" required>
                     </div>
                     <div class="mb-3 text-center">
-                        <input type="submit" value="Insérer" class="btn btn-outline-primary">
+                        <input type="submit" value="Insérer" class="btn btn-outline-primary mt-4">
                     </div>
                     <?php
                     //var_dump($_POST);
