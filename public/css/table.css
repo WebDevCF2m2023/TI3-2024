@@ -4,3 +4,18 @@
 .thmin.long, .thmin.lat{
     min-width: 185px !important;
 }
+.popup{
+    transform: translateY(80px);
+    animation: appearPopup 1s ease-in-out;
+}
+
+@keyframes appearPopup {
+    0%{
+        opacity: 0;
+        transform: translate(120px, 80px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px, 80px);
+    }
+}

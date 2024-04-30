@@ -33,6 +33,9 @@
     </nav>
 
     <div class="container">
+        <header class="bg-dark my-4" style="height: 250px">
+            <h1 class="text-light text-center" style="line-height: 250px">Administration</h1>
+        </header>
         <?php if(isset($_GET['updateOK'])) : ?>
             <h2 class="text-center mb-4 text-success">La localisation avec comme ID <strong class="text-primary"><?=$_GET['updateOK']?></strong> a bien été modifié.</h2>
         <?php endif ?>
@@ -102,5 +105,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.4/dist/extensions/export/bootstrap-table-export.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/locale/bootstrap-table-fr-FR.min.js"></script>
     <script src="js/table.js"></script>
+    <div class="position-fixed w-25 bottom-0 end-0 me-2 mb-2" style="height: 50px">
+
+    </div>
    </body>
 </html>
