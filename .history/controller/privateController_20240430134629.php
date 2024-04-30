@@ -80,7 +80,7 @@ if(isset($_GET['insert'])){
         $longitude = (float) $_POST['longitude'];
 
         // si on récupère true, à cette fonction, il faut rédiriger vers l'accueil de l'admin, sinon affichage d'une erreur
-        $insert = addOurdatas($connect,$id,$nom,$adresse ,$codepostal,$latitude,$longitude);
+        $insert = addOurdatas($connect,$nom,$adresse ,$codepostal,$latitude,$longitude);
 
         if($insert===true):
             header("Location: ./?zut"); 
