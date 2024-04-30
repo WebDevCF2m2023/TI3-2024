@@ -9,17 +9,29 @@
     <title>Insertion d'un lieu</title>
 </head>
 <body>
-     <!--NAVBAR-->
-     <div class="container">
-    <header class="d-flex justify-content-center py-3">
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="./" class="nav-link text-black">Accueil</a></li>
-        <li class="nav-item"><a href="?create" class="nav-link text-black">Ajouter un lieu</a></li>
-        <li class="nav-item"><a href="?disconnect" class="nav-link text-black">Déconnexion</a></li>
-       
-      </ul>
-    </header>
-  </div>
+    <!--NAVBAR-->
+  <nav class="navbar navbar-expand-lg  rounded" aria-label="Twelfth navbar example" id="navbarStyle">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="./">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="?create">Ajouter un lieu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="?disconnect">Déconnexion</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
   <!--Fin NAVBAR-->
   <div id="content">
         <h2 class="text-center mt-5">Ajoutez votre lieu</h2>
