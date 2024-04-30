@@ -4,28 +4,60 @@
     margin-bottom: 15px;
 }
 
-.navbar-home{
-  background-color: #28a745;
-  color: white;
-  margin-bottom: 4vh;
-  justify-content: flex-end;
-}
 .navbar-home h1{
-  font-size: 1.5rem;
-  text-align: start;
-  padding-left: 20vh;
-
+  color: white;
 }
 
-.navbar-home button a{
-  display: flex;
-  align-items: flex-end;
-  
-  
-}
 
 .photo {
     width:100px;
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.navbar-links li {
+  display: inline;
+  margin-right: 20px;
+  list-style-type: none;
+  
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.connect-btn {
+  background-color: #4ba60a;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute; 
+  right: 20px; 
+  top: 10px;
+  list-style-type: none;
+
+}
+
+.navbar-home button a {
+  text-decoration: none;
+  color: white;
+}
+
+
+.navbar-home {
+  background-color: #49d052;
+  padding: 10px 20px;
+  display: flex;
+  align-items: flex-end; 
 }
 
 #resultats {
@@ -60,9 +92,7 @@
     background-color: #e9e9e9; 
   }
 
-  .contenuto h1 {
-    
-  }
+ 
 
   h1{
     text-align: center;
@@ -92,7 +122,7 @@
     background-color: #49d052;
     padding: 10px 20px;
     display: flex;
-    align-items: flex-end; /* Allinea gli elementi verticalmente in basso */
+    align-items: flex-end; 
   }
   
   .container {
@@ -131,9 +161,9 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    position: absolute; /* Posiziona il pulsante in modo assoluto */
-    right: 20px; /* Posiziona il pulsante a 20px dal bordo destro del contenitore */
-    top: 10px; /* Posiziona il pulsante a 10px dal fondo del contenitore */
+    position: absolute; 
+    right: 20px; 
+    top: 10px; 
     list-style-type: none;
 
   }

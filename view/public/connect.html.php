@@ -8,11 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body class="d-flex flex-column h-screen bg-light">
+<body class="d-flex flex-column h-screen bg-dark">
 
-    <nav class="navbar navbar-expand-sm navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-sm navbar-light bg-warning shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">GeoMapper</a>
+            <a class="navbar-brand" href="#">GeoMapper<img src="./img/admin.png" alt="admin"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fas fa-bars"></span>
             </button>
@@ -31,9 +31,9 @@
 
     <main class="container mt-5">
         <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-md-6 col-sm-8 card shadow-sm">
+            <div id="manutenzione" class="col-md-6 col-sm-8 card shadow-sm bg-image">
                 <div class="card-body">
-                    <h1 class="h3 mb-3 text-center font-weight-normal">Connectez-vous</h1>
+                    <h1 class="h3 mb-3 text-center font-weight-normal">Connectez-vous<img src="./img/admin.png" alt="admin"></h1>
 
                     <?php
                     
@@ -68,13 +68,24 @@
                             </div>
                         <?php endif; ?>
 
-                        <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">Connexion</button>
+                        <button class="btn btn-lg btn-primary btn-block mt-5 bg-dark offset-lg-9 offset-sm-3" type="submit">Connexion</button>
                     </form>
                 </div>
             </div>
         </div>
     </main>
 
+    <style>
+        #manutenzione{
+            background-color: rgb(255, 193, 7);
+            background-image: url(./img/manutenzione.png);
+            background-repeat: no-repeat;
+            background-size: 570px ;
+            background-position: center;
+
+        }
+        
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
