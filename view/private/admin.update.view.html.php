@@ -59,31 +59,31 @@
                     <form method="POST" name="geo" action="">
                         <div class="mb-3">
                             <label for="nom" class="form-label">Nom</label>
-                            <input type="text" name="nom" value="<?=   $getOneLocation['nom'] ?>" class="form-control mx-auto w-25" id="nom" required>
+                            <input type="text" name="nom" value="<?=   $getOneLocation['nom'] ?>" class="form-control mx-auto w-25 shadow-lg" id="nom" required>
                         </div>
                         <div class="mb-3">
                             <label for="rue" class="form-label">Adresse</label>
-                            <input type="text" name="rue" class="form-control mx-auto w-25" id="rue" value="<?=   $getOneLocation['rue'] ?>" required>
+                            <input type="text" name="rue" class="form-control mx-auto w-25 shadow-lg" id="rue" value="<?=   $getOneLocation['rue'] ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="codepostal" class="form-label">Code Postal</label>
-                            <input type="text" name="codepostal" class="form-control mx-auto w-25" id="codepostal" value="<?=   $getOneLocation['codepostal'] ?>" required>
+                            <input type="text" name="codepostal" class="form-control mx-auto w-25 shadow-lg" id="codepostal" value="<?=   $getOneLocation['codepostal'] ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="telephone" class="form-label">Numéro Tel</label>
-                            <input type="text" name="telephone" class="form-control mx-auto w-25" id="telephone" value="<?=   $getOneLocation['telephone'] ?>" required>
+                            <input type="text" name="telephone" class="form-control mx-auto w-25 shadow-lg" id="telephone" value="<?=   $getOneLocation['telephone'] ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="url" class="form-label">Url</label>
-                            <input type="text" name="url" class="form-control mx-auto w-25" id="url" value="<?=   $getOneLocation['url'] ?>" required>
+                            <input type="text" name="url" class="form-control mx-auto w-25 shadow-lg" id="url" value="<?=   $getOneLocation['url'] ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="latitude" class="form-label">Latitude</label>
-                            <input type="number" value="<?= $getOneLocation['latitude'] ?>" name="latitude" step="0.000000001" class="form-control mx-auto w-25" id="latitude" required>
+                            <input type="number" value="<?= $getOneLocation['latitude'] ?>" name="latitude" step="0.000000001" class="form-control mx-auto w-25 shadow-lg" id="latitude" required>
                         </div>
                         <div class="mb-3">
                             <label for="longitude" class="form-label">Longitude</label>
-                            <input type="number" name="longitude" value="<?= $getOneLocation['longitude'] ?>" step="0.000000001" class="form-control mx-auto w-25" id="longitude" required>
+                            <input type="number" name="longitude" value="<?= $getOneLocation['longitude'] ?>" step="0.000000001" class="form-control mx-auto w-25 shadow-lg" id="longitude" required>
                         </div>
                         <div class="mb-3 text-center">
                             <input type="submit" value="Modifier" class="btn btn-outline-primary mt-4">
