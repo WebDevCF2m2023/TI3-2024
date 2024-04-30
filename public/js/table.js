@@ -155,7 +155,17 @@ $add.click(function () {
             actions: `<div class="d-flex justify-content-center gap-3 pb-4"><a href="javascript:void(0)" title="valider"><i class="validInsert bi bi-check text-success fs-4"></i></a><a href="javascript:void(0)" title="annuler"><i class="cancelInsert bi bi-x text-danger fs-4"></i></a></div>`,
         }
       });
-    newValueInsert = {id:-1};
+      newValueInsert = {
+          id:-1, 
+          nom: "",
+          type:"",
+          adresse: "",
+          codepostal: "",
+          ville: "",
+          url: "",
+          latitude: "",
+          longitude:"",
+      };
 });
 function getIdSelections() {
     return $.map($table.bootstrapTable('getSelections'), function (row) {
