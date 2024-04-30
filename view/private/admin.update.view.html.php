@@ -10,7 +10,7 @@
 </head>
 <body>
      <!--NAVBAR-->
-  <nav class="navbar navbar-expand-lg  rounded" aria-label="Twelfth navbar example" id="navbarStyle">
+  <nav class="navbar navbar-expand-lg" aria-label="Twelfth navbar example" id="navbarStyle">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -58,32 +58,32 @@
                 <div class="row justify-content-center align-items-center">
                     <form method="POST" name="geo" action="">
                         <div class="mb-3">
-                            <label for="nom" class=" form-label">Nom</label>
-                            <input type="text" name="nom" value="<?=   $getOneLocation['nom'] ?>" class="form-control" id="nom" required>
+                            <label for="nom" class="form-label">Nom</label>
+                            <input type="text" name="nom" value="<?=   $getOneLocation['nom'] ?>" class="form-control mx-auto w-25" id="nom" required>
                         </div>
                         <div class="mb-3">
                             <label for="rue" class="form-label">Adresse</label>
-                            <input type="text" name="rue" class="form-control" id="rue" value="<?=   $getOneLocation['rue'] ?>" required>
+                            <input type="text" name="rue" class="form-control mx-auto w-25" id="rue" value="<?=   $getOneLocation['rue'] ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="codepostal" class="form-label">Code Postal</label>
-                            <input type="text" name="codepostal" class="form-control" id="codepostal" value="<?=   $getOneLocation['codepostal'] ?>" required>
+                            <input type="text" name="codepostal" class="form-control mx-auto w-25" id="codepostal" value="<?=   $getOneLocation['codepostal'] ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="telephone" class="form-label">Numéro Tel</label>
-                            <input type="text" name="telephone" class="form-control" id="telephone" value="<?=   $getOneLocation['telephone'] ?>" required>
+                            <input type="text" name="telephone" class="form-control mx-auto w-25" id="telephone" value="<?=   $getOneLocation['telephone'] ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="url" class="form-label">Url</label>
-                            <input type="text" name="url" class="form-control" id="url" value="<?=   $getOneLocation['url'] ?>" required>
+                            <input type="text" name="url" class="form-control mx-auto w-25" id="url" value="<?=   $getOneLocation['url'] ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="latitude" class="form-label">Latitude</label>
-                            <input type="number" value="<?= $getOneLocation['latitude'] ?>" name="latitude" step="0.000000001" class="form-control" id="latitude" required>
+                            <input type="number" value="<?= $getOneLocation['latitude'] ?>" name="latitude" step="0.000000001" class="form-control mx-auto w-25" id="latitude" required>
                         </div>
                         <div class="mb-3">
                             <label for="longitude" class="form-label">Longitude</label>
-                            <input type="number" name="longitude" value="<?= $getOneLocation['longitude'] ?>" step="0.000000001" class="form-control" id="longitude" required>
+                            <input type="number" name="longitude" value="<?= $getOneLocation['longitude'] ?>" step="0.000000001" class="form-control mx-auto w-25" id="longitude" required>
                         </div>
                         <div class="mb-3 text-center">
                             <input type="submit" value="Modifier" class="btn btn-outline-success">
