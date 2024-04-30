@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col-auto" id="tableau">
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped"  data-toggle="table" data-show-columns="true" data-search="true" data-pagination="true" data-checkbox-header="true">
+                            <table class="table table-bordered"  data-toggle="table" data-show-columns="true" data-search="true" data-pagination="true" data-checkbox-header="true">
                                 <thead>
                                     <tr>
                                         <th data-checkbox="true"></th>
