@@ -1,5 +1,6 @@
 const $table = $('#table');
 const $remove = $('#remove');
+const $add = $('#add');
 const baseActions = '<div class="d-flex justify-content-center"><a href="javascript:void(0)" title="editer"><i class="edit bi bi-pen me-4"></i></a><a href="javascript:void(0)" title="supprimer"><i class="remove bi bi-trash text-danger"></i></a></div>';
 let selections;
 let lastValueRow = {};
@@ -13,6 +14,7 @@ window.operateEvents = {
             }).then(data=>{
                 if(data.error !== undefined) return; // TODO MESSAGE
                 $table.bootstrapTable('refresh');
+                $remove.prop('disabled', true);
             });
         }
     },  
@@ -35,6 +37,7 @@ window.operateEvents = {
                 return;
             } // TODO MESSAGE
             $table.bootstrapTable('refresh');
+            $remove.prop('disabled', true);
             lastValueRow = {};
         });
     },
@@ -80,6 +83,7 @@ window.operateEvents = {
         });
     }
 }
+
 $remove.click(function () {
     if(confirm(`Êtes-vous sûre de vouloir supprimer ces éléments ?`)){
         postData(`?delete=1&multiple=${selections.join(",")}`, {
@@ -90,6 +94,15 @@ $remove.click(function () {
             $remove.prop('disabled', true);
         });
     }
+});
+
+$add.click(function () {
+    postData(`?addLocation`, {
+        bootstraptable: 1
+    }).then(data=>{
+        $table.bootstrapTable('refresh');
+        $remove.prop('disabled', true);
+    });
 });
 function getIdSelections() {
     return $.map($table.bootstrapTable('getSelections'), function (row) {
