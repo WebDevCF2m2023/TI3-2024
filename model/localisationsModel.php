@@ -42,7 +42,7 @@ function updateLocation(PDO $connect, int $id, string $nom, string $adresse, str
     }
 }
 
-function addLocation(PDO $connect, int $id, string $nom, string $adresse, string $codepostal, string $ville, float $latitude, float $longitude) : int | string{
+function addLocation(PDO $connect, string $nom, string $adresse, string $codepostal, string $ville, float $latitude, float $longitude) : int | string{
     try {
         $prepare = $connect->prepare("INSERT INTO `localisations`(`nom`, `adresse`, `codepostal`, `ville`, `latitude`, `longitude`) VALUE(?,?,?,?,?,?)");
         $prepare->execute([$nom, $adresse, $codepostal, $ville, $latitude, $longitude]);

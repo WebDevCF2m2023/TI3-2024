@@ -7,39 +7,29 @@
     <title>Login</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4 sticky-top">
+    <nav class="navbar navbar-expand-lg bg-success mb-5 sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Centres Culturels</a>
+            <a class="navbar-brand ms-3 text-light link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="/">Centres Culturels</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/?login">Login</a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
     
-    <div class="container">
-        <form action="" method="POST">
+    <div class="container col-3 mt-5 p-5 border border-success rounded-5">
+        <form method="POST">
             <?php if(isset($error)): ?>
                 <p class="text-danger"><?= $error === false ? "Nom de compte ou mot de passe incorrect" : $error ?></p>
             <?php endif ?>
             <div class="mb-3">
                 <label for="user" class="form-label">Nom d'utilisateur</label>
-                <input type="text" class="form-control" id="user" aria-describedby="user" name="user">
+                <input type="text" class="form-control border-success" id="user" aria-describedby="user" name="user">
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <label for="password" class="form-label col-3">Mot de passe</label>
+                <input type="password" class="form-control border-success" id="password" name="password">
             </div>
-            <button type="submit" class="btn btn-primary">Se connecter</button>
+            <button type="submit" class="btn btn-success mt-5 w-45 d-block m-auto">Se connecter</button>
         </form>
     </div>
 

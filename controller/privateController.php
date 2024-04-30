@@ -2,7 +2,7 @@
 
 if(isset($_GET['disconnect'])){
     administratorDisconnect();
-}elseif(isset($_GET['administration'])){
+}elseif(isset($_GET['admin'])){
     $locations = getAllLocations($connect);
     require("../view/private/admin.html.php");
 }elseif(isset($_GET['update']) && ctype_digit($_GET['update'])){
@@ -20,7 +20,7 @@ if(isset($_GET['disconnect'])){
 }elseif(isset($_GET['delete']) && ctype_digit($_GET['delete'])){
     $id = (int) $_GET['delete'];
 
-    if(isset($_GET['success'])){
+    if(isset($_GET['ok'])){
         $successDelete = deleteLocationByID($connect, $id);
         if($successDelete === true){
             header("Location: ./?admin&deleteSuccess=$id");
@@ -32,10 +32,10 @@ if(isset($_GET['disconnect'])){
     }
 
     $delete = getLocationByID($connect, $id);
-    require("../view/private/admin.delete.html.php");
+    require("../view/private/admin.delete.php");
 }elseif(isset($_GET['addLocation'])){
     if(isset($_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], $_POST['latitude'], $_POST['longitude'])){
-        $successAdd = addLocation($connect, $id, $_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], (float) $_POST['latitude'], (float) $_POST['longitude']);
+        $successAdd = addLocation($connect, $_POST['nom'], $_POST['adresse'], $_POST['codepostal'], $_POST['ville'], (float) $_POST['latitude'], (float) $_POST['longitude']);
         if(!is_string($successAdd)){
             header("Location: ./?admin&addOK=$successAdd");
             die();
@@ -43,5 +43,5 @@ if(isset($_GET['disconnect'])){
     }
     require("../view/private/admin.insert.html.php");
 }else{
-    require("../view/private/homepage.html.php");
+    require("../view/private/admin.html.php");
 }

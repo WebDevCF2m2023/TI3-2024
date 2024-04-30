@@ -4,62 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Administration Delete</title>
+    <title>Administration | Suppression</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4 sticky-top">
+    <nav class="navbar navbar-expand-lg bg-success mb-4 sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Centres Culturels</a>
+            <a class="navbar-brand ms-3 text-light link-dark link-offset-2 link-underline-opacity-10 link-underline-opacity-100-hover">Centres Culturels</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" name="name" name="name" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Accueil</a>
+                    <a class="nav-link text-dark link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" aria-current="page" href="/?administration">Panel Administration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/?administration">Panel Administration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/?disconnect">Se deconnecter</a>
+                    <a class="nav-link text-dark link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="/?disconnect">Se deconnecter</a>
                 </li>
             </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container col-5 mt-5">
         <?php if(isset($error)): ?>
                 <h2 class="text-center mb-4 text-danger"><?= $error ?></h2>
         <?php endif; ?>
-        <h2 class="text-center mb-4 text-primary">Ajouter une nouvelle location.</h2>
+        <h2 class="text-center mb-4 text-success">Ajoutez un Centre Culturel.</h2>
         <form class="w-50 m-auto" method="POST">
             <div class="form-group">
-                <label for="name">Nom</label>
-                <input type="text" class="form-control" name="nom" id="nom" required>
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control border-success mb-2" name="nom" id="nom" required>
             </div>
             <div class="form-group">
                 <label for="adresse">Adresse</label>
-                <input type="text" class="form-control" name="adresse" id="adresse" required>
+                <input type="text" class="form-control border-success mb-2" name="adresse" id="adresse" required>
             </div>
             <div class="form-group">
                 <label for="codepostal">Code Postal</label>
-                <input type="text" class="form-control" name="codepostal" id="codepostal" required>
+                <input type="text" class="form-control border-success mb-2" name="codepostal" id="codepostal" required>
             </div>
             <div class="form-group">
                 <label for="ville">Ville</label>
-                <input type="text" class="form-control" name="ville" id="ville" required>
+                <input type="text" class="form-control border-success mb-2" name="ville" id="ville" required>
             </div>
             <div class="form-group">
                 <label for="latitude">Latitude</label>
-                <input type="number" class="form-control" name="latitude" id="latitude" step="0.0000001" required>
+                <input type="number" class="form-control border-success mb-2" name="latitude" id="latitude" step="0.0000001" required>
             </div>
             <div class="form-group">
                 <label for="longitude">longitude</label>
-                <input type="number" class="form-control" name="longitude" id="longitude" step="0.0000001" require>
+                <input type="number" class="form-control border-success mb-2" name="longitude" id="longitude" step="0.0000001" require>
             </div>
-            <button type="submit" class="btn btn-primary mt-3 w-50 d-block m-auto">Ajouter</button>
+            <button type="submit" class="btn btn-success mt-5 w-50 d-block m-auto">Ajouter</button>
         </form>
     </div>
     
