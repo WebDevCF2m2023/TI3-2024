@@ -32,6 +32,23 @@
         </div>
     </nav>
 
+    <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDeleteID">Validation de suppression</h5>
+                </div>
+            <div class="modal-body">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="onCancelDelete(event)">Annuler</button>
+                <button type="button" class="btn btn-danger validDelete" onclick="onValideDelete(event)">Supprimer</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <header class="bg-dark my-4" style="height: 250px">
             <h1 class="text-light text-center" style="line-height: 250px">Administration</h1>

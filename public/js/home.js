@@ -10,7 +10,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 fetch("?json")
     .then(response=>response.json())
     .then(handleResponse)
-    .catch(error=>console.log("error", error));
+    .catch(error=>alert(error));
 
 /**
  * 

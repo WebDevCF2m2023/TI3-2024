@@ -30,7 +30,6 @@
     </nav>
 
     <div class="container">
-        <?php /*TODO POST VALUE HAAANNN*/ ?>
         <?php if(is_string($update)): ?>
                 <h2 class="text-center mb-4 text-danger"><?= $update ?></h2>
         <?php else: ?>
@@ -41,56 +40,56 @@
                 <form class="w-50 m-auto needs-validation <?= isset($secure) ? 'was-validated' : ''?>" novalidate method="POST">
                     <div class="form-group">
                         <label for="name">Nom</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Nom" pattern="^.{1,50}$" value="<?= $update["nom"]?>" required>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Nom" pattern="^.{1,50}$" value="<?= isset($_POST["name"]) ? $_POST["name"] : $update["nom"]?>" required>
                         <div class="checkname invalid-feedback">
                         Le nom ne doit pas être vide ou dépasser 50 caractères
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="type">Type</label>
-                        <input type="text" class="form-control" name="type" id="type" placeholder="Type" pattern="^.{1,20}$" value="<?= $update["type"]?>" required>
+                        <input type="text" class="form-control" name="type" id="type" placeholder="Type" pattern="^.{1,20}$" value="<?= isset($_POST["type"]) ? $_POST["type"] : $update["type"]?>" required>
                         <div class="checktype invalid-feedback">
                         Le type ne doit pas être vide ou dépasser 20 caractères
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="adresse">Adresse</label>
-                        <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse" pattern="^.{1,100}$" value="<?= $update["adresse"]?>" required>
+                        <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse" pattern="^.{1,100}$" value="<?= isset($_POST["adresse"]) ? $_POST["adresse"] : $update["adresse"]?>" required>
                         <div class="checkadresse invalid-feedback">
                         L'adresse ne doit pas être vide ou dépasser 100 caractères
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="codepostal">Code Postal</label>
-                        <input type="text" class="form-control" name="codePostal" id="codepostal" placeholder="Code Postal" pattern="^\d\d\d\d$" value="<?= $update["codepostal"]?>" required>
+                        <input type="text" class="form-control" name="codePostal" id="codepostal" placeholder="Code Postal" pattern="^\d\d\d\d$" value="<?= isset($_POST["codePostal"]) ? $_POST["codePostal"] : $update["codepostal"]?>" required>
                         <div class="checkcodePostal invalid-feedback">
                         Le Code Postal doit être constitué de 4 chiffres.
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="country">Ville</label>
-                        <input type="text" class="form-control" name="country" id="country" placeholder="Ville" pattern="^.{1,20}$" value="<?= $update["ville"]?>" required>
+                        <input type="text" class="form-control" name="country" id="country" placeholder="Ville" pattern="^.{1,20}$" value="<?= isset($_POST["country"]) ? $_POST["country"] : $update["ville"]?>" required>
                         <div class="checkcountry invalid-feedback">
                         La ville ne doit pas être vide ou dépasser 20 caractères
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="url">Lien du site</label>
-                        <input type="text" class="form-control" name="url" id="url" placeholder="Lien du site" pattern="^.{1,200}$" value="<?= $update["url"]?>" required>
+                        <input type="text" class="form-control" name="url" id="url" placeholder="Lien du site" pattern="^.{1,200}$" value="<?= isset($_POST["url"]) ? $_POST["url"] : $update["url"]?>" required>
                         <div class="checkurl invalid-feedback">
                         Le lien du site ne doit pas être vide ou dépasser 200 caractères
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="lat">Latitude</label>
-                        <input type="text" class="form-control" name="latitude" id="lat" pattern="^-?\d{1,2}(\.\d{1,6})?$" placeholder="Exemple: 50.25647" value="<?= $update["latitude"]?>" required>
+                        <input type="text" class="form-control" name="latitude" id="lat" pattern="^-?\d{1,2}(\.\d{1,6})?$" placeholder="Exemple: 50.25647" value="<?= isset($_POST["latitude"]) ? $_POST["latitude"] : $update["latitude"]?>" required>
                         <div class="checklatitude invalid-feedback">
                         Format de latitude incorrect. Exemple a suivre : 5.214578
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="long">Longitude</label>
-                        <input type="text" class="form-control" name="longitude" id="long" pattern="^-?\d{1,2}(\.\d{1,6})?$" placeholder="Exemple: 1.21456" value="<?= $update["longitude"]?>" required>
+                        <input type="text" class="form-control" name="longitude" id="long" pattern="^-?\d{1,2}(\.\d{1,6})?$" placeholder="Exemple: 1.21456" value="<?= isset($_POST["longitude"]) ? $_POST["longitude"] : $update["longitude"]?>" required>
                         <div class="checklongitude invalid-feedback">
                         Format de longitude incorrect. Exemple a suivre : 50.214578
                         </div>

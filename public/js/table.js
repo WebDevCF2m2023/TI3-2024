@@ -1,36 +1,36 @@
 const $table = $('#table');
 const $remove = $('#remove');
 const $add = $('#add');
+const $modalDelete = $('#modalDelete');
 const selectApiMode = document.querySelector(".select-api-mode");
+const modalBody = document.querySelector(".modal-body");
 const baseActions = '<div class="d-flex justify-content-center"><a href="javascript:void(0)" title="editer"><i class="edit bi bi-pen me-4"></i></a><a href="javascript:void(0)" title="supprimer"><i class="remove bi bi-trash text-danger"></i></a></div>';
 let selections;
 let lastValueRow = {};
 let newValueEdit = {};
 let newValueInsert = {};
 let apiMode;
+
+let toDelete;
 window.operateEvents = {
     'click .remove': function (e, value, row, index) {
         if(!apiMode){
             window.location = `?delete=${row.id}`;
             return;
         }
-        if(confirm(`Êtes-vous sûre de vouloir supprimer l'élément avec comme ID ${row.id} ?`)){
-            postData(`?delete=${row.id}&ok`, {
-                bootstraptable: index
-            }).then(data=>{
-                if(data.error !== undefined) popup(data.error, false);
-                else popup(`La localisation ${data.delete} a bien été supprimé.`);
-                $table.bootstrapTable('refresh');
-                $remove.prop('disabled', true);
-            });
-        }
+        modalBody.textContent = `Êtes-vous sûre de vouloir supprimer cette élément avec comme ID ${row.id}?`;
+        $modalDelete.modal('show');
+        toDelete = [row.id, index];
     },  
     'click .validEdit': function (e, value, row, index) {
         if(!apiMode){
             window.location = `?update=${row.id}`;
             return;
         }
-        if(!checkCanValidate(newValueEdit)) return; // TODO MESSAGE
+        if(!checkCanValidate(newValueEdit)){
+            popup("Des champs sont incomplets ou incorrects.", false);
+            return;
+        }
         postData(`?update=${row.id}`, {
             name: newValueEdit.nom,
             type: newValueEdit.type,
@@ -54,7 +54,10 @@ window.operateEvents = {
             window.location = `?addLocation`;
             return;
         }
-        if(!checkCanValidate(newValueInsert)) return; // TODO MESSAGE
+        if(!checkCanValidate(newValueInsert)) {
+            popup("Des champs sont incomplets ou incorrects.", false);
+            return;
+        }
         postData(`?addLocation`, {
             name: newValueInsert.nom,
             type: newValueInsert.type,
@@ -77,10 +80,7 @@ window.operateEvents = {
         resetRowWithLastValue();
     },
     'click .cancelInsert': function (e, value, row, index) {
-        $table.bootstrapTable('remove', {
-            field: 'id',
-            values: [-1]
-        });
+        cancelInsert();
     },
     'click .edit': function (e, value, row, index) {
         if(!apiMode){
@@ -127,16 +127,9 @@ window.operateEvents = {
 }
 
 $remove.click(function () {
-    if(confirm(`Êtes-vous sûre de vouloir supprimer ces éléments ?`)){
-        postData(`?delete=1&multiple=${selections.join(",")}`, {
-            bootstraptable: 1
-        }).then(data=>{
-            if(data.error !== undefined) popup(data.error, false);
-            else popup(`Les locations ${data.multiple} ont bien été supprimé`)
-            $table.bootstrapTable('refresh');
-            $remove.prop('disabled', true);
-        });
-    }
+    modalBody.textContent = `Êtes-vous sûre de vouloir supprimer ces éléments ?`;
+    $modalDelete.modal('show');
+    toDelete = [...selections, -1];
 });
 
 $add.click(function () {
@@ -144,6 +137,9 @@ $add.click(function () {
         window.location = `?addLocation`;
         return;
     }
+    if(newValueInsert.id !== undefined)
+        cancelInsert();
+    
     $table.bootstrapTable('insertRow', {
         index: 0,
         row: {
@@ -159,7 +155,7 @@ $add.click(function () {
             actions: `<div class="d-flex justify-content-center gap-3 pb-4"><a href="javascript:void(0)" title="valider"><i class="validInsert bi bi-check text-success fs-4"></i></a><a href="javascript:void(0)" title="annuler"><i class="cancelInsert bi bi-x text-danger fs-4"></i></a></div>`,
         }
       });
-    newValueInsert = {};
+    newValueInsert = {id:-1};
 });
 function getIdSelections() {
     return $.map($table.bootstrapTable('getSelections'), function (row) {
@@ -311,6 +307,14 @@ function checkNewValueInputByName(name, objectToCheck){
     }
 }
 
+function cancelInsert(){
+    $table.bootstrapTable('remove', {
+        field: 'id',
+        values: [-1]
+    });
+    newValueInsert = {};
+}
+
 async function postData(url = '', data = {}) {
     // Transforme les données en chaîne de caractères de type x-www-form-urlencoded
     const formData = new URLSearchParams();
@@ -367,7 +371,47 @@ function getApiMode(){
     return store === "true";
 }
 
-addEventListener('keydown', e => e.key === "Enter" && $('.validEdit').length!==0 ? $('.validEdit').click() : undefined);
+function onValideDelete(e){
+    $modalDelete.modal('hide');
+    if(toDelete.length == 2){
+        postData(`?delete=${toDelete[0]}&ok`, {
+            bootstraptable: toDelete[1]
+        }).then(data=>{
+            if(data.error !== undefined) popup(data.error, false);
+            else popup(`La localisation ${data.delete} a bien été supprimé.`);
+            $table.bootstrapTable('refresh');
+            $remove.prop('disabled', true);
+            toDelete = [];
+        });
+    }else if(toDelete.length > 2){
+        postData(`?delete=1&multiple=${selections.join(",")}`, {
+            bootstraptable: 1
+        }).then(data=>{
+            if(data.error !== undefined) popup(data.error, false);
+            else popup(`Les localisations ${data.multiple} ont bien été supprimé`)
+            $table.bootstrapTable('refresh');
+            $remove.prop('disabled', true);
+        });
+    }
+}
+
+function onCancelDelete(e){
+    $modalDelete.modal('hide');
+    toDelete = [];
+}
+
+addEventListener('keydown', e => {
+    if(e.target.name !== undefined && e.target.name.includes("Edit")){
+        const existEdit = $('.validEdit').length !==0;
+        if(e.key === "Enter" && existEdit) $('.validEdit').click();
+        else if(e.key === "Escape" && existEdit) $('.cancelEdit').click();
+    }
+    else if(e.target.name !== undefined && e.target.name.includes("Insert")){
+        const existInsert = $('.validInsert').length !==0;
+        if(e.key === "Enter" && existInsert) $('.validInsert').click();
+        else if(e.key === "Escape" && existInsert) $('.cancelInsert').click();
+    }
+});
 
 $(function(){
     $table.on('check.bs.table uncheck.bs.table check-all.bs.table uncheck-all.bs.table', function () {
