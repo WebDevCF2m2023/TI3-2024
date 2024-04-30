@@ -32,10 +32,8 @@ function get_localisation_by_id(PDO $db, int $id):array|string{
 function get_localisation_by_page(PDO $db, int $nb_by_page, int $page):array|string{
     try {
         $offset = $nb_by_page * ($page - 1);
-        var_dump($offset);
         $limit = $nb_by_page;
         $sql = "SELECT * FROM `localisations` ORDER BY `id` DESC LIMIT $offset,$limit";
-        var_dump($sql);
         $prepare = $db->prepare($sql);
         $prepare->execute();
         $locations = $prepare->fetchAll(PDO::FETCH_ASSOC);

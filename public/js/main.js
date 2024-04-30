@@ -6,7 +6,13 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-fetch("./?all_datas").then(res=>res.json()).then(handle_res).catch(error=>console.log("error", error));
+if (document.querySelector("#locations-table tbody")){
+    const page = /page=/.test(location.href) ? Number(location.href.match("page=([0-9]*)")[1]) : 1;
+    console.log(page);
+    fetch(`./?datas_page=${page}`).then(res=>res.json()).then(handle_res).catch(error=>console.log("error", error));
+}else {
+    fetch("./?all_datas").then(res=>res.json()).then(handle_res).catch(error=>console.log("error", error));
+}
 
 function handle_res(locations){
     if(locations.error){
@@ -20,14 +26,14 @@ function handle_res(locations){
     //center zoom
     const group = new L.featureGroup(markers);
     map.fitBounds(group.getBounds());
-    //add locations to table (public home)
+    //add locations to table (private home)
     const tbody = document.querySelector("#locations-table tbody");
     if (tbody){
         locations.forEach((location)=>{
             tbody_add_location(tbody, location);
         });
     }
-    //add locations to list (admin home)
+    //add locations to list (public home)
     const ul_list = document.querySelector("#locations-list");
     if (ul_list){
         locations.forEach((location)=>{
