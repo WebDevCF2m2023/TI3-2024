@@ -16,7 +16,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/?administration">Panel Administration</a>
+                    <a class="nav-link" aria-current="page" href="/?administration">Administration</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/?disconnect">Se deconnecter</a>
@@ -75,8 +75,8 @@
                             <td><?= $location['ville'] ?></td>
                             <td><?= $location['latitude'] ?></td>
                             <td><?= $location['longitude'] ?></td>
-                            <td class="ps-4"><a href="?update=<?= $location['id'] ?>"><img src="img/update.png" alt="Icone modifier" width="30"></a></td>
-                            <td class="ps-4"><a href="?delete=<?= $location['id'] ?>"><img src="img/trash.png" alt="Icone supprimer" width="30"></a></td>
+                            <td class="ps-4"><a href="?update=<?= $location['id'] ?>"><img src="img/update.svg" alt="Icone modifier" width="30"></a></td>
+                            <td class="ps-4"><a href="?delete=<?= $location['id'] ?>"><img src="img/trash.svg" alt="Icone supprimer" width="30"></a></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>

@@ -6,8 +6,12 @@
 
 #container{
     display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     width: 80%;
     margin: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     gap: 5px;
     grid-template-columns: 1fr 0.7fr;
     grid-template-areas: 
@@ -34,6 +38,13 @@
 
 #liste ul li{
     cursor: pointer;
+    list-style-type: none;
+    background-color: #debdaf;
+    color: #232323;
+    font-size: 14pt;
+    line-height: 1.6em;
+    padding: 10px;
+    text-align: left;
     list-style: none;
     padding: 5px 10px 5px 10px;
 }
@@ -43,7 +54,9 @@
 }
 
 #liste ul li:hover{
-    background-color: rgba(0,255,0,0.3);
+    background-color: rgba(118, 26, 0, 0.585);
+    color: white;
+
 }
 
 @media screen and (width <= 576px) {
@@ -58,22 +71,71 @@
     }
 }
 
-#welcome-home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: calc(100vh - var(--navbar-height));
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
-
 
 #homepage-container {
     display: grid;
     width: 80%;
     margin: auto;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-        "map liste";
-        margin-bottom: 100px;
+    grid-template-areas: "map liste";
+    margin-bottom: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 80%;
+    font-weight: lighter;
+    
+}
 
+h1  {
+    text-align: center;
+    font-size: 3em;
+    line-height: 1.4;
+    letter-spacing: -2px;
+    color: rgb(90, 90, 90);
+}
+
+h2  {
+    /*text-transform: uppercase;*/
+    font-size: 1.5em;
+    line-height: 1.6;
+    letter-spacing: .75;
+    text-align: center;
+    max-width: 60ch;
+    margin: auto;
+    color: #555;
+}
+
+button  {
+    background: #232323;
+    border: none;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.1),inset 0 1px 1px rgba(255,255,255,.075);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .2), inset 0 0 0 4px rgba(255, 255, 255, .6);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    outline:
+    padding: 10px 15px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+    height: 40px;
+    display: block;
+    &:hover   {box-shadow: inset 0 0 0  1px rgba(255,  255, 255, .2), inset 0 0  0 8px rgba(255, 255, 255, .8)}
+    &:hover   {box-shadow: inset 0 0 0  1px rgba(255,  255, 255, .6), inset 0 0  0 8px rgba(255, 255, 255, .8)}
+}
+
+ 
+
+#map, #liste {
+    flex: 1 1 100%;
+}
+@media (min-width: 600px) {
+    #map, #liste {
+        flex: 1;
+    }
 }

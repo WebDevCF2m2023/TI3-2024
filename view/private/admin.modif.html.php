@@ -16,7 +16,7 @@
             <div class="collapse navbar-collapse" name="name" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/?administration">Panel Administration</a>
+                    <a class="nav-link" aria-current="page" href="/?administration">Administration</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/?disconnect">Se deconnecter</a>
