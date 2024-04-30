@@ -8,7 +8,6 @@ let newValueEdit = {};
 let newValueInsert = {};
 window.operateEvents = {
     'click .remove': function (e, value, row, index) {
-        console.log(index)
         if(confirm(`Êtes-vous sûre de vouloir supprimer l'élément avec comme ID ${row.id} ?`)){
             postData(`?delete=${row.id}&ok`, {
                 bootstraptable: index
@@ -34,6 +33,7 @@ window.operateEvents = {
             bootstraptable: index
         }).then(data=>{
             if(data.error !== undefined) popup(data.error, false);
+            else if(data.secure !== undefined) popup(data.secure, false);
             else popup(`La localisation ${data.update} a bien été modifié.`);
             $table.bootstrapTable('refresh');
             $remove.prop('disabled', true);
@@ -53,6 +53,7 @@ window.operateEvents = {
             bootstraptable: 1
         }).then(data=>{
             if(data.error !== undefined) popup(data.error, false);
+            else if(data.secure !== undefined) popup(data.secure, false);
             else popup(`La localisation ${data.add} a bien été crée.`);
             $table.bootstrapTable('refresh');
             $remove.prop('disabled', true);

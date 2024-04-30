@@ -77,6 +77,8 @@ if(isset($_GET['disconnect'])){
     $id = (int) $_GET['update'];
     if(formIsSet()){
         $secure = secureValueFromForm();
+        $isBooststrapTable = isset($_POST['bootstraptable']) && ctype_digit($_POST['bootstraptable']);
+        if($isBooststrapTable) header('Content-Type: application/json; charset=utf-8');
         if($secure === true){
             $successUpdate = updateLocation($db, $id, 
                                 $_POST['name'], 
@@ -87,8 +89,7 @@ if(isset($_GET['disconnect'])){
                                 $_POST['url'], 
                                 (float) $_POST['latitude'], 
                                 (float) $_POST['longitude']);
-            if(isset($_POST['bootstraptable']) && ctype_digit($_POST['bootstraptable'])){
-                header('Content-Type: application/json; charset=utf-8');
+            if($isBooststrapTable){
                 if($successUpdate === true) echo json_encode([
                     'success' => true, 
                     'update' => $id, 
@@ -110,6 +111,22 @@ if(isset($_GET['disconnect'])){
                     die();
                 } else $error = $successUpdate;
             }
+        }
+        if($isBooststrapTable){
+            echo json_encode([
+                'secure' => "Données reçu incorrect", 
+                'update' => $id, 
+                'name' => $_POST['name'], 
+                'type' => $_POST['type'], 
+                'adresse' => $_POST['adresse'], 
+                'codepostal' => $_POST['codePostal'], 
+                'ville' => $_POST['country'], 
+                'url' => $_POST['url'], 
+                'latitude' => htmlspecialchars($_POST['latitude']), 
+                'longitude' => htmlspecialchars($_POST['longitude']),
+                'index' => (int)$_POST['bootstraptable']
+            ]);
+            die();
         }
     }
 
@@ -150,6 +167,8 @@ if(isset($_GET['disconnect'])){
 }elseif(isset($_GET['addLocation'])){
     if(formIsSet()){
         $secure = secureValueFromForm();
+        $isBooststrapTable = isset($_POST['bootstraptable']) && ctype_digit($_POST['bootstraptable']);
+        if($isBooststrapTable) header('Content-Type: application/json; charset=utf-8');
         if($secure === true){
             $successAdd = addLocation($db, 
                                 $_POST['name'], 
@@ -161,8 +180,7 @@ if(isset($_GET['disconnect'])){
                                 (float) $_POST['latitude'], 
                                 (float) $_POST['longitude']);
     
-            if(isset($_POST['bootstraptable']) && ctype_digit($_POST['bootstraptable'])){
-                header('Content-Type: application/json; charset=utf-8');
+            if($isBooststrapTable){
                 if(!is_string($successAdd)) echo json_encode([
                     'success' => true, 
                     'add' => $successAdd,
@@ -184,6 +202,22 @@ if(isset($_GET['disconnect'])){
                     die();
                 } else $error = $successAdd;
             }
+        }
+        if($isBooststrapTable){
+            echo json_encode([
+                'secure' => "Données reçu incorrect", 
+                'add' => $id, 
+                'name' => $_POST['name'], 
+                'type' => $_POST['type'], 
+                'adresse' => $_POST['adresse'], 
+                'codepostal' => $_POST['codePostal'], 
+                'ville' => $_POST['country'], 
+                'url' => $_POST['url'], 
+                'latitude' => htmlspecialchars($_POST['latitude']), 
+                'longitude' => htmlspecialchars($_POST['longitude']),
+                'index' => (int)$_POST['bootstraptable']
+            ]);
+            die();
         }
     }
     require("../view/private/administration.add.html.php");
