@@ -151,13 +151,6 @@
             </nav>
             <!-- Navbar End -->
 
-
-
-
-
-
-
-
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
@@ -172,9 +165,15 @@
                <li><a href="?disconnect">Déconnexion</a></li>
            </ul>
         <?php if(isset($_GET['zut'])): ?>
-
             <h2 class="text-success">Insertion réussie</h2>
-            
+        <?php endif ?>
+
+        <?php if(isset($_GET['up'])): ?>
+          <h2 class="text-success">Update réussie</h2>
+        <?php endif ?>
+
+        <?php if(isset($_GET['ok'])): ?>
+          <h2 class="text-success">delete réussie</h2>
         <?php endif ?>
 
         <?php  if(isset($message)): ?>

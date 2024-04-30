@@ -4,18 +4,24 @@
 if(isset($_GET['disconnect'])) administratorDisconnect();
 
 // suppression
+
+
+
+
 if(isset($_GET['delete'])&&ctype_digit($_GET['delete']))
 {
     $idDelete = (int) $_GET['delete'];
 
     // si on valide
     if(isset($_GET['ok'])){
+
         $delete = deleteOurdatasByID($connect, $idDelete);
         if($delete===true){
-            header("Location: ./");
+            header("Location: ./?ok");
             die;
         }
     }
+
 
     $delete = getOneOurdatasByID($connect,$idDelete);
 
@@ -51,7 +57,7 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
    
         if($update===true){
             // redirection
-            header("Location: ./");
+            header("Location: ./?up");
             die;
         }
         //var_dump($update);
