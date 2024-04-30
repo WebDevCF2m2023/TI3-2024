@@ -7,7 +7,7 @@
     <title>Login</title>
 </head>
 <body style="background: url(../img/bg.svg);
-    background-attachment: fixed;" >
+    background-attachment: fixed;">
     <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4 sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">Bornes de recharge</a>
