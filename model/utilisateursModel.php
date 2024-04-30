@@ -1,7 +1,7 @@
 <?php
 
 # Connexion de l'administrateur en utilisant password_verify
-function attemptAdminLogin (PDO $db, string $name, string $pass) : bool | string {
+function attemptUserLogin (PDO $db, string $name, string $pass) : bool | string {
     
     $sql = "SELECT *
             FROM `utilisateurs`
@@ -19,10 +19,9 @@ try {
     if (password_verify($pass, $result['passwd'])) {
         
         $_SESSION = $result;
-        unset($_SESSION['passwd']);
+        unset($_SESSION['password']);
         $_SESSION['monID'] = session_id();
-        $_SESSION["pageCount"] = 0;
-        $_SESSION['showGreeting'] = false;       
+        $_SESSION['pageCount'] = 1;       
         return true;
         
     }else{
