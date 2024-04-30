@@ -40,8 +40,8 @@
             // var_dump($datas);
             foreach ($datas as $data) :
             ?>
-                <h4><?= $data['title'] ?></h4>
-                <p><?= $data['geolocdesc'] ?></p>
+                <h4><?= $data['nom'] ?></h4>
+                <p><?= $data['rue'] ?></p>
                 <p><?= $data['latitude'] ?> | <?= $data['longitude'] ?></p>
                 <hr>
         <?php
