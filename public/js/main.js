@@ -20,14 +20,14 @@ function handle_res(locations){
     //center zoom
     const group = new L.featureGroup(markers);
     map.fitBounds(group.getBounds());
-    //add locations to table
+    //add locations to table (public home)
     const tbody = document.querySelector("#locations-table tbody");
     if (tbody){
         locations.forEach((location)=>{
             tbody_add_location(tbody, location);
         });
     }
-    //add locations to list
+    //add locations to list (admin home)
     const ul_list = document.querySelector("#locations-list");
     if (ul_list){
         locations.forEach((location)=>{
@@ -53,6 +53,7 @@ function ul_add_location(ul, location){
     const li_html_content = `${location.nom} | ${location.rue} ${location.codepostal} Bruxelles | ${location.telephone} | <a href="${location.url}" target="_blank">Voir le site</a>`;
     li.innerHTML = li_html_content;
     ul.insertAdjacentElement("beforeend", li);
+    //zoom on the marker when click
     li.addEventListener("click", (e)=>{
         const marker = markers_hashmap[location.id];
         marker.openPopup();
@@ -90,7 +91,7 @@ function tbody_add_location(tbody, location){
         marker.openPopup();
         map.setView(marker.getLatLng(), 17);
     });
-    //if modo show icons to edit and delete
+    //if modo: show the icons to edit and delete
     if (document.querySelector("#logout-link")){
         const edit_a = document.createElement("a");
         const delete_a = document.createElement("a");

@@ -15,7 +15,7 @@
     <h4 id="nb-locations"></h4>
     <main id="public-home">
         <div id="map"></div>
-        <!-- table -->
+        <!-- liste locations -->
         <ul id="locations-list">
         </ul>
     </main>

@@ -5,7 +5,8 @@ if (isset($_GET["p"])){
         case "logout":
             logout_admin();
             header("Location: ./");
-            die;
+        default:
+            require_once("../view/private/home.php");
     }
 }
 elseif (isset($_GET["edit"])){
