@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Acceuil</title>
+    <title>Accueil</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Leaflet CSS -->
@@ -22,7 +22,7 @@
             </button>
             <div id="navbarSupportedContent" style="display: none;">
                 <ul style="margin: 0; padding: 0; list-style: none; display: flex; justify-content: flex-end; align-items: center;">
-                    <li style="margin-right: 1rem;"><a style="color: white; text-decoration: none;" href="?homepage">Acceuil</a></li>
+                    <li style="margin-right: 1rem;"><a style="color: white; text-decoration: none;" href="?homepage">Accueil</a></li>
                     <li><a style="color: white; text-decoration: none;" href="?connect">Connexion</a></li>
                 </ul>
             </div>
