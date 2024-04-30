@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 15px; /* Bordures arrondies */
+    border: 2px solid #007bff; /* Bordure bleue */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#map {
+    flex: 1;
+    height: 600px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 50px;
+}
+
+#liste {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+    color: #007bff;
+}
+
+#nav1 {
+    background-color: #007bff;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#nav1 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav1 ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+#nav1 ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+#nav1 ul li a:hover {
+    color: #0056b3;
+}
+#nav1 ul li a:hover {
+    color: #0056b3;
+}
+#map { width: 50%; height: 600px; }
+#map { box-shadow: 0 0 10px rgb(43, 211, 226); border: solid rgb(248, 232, 233);}
+.rouge, .rouge a {color:red;}
+h3, h1 {text-align: center;}
+.photo {width:100px;}
+#resultats {display: flex;}
+
+body{
+    background-image: url("../img/bg-blue.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

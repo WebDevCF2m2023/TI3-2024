@@ -1,0 +1,33 @@
+nav ul li{
+    display: inline;
+    text-decoration: none;
+    padding-right: 1em;
+}
+#alert{
+    color: red;
+}
+#comment{
+    color: rgb(4, 71, 15);
+}  
+
+
+#map { width: 50%; height: 600px; }
+#map { box-shadow: 0 0 10px rgb(226, 43, 55); border: solid rgb(226, 43, 55);}
+.rouge, .rouge a {color:red;}
+h3, h1 {text-align: center;}
+.photo {width:100px;}
+#resultats {display: flex;}
+
+body{
+    background-image: url("../img/backgr.jpg");
+}
+
+#nc {
+    justify-content: center;
+    text-align: center;
+}
+
+#nav1 {
+    justify-content: center;
+    text-align: center;
+}
