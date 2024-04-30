@@ -16,9 +16,6 @@
             <div class="collapse navbar-collapse" name="name" name="name" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Accueil</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/?administration">Panel Administration</a>
                 </li>
                 <li class="nav-item">

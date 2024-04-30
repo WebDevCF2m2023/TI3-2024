@@ -18,7 +18,7 @@ try{
 }
 
 if(isset($_GET['json'])){
-    require("../controller/ApiController.php");
+    require("../controller/apiController.php");
 }else if(isset($_SESSION['connected'])){
     require("../controller/privateController.php");
 }else{

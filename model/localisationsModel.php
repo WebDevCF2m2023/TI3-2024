@@ -35,7 +35,7 @@ function deleteLocationByID(PDO $connect, int $id) : bool | string{
 function updateLocation(PDO $connect, int $id, string $rue, string $codepostal, string $ville, float $latitude, float $longitude) : bool | string{
     try {
         $prepare = $connect->prepare("UPDATE `localisations` SET `rue` = ?, `codepostal` = ?, `ville` = ?, `latitude` = ?, `longitude` = ? WHERE `id` = ?");
-        $prepare->execute([$nom, $adresse, $codepostal, $ville, $latitude, $longitude, $id]);
+        $prepare->execute([$rue, $codepostal, $ville, $latitude, $longitude, $id]);
         return true;
     } catch (Exception $e) {
         return $e->getMessage();
@@ -45,7 +45,7 @@ function updateLocation(PDO $connect, int $id, string $rue, string $codepostal, 
 function addLocation(PDO $connect, string $rue, string $codepostal, string $ville, float $latitude, float $longitude) : int | string{
     try {
         $prepare = $connect->prepare("INSERT INTO `localisations`(`rue`, `codepostal`, `ville`, `latitude`, `longitude`) VALUE(?,?,?,?,?)");
-        $prepare->execute([$rue, $adresse, $codepostal, $ville, $latitude, $longitude]);
+        $prepare->execute([$rue, $codepostal, $ville, $latitude, $longitude]);
         return (int) $connect->lastInsertId();
     } catch (Exception $e) {
         return $e->getMessage();

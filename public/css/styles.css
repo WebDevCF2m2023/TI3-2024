@@ -63,7 +63,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: calc(100vh - var(--navbar-height));
 }
+
 
 #homepage-container {
     display: grid;

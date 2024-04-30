@@ -16,9 +16,6 @@
             <div class="collapse navbar-collapse" name="name" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Accueil</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/?administration">Panel Administration</a>
                 </li>
                 <li class="nav-item">
@@ -39,24 +36,24 @@
                 <h2 class="text-center mb-4 text-primary">Modifier la localisation avec comme ID <?= $update['id'] ?></h2>
                 <form class="w-50 m-auto" method="POST">
                     <div class="form-group">
-                        <label for="name">Rue</label>
-                        <input type="text" class="form-control" name="name" id="name" required value="<?= $update['name'] ?>">
+                        <label for="rue">Rue</label>
+                        <input type="text" class="form-control" name="rue" id="rue" required value="<?= $update['rue'] ?>">
                     </div>
                     <div class="form-group">
-                        <label for="img_url">Image URL</label>
-                        <input type="text" class="form-control" name="img_url" id="img_url" required value="<?= $update['img_url'] ?>">
+                        <label for="codepostal">CodePostal</label>
+                        <input type="text" class="form-control" name="codepostal" id="codepostal" required value="<?= $update['codepostal'] ?>">
                     </div>
                     <div class="form-group">
-                        <label for="adresse">Adresse</label>
-                        <input type="text" class="form-control" name="adresse" id="adresse" required value="<?= $update['adresse'] ?>">
+                        <label for="ville">Ville</label>
+                        <input type="text" class="form-control" name="ville" id="ville" required value="<?= $update['ville'] ?>">
                     </div>
                     <div class="form-group">
-                        <label for="long">Longitude</label>
-                        <input type="number" class="form-control" name="long" id="long" step="0.0000001" required value="<?= $update['long'] ?>">
+                        <label for="latitude">Latitude</label>
+                        <input type="number" class="form-control" name="latitude" id="latitude" step="0.0000001" required value="<?= $update['latitude'] ?>">
                     </div>
                     <div class="form-group">
-                        <label for="lat">Latitude</label>
-                        <input type="number" class="form-control" name="lat" id="lat" step="0.0000001" required value="<?= $update['lat'] ?>">
+                        <label for="longitude">Longitude</label>
+                        <input type="number" class="form-control" name="longitude" id="longitude" step="0.0000001" required value="<?= $update['longitude'] ?>">
                     </div>
                     <button type="submit" class="btn btn-primary mt-3 w-50 d-block m-auto">Modifier</button>
                 </form>
