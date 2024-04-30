@@ -54,7 +54,7 @@
             // on compte le nombre de données 
             $nb = count($datas);
         ?>
-            <!-- <h3>Il y a <?= $nb ?> <?= $nb > 1 ? "lieux" : "lieu" ?></h3>-->
+             <p class="text-center mt-5">Il y a <span id="nbLieu"><?= $nb ?></span> <?= $nb > 1 ? "lieux" : "lieu" ?> dans la base de données</p>
             <section class="container">
                 <div class="row">
                     <div class="col-auto" id="tableau">
