@@ -91,3 +91,15 @@ a #btnHomepage{
 li{
     margin-bottom: 10px;
 }
+
+#navbarStyle{
+    background-color: #2a454e;
+   padding: 8px;
+}
+#navbarStyle a{
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.titleStyle{
+    margin-top: 2em;
+}
