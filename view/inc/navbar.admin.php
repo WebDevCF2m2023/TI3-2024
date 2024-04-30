@@ -9,7 +9,7 @@
                 <a class="nav-link" aria-current="page" href="./">Accueil</a>
                 </li>
                 <li class="nav-item h4">
-                <a class="nav-link" href="?create">Ajoutez un utilisateur</a>
+                <a class="nav-link" href="?create">Ajouter un lieu</a>
                 </li>
                 <li class="nav-item h4">
                 <a class="nav-link" href="?disconnect">Déconnexion</a>

@@ -12,6 +12,7 @@
     <?php
         require_once "../view/inc/navbar.admin.php";
     ?>
+    <h3 class="messages">Ajouter un lieu</h3>
     <form method="POST" >
         <div class="container border-start border-end border-success rounded-5 p-4">
         <div class="row mb-4 mt-5">

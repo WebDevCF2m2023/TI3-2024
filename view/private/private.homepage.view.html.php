@@ -41,7 +41,7 @@
             // on compte le nombre de données 
             $nb = count($datas);
         ?>
-            <h3 id="messages">Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
+            <h3 class="messages">Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
 
         <section class="container mt-3 mb-5 border-bottom border-start border-danger rounded-5 py-4 px-5">
             <div class="row">

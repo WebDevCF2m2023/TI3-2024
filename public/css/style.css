@@ -30,12 +30,11 @@ nav ul li{
     padding-right: 1em;
 }
 
-#messages h3{
+#alert {
     color: rebeccapurple;
 }
-
-#alert {
-    color: red;
+.messages {
+    color: rebeccapurple;
 }
 
 #comment{
