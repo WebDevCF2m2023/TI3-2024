@@ -25,6 +25,14 @@ if (isset($_GET["all_datas"])){
     //return datas
     else echo json_encode($locations);
 }
+else if (isset($_GET["datas_page"])){
+    $locations = get_localisation_by_page($db, ELEMENT_BY_PAGE, $_GET["datas_page"]);
+
+    //error
+    if(gettype($locations)==="string")echo json_encode(['error' => $locations]);
+    //return datas
+    else echo json_encode($locations);
+}
 else if (isset($_SESSION["admin"]) && $_SESSION["admin"]){
     require_once("../controller/privateController.php");
 }else {

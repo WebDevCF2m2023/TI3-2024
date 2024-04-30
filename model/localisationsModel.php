@@ -29,6 +29,24 @@ function get_localisation_by_id(PDO $db, int $id):array|string{
     }
 }
 
+function get_localisation_by_page(PDO $db, int $nb_by_page, int $page):array|string{
+    try {
+        $offset = $nb_by_page * ($page - 1);
+        var_dump($offset);
+        $limit = $nb_by_page;
+        $sql = "SELECT * FROM `localisations` ORDER BY `id` DESC LIMIT $offset,$limit";
+        var_dump($sql);
+        $prepare = $db->prepare($sql);
+        $prepare->execute();
+        $locations = $prepare->fetchAll(PDO::FETCH_ASSOC);
+        $prepare->closeCursor();
+        if ($locations)return $locations;
+        return "Localisations non trouvées";
+    }catch (Exception $e){
+        return $e->getMessage();
+    }
+}
+
 function check_fields(string $name, string $street, string $postal_code, string $phone_number, string $url):true|string{
     $name = htmlspecialchars(strip_tags(trim($name)),ENT_QUOTES);
     if ($name==="")return "le champ `Nom` ne peut pas être vide";
