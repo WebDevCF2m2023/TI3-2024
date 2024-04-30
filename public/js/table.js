@@ -16,6 +16,7 @@ window.operateEvents = {
                 if(data.error !== undefined) return; // TODO MESSAGE
                 $table.bootstrapTable('refresh');
                 $remove.prop('disabled', true);
+                popup(`La localisation ${data.delete} a bien été supprimé.`);
             });
         }
     },  
@@ -40,6 +41,7 @@ window.operateEvents = {
             $table.bootstrapTable('refresh');
             $remove.prop('disabled', true);
             lastValueRow = {};
+            popup(`La localisation ${data.update} a bien été modifié.`);
         });
     },'click .validInsert': function (e, value, row, index) {
         if(!checkCanValidate(newValueInsert)) return; // TODO MESSAGE
@@ -57,6 +59,7 @@ window.operateEvents = {
             console.log(data)
             $table.bootstrapTable('refresh');
             $remove.prop('disabled', true);
+            popup(`La localisation ${data.add} a bien été crée.`);
         });
     },
     'click .cancelEdit': function (e, value, row, index) {
@@ -146,7 +149,6 @@ function getIdSelections() {
 function setValueInput(e){
     const regex = /(Edit|Insert)/gi;
     const name = e.target.name.replace(regex, '');
-    console.log(name);
     switch(name){
         case "nom":
             if(e.target.name.includes("Edit"))
@@ -199,7 +201,7 @@ function setValueInput(e){
         default: return;
     }
 
-    const check = checkNewValueInputByName(name, newValueInsert);
+    const check = checkNewValueInputByName(name, e.target.name.includes("Edit") ? newValueEdit : newValueInsert);
 
     if(check !== true){
         e.target.classList.remove("is-valid");
@@ -313,7 +315,7 @@ async function postData(url = '', data = {}) {
  * 
  * @param {string} message
  */
-function popup(message, success){
+function popup(message, success = true){
     const div = document.createElement("div");
     div.className = "popup d-flex justify-content-center rounded fw-bold text-light align-items-start position-fixed py-2 px-4 top-0 end-0 me-3 " + (success ? "bg-success border border-success" : "bg-danger border border-danger");
     div.style.minWidth = "300px";
