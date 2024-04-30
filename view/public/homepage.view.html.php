@@ -38,7 +38,7 @@
             </div>
         </div>
     </header>
-    <div id="content" style="text-align: center; margin-top: 3rem;">
+    <div id="content2" style="text-align: center; margin-top: 3rem;">
         <h3>Liste des stations</h3>
     </div>
     <div id="content">
