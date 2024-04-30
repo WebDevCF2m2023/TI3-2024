@@ -29,7 +29,7 @@
                           </nav>
                         </div>
 
-    <div class="card text-black border border-primary mb-4" style="border-radius: 25px;">
+                        <div class="card text-black border border-primary mb-4" style="border-radius: 25px;">
                           <div class="card-body p-md-5">
                             <div class="row justify-content-center">
                               <div class="col-md-10 col-lg-6 col-xl-5">
@@ -37,7 +37,7 @@
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 text-primary">Modifier la data</p>
 
                                 <form action="" name="localisations" method="POST" [12:42] kevin Vanwassenhove
-onsubmit="return event.submitter.name === 'up' ? confirm('Voulez-vous vraiment modifier ?') : true">
+                                  onsubmit="return event.submitter.name === 'up' ? confirm('Voulez-vous vraiment modifier ?') : true">
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example3c">nom</label>
