@@ -14,7 +14,7 @@
     ?>
     <h3 class="messages">Ajouter un lieu</h3>
     <form method="POST" >
-        <div class="container border-start border-end border-success rounded-5 p-4">
+        <div class="container border-start border-end border-success rounded-5 p-3">
         <div class="row mb-4 mt-5">
             <div class="col">   
                 <div data-mdb-input-init class="form-outline">

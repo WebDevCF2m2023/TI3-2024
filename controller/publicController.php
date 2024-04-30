@@ -12,7 +12,6 @@ if(isset($_GET['json'])){
     exit();
 }
 
-
 // Si on essaye de se connecter
 if(isset($_GET['connect'])){
 

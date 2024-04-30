@@ -50,7 +50,6 @@
                         <table
                             class="table my-2"
                             data-toggle="table"
-                            data-toolbar="#toolbar"
                             data-show-export="true"
                             data-click-to-select="true"
                             data-pagination="true"

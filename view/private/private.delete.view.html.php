@@ -31,19 +31,19 @@
         // Nous avons un lieu
         else:
         ?>    
-        <div class="container mt-4 w-50">
+        <div class="container mt-4 w-75">
             <div class="card text-center">
-                <div class="card-header"><?=$getOneAdresse['nom']?></div>
+                <div class="card-header"><?=$getOneAdresse['ville']?></div>
                     <div class="card-body">
-                        <h5 class="card-title"><?=$getOneAdresse['ville']?></h5>
+                        <h5 class="card-title"><?=$getOneAdresse['nom']?></h5>
                         <p class="card-text"><?=$getOneAdresse['adresse']?></p>
                         <p class="card-text"><?=$getOneAdresse['codepostal']?></p>
                         <p class="card-text"><?=$getOneAdresse['latitude']?></p>
                         <p class="card-text"><?=$getOneAdresse['longitude']?></p>
                     </div>
                 <div class="card-body">
-                    <a href="?delete=<?=$idDelete?>&ok"><button value="supprimer" class="btn btn-outline-success btn-rounded me-2">supprimer</button></a>
-                    <a href="./"><button value="Non" class="btn btn-outline-danger btn-rounded">Ne pas supprimer</button></a>
+                    <a href="?delete=<?=$idDelete?>&ok"><button value="supprimer" class="btn btn-outline-success btn-rounded me-2 mb-2">supprimer</button></a>
+                    <a href="./"><button value="Non" class="btn btn-outline-danger btn-rounded mb-2">Ne pas supprimer</button></a>
                 </div>
             </div>
         </div>   

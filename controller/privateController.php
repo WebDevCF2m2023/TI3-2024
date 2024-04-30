@@ -108,11 +108,8 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
             }else{
                 $errorUpdate = $update;
             }
-    }
-        
+    }     
     
-
-
     // chargement de l'article pour l'update
     $getOneAdresse = getOneAdressByID($db, $idUpdate);
     
@@ -121,8 +118,6 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
     include "../view/private/private.update.view.html.php";
     exit();
 }
-
-
 
 $datas = getAllAdresses($db); // on obtient un string (Erreur SQL), un tableau vide (Pas de datas), un tableau non vide (On a des datas)
 // appel de la vue de l'accueil de l'admin

@@ -39,9 +39,7 @@
                 <a href="?connect">Connexion à l'administration</a>
             </button>
         </div>
-        </div>
-        
-            
+        </div>        
         <!-- Zone d'affichage de la carte -->
         <div id="resultat">
             <div id="map"></div>
@@ -52,7 +50,6 @@
             </div>
         </div>
         </div>
-
     <!-- JS de Leaflet -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="

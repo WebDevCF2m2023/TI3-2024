@@ -50,7 +50,15 @@ function getOneAdressByID(PDO $db, int $getIt) : string|bool|array
 // nous renvoie false en cas d'échec ou le message d'erreur sql
 // ou un true en cas de succès
 
-function updateOneAdressByID(PDO $db, int $id, string $nom, string $adresse, int $codepostal, string $ville, int $nb_velos, float $latitude, float $longitude) : string|bool
+function updateOneAdressByID(PDO $db, 
+                            int $id, 
+                            string $nom, 
+                            string $adresse, 
+                            int $codepostal, 
+                            string $ville, 
+                            int $nb_velos, 
+                            float $latitude, 
+                            float $longitude) : string|bool
 
 {
     $sql = "UPDATE `localisations` SET `nom`= ?, `adresse`= ?, `codepostal`= ?, `ville`= ?, `nb_velos`= ?, `latitude`= ?, `longitude`= ? WHERE `id` = ?";
@@ -76,8 +84,14 @@ function updateOneAdressByID(PDO $db, int $id, string $nom, string $adresse, int
 }
 
 // pour insérer un nouveau lieu 
-function insertOneAdressByID(PDO $db, string $nom, string $adresse, int $codepostal, string $ville, int $nb_velos, float $latitude, float $longitude):
-bool|string
+function insertOneAdressByID(PDO $db, 
+                            string $nom, 
+                            string $adresse, 
+                            int $codepostal, 
+                            string $ville, 
+                            int $nb_velos, 
+                            float $latitude, 
+                            float $longitude):bool|string
 {
     $sql = "INSERT INTO `localisations` (`nom`,`adresse`,`codepostal`,`ville`, `nb_velos`,`latitude`, `longitude`) VALUES (?,?,?,?,?,?,?);";
     $prepare = $db->prepare($sql);
@@ -103,7 +117,6 @@ function deleteOneAdressByID(PDO $db, int $id): bool|string
     $sql = "DELETE FROM `localisations` WHERE `id`= :id ";
     $stmt = $db->prepare($sql);
     $stmt->bindValue("id", $id, PDO::PARAM_INT);
-
     try{
         $stmt->execute();
         if($stmt->rowCount()===0) return false;
