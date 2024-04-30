@@ -14,9 +14,9 @@
     <h1 class="text-center">Insertion d'un lieu</h1>
     <nav>
        
-            <a class="btn btn-primary" href="./">Accueil de l'administration</a>
-            <a class="btn btn-primary" href="?create">Ajouter un lieu</a>
-            <a class="btn btn-primary" href="?disconnect">Déconnexion</a>
+            <a class="btn btn-info col-4 offset-4 mt-3 text-white" href="./">Accueil de l'administration</a>
+            <a class="btn btn-success col-4 offset-4 mt-3 text-white" href="?create">Ajouter un lieu</a>
+            <a class="btn btn-danger col-4 offset-4 mt-3 text-white" href="?disconnect">Déconnexion</a>
         
     </nav>
     <div id="content">

@@ -85,8 +85,8 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
             $id = $idUpdate;
             $rue = htmlspecialchars(strip_tags(trim($_POST['rue'])),ENT_QUOTES);
-            $codepostal = htmlspecialchars(strip_tags(trim($_POST['codepostal'])),ENT_QUOTES);
             $ville= htmlspecialchars(trim($_POST['ville']),ENT_QUOTES);
+            $codepostal = htmlspecialchars(strip_tags(trim($_POST['codepostal'])),ENT_QUOTES);
             $latitude = (float) $_POST['latitude'];
             $longitude = (float) $_POST['longitude'];
 

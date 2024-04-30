@@ -28,7 +28,8 @@ header {
 
 
     #nav1 {
-        background-color: #007bff;
+        background-color:  rgb(56, 203, 239);
+        box-shadow: 0 0 10px rgb(56, 203, 239); border: solid rgb(248, 232, 233);
         padding: 10px 0;
         text-align: center;
         border-radius: 8px;
@@ -54,10 +55,10 @@ header {
     }
      
     #nav1 ul li a:hover {
-        color: #0056b3;
+        color: #00b3aa;
     }
     #nav1 ul li a:hover {
-        color: #0056b3;
+        color: #0098b3;
     }
 
 
@@ -96,7 +97,7 @@ h3,h4{
             margin: 20px auto;
             background-color: white;
             border-radius: 15px; /* Bordures arrondies */
-            border: 2px solid #007bff; /* Bordure bleue */
+            border: 2px solid #0c529c; /* Bordure bleue */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
@@ -124,7 +125,8 @@ h3,h4{
          }
         #nav1 {
             font-size: x-large;
-            background-color: #007bff;
+            background-color: rgb(56, 203, 239);
+            box-shadow: 0 0 10px rgb(56, 203, 239); border: solid rgb(248, 232, 233);
             padding: 10px 0;
             text-align: center;
             border-radius: 8px;
@@ -152,13 +154,13 @@ h3,h4{
         }
          
         #nav1 ul li a:hover {
-            color: #0056b3;
+            color: #00a7b3;
         }
         #nav1 ul li a:hover {
-            color: #0056b3;
+            color: #009eb3;
         }
         #map { width: 50%; height: 600px; }
-        #map { box-shadow: 0 0 10px rgb(43, 211, 226); border: solid rgb(248, 232, 233);}
+        #map { box-shadow: 0 0 10px rgb(56, 203, 239); border: solid rgb(248, 232, 233);}
         .rouge, .rouge a {color:red;}
         h3, h1 {text-align: center;}
         .photo {width:100px;}

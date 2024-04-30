@@ -10,14 +10,15 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </head>
-<body>
-<a class="navbar-brand" href="./" >Accueil</a>
-    <h1 class="text-center">Accueil de l'administration</h1>
+<body class="bg-dark">
+    
+    <h1 class="text-center bg-dark text-white">Accueil de l'administration</h1>
     
       
-            <div class="container">
-            <a class="btn btn-primary col-4 offset-4 mt-3" href="?create">Ajouter un lieu</a>
-            <div class="row"> <div class="col"></div></div>
+            <div class="container bg-dark">
+            
+            <a class="btn btn-success col-4 offset-4 mt-3" href="?create">Ajouter un lieu</a>
+            
             <a class="btn btn-danger col-4 offset-4 mt-3"  href="?disconnect">Déconnexion</a>
             </div>
 
@@ -39,7 +40,7 @@
             // on compte le nombre de données 
             $nb = count($datas);
         ?>
-        <h3 class="text-center">Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
+        <h3 class="text-center text-white">Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
         <table class="table table-dark table-hover">
         <tr>
                 <th>id</th>
