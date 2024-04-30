@@ -103,3 +103,7 @@ li{
 .titleStyle{
     margin-top: 2em;
 }
+
+.th-inner{
+    background-color: #C0D6DF !important;
+}
