@@ -26,7 +26,7 @@
 
                  <div class="form-group">
                    <label for="itemUrl">URL</label>
-                   <input type="text" class="form-control text-center" name="updateUrlInp" id="UrlInpUpdate" aria-describedby="updateUrlField" placeholder="<?=$updateItem["url"]?>" value="<?=$updateItem["url"]?>">
+                   <input type="text" class="form-control text-center" name="updateUrlInp" id="urlInpUpdate" aria-describedby="updateUrlField" placeholder="<?=$updateItem["url"]?>" value="<?=$updateItem["url"]?>">
                  </div>
 
                  <div class="form-group">

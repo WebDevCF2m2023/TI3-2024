@@ -74,8 +74,16 @@ function addItemToMap (PDO $db, string $name, string $type, string $add, string 
     $cleanedLat = htmlspecialchars(strip_tags(trim($lat)));
     $cleanedLon = htmlspecialchars(strip_tags(trim($lon)));
 
+    var_dump($cleanedName, 
+    $cleanedType,
+    $cleanedAdd, 
+    $cleanedCode, 
+    $cleanedVille,
+    $cleanedUrl, 
+    $cleanedLat, 
+    $cleanedLon);
     
-    $sql = "INSERT INTO `localisation`(`nom`, `type`, `adresse`, `codepostal`, `ville`, `url`, `latitude`, `longitude`)  
+    $sql = "INSERT INTO `localisations`(`nom`, `type`, `adresse`, `codepostal`, `ville`, `url`, `latitude`, `longitude`)  
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(1, $cleanedName);
@@ -84,8 +92,8 @@ function addItemToMap (PDO $db, string $name, string $type, string $add, string 
     $stmt->bindValue(4, $cleanedCode);
     $stmt->bindValue(5, $cleanedVille);
     $stmt->bindValue(6, $cleanedUrl);
-    $stmt->bindValue(7, $cleanedLat);
-    $stmt->bindValue(8, $cleanedLon);
+    $stmt->bindValue(7, $cleanedLat, PDO::PARAM_INT);
+    $stmt->bindValue(8, $cleanedLon, PDO::PARAM_INT);
     
     try {
         $stmt->execute();

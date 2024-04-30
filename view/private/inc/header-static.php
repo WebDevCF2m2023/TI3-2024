@@ -13,7 +13,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row justify-content-evenly">
         <li class="nav-item">
           <?php
-              if(isset($_GET["page"]) && $_GET["page"] !== "home") {
+              if(isset($_GET["page"]) && $_GET["page"] !== "adminHome") {
           ?>
           <a class="nav-link active" aria-current="page" href="?page=adminHome">Home</a>
           <?php

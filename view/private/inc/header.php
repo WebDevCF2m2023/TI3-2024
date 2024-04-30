@@ -18,7 +18,7 @@
           <a class="nav-link active animate__animated animate__delay-1s animate__fadeIn" aria-current="page" href="?page=home">Home</a>
           <?php
         
-            }else if(isset($_GET["page"]) && $_GET["page"] !== "home") {
+            }else if(isset($_GET["page"]) && $_GET["page"] !== "adminHome") {
             
           ?>
           <a class="nav-link active animate__animated animate__delay-1s animate__fadeIn" aria-current="page" href="?page=adminHome">Home</a>

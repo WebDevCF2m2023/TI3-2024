@@ -63,6 +63,7 @@ if (!isset($_SESSION) || $_SESSION["monID"] != session_id()) {
                 ?>
 <script src="js/colour-script.js"></script>
 <script src="js/checkbox-script.js"></script>
-<!-- <script src="scripts/insertScript.js"></script> -->
+<script src="js/insertScript.js"></script>
+
 </body>
 </html>

@@ -14,6 +14,13 @@
     <title><?=$title?></title>
 </head>
 <body>
+
+<?php
+    if (isset($_SESSION["monID"]) && $_SESSION["monID"] === session_id())
+    {
+        header("Location: ?page=adminHome");
+    }
+?>
     <div class="global">
     <header>
     <h1>Carte Interactive</h1>
