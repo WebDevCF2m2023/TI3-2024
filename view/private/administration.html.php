@@ -78,7 +78,6 @@
                 data-minimum-count-columns="2"
                 data-show-columns="true"
                 data-show-columns-toggle-all="true"
-                data-search="true"
                 data-url="?json"
                 data-side-pagination="server"
                 >
