@@ -15,22 +15,27 @@ if(isset($_GET['create'])){
     if(isset(
         $_POST['nom'],
         $_POST['adresse'],
+        $_POST['codepostal'],
+        $_POST['ville'],
+        $_POST['nb_velos'],
         $_POST['latitude'],
         $_POST['longitude']
     )){
 
-       $title = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
-       $geolocdesc = htmlspecialchars(trim($_POST['adresse']),ENT_QUOTES);
+       $nom = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
+       $adresse = htmlspecialchars(trim($_POST['adresse']),ENT_QUOTES);
+       $codepostal = trim($_POST['codepostal']);
+       $ville = htmlspecialchars(trim($_POST['ville']),ENT_QUOTES);
+       $nb_velos = (int) $_POST['nb_velos'];
        $latitude = (float) $_POST['latitude'];
        $longitude = (float) $_POST['longitude'];
 
-       $insert = insertOneGeolocByID($db,$title,$geolocdesc,$latitude, $longitude);
+       $insert = insertOneAdressByID($db, $nom, $adresse, $codepostal, $ville, $nb_velos, $latitude, $longitude);
 
        if($insert === true){
         header("Location: ./");
         exit();
        }
-
     }
 
     // chargement de la vue
@@ -46,7 +51,7 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
 
     // si on a validé la suppression
     if(isset($_GET['ok'])){
-        $delete = deleteOneGeolocByID($db, $idDelete);
+        $delete = deleteOneAdressByID($db, $idDelete);
         if($delete===true){
             header("Location: ./");
             exit();
@@ -58,7 +63,7 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
     }
 
     // chargement de l'article pour la suppression
-    $getOneGeoloc = getOneGeolocByID($db, $idDelete);
+    $getOneAdresse = getOneAdressByID($db, $idDelete);
 
     // chargement de la vue
     include "../view/private/private.delete.view.html.php";
@@ -75,19 +80,25 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
     if(isset(
              $_POST['nom'],
              $_POST['adresse'],
+             $_POST['codepostal'],
+             $_POST['ville'],
+             $_POST['nb_velos'],
              $_POST['latitude'],
              $_POST['longitude']
     )){
 
-            $idgeoloc = $idUpdate;
-            $title = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
-            $geolocdesc = htmlspecialchars(trim($_POST['adresse']),ENT_QUOTES);
+            $id = $idUpdate;
+            $nom = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
+            $adresse = htmlspecialchars(trim($_POST['adresse']),ENT_QUOTES);
+            $codepostal = trim($_POST['codepostal']);
+            $ville = htmlspecialchars(trim($_POST['ville']),ENT_QUOTES);
+            $nb_velos = trim($_POST['nb_velos']);
             $latitude = (float) $_POST['latitude'];
             $longitude = (float) $_POST['longitude'];
 
             // fonction qui update la mise à jour
-            $update = updateOneGeolocByID($db,$idgeoloc,$title,$geolocdesc,$latitude,   $longitude);
-            //var_dump($update);
+            $update = updateOneAdressByID($db, $id, $nom, $adresse, $codepostal, $ville, $nb_velos, $latitude, $longitude);
+            
             // update ok
             if($update===true){
                 header("Location: ./");
@@ -103,8 +114,8 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
 
     // chargement de l'article pour l'update
-    $getOneGeoloc = getOneGeolocByID($db, $idUpdate);
-    //var_dump($getOneGeoloc);
+    $getOneAdresse = getOneAdressByID($db, $idUpdate);
+    
 
     // chargement de la vue
     include "../view/private/private.update.view.html.php";
@@ -112,7 +123,7 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 }
 
 
-// si on est sur l'accueil chargement de tous les `geoloc`
-$datas = getAllGeoloc($db); // on obtient un string (Erreur SQL), un tableau vide (Pas de datas), un tableau non vide (On a des datas)
+
+$datas = getAllAdresses($db); // on obtient un string (Erreur SQL), un tableau vide (Pas de datas), un tableau non vide (On a des datas)
 // appel de la vue de l'accueil de l'admin
 include "../view/private/private.homepage.view.html.php";

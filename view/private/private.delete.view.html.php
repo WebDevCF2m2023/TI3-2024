@@ -14,19 +14,18 @@
     <div id="content">
         <h3>Article à supprimer</h3>
     
-        <?php
-        if(isset($error)):
-            ?>
+        <?php if(isset($error)): ?>
+
             <h3 id="alert"><?=$error?></h3>
         <?php
         endif;
         // datas est une chaîne de caractère : erreur SQL !
-        if(is_string($getOneGeoloc)):
+        if(is_string($getOneAdresse)):
         ?>
-            <h3 id="alert"><?=$getOneGeoloc?></h3>
+            <h3 id="alert"><?=$getOneAdresse?></h3>
         <?php
-        // Pas de `geoloc` trouvée
-        elseif($getOneGeoloc===false):
+        // Pas de `localisations` trouvée
+        elseif($getOneAdresse===false):
         ?>
             <h3 id="comment">Ce le lieu n'existe plus !</h3>
         <?php
@@ -36,24 +35,23 @@
     <div class="container my-5 d-flex justify-content-center">
         <div class="card col-5 ">
         <div class="card-body">
-            <h5 class="card-title"><?=$getOneGeoloc['nom']?></h5>
+            <h5 class="card-title"><?=$getOneAdresse['nom']?></h5>
         </div>
         <ul class="list-group list-group-light list-group-small">
-            <li class="list-group-item px-4"><?=$getOneGeoloc['adresse']?></li>
-            <li class="list-group-item px-4"><?=$getOneGeoloc['latitude']?></li>
-            <li class="list-group-item px-4"><?=$getOneGeoloc['longitude']?></li>
+            <li class="list-group-item px-4"><?=$getOneAdresse['adresse']?></li>
+            <li class="list-group-item px-4"><?=$getOneAdresse['codepostal']?></li>
+            <li class="list-group-item px-4"><?=$getOneAdresse['ville']?></li>
+            <li class="list-group-item px-4"><?=$getOneAdresse['latitude']?></li>
+            <li class="list-group-item px-4"><?=$getOneAdresse['longitude']?></li>
         </ul>
         <div class="card-body">
             <a href="?delete=<?=$idDelete?>&ok"><button value="supprimer" class="btn btn-success">supprimer</button></a>
             <a href="./"><button value="Non" class="btn btn-danger">Ne pas supprimer</button></a>
         </div>
         </div>
-    </div>
-    
-    
+    </div> 
         <?php endif ?>   
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

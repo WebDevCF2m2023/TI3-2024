@@ -15,6 +15,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
 
 </head>
@@ -29,7 +31,7 @@
         ?>
             <h3 id="alert"><?=$datas?></h3>
         <?php
-        // Pas encore de `geoloc`
+        // Pas encore de `localisations`
         elseif(empty($datas)):
         ?>
             <h3 id="comment">Pas encore de lieu.</h3>
@@ -45,7 +47,7 @@
             <div class="row">
                 <div class="col">
                     <div class="table-responsive">
-                        <table id="table"
+                        <table
                             class="table mt-3"
                             data-toggle="table"
                             data-toolbar="#toolbar"
@@ -61,17 +63,18 @@
                                 <th>Id</th>
                                 <th>Nom</th>
                                 <th>Adresse</th>
+                                <th>Code Postal</th>
+                                <th>Ville</th>
+                                <th>Nombre de Vélos</th>
                                 <th>Latitude</th>
                                 <th>Longitude</th>
-                                <th>Update</th>
-                                <th>Delete</th>
+                                <th>Ajouter</th>
+                                <th>Supprimer</th>
                             </tr>
                         </thead>
-                        
                         <tbody class="text-center">
                         <?php
-                        // tant qu'on a des données
-                        // var_dump($datas);
+                        // tant qu'on a des données                    
                         foreach($datas as $data):
                         ?>
                             <tr>
@@ -79,6 +82,9 @@
                                 <td><?=$data['id']?></td>
                                 <td><?=$data['nom']?></td>
                                 <td><?=$data['adresse']?></td>
+                                <td><?=$data['codepostal']?></td>
+                                <td><?=$data['ville']?></td>
+                                <td><?=$data['nb_velos']?></td>
                                 <td><?=$data['latitude']?></td>
                                 <td><?=$data['longitude']?></td>
                                 <td><a href="?update=<?=$data['id']?>"><i class="edit bi bi-pen me-4"></i></a></td>
@@ -86,18 +92,15 @@
                             </tr>
                             <?php endforeach ?>
                         </tbody>
-                        
                         </table>
-                <?php endif ?> 
+                        <?php endif ?> 
+                    </div>
                 </div>
             </div>
-        </div>
         </section>
-
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.28.0/tableExport.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.4/dist/bootstrap-table-locale-all.min.js"></script>

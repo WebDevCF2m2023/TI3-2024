@@ -39,9 +39,6 @@ function connectAdministrator(PDO $con, string $user, string $password) : bool|s
 function disconnectAdministrator(): bool
 {
 
-    // la session est lancée dans le CF, sinon décommentez cette ligne
-    // session_start();
-
     // Détruit toutes les variables de session
     $_SESSION = [];
 
@@ -55,9 +52,7 @@ function disconnectAdministrator(): bool
             $params["secure"], $params["httponly"]
         );
     }
-
-    // Finalement, on détruit la session (fichier texte côté serveur)
+    // Finalement, on détruit la session 
     session_destroy();
-
     return true;
 }
