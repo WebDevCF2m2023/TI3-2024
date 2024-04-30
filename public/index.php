@@ -18,8 +18,8 @@ try {
     die($e->getMessage());
 }
 
-if(isset($_GET['json'])){
-    require("../controller/ApiController.php");
+if(isset($_GET['json'])){ // API JSON (public)
+    require("../controller/ApiController.php"); // API JSON
 }else if(isset($_SESSION['connected'])){
     require("../controller/PrivateController.php");
 }else{

@@ -10,16 +10,16 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 
-fetch('?json')
-    .then(response=>response.json())
-    .then(handleResponse)
-    .catch(error=>console.error("Error: ", error));
+fetch('?json') // Fetch the localisations
+    .then(response=>response.json()) // Parse the response as JSON
+    .then(handleResponse) // Call the function to handle the response
+    .catch(error=>console.error("Error: ", error)); // Log any errors that are returned
 
 
 
 function handleResponse(localisations)  {
-    if(localisations.error !== undefined) {
-        console.error(localisations.error);
+    if(localisations.error !== undefined) { // If there is an error
+        console.error(localisations.error); // Log the error
         return;
     }
     addAllMarkersByLocations(localisations);
