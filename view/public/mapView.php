@@ -45,7 +45,7 @@
                         <table class="table" data-toggle="table" data-show-columns="false" data-search="false" data-pagination="true">
                         <thead>
                                 <tr>
-                                    <th class="text-center bg-transparent">Choissisez votre destination</th>
+                                    <th class="text-center bg-transparent">Choissisez votre destination parmi ce <?=$mapCount?> options</th>
                                 </tr>
                             </thead>
                             <tbody>

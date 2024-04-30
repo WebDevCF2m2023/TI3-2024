@@ -36,7 +36,7 @@
         </div>
         <div class = "listDiv">
             <div class="listHead">
-                <h3>Liste des locations</h3>
+                <h3>Liste des <?=$mapCount?> locations</h3>
                 <h5>Cliquez sur un nom du Cinéma ci-dessous pour la situer sur la carte</h5>
             </div>
             <table class = "listTable">
@@ -63,7 +63,7 @@
 
     <div class = "listDivLarge">
             <div class="listHeadLarge">
-                <h3>Liste des locations</h3>
+                <h3>Liste des <?=$mapCount?> locations</h3>
                 <h5>Cliquez sur un nom du Cinéma ci-dessous pour la situer sur la carte</h5>
             </div>
             <table class="normalTable">

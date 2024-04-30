@@ -1,5 +1,6 @@
 <?php
 $getMaps = getAllMaps($db);
+$mapCount = count(getAllMaps($db));
 
 // LOGIN
 if (isset($_POST["userNameInp"], $_POST["userPassInp"])) {
