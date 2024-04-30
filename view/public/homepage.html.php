@@ -9,7 +9,7 @@
     <title>Accueil</title>
 </head>
 <body>
-    <div id="welcome-home">
+    <div id="home">
         <h1>Carte Interactive</h1>
         <h2>Parcours des bornes électriques à Bruxelles</h2>
         
@@ -19,7 +19,7 @@
         
     </div>
 
-    <div id="homepage-container">
+    <div id="container">
         <div id="map"></div>
         <div id="liste">
             <h1>Liste des points</h1>

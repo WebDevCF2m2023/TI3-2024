@@ -6,7 +6,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Login</title>
 </head>
-<body>
+<body style="background: url(../img/bg.svg);
+    background-attachment: fixed;" >
     <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4 sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">Bornes de recharge</a>
