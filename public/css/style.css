@@ -1,8 +1,10 @@
+.connectform{
+    margin-top: 8%;
+}
 
 body{
     margin: 0;
     padding: 0;
-    height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -100,7 +102,6 @@ a{
     
 }
 
-
 #login{
     color: rgb(143, 142, 142);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -191,6 +192,7 @@ margin-top: 10%;
     display: flex;
     justify-content: center;
     height: 100px;
+    width: 100%;
     align-items: center;
 
 }
@@ -234,6 +236,9 @@ strong{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+#form5Example2{
+    margin-left: 3%;
+}
 @media screen and (width <= 576px) {
     #resultat{
         grid-template-columns: 1fr;
