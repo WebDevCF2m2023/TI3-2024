@@ -106,3 +106,27 @@ body, .bodyClassic {
 .markerIcon * {
     margin: 0;
 }
+
+@media screen and (max-width: 640px) {
+    .mainMap {
+        display: grid;   
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "mapGrid"
+        "listGrid";
+        justify-content: center;
+
+    }
+
+    .listDivLarge {
+        display: none;
+    }
+    #theMap {
+        height: 300px;
+    }
+
+    .mapDiv {
+        margin-left: 50px;
+    }
+}

@@ -1,5 +1,5 @@
 
-<div class="container-fluid my-3 border border-secondary rounded-3 pt-3">
+<div class="container-fluid border border-secondary rounded-3">
     <div class="container-fluid">
 
                     <div class="table-responsive">
