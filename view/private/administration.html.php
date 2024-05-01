@@ -97,6 +97,7 @@
                 data-show-columns-toggle-all="true"
                 data-url="?json"
                 data-side-pagination="server"
+                data-unique-id="id"
                 >
                 <thead>
                     <tr>

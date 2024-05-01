@@ -4,7 +4,7 @@ const $add = $('#add');
 const $modalDelete = $('#modalDelete');
 const selectApiMode = document.querySelector(".select-api-mode");
 const modalBody = document.querySelector(".modal-body");
-const baseActions = '<div class="d-flex justify-content-center"><a href="javascript:void(0)" title="editer"><i class="edit bi bi-pen me-4"></i></a><a href="javascript:void(0)" title="supprimer"><i class="remove bi bi-trash text-danger"></i></a></div>';
+const baseActions = '<div class="d-flex justify-content-center"><a href="javascript:void(0)" title="editer"><i class="edit bi bi-pen me-4" data-id="%id"></i></a><a href="javascript:void(0)" title="supprimer"><i class="remove bi bi-trash text-danger" data-id="%id"></i></a></div>';
 let selections;
 let lastValueRow = {};
 let newValueEdit = {};
@@ -83,6 +83,8 @@ window.operateEvents = {
         cancelInsert();
     },
     'click .edit': function (e, value, row, index) {
+        row = $table.bootstrapTable('getRowByUniqueId', e.target.dataset.id);
+
         if(!apiMode){
             window.location = `?update=${row.id}`;
             return;
@@ -90,6 +92,7 @@ window.operateEvents = {
         if(lastValueRow.nom !== undefined){
             resetRowWithLastValue();
         }
+        lastValueRow.id = row.id;
         lastValueRow.nom = row.nom;
         lastValueRow.type = row.type;
         lastValueRow.adresse = row.adresse;
@@ -251,14 +254,14 @@ function resetRowWithLastValue(){
             url: lastValueRow.url,
             latitude: lastValueRow.latitude,
             longitude: lastValueRow.longitude,
-            actions: baseActions
+            actions: baseActions.replace("%id", lastValueRow.id)
         }
     });
     lastValueRow = {};
 }
 
-function formatBaseActions(a){
-    return a === undefined ? baseActions : a;
+function formatBaseActions(a, row){
+    return a === undefined ? baseActions.replace("%id", row.id) : a;
 }
 
 function checkCanValidate(objectToCheck){
