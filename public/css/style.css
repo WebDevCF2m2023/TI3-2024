@@ -43,6 +43,9 @@ body, .bodyClassic {
 }
 
 .global {
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,18 +53,21 @@ body, .bodyClassic {
     text-align: center;
 }
 
-#theMap {
+.mapDiv {
     height: 600px;
     box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
     margin-right: 50px;
 }
+
 .mainMap {
-    
+    margin-top: 10vh;
+    width: 90vw;
     display: grid;   
-    grid-template-columns: 5fr 2fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 600px;
     grid-template-areas: 
     "mapGrid listGrid";
+    align-items: center;
     justify-content: center;
 }
 
@@ -71,10 +77,11 @@ body, .bodyClassic {
     flex-direction: column;
 }
 
-.listDivLarge {
-    grid-area: listGridLarge;
-    margin-top: 50px;
+.listDiv ul {
+    list-style: none;
 }
+
+
 
 
 .normalTable {
@@ -101,18 +108,36 @@ body, .bodyClassic {
     background-color: hsla(45, 40%, 94%, 1);
 }
 
-.markerIcon {
+.mapIcon {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.markerIcon * {
+.mapIcon * {
     margin: 0;
 }
 
+.listIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+}
+
+.flyMarker {
+    padding: 0 5px ;
+}
+
+
+
 @media screen and (max-width: 640px) {
+    .global {
+        padding: 0;
+    }
     .mainMap {
+        margin-top: 5vh;
+        width: 80vw;
         display: grid;   
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
@@ -120,23 +145,14 @@ body, .bodyClassic {
         "mapGrid"
         "listGrid";
         justify-content: center;
+        align-items: center;
     }
-
-    #theMap {
+    .mapDiv {
         height: 350px;
         box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
-        position: relative;
-        margin-right: 50px;
+        margin: 0 0 3vh 0;
     }
 
-    .listDivLarge {
-        display: none;
-    }
-    #theMap {
-        height: 300px;
-    }
 
-    .mapDiv {
-        margin-left: 50px;
-    }
+
 }

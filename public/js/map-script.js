@@ -1,72 +1,84 @@
-const URL_SearchParams = new URLSearchParams(window.location.search);
-    flyLat = URL_SearchParams.get("lat");
-    flyLon = URL_SearchParams.get("lon");
+/* Définition du centre et du zoom de la carte (valeur initiale)  */
+const map = L.map('map').setView([50.825, 4.338], 18);
 
-const map       = L.map('theMap').setView([50.82563, 4.33859], 19);
-const mapLink   = document.querySelectorAll('.mapLink');
-
+/* Ajout d'un fond de carte (arrière-plan) */
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 23,
-    attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-/*              REFUSES TO FUNCTION PROPERLY
-fetch("../control/mapJSON.php")
-    .then(function (response) {
-        response.json().then(function (data) {
-            console.log(data);
-            placeMarkers(data);
-            affichemarker(data);
-        });
-    })
-    .catch(function (error) {
-        console.log(error.message);
+
+/* Récupération des données */
+
+
+fetch("?json")
+.then(function(response){
+    response.json().then(function(data){
+        console.log(data);
+       afficheMarqueurs(data);
+        afficheListe(data);
     });
 
-    const hiddenJSON = document.querySelector(".hidden");
+    })
+    .catch(function(error){
+        console.log(error.message);
+    });
     
-    console.log(hiddenJSON.textContent);
-    */
-    map.flyTo([flyLat, flyLon], 19, {
-        animate: true,
-        duration: 3 // in seconds
-      });
 
-    
+/* Création d'un tableau de marqueurs pour un affichage optimal avec FeatureGroup */
 const markerTable = [];
-    for (x of mapLink) {
 
-        let href = x.getAttribute("href");
-        let params = href.split('&');
-        let lat, lon, nom, id, url;
-            params.forEach(function(param) {
-                let splitParam = param.split('=');
-                    if (splitParam[0] === 'lat') {
-                        lat = splitParam[1];
-                    }else if (splitParam[0] === 'lon') {
-                        lon = splitParam[1];
-                    }else if (splitParam[0] === 'nom') {
-                        nom = splitParam[1];
-                    }else if (splitParam[0] === 'id') {
-                        id = splitParam[1];
-                    }else if (splitParam[0] === 'url') {
-                        url = splitParam[1];
-                    }
-            });
-console.log(url);
+function afficheMarqueurs(liste){
+    /* Boucle pour créer les marqueurs de la liste */
+    for (let item in liste){
+        /* créer un marqueur pour chaque élément de la liste */
+        let unMarqueur = L.marker([liste[item].latitude, liste[item].longitude]).addTo(map);
+        /* mettre le nom de l'item dans un popup */
+        unMarqueur.bindPopup(`<span class = "mapIcon"><h3>${liste[item].nom}</h3><a target='_blank' href='${liste[item].url}'>${liste[item].url}</a></span>`);
 
-        markerTable.push({"lat":lat,"lon":lon,"nom":nom,"id":id, "url":url});
+        /* ajouter ce marqueur au tableau */
+        markerTable.push(unMarqueur);
     }
 
+/* placer le tableau de marqueurs dans le featureGroup */
+const groupe = new L.featureGroup(markerTable);
 
-    placeMarkers(markerTable);
+/* adapter l'affichage de ma carte en fonction de la position des marqueurs */
+map.fitBounds(groupe.getBounds(),{padding:[10,10]});
+}
 
-function placeMarkers(marker){
-    for (let item in marker){
-        let thisMarker = L.marker([marker[item].lat, marker[item].lon]).addTo(map);
-        thisMarker.bindPopup(`<div class="markerIcon"><h4>${marker[item].nom}</h4><a href="${marker[item].url}" target="_blank"><h5>Visite</h5></a></div>`);
-        markerTable.push(thisMarker);
-    }
+function afficheListe(liste){
+    const divliste = document.getElementById("liste");
 
+    const UL = document.createElement("ul");
 
+    liste.forEach(function(item){
+        // créer l'élément de type <li>
+        let LI = document.createElement("li");
+        // remplir le <li>
+        LI.innerHTML = `<span class = "listIcon"><span class="flyMarker">${item.nom},</span><span class="flyMarker">${item.adresse},</span><span class="flyMarker">${item.codepostal},</span><span class="flyMarker">${item.ville}.</span><span class="flyMarker"><a href="${item.url}" target="_blank">Visite</a></span></span>`;
+        // ajouter un eventListener sur le clic
+        LI.addEventListener('click', itemClick);
+        // ajouter un attribut à cet item LI pour l'identifier
+        LI.setAttribute("id",`${item.id}`);
+        // ajouter des attributs à cet item LI pour stocker les coordonnées
+        LI.setAttribute("latitude",`${item.latitude}`);
+        LI.setAttribute("longitude",`${item.longitude}`);
+        // attacher ce <li> au <ul>
+        UL.appendChild(LI);
+    });
+
+    // attacher la liste <ul> au DIV
+    divliste.appendChild(UL);
+}
+
+function itemClick(){
+    let id = this.getAttribute("id");
+    let latitude = this.getAttribute("latitude");
+    let longitude = this.getAttribute("longitude");
+
+    console.log('item cliqué : ' + id);
+
+    let marqueur = markerTable[id-1];
+    marqueur.togglePopup();
+    map.flyTo([latitude,longitude],17);
 }

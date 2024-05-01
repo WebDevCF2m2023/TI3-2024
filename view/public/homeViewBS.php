@@ -36,10 +36,6 @@ Si je n'avais pas séparé les sections en "include", cette page ferait 800 lign
     if (isset($_GET["login"])){
 
      include("inc/login-form.php"); 
-    }   else if (isset($errorMessage)) {
-        ?>
-            <p><?=$errorMessage?></p>
-        <?php
     }else if (!isset($_SESSION["monID"]) || $_SESSION["monID"] != session_id()) {
         ?>
         <div class="text-center">
