@@ -62,17 +62,17 @@ function addAllToListe(locations){
  */
 function addAllMarkersByLocations(locations){
     const cinemaIcon = L.icon({
-        iconUrl: '../img/cinema.png',
+        iconUrl: 'img/cinema.png',
         iconSize: [35,35], // size of the icon
     });
 
     const cineclubIcon = L.icon({
-        iconUrl: '../img/cineclub.png',
+        iconUrl: 'img/cineclub.png',
         iconSize: [35,35], // size of the icon
     });
 
     const cultureIcon = L.icon({
-        iconUrl: '../img/culture.png',
+        iconUrl: 'img/culture.png',
         iconSize: [35,35], // size of the icon
     });
     

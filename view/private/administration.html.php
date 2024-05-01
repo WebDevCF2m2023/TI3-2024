@@ -22,10 +22,10 @@
                     <a class="nav-link" href="/">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/?administration">Panel administration</a>
+                    <a class="nav-link active" href="./?administration">Panel administration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/?disconnect">Se deconnecter</a>
+                    <a class="nav-link" href="./?disconnect">Se deconnecter</a>
                 </li>
             </ul>
             </div>

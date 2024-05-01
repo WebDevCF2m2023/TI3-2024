@@ -14,7 +14,7 @@
         <header>
             <h1>Carte interactive</h1>
             <h2>Parcours BD à Bruxelles</h2>
-            <a href="/?login"><button>Connexion à l'administration</button></a>
+            <a href="./?login"><button>Connexion à l'administration</button></a>
         </header>    
         <div id="map"></div>
         <div id="liste">

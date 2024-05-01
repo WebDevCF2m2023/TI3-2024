@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Administration Delete</title>
+    <title>Administration Insertion</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg mb-4 bg-dark sticky-top" data-bs-theme="dark">
@@ -19,10 +19,10 @@
                     <a class="nav-link" href="/">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/?administration">Panel administration</a>
+                    <a class="nav-link active" href="./?administration">Panel administration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/?disconnect">Se deconnecter</a>
+                    <a class="nav-link" href="./?disconnect">Se deconnecter</a>
                 </li>
             </ul>
             </div>

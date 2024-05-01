@@ -7,7 +7,7 @@ function userConnect(PDO $db, string $user, string $password) : bool|string{
     if(!is_array($bddUser)) return $bddUser;
     if(!password_verify($password, $bddUser['passwd'])) return false;
     $_SESSION['connected'] = true;
-    header("Location: /");
+    header("Location: ./");
     die();
 }
 
@@ -26,7 +26,7 @@ function userDisconnect(){
     }
 
     session_destroy();
-    header("Location: /");
+    header("Location: ./");
     die();
 }
 

@@ -17,10 +17,10 @@
                 <a class="active" href="/">Accueil</a>
             </li>
             <li>
-                <a href="/?administration">Panel administration</a>
+                <a href="./?administration">Panel administration</a>
             </li>
             <li>
-                <a href="/?disconnect">Se deconnecter</a>
+                <a href="./?disconnect">Se deconnecter</a>
             </li>
         </ul>
     </nav>
