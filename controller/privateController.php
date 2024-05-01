@@ -48,8 +48,10 @@ function secureValueFromForm() : bool{
         return false;
     }
 
+    $regex = "/^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,190}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/";
+
     $url = $_POST['url'];
-    if(strlen($url) === 0 || strlen($url) > 200 || !filter_var($url, FILTER_VALIDATE_URL)){
+    if(strlen($url) === 0 || strlen($url) > 200 || !preg_match($regex, $url) || !filter_var($url, FILTER_VALIDATE_URL)){
         return false;
     }
 

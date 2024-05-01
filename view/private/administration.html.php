@@ -125,8 +125,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.4/dist/extensions/export/bootstrap-table-export.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/locale/bootstrap-table-fr-FR.min.js"></script>
     <script src="js/table.js"></script>
-    <div class="position-fixed w-25 bottom-0 end-0 me-2 mb-2" style="height: 50px">
-
-    </div>
    </body>
 </html>
