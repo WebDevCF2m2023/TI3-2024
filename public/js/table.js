@@ -82,9 +82,7 @@ window.operateEvents = {
     'click .cancelInsert': function (e, value, row, index) {
         cancelInsert();
     },
-    'click .edit': function (e, value, row, index) {
-        row = $table.bootstrapTable('getRowByUniqueId', e.target.dataset.id);
-
+    'click .edit': function (e, value, row, index) { 
         if(!apiMode){
             window.location = `?update=${row.id}`;
             return;
