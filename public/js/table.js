@@ -373,6 +373,7 @@ function selectMode(e){
 function setApiMode(value){
     apiMode = value;
     localStorage.setItem("apiMode", value);
+    if(apiMode === true) removeInfoH2StandartMode();
 }
 
 function getApiMode(){
@@ -411,6 +412,10 @@ function onCancelDelete(e){
     toDelete = [];
 }
 
+function removeInfoH2StandartMode(){
+    document.querySelectorAll("h2").forEach(h2=>h2.parentElement.removeChild(h2));
+}
+
 addEventListener('keydown', e => {
     if(e.target.name !== undefined && e.target.name.includes("Edit")){
         const existEdit = $('.validEdit').length !==0;
@@ -439,4 +444,5 @@ $(function(){
         selectApiMode.children[0].selected = false;
         selectApiMode.children[1].selected = true;
     }
+    if(apiMode === true) removeInfoH2StandartMode();
 });
