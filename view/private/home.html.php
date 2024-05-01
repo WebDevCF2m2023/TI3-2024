@@ -11,10 +11,10 @@
 </head>
 <body>
     <nav>
-        <a href="/">TI3_2024</a>
+        <a href="./">TI3_2024</a>
         <ul>
             <li>
-                <a class="active" href="/">Accueil</a>
+                <a class="active" href="./">Accueil</a>
             </li>
             <li>
                 <a href="./?administration">Panel administration</a>
