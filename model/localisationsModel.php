@@ -6,7 +6,7 @@
 function getAllMaps(PDO $db) : array | string {
     $sql = "SELECT * 
             FROM `localisations` 
-            ORDER BY `id` DESC";
+            ORDER BY `id` ASC";
 
 try{
     $query = $db->query($sql);

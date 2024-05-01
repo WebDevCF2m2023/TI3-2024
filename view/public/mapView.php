@@ -25,7 +25,7 @@
                         <?php
                              }   
                              ?>
-            <div class="hidden" style="display: none"><?=var_dump($result);?></div>
+           
         </div>
         <div class="row d-flex">
             
@@ -34,9 +34,16 @@
             </div>
             <div class="col-3">
                 
-                <div class="container">                    
-                    List HERE
-                    
+                <div class="container text-center"> 
+                <p class="h4">Cliquez sur un nom pour le voir sur la carte</p>                   
+                <div class="d-flex flex-row">
+                    <div class="list-group" id = 'BSListLeft'>
+   
+                            </div>
+                    <div class="list-group" id = 'BSListRight'>
+   
+                            </div>  
+                </div>                  
                     </div>
                 </div>
             </div>
@@ -59,6 +66,6 @@
         ?>
 <!--  Script Perso  -->
 <script src="js/colour-script.js"></script>
-<script src="js/map-script.js"></script>
+<script src="js/mapBS-script.js"></script>
 </body>
 </html>
