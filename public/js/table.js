@@ -129,7 +129,7 @@ window.operateEvents = {
 $remove.click(function () {
     modalBody.textContent = `Êtes-vous sûre de vouloir supprimer ces éléments ?`;
     $modalDelete.modal('show');
-    toDelete = [...selections, -1];
+    toDelete = [...selections, 1];
 });
 
 $add.click(function () {
