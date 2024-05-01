@@ -6,3 +6,7 @@
     background-position: right calc(.375em + .1875rem) center !important;
     background-size: calc(.75em + .375rem) calc(.75em + .375rem) !important;
 }
+.customInvalid:focus {
+    border-color: var(--bs-form-invalid-border-color) !important;
+    box-shadow: 0 0 0 .25rem rgba(var(--bs-danger-rgb), .25) !important;
+}
