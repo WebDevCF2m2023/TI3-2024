@@ -78,7 +78,7 @@ function itemClick(){
 
     console.log('item cliqué : ' + id);
 
-    let marqueur = markerTable[id+1];
+    let marqueur = markerTable[id-1];
     marqueur.togglePopup();
     map.flyTo([latitude,longitude],17);
 }
