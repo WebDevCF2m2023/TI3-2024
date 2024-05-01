@@ -37,12 +37,17 @@ try{
 }
 
 function deleteItemFromMapByID(PDO $db, int $item) : bool | string {
+    
+    $resetPoint = count(getAllMaps($db));
     $sql = "DELETE FROM `localisations`
             WHERE `id` = ?";
+    $sqlAI = "ALTER TABLE `localisations` AUTO_INCREMENT= $resetPoint";
     
     $stmt = $db->prepare($sql);
+    $stmtAI = $db->prepare($sqlAI);
     try{
         $stmt->execute([$item]);
+        $stmtAI->execute();
         return true;
     }catch(Exception $e) {
         return $e->getMessage();
@@ -92,8 +97,8 @@ function addItemToMap (PDO $db, string $name, string $type, string $add, string 
     $stmt->bindValue(4, $cleanedCode);
     $stmt->bindValue(5, $cleanedVille);
     $stmt->bindValue(6, $cleanedUrl);
-    $stmt->bindValue(7, $cleanedLat, PDO::PARAM_INT);
-    $stmt->bindValue(8, $cleanedLon, PDO::PARAM_INT);
+    $stmt->bindValue(7, $cleanedLat);
+    $stmt->bindValue(8, $cleanedLon);
     
     try {
         $stmt->execute();
