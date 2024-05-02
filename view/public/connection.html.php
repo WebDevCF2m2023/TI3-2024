@@ -16,20 +16,20 @@
         </div>
     </nav>
     
-    <div class="container col-3 mt-5 p-5 border border-success rounded-5">
+    <div class="container col-6  mt-5 p-5 border border-success rounded-5">
         <form method="POST">
             <?php if(isset($error)): ?>
                 <p class="text-danger"><?= $error === false ? "Nom de compte ou mot de passe incorrect" : $error ?></p>
             <?php endif ?>
-            <div class="mb-3">
+            <div class="lg-mb-3">
                 <label for="user" class="form-label">Nom d'utilisateur</label>
-                <input type="text" class="form-control border-success" id="user" aria-describedby="user" name="user">
+                <input type="text" class="form-control border border-success" id="user" aria-describedby="user" name="user">
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label col-3">Mot de passe</label>
-                <input type="password" class="form-control border-success" id="password" name="password">
+            <div class="lg-mb-3">
+                <label for="password" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control border border-success" id="password" name="password">
             </div>
-            <button type="submit" class="btn btn-success mt-5 w-45 d-block m-auto">Se connecter</button>
+            <button type="submit" class="btn btn-success mt-5 w-auto d-block m-auto">Se connecter</button>
         </form>
     </div>
 

@@ -29,6 +29,7 @@ function addAllMarkersByLocations(locations) {
         markers[information.id] = marker;
         marker.bindPopup(`<b><p>${information.nom}</b></p>${information.adresse}<br> ${information.codepostal} ${information.ville}</p>`);
     });
+    map.fitBounds(L.featureGroup(Object.values(markers)).getBounds());
 }
  
 // Ajout des éléments à la liste
@@ -38,7 +39,7 @@ function addAllToListe(locations) {
  
     locations.forEach(i => {
         const li = document.createElement('li');
-        li.innerHTML = `<b><code>&bull; </code>${i.nom} </b>| ${i.adresse}, ${i.codepostal}, ${i.ville} `;
+        li.innerHTML = `${i.nom} | ${i.adresse}, ${i.codepostal}, ${i.ville} `;
         li.dataset.id = i.id;
         ul.appendChild(li);
     });
@@ -53,5 +54,5 @@ function onClickLI(e) {
     if (li.nodeName !== "LI") return;
     const marker = markers[li.dataset.id];
     const latlng = marker.getLatLng();
-    map.flyTo([latlng.lat, latlng.lng], 16);
+    map.flyTo([latlng.lat, latlng.lng], 18);
 }

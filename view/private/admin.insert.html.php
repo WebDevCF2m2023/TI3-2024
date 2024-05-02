@@ -30,7 +30,7 @@
         <?php if(isset($error)): ?>
                 <h2 class="text-center mb-4 text-danger"><?= $error ?></h2>
         <?php endif; ?>
-        <h2 class="text-center mb-4 text-success">Ajoutez un Centre Culturel.</h2>
+        <h2 class="text-center mb-4 text-success text-uppercase fw-bold">Ajoutez un Centre Culturel.</h2>
         <form class="w-50 m-auto" method="POST">
             <div class="form-group">
                 <label for="nom">Nom</label>

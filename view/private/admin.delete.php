@@ -33,7 +33,7 @@
             <?php if(isset($error)): ?>
                     <h2 class="text-center mb-4 text-danger"><?= $error ?></h2>
             <?php endif; ?>
-                <h2 class="text-center mb-4 text-success">Supprimez un Centre Culturel ID <?= $delete['id'] ?></h2>
+                <h2 class="text-center mb-4 text-success text-uppercase fw-bold">Supprimez un Centre Culturel ID <?= $delete['id'] ?></h2>
                 <form class="w-50 m-auto" method="GET">
                     <div class="form-group">
                         <label for="nom">Nom</label>

@@ -28,16 +28,16 @@
 
     <div class="container">
         <?php if(isset($_GET['updateOK'])) : ?>
-            <h2 class="text-center mb-4 text-success">Le centre culturel ID <strong class="text-primary"><?=$_GET['updateOK']?></strong> a bien été modifié.</h2>
+            <h2 class="text-center mb-4 text-success text-uppercase ">Le centre culturel ID <strong class="text-primary"><?=$_GET['updateOK']?></strong> a bien été modifié.</h2>
         <?php endif ?>
         <?php if(isset($_GET['deleteOK'])) : ?>
-            <h2 class="text-center mb-4 text-success">Le centre culturel ID <strong class="text-primary"><?=$_GET['deleteOK']?></strong> a bien été <strong class="text-danger">supprimé</strong>.</h2>
+            <h2 class="text-center mb-4 text-success text-uppercase fw-bold">Le centre culturel ID <strong class="text-primary"><?=$_GET['deleteOK']?></strong> a bien été <strong class="text-danger">supprimé</strong>.</h2>
         <?php endif ?>
         <?php if(isset($_GET['deleteKO'])) : ?>
-            <h2 class="text-center mb-4 text-danger">Le centre culturel ID <strong class="text-primary"><?=$_GET['deleteKO']?></strong> <strong>n'a pas</strong> été supprimé.</h2>
+            <h2 class="text-center mb-4 text-danger  text-uppercase">Le centre culturel ID <strong class="text-primary"><?=$_GET['deleteKO']?></strong> <strong>n'a pas</strong> été supprimé.</h2>
         <?php endif ?>
         <?php if(isset($_GET['addOK'])) : ?>
-            <h2 class="text-center mb-4 text-success">Le centre culturel ID <strong class="text-primary"><?=$_GET['addOK']?></strong> a bien été crée.</h2>
+            <h2 class="text-center mb-4 text-success text-uppercase">Le centre culturel ID <strong class="text-primary"><?=$_GET['addOK']?></strong> a bien été crée.</h2>
         <?php endif ?>
         <?php if(is_string($locations)) : ?>
             <h2 class="text-danger text-center"><?= $locations ?></h2>
@@ -50,7 +50,9 @@
                     </button>
                 </a>
             </div>
-            <table class="table table-bordered border-success table-success table-striped table-hover mb-5">
+
+            <div class="table-responsive">
+            <table class="table table-bordered border-success table-success table-striped table-hover ">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -65,22 +67,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($locations as $location) : ?>
-                        <tr>
-                            <th scope="row"><?= $location['id'] ?></th>
-                            <td><?= $location['nom'] ?></td>
-                            <td><?= $location['adresse'] ?></td>
-                            <td><?= $location['codepostal'] ?></td>
-                            <td><?= $location['ville'] ?></td>
-                            <td><?= $location['latitude'] ?></td>
-                            <td><?= $location['longitude'] ?></td>
-                            <td class="ps-4"><a href="?update=<?= $location['id'] ?>"><img src="img/update.png" alt="Icone modifier" width="30"></a></td>
-                            <td class="ps-4"><a href="?delete=<?= $location['id'] ?>"><img src="img/delete.png" alt="Icone supprimer" width="30"></a></td>
-                        </tr>
-                    <?php endforeach ?>
+                        <?php foreach($locations as $location) : ?>
+                            <tr>
+                                <th scope="row"><?= $location['id'] ?></th>
+                                <td><?= $location['nom'] ?></td>
+                                <td><?= $location['adresse'] ?></td>
+                                <td><?= $location['codepostal'] ?></td>
+                                 <td><?= $location['ville'] ?></td>
+                                <td><?= $location['latitude'] ?></td>
+                                <td><?= $location['longitude'] ?></td>
+                                 <td class="ps-4"><a href="?update=<?= $location['id'] ?>"><img src="img/update.png" alt="Icone modifier" width="30"></a></td>
+                                <td class="ps-4"><a href="?delete=<?= $location['id'] ?>"><img src="img/delete.png" alt="Icone supprimer" width="30"></a></td>
+                            </tr>
+                        <?php endforeach ?>
                 </tbody>
             </table>
-        <?php endif ?>
+           <?php endif ?>
+        </div>        
     </div>
     
 
