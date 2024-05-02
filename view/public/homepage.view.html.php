@@ -33,7 +33,7 @@
         <?php endif ?> 
         <div id="tophomepage">
         <h3>Carte Interactive</h3>
-        <p>Parcours BD à Bruxelles</p>
+        <p>Parcours Vélos à Bruxelles</p>
         <div id="button">
             <button>
                 <a href="?connect">Connexion à l'administration</a>

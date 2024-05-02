@@ -38,7 +38,6 @@ function connectAdministrator(PDO $con, string $user, string $password) : bool|s
 
 function disconnectAdministrator(): bool
 {
-
     // Détruit toutes les variables de session
     $_SESSION = [];
 
