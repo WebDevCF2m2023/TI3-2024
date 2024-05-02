@@ -7,6 +7,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <?php 
+            // Utilisé pour réduire la quantité d'espace occupé par les CDN
+            include_once ("../view/shared/leaf.css.php");
+            ?> 
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/colours.css">
         <title><?=$title?></title>
@@ -21,8 +25,8 @@
             <h2>Carte Interactive</h2>
             <h3>Parcours Ciné à Bruxelles</h3>   
                 <div class="mapAndList">
-                    <div class="map">
-                        <!-- La carte, et rien que la carte, va ici. -->
+                    <div id="map" class="theMap">
+                        <!-- La carte, et rien que la carte, va ici -->
                     </div>
                     <div class="cineList">
                         <?php
@@ -37,16 +41,20 @@
                             }
                         ?>
                             <div id="cineJSON">
-                                <!-- Tout est créé dans le fichier js.script. -->
+                                <!-- Tout est créé dans le fichier js.script -->
                             </div>
-                            
+
                     </div>  <!-- end cineList -->
                 </div>    <!-- end mapAndList -->
         </main>
-    <?php if(isset($errorMessage)) echo $errorMessage;    //  IF d'une ligne, courte et efficace. ?>
+    <?php if(isset($errorMessage)) echo $errorMessage;    //  IF d'une ligne, courte et efficace ?>
         </div> <!-- end global -->
     
     
-    
+        <?php 
+            // Utiliser encore une fois pour les CDN JavaScript.
+            include_once ("../view/shared/leaf.js.php");
+            ?> 
+        <script src="js/cine.script.js"></script>
 </body>
 </html>
