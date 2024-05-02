@@ -83,7 +83,7 @@ function afficheListe(donnees){
         // ajouter des attributs spécifiques à chaque élément pour pouvoir les distinguer
         LI.setAttribute("lat",`${item.latitude}`);
         LI.setAttribute("lng",`${item.longitude}`);
-        LI.setAttribute("id",`${item.idourdatas}`);
+        LI.setAttribute("id",`${item.id}`);
         // ajouter un écouteur d'événement pour savoir si on a cliqué sur cet élément
         LI.addEventListener('click', clicItem);
         // la relier à la liste
@@ -99,11 +99,11 @@ function clicItem() {
     let latitude = this.getAttribute('lat');
     let longitude= this.getAttribute('lng');
     let id= this.getAttribute('id');
-    console.log(`${latitude} ${longitude}`);
+    console.log(`${id} ${latitude} ${longitude}`);
 
     let marqueur = lesMarqueurs[id];
 
     carte.flyTo([latitude,longitude],17);
 
-    marqueur.togglePopup();
+    marqueur.openPopup();
 }
