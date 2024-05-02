@@ -32,7 +32,7 @@ function afficheMarqueurs(liste) {
         let unMarqueur = L.marker([liste[item].latitude, liste[item].longitude]).addTo(map);
 
         //Ajout du nom de l'item dans un popup
-        unMarqueur.bindPopup(`<h3>${liste[item].title}</h3> <p>${liste[item].adresse}</p>`);
+        unMarqueur.bindPopup(`<h3>${liste[item].nom}</h3> <p>${liste[item].adresse}</p>`);
 
         //Ajout de ce marqueur au tableau
         markerTable.push(unMarqueur);
