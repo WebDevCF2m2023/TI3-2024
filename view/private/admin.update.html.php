@@ -34,51 +34,51 @@
                             <div class="row justify-content-center">
                               <div class="col-md-10 col-lg-6 col-xl-5">
           
-                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 text-primary">Modifier la data</p>
+                                <p class="text-center h1 fw-bold mb-3 mx-1 mx-md-4 mt-4 text-primary">Modifier la data</p>
 
                                 <form action="" name="localisations" method="POST" [12:42] kevin Vanwassenhove
                                   onsubmit="return event.submitter.name === 'up' ? confirm('Voulez-vous vraiment modifier ?') : true">
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">nom</label>
-                                      <input type="text" name="nom" placeholder="nom" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['nom']?>" required>
+                                      <label class="form-label" for="form3Example3c">Nom</label>
+                                      <input type="text" name="nom" placeholder="Nom" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['nom']?>" required>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">adresse</label>
-                                      <input type="text" name="adresse" placeholder="adresse" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['adresse']?>" required>
+                                      <label class="form-label" for="form3Example3c"><A></A>dresse</label>
+                                      <input type="text" name="adresse" placeholder="Adresse" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['adresse']?>" required>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">numero</label>
-                                      <input type="number" name="numero" placeholder="numero" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['numero']?>" required>
+                                      <label class="form-label" for="form3Example3c">Numero</label>
+                                      <input type="number" name="Numero" placeholder="numero" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['numero']?>" required>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">ville</label>
+                                      <label class="form-label" for="form3Example3c">Ville</label>
                                       <input type="text" name="ville" placeholder="ville" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['ville']?>" required>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">codepostal</label>
-                                      <input type="number" name="codepostal" placeholder="codepostal" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['codepostal']?>" required>
+                                      <label class="form-label" for="form3Example3c">Codepostal</label>
+                                      <input type="number" name="codepostal" placeholder="Codepostal" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['codepostal']?>" required>
                                     </div>
                                   </div>
 
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example4c">latitude</label>
-                                      <input type="number" step="0.0000001" name="latitude" placeholder="latitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['latitude']?>" required>
+                                      <label class="form-label" for="form3Example4c">Latitude</label>
+                                      <input type="number" step="0.0000001" name="Latitude" placeholder="latitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['latitude']?>" required>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center mb-5 ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example4c">longitude</label>
-                                      <input type="number" step="0.0000001" name="longitude" placeholder="longitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['longitude']?>" required>
+                                      <label class="form-label" for="form3Example4c">Longitude</label>
+                                      <input type="number" step="0.0000001" name="Longitude" placeholder="longitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['longitude']?>" required>
                                     </div>
                                   </div>
                                   <input type="hidden" name="id" value="<?=$update['id']?>">

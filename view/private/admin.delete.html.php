@@ -34,50 +34,50 @@
                             <div class="row justify-content-center">
                               <div class="col-md-10 col-lg-6 col-xl-5">
           
-                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 text-primary">Supprimer</p>
+                                <p class="text-center h1 fw-bold mb-3 mx-1 mx-md-4 mt-4 text-primary">Supprimer</p>
 
                                 
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">nom</label>
-                                      <input type="text" name="nom" class="form-control border border-primary border-2 Regular shadow" placeholder="nom" value="<?=$delete['nom']?>" disabled>
+                                      <label class="form-label" for="form3Example3c">Nom</label>
+                                      <input type="text" name="Nom" class="form-control border border-primary border-2 Regular shadow" placeholder="nom" value="<?=$delete['nom']?>" disabled>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">adresse</label>
-                                      <input type="text" name="adresse" class="form-control border border-primary border-2 Regular shadow" placeholder="adresse" value="<?=$delete['adresse']?>" disabled>
+                                      <label class="form-label" for="form3Example3c">Adresse</label>
+                                      <input type="text" name="Adresse" class="form-control border border-primary border-2 Regular shadow" placeholder="adresse" value="<?=$delete['adresse']?>" disabled>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">numero</label>
-                                      <input type="number" name="numero" class="form-control border border-primary border-2 Regular shadow" placeholder="numero" value="<?=$delete['numero']?>" disabled>
+                                      <label class="form-label" for="form3Example3c">Numero</label>
+                                      <input type="number" name="Numero" class="form-control border border-primary border-2 Regular shadow" placeholder="numero" value="<?=$delete['numero']?>" disabled>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">ville</label>
+                                      <label class="form-label" for="form3Example3c">Ville</label>
                                       <input type="text" name="ville" class="form-control border border-primary border-2 Regular shadow" placeholder="ville" value="<?=$delete['ville']?>" disabled>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">codepostal</label>
-                                      <input type="number" name="codepostal" class="form-control border border-primary border-2 Regular shadow" placeholder="codepostal" value="<?=$delete['codepostal']?>" disabled>
+                                      <label class="form-label" for="form3Example3c">Codepostal</label>
+                                      <input type="number" name="Codepostal" class="form-control border border-primary border-2 Regular shadow" placeholder="codepostal" value="<?=$delete['codepostal']?>" disabled>
                                     </div>
                                   </div>
                              
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example4c">latitude</label>
+                                      <label class="form-label" for="form3Example4c">Latitude</label>
                                       <input type="number" step="0.0000001" name="latitude" placeholder="latitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$delete['latitude']?>" disabled>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center mb-5 ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example4c">longitude</label>
-                                      <input type="number" step="0.0000001" name="longitude" placeholder="longitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$delete['longitude']?>" disabled>
+                                      <label class="form-label" for="form3Example4c">Longitude</label>
+                                      <input type="number" step="0.0000001" name="Longitude" placeholder="longitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$delete['longitude']?>" disabled>
                                     </div>
                                   </div>
               

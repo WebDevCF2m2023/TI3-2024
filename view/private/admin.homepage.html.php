@@ -167,16 +167,16 @@
                <li><a href="?disconnect">Déconnexion</a></li>
            </ul>
         <?php if(isset($_SESSION['login'])): ?>
-        <h2 id="title" class=" display-4 text-success fst-italic animate__animated animate__backOutRight animate__delay-2s">bienvenue <?=$_SESSION['login']?></h2>
+        <h2 id="title" class=" display-4 text-success fst-italic ">bienvenue <?=$_SESSION['login']?></h2>
         <?php endif ?>
         <?php if(isset($_GET['zut'])): ?>
-            <h2 id="insert" class="display-5 text-info animate__animated animate__backOutRight animate__delay-2s ">Insertion réussie</h2>
+            <h2 id="insert" class="display-5 text-info  ">Insertion réussie</h2>
         <?php endif ?>
         <?php if(isset($_GET['up'])): ?>
-          <h2 id="up" class=" display-5 text-info animate__animated animate__backOutRight animate__delay-2s ">Update réussie</h2>
+          <h2 id="up" class=" display-5 text-info  ">Update réussie</h2>
         <?php endif ?>
         <?php if(isset($_GET['ok'])): ?>
-          <h2 id="del" class=" display-5 text-info animate__animated animate__backOutRight animate__delay-2s ">delete réussie</h2>
+          <h2 id="del" class=" display-5 text-info  ">delete réussie</h2>
         <?php endif ?>
         <?php  if(isset($message)): ?>
                 <h3><?=$message?></h3>
