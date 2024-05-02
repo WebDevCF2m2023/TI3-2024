@@ -222,8 +222,8 @@
                               <td class="text-white"><?=$item['codepostal']?></td>
                               <td class="text-white"><?=$item['latitude']?></td>
                               <td class="text-white"><?=$item['longitude']?></td>
-                              <td class="text-white"><a href="?update=<?=$item['id']?>"><img src="img/up.png" width="32" height="32" alt="update" /></a></td>
-                              <td class="text-white"><a href="?delete=<?=$item['id']?>"><img src="img/poubelle.png" width="32" height="32" alt="delete" /></a></td>
+                              <td class="text-white"><a href="?update=<?=$item['id']?>"><img src="./img/up.png" width="32" height="32" alt="update" /></a></td>
+                              <td class="text-white"><a href="?delete=<?=$item['id']?>"><img src="./img/poubelle.png" width="32" height="32" alt="delete" /></a></td>
                             </tr>
                               <?php endforeach; ?>
                             </table>
