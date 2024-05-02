@@ -8,9 +8,9 @@
     <style>
         body {
             background-color: #1a1a28;
-opacity: 0.9;
-background-size: 10px 10px;
-background-image: repeating-linear-gradient(45deg, #466be8 0, #466be8 1px, #1a1a28 0, #1a1a28 50%);
+            opacity: 0.9;
+            background-size: 10px 10px;
+            background-image: repeating-linear-gradient(45deg, #466be8 0, #466be8 1px, #1a1a28 0, #1a1a28 50%);
         }
     </style>
 </head>
@@ -24,15 +24,15 @@ background-image: repeating-linear-gradient(45deg, #466be8 0, #466be8 1px, #1a1a
 <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="p-3 rounded shadow" style="background-color: #f8f9fa;">
+                <div class="p-3 rounded shadow border border-4 border-primary" style="background-color: #f8f9fa;">
                     <div class="row">
                         <div class="col-md-6 d-flex justify-content-center">
-                            <div class="p-3 rounded shadow" style="background-color: #e9ecef; box-shadow: 0 20px 20px rgba(0,0,0,0.1), 0px 0px 50px rgba(0,0,0,0.1); transform: perspective(1000px) rotateX(5deg) rotateY(10deg) scale(1.1);">
-                                <img src="../img/login.png" alt="Cool Image" class="img-fluid rounded mb-3">
+                            <div class="p-3 rounded shadow" style="background-color: #1a1a28; background-image: repeating-linear-gradient(45deg, #466be8 0, #466be8 1px, #1a1a28 0, #1a1a28 50%); box-shadow: 0 20px 20px rgba(0,0,0,0.7), 0px 0px 50px rgba(0,0,0,0.1); transform: perspective(1000px) rotateX(5deg) rotateY(10deg) scale(1.1);">
+                                <img src="img/login.png" alt="Cool Image" class="img-fluid rounded-5 mb-3 border border-5 border-primary">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="card" style="box-shadow: 0 20px 20px rgba(0,0,0,0.1), 0px 0px 50px rgba(0,0,0,0.1); background: linear-gradient(to right, #f8f9fa, #e9ecef);">
+                            <div class="card border border-3 border-primary rounded-4" style="box-shadow: 0 20px 20px rgba(0,0,0,0.1), 0px 0px 50px rgba(0,0,0,0.1); background: linear-gradient(to right, #f8f9fa, #e9ecef);">
                                 <div class="card-header bg-primary text-white">Se connecter</div>
                                 <div class="card-body">
                                     <form action="" method="POST">

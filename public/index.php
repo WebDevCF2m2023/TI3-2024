@@ -19,11 +19,11 @@ try {
 }
 
 if(isset($_GET['json'])){ // API JSON (public)
-    require("../controller/ApiController.php"); // API JSON
+    require("../controller/apiController.php"); // API JSON
 }else if(isset($_SESSION['connected'])){
-    require("../controller/PrivateController.php");
+    require("../controller/privateController.php");
 }else{
-    require("../controller/PublicController.php");
+    require("../controller/publicController.php");
     
 }
 

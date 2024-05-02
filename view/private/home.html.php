@@ -21,10 +21,10 @@
         <h2>Parcours des endorits connu à Bruxelles</h2>
         
 
-        <a href="/?administration">
+        <a href="?administration">
             <button>Admin Panel</button>
         </a>   
-        <a href="/?disconnect">
+        <a href="?disconnect">
             <button>Deconexion</button>
         </a>    
         

@@ -25,7 +25,7 @@ function userConnect(PDO $db, string $user) : bool|string{
     if(!is_array($bddUser)) return $bddUser;
     if(!password_verify($_POST['password'], $bddUser['passwd'])) return false;
     $_SESSION['connected'] = true;
-    header("Location: /");
+    header("Location: ./");
     die();
 }
 

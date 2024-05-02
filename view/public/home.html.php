@@ -20,7 +20,7 @@
         <h1>Carte Interactive</h1>
         <h2>Parcours des endorits connu à Bruxelles</h2>
         
-        <a href="/?login">
+        <a href="?login">
             <button>Connexion a l'administration</button>
         </a>
         

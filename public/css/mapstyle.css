@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 #homepage-container {
     display: grid;
     width: 80%;
@@ -41,7 +42,7 @@
 
 
 #liste ul li:hover{
-    background-color: rgba(0,255,0,0.3);
+    background-color: rgba(89, 132, 232, 0.3);
 }
 
 @media screen and (max-width: 640px) {
@@ -86,7 +87,10 @@ button {
 }
 
 button:hover {
-    background-color: goldenrod;
+    background-color:steelblue;
+    color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    
 
 }
 

@@ -83,7 +83,7 @@
                 <a href="/?">
                     <button type="button" class="btn btn-warning ">Page d'accueil</button>
                 </a>
-                <a href="/?disconnect">
+                <a href="?disconnect">
                     <button type="button" class="btn btn-danger">Deconexion</button>
                 </a>
             </div>
