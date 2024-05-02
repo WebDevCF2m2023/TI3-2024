@@ -160,9 +160,9 @@
                         <h6 class="mb-0">Recent data</h6>
                         
                     </div>
-                    <h2>Administration de nos datas</h2>
-                    <ul class="list-unstyled">
-               <li><a href="./">Accueil Admin</a></li>
+                    <h2 class="mb-5">Administration de nos datas</h2>
+                    <ul class="list-unstyled mt-5">
+               <li class=""><a href="./">Accueil Admin</a></li>
                <li><a href="?insert">Ajouter une data</a></li>
                <li><a href="?disconnect">Déconnexion</a></li>
            </ul>
