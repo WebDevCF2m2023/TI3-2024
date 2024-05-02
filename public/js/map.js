@@ -66,7 +66,9 @@ function addAllMarkersByLocations(locations){
         marker.bindPopup(`<b>${information.nom}</b><br><p>${information.adresse} - ${information.numero} - ${information.ville} - ${information.codepostal}</p><img width='100''>`);
     });
 
+
 }
+
 
 /**
  * 

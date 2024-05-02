@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -40,7 +42,7 @@
 <div class="container">
 
     <div class="text-center">
-        <h1>Admin Homepage</h1>
+        <h1 class="ms-5">Admin Homepage</h1>
       </div>
 </div>
 <body>
@@ -164,18 +166,18 @@
                <li><a href="?insert">Ajouter une data</a></li>
                <li><a href="?disconnect">Déconnexion</a></li>
            </ul>
+        <?php if(isset($_SESSION['login'])): ?>
+        <h2 id="title" class=" display-4 text-success fst-italic animate__animated animate__backOutRight animate__delay-2s">bienvenue <?=$_SESSION['login']?></h2>
+        <?php endif ?>
         <?php if(isset($_GET['zut'])): ?>
-            <h2 class="text-success">Insertion réussie</h2>
+            <h2 id="insert" class="display-5 text-info animate__animated animate__backOutRight animate__delay-2s ">Insertion réussie</h2>
         <?php endif ?>
-
         <?php if(isset($_GET['up'])): ?>
-          <h2 class="text-success">Update réussie</h2>
+          <h2 id="up" class=" display-5 text-info animate__animated animate__backOutRight animate__delay-2s ">Update réussie</h2>
         <?php endif ?>
-
         <?php if(isset($_GET['ok'])): ?>
-          <h2 class="text-success">delete réussie</h2>
+          <h2 id="del" class=" display-5 text-info animate__animated animate__backOutRight animate__delay-2s ">delete réussie</h2>
         <?php endif ?>
-
         <?php  if(isset($message)): ?>
                 <h3><?=$message?></h3>
         <?php elseif(isset($error)): ?>
@@ -317,6 +319,36 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/map.js"></script>
+
+   <!-- <script>
+        const title = document.querySelector('#title');
+        title.classList.add('animate__animated', 'animate__backInDown', "animate__delay-2s");
+
+        title.addEventListener('animationend', () => {
+            title.classList.replace('animate__backInDown', 'animate__backOutRight')
+        });
+
+        const insert = document.querySelector('#insert');
+        insert.classList.add('animate__animated', 'animate__backInDown', "animate__delay-2s");
+
+        insert.addEventListener('animationend', () => {
+            insert.classList.replace('animate__backInDown', 'animate__backOutRight')
+        });
+
+        const up = document.querySelector('#up');
+        up.classList.add('animate__animated', 'animate__backInDown', "animate__delay-2s");
+
+        up.addEventListener('animationend', () => {
+            up.classList.replace('animate__backInDown', 'animate__backOutRight')
+        });
+
+        const del = document.querySelector('#del');
+        del.classList.add('animate__animated', 'animate__backInDown', "animate__delay-2s");
+
+        del.addEventListener('animationend', () => {
+            del.classList.replace('animate__backInDown', 'animate__backOutRight')
+        });
+    </script>-->
 </body>
 
 </html>

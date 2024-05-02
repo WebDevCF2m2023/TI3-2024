@@ -14,7 +14,6 @@
     <h1>carte interactive</h1><br>
     <h2>les stations Cambio 🚗</h2>
     <a href="/?connect"><button>connection a <br> l'administration</button></a>
-
 </header>
         <div id="container">
         <div id="map"></div>
