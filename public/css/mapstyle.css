@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#homepage-container {
+    display: grid;
+    width: 80%;
+    margin: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "map liste";
+        margin-bottom: 100px;
+
+}
+
+#map {
+    grid-area: map;
+    height: 700px;
+ }
+
+#liste{
+    grid-area: liste;
+    padding: 5px;
+    
+    max-height: 700px;
+    overflow-y: scroll;
+}
+
+#liste ul{
+    padding: 0;
+    margin: 0;
+}
+
+#liste ul li{
+    cursor: pointer;
+    list-style: none;
+    padding: 5px 10px 5px 10px;
+}
+
+
+#liste ul li:hover{
+    background-color: rgba(89, 132, 232, 0.3);
+}
+
+@media screen and (max-width: 640px) {
+    #homepage-container{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+                "map"
+                "liste";
+    }
+    #map{
+        margin-bottom: 1rem;
+    }
+}
+
+
+#welcome-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem;
+}
+
+h2 {
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.5rem;
+}
+
+button {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:steelblue;
+    color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    
+
+}
+
+hr
+{
+    border: 2px solid #443b3b;
+    opacity: 1.0;
+}
