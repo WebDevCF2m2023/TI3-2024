@@ -6,13 +6,10 @@
     text-align: center;
 }
 
-a #btnHomepage{
-    margin: 20px auto;
 
- }
  a{
     text-decoration: none;
-    
+    display: block;
  }
 #btnHomepage{
     display: flex;
@@ -24,6 +21,8 @@ a #btnHomepage{
     color: black;
     border: 2px solid #2a454e;
     border-radius: 10px;
+    margin: 20px auto;
+    width: 10vw;
   }
   #btnHomepage:hover{
     text-shadow: 0 0 10px white;
@@ -85,7 +84,9 @@ a #btnHomepage{
         right: 20px;
         margin-top: 15%;
     }
-   
+    #btnHomepage{
+        width: 18vw;
+    }
 }
 
 li{

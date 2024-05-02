@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!--Lien CSS Leaflet-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -14,7 +14,7 @@
 <div id="content">
         <h1 class="titreHomepage">Carte interactive</h1>
         <h3 class="titreHomepage">Théâtre à Bruxelles</h3>
-         <a href="?connect"> <button value="Connexion" id="btnHomepage">Connexion à l'administration</button></a> 
+         <a href="?connect" id="btnHomepage">Connexion à l'administration</a> 
         <?php
         /*
         // datas est une chaine de caractère : erreur SQL ! 
@@ -67,6 +67,6 @@
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
      <!--Mon JS-->
-     <script src="../js/carteJSON.js"></script>
+     <script src="js/carteJSON.js"></script>
 </body>
 </html>
