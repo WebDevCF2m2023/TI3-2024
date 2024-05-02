@@ -14,6 +14,7 @@
             background-color:black;
           }
         </style>
+        
 </head>
 <body>
     
@@ -27,20 +28,43 @@
     <div id="content">
         
         <?php if(isset($error)): ?>
-            <h4 id="alert"><?=$error?></h4>
+            <h4 class="text-danger" id="alert"><?=$error?></h4>
         <?php endif ?>
        
 </div>   
 
         <?php // var_dump($_POST)?>
-  <div class="row justify-content-md-center  ">
-
-        
-   <div class="card col-lg-4 col-md-5 col-sm-12 mt-5 bg-dark ">
-    <div class="card-header text-white">
-            Inscription
+<div class="container " style="margin-top:10%;">
+  <div class="row justify-content-md-center justify-content-sm-center">
+  <div class="col-lg-6  pt-5 rounded ">        
+                    <div id="carouselExampleControls" class="carousel slide shadow-lg" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/car4.jpg" alt="First slide">
     </div>
-        <div class="card-body  ">
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/car3.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/car2.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+        </div>
+        
+   <div class="card col-lg-4 col-md-8 col-sm-10 mt-5 bg-dark offset-lg-2 ">
+    <div class="card-header text-white">
+            Administration
+    </div>
+        <div class="card-body">
             <form action="" method="POST" name="connexion">
                 <div class="col-12 text-white">
                 <label for="name" class="form-label">Nom</label>
@@ -56,8 +80,15 @@
             </form>
         </div>
     </div>
-</div>
-</div>
-</div>
+
+
+
+                      
+ 
+        </div>
+        </div>       
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

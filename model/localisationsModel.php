@@ -3,7 +3,7 @@
 // C'est une fonction qui recupère toutes les localisations 
 function getAllGeoloc(PDO $db) : array|string
 {
-    $sql = "SELECT * FROM `localisations` ORDER BY id DESC ;";
+    $sql = "SELECT * FROM `localisations` ORDER BY id ASC ;";
     try{
         $query = $db->query($sql);
         // si il n'y a pas de résultats, fetchAll est un tableau vide

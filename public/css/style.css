@@ -71,9 +71,13 @@ h3,h4{
    
 }
 
-  #map { width: 100%; height: 500px; }
-  
-  
+ 
+
+  #map { box-shadow: 0 0 10px rgb(56, 203, 239);
+     border: solid rgb(248, 232, 233); 
+     width: 98%; 
+     height: 500px;  
+     }
         
 
         

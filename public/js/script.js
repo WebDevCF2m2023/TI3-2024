@@ -84,7 +84,7 @@ function afficheListe(donnees){
         // ajouter des attributs spécifiques à chaque élément pour pouvoir les distinguer
         LI.setAttribute("lat",`${item.latitude}`);
         LI.setAttribute("lng",`${item.longitude}`);
-        LI.setAttribute("id",`${item.idourdatas}`);
+        LI.setAttribute("id",`${item.id}`);
         // ajouter un écouteur d'événement pour savoir si on a cliqué sur cet élément
         LI.addEventListener('click', clicItem);
         // la relier à la liste
