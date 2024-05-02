@@ -1,0 +1,164 @@
+/*FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+
+.titreHomepage{
+    text-align: center;
+}
+
+
+ a{
+    text-decoration: none;
+    display: block;
+ }
+#btnHomepage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #C0D6DF;
+    color: black;
+    border: 2px solid #2a454e;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 10vw;
+  }
+  #btnHomepage:hover{
+    text-shadow: 0 0 10px white;
+  }
+  #alert {
+    color: red;
+}
+
+#comment {
+    color: rgb(4, 71, 15);
+}
+  #map {
+    width: 100%;
+    height: 750px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.7),
+                0px 2px 4px rgba(0, 0, 0, 0.7),
+                0px 4px 8px rgba(0, 0, 0, 0.7),
+                0px 8px 16px rgba(0, 0, 0, 0.7),
+                0px 16px 32px rgba(0, 0, 0, 0.7),
+                0px 32px 64px rgba(0, 0, 0, 0.7);
+    position: relative;
+    top: 10%;            
+}
+
+#resultat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 50px 0 0 70px;
+}
+
+#btnConnexion{
+    background-color: #00e0c3;
+    color: black;
+}
+#titleConnexion{
+   font-family: "Fjalla One", sans-serif;
+   
+}
+#loginForm{
+    background-color: #2a454e;
+}
+@media  screen and (max-width:640px) {
+    #resultat {
+        display: grid;
+        grid-template-columns: 1fr ;
+        gap: 10px;
+       
+    }
+    #map {
+        width: 100%;
+        height: 650px;
+        position: relative;
+        right: 20px;
+        
+    }
+    #liste{
+        position: relative;
+        right: 20px;
+        margin-top: 15%;
+    }
+    #btnHomepage{
+        width: 18vw;
+    }
+}
+
+li{
+    margin-bottom: 10px;
+}
+
+#navbarStyle{
+    background-color: #2a454e;
+   padding: 8px;
+}
+#navbarStyle a{
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.titleStyle{
+    margin-top: 2em;
+}
+
+.th-inner{
+    background-color: #C0D6DF !important;
+}
+.form-label{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 8em;
+}
+label[for="nom"]{
+    position: relative;
+    right: 11%;
+}
+label[for="codepostal"]{
+    position: relative;
+    right: 9%;
+}
+label[for="telephone"]{
+    position: relative;
+    right: 9%;
+}
+label[for="url"]{
+    position: relative;
+    right: 11.5%;
+}
+label[for="longitude"]{
+    position: relative;
+    left: -9.5%;
+}
+
+@media  screen and (max-width:1400px) {
+    label[for="rue"]{
+        position: relative;
+        right: 9%;
+    }
+    label[for="codepostal"]{
+        position: relative;
+        right: 8%;
+    }
+    label[for="telephone"]{
+        position: relative;
+        right: 8%;
+    }
+    label[for="latitude"]{
+        position: relative;
+        right: 9%;
+    }
+    label[for="longitude"]{
+        position: relative;
+        right: 5%;
+    }
+}
+
+#nbLieu{
+    color: #2a454e !important;
+    font-weight: bold;
+}
