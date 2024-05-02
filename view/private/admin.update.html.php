@@ -53,7 +53,7 @@
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example3c">Numero</label>
-                                      <input type="number" name="Numero" placeholder="numero" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['numero']?>" required>
+                                      <input type="number" name="numero" placeholder="Numero" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['numero']?>" required>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
@@ -72,13 +72,13 @@
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example4c">Latitude</label>
-                                      <input type="number" step="0.0000001" name="Latitude" placeholder="latitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['latitude']?>" required>
+                                      <input type="number" step="0.0000001" name="latitude" placeholder="Latitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['latitude']?>" required>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center mb-5 ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example4c">Longitude</label>
-                                      <input type="number" step="0.0000001" name="Longitude" placeholder="longitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['longitude']?>" required>
+                                      <input type="number" step="0.0000001" name="longitude" placeholder="Longitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['longitude']?>" required>
                                     </div>
                                   </div>
                                   <input type="hidden" name="id" value="<?=$update['id']?>">

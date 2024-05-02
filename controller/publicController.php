@@ -12,7 +12,7 @@ if(isset($_GET['connect'])){
 
 
         if($connection === true){
-            header("Location: ./");
+            header("Location: ./?co");
             die();
         }
 

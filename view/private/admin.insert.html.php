@@ -70,13 +70,13 @@
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example4c">Latitude</label>
-                                      <input type="number" step="0.0000001" name="Latitude" placeholder="latitude" class="form-control border border-primary border-2 Regular shadow" required>
+                                      <input type="number" step="0.0000001" name="latitude" placeholder="Latitude" class="form-control border border-primary border-2 Regular shadow" required>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center mb-5 ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example4c">longitude</label>
-                                      <input type="number" step="0.0000001" name="Longitude" placeholder="longitude" class="form-control border border-primary border-2 Regular shadow" required>
+                                      <input type="number" step="0.0000001" name="longitude" placeholder="Longitude" class="form-control border border-primary border-2 Regular shadow" required>
                                     </div>
                                   </div>
               

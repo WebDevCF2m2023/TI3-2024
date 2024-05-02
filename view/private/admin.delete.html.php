@@ -40,19 +40,19 @@
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example3c">Nom</label>
-                                      <input type="text" name="Nom" class="form-control border border-primary border-2 Regular shadow" placeholder="nom" value="<?=$delete['nom']?>" disabled>
+                                      <input type="text" name="nom" class="form-control border border-primary border-2 Regular shadow" placeholder="nom" value="<?=$delete['nom']?>" disabled>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example3c">Adresse</label>
-                                      <input type="text" name="Adresse" class="form-control border border-primary border-2 Regular shadow" placeholder="adresse" value="<?=$delete['adresse']?>" disabled>
+                                      <input type="text" name="adresse" class="form-control border border-primary border-2 Regular shadow" placeholder="adresse" value="<?=$delete['adresse']?>" disabled>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example3c">Numero</label>
-                                      <input type="number" name="Numero" class="form-control border border-primary border-2 Regular shadow" placeholder="numero" value="<?=$delete['numero']?>" disabled>
+                                      <input type="number" name="numero" class="form-control border border-primary border-2 Regular shadow" placeholder="numero" value="<?=$delete['numero']?>" disabled>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
@@ -64,20 +64,20 @@
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example3c">Codepostal</label>
-                                      <input type="number" name="Codepostal" class="form-control border border-primary border-2 Regular shadow" placeholder="codepostal" value="<?=$delete['codepostal']?>" disabled>
+                                      <input type="number" name="codepostal" class="form-control border border-primary border-2 Regular shadow" placeholder="codepostal" value="<?=$delete['codepostal']?>" disabled>
                                     </div>
                                   </div>
                              
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example4c">Latitude</label>
-                                      <input type="number" step="0.0000001" name="latitude" placeholder="latitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$delete['latitude']?>" disabled>
+                                      <input type="number" step="0.0000001" name="latitude" placeholder="Latitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$delete['latitude']?>" disabled>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center mb-5 ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                                       <label class="form-label" for="form3Example4c">Longitude</label>
-                                      <input type="number" step="0.0000001" name="Longitude" placeholder="longitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$delete['longitude']?>" disabled>
+                                      <input type="number" step="0.0000001" name="longitude" placeholder="Longitude" class="form-control border border-primary border-2 Regular shadow" value="<?=$delete['longitude']?>" disabled>
                                     </div>
                                   </div>
               

@@ -166,17 +166,17 @@
                <li><a href="?insert">Ajouter une data</a></li>
                <li><a href="?disconnect">Déconnexion</a></li>
            </ul>
-        <?php if(isset($_SESSION['login'])): ?>
-        <h2 id="title" class=" display-4 text-success fst-italic ">bienvenue <?=$_SESSION['login']?></h2>
+        <?php if(isset($_GET['co'])): ?>
+        <h2 id="title" class=" display-4 text-success fst-italic animate__animated animate__zoomIn  ">Bienvenue <?=$_SESSION['login']?></h2>
         <?php endif ?>
         <?php if(isset($_GET['zut'])): ?>
-            <h2 id="insert" class="display-5 text-info  ">Insertion réussie</h2>
+            <h2 id="insert" class="display-5 text-info animate__animated animate__zoomIn animate__delay-1s  ">Insertion réussie</h2>
         <?php endif ?>
         <?php if(isset($_GET['up'])): ?>
-          <h2 id="up" class=" display-5 text-info  ">Update réussie</h2>
+          <h2 id="up" class=" display-5 text-info animate__animated animate__zoomIn animate__delay-1s ">Update réussie</h2>
         <?php endif ?>
         <?php if(isset($_GET['ok'])): ?>
-          <h2 id="del" class=" display-5 text-info  ">delete réussie</h2>
+          <h2 id="del" class=" display-5 text-info animate__animated animate__zoomIn animate__delay-1s ">Delete réussie</h2>
         <?php endif ?>
         <?php  if(isset($message)): ?>
                 <h3><?=$message?></h3>
@@ -184,7 +184,7 @@
                 <h3 class="error"><?=$error?></h3>
         
         <?php else: ?>
-                    <div class="table-responsive">
+                    <div class="table-responsive{-sm|-md|-lg|-xl|-xxl}">
                         <table  id="table"
                         class="table table-striped"
                         data-toggle="table"
@@ -199,15 +199,15 @@
                                 <tr>
                                   <th data-checkbox="true" data-field="state"></th>
                                   <th class="text-success">ID</th>
-                                  <th class="text-success">nom</th>
-                                  <th class="text-success">adresse</th>
-                                  <th class="text-success">numero</th>
-                                  <th class="text-success">ville</th>
-                                  <th class="text-success">codepostal</th>
+                                  <th class="text-success">Nom</th>
+                                  <th class="text-success">Adresse</th>
+                                  <th class="text-success">Numero</th>
+                                  <th class="text-success">Ville</th>
+                                  <th class="text-success">Codepostal</th>
                                   <th class="text-success">latitude</th>
-                                  <th class="text-success">longitude</th>
+                                  <th class="text-success">Longitude</th>
                                   <th class="text-success" data-switchable="false">Modifier</th>
-                                  <th class="text-success" data-switchable="false">supprimer</th>
+                                  <th class="text-success" data-switchable="false">Supprimer</th>
                                 </tr>
                               </thead>
                        <tbody>
