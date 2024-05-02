@@ -52,8 +52,8 @@ function afficheMarqueurs(pointsGeo){
         // l'adresse du lieu se trouve dans le champ adresse
         // l'URL de l'image se trouve dans le champ img_url
         unMarqueur.bindPopup(
-            `<h3>${pointsGeo[item].title}</h3>
-            <p>${pointsGeo[item].ourdesc}</p>
+            `<h3>${pointsGeo[item].nom}</h3>
+            <p>${pointsGeo[item].adresse}</p>
             `);
 
         /* ajouter aussi ce marqueur au tableau */
