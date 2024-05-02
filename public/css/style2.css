@@ -80,3 +80,16 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+@media screen and (max-width : 640px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    #map{
+        margin-bottom: 1rem;
+        position: relative;
+        left: 100px;
+        width: 75%;
+    }
+}

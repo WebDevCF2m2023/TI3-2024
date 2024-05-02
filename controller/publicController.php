@@ -26,7 +26,7 @@ if(isset($_GET['connect'])){
 if(isset($_GET['loadDatas'])){
     $localisations = getlocalisations($connect);
     echo json_encode($localisations);
-    exit();
+    exit(); 
 }
 
 /*
