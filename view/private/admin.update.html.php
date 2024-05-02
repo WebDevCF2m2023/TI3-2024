@@ -42,7 +42,7 @@ include "../view/inc/connect.php";
                  <div class="form-group">
             <input type="text" class="form-control text-center bg-light" name="nom" placeholder="nom" value="<?=$updateDatas['nom']?>" required><br>
             <textarea class="form-control text-center bg-light" name="adresse" placeholder="adresse" required><?=$updateDatas['adresse']?></textarea><br>
-            <input type="text" class="form-control text-center bg-light" name="nom" placeholder="nom" value="<?=$updateDatas['ville']?>" required><br>
+            <input type="text" class="form-control text-center bg-light" name="ville" placeholder="nom" value="<?=$updateDatas['ville']?>" required><br>
             <input type="number" class="form-control text-center text-alert bg-light" step="0.0000001" name="codepostal" placeholder="codepostal" value="<?=$updateDatas['codepostal']?>" required><br>
             <input type="number" class="form-control text-center text-alert bg-light" step="0.0000001" name="latitude" placeholder="latitude" value="<?=$updateDatas['latitude']?>" required><br>
             <input type="number" class="form-control text-center text-alert bg-light" step="0.0000001" name="longitude" placeholder="longitude" value="<?=$updateDatas['longitude']?>" required><br>
