@@ -35,7 +35,7 @@
                 <h2 class="text-center mb-4 text-danger"><?= $error ?></h2>
         <?php endif; ?>
         <h2 class="text-center mb-4 text-primary">Ajouter une nouvelle location.</h2>
-        <form class="w-50 m-auto needs-validation <?= isset($secure) ? 'was-validated' : ''?>" novalidate method="POST">
+        <form class="col-12 col-md-8 col-xl-6 m-auto needs-validation <?= isset($secure) ? 'was-validated' : ''?>" novalidate method="POST">
             <div class="form-group">
                 <label for="name">Nom</label>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Nom" pattern="^.{1,50}$" value="<?= isset($secure) ? $_POST["name"] : "" ?>" required>

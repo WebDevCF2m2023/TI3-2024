@@ -25,7 +25,7 @@
     
     <div class="container">
         <h1 class="text-center my-5">Formulaire de connexion</h1>
-        <form action="" method="POST" class="w-50 m-auto">
+        <form action="" method="POST" class="col-12 col-md-8 col-xl-6 m-auto">
             <?php if(isset($error)): ?>
                 <p class="text-danger"><?= $error === false ? "Nom de compte ou mot de passe incorrect" : $error ?></p>
             <?php endif ?>

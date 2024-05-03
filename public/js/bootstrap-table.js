@@ -7106,7 +7106,7 @@
               var el = key.substring(index + 1);
               $td.find(el).off(name).on(name, function (e) {
                 var index = $tr.data('index');
-                var row = _this9.options.sidePagination === 'server' ? _this9.options.data[index] : _this9.data[index];
+                var row = _this9.data[index];
                 var value = row[field];
                 event.apply(_this9, [e, value, row, index]);
               });
@@ -7707,6 +7707,7 @@
         if (this.options.sidePagination === 'server') {
           this.options.totalRows += 1;
           this.options.pageSize += 1;
+          this.data = [...this.options.data];
         }
         this.initSearch();
         this.initPagination();

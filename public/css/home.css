@@ -145,6 +145,12 @@ header button{
                 "liste";
     }
     #map{
-        margin-bottom: 1rem;
+        margin: 0 auto 1rem auto;
+        width: 90%;
+        height: 600px;
+    }
+
+    #liste{
+        height: 600px;
     }
 }

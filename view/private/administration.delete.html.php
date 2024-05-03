@@ -37,7 +37,7 @@
                     <h2 class="text-center mb-4 text-danger"><?= $error ?></h2>
             <?php endif; ?>
             <h2 class="text-center mb-4 text-primary">Supprimer la localisation avec comme ID <?= $delete['id'] ?></h2>
-                <form class="w-50 m-auto" method="GET">
+                <form class="col-12 col-md-8 col-xl-6 m-auto" method="GET">
                     <div class="form-group">
                         <label for="name">Nom</label>
                         <input type="text" class="form-control" name="name" id="name" disabled value="<?= $delete['nom'] ?>">
