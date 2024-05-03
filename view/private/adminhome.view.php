@@ -25,9 +25,10 @@
             <div class="normalHead">
                 <h2>Carte Interactive</h2>
                 <h3>Parcours Ciné à Bruxelles</h3>   
+                <a href="?logout">Déconnexion</a>
             </div>
             <div class="hideLogin">
-                <form action="./" method="POST" id = "loginForm">
+                <form action="" method="POST" id = "loginForm">
                     <label for="nomInp">Nom</label>
                         <input type="text" name="userNameInp" id="nomInp" aria-describedby="userNameField" placeholder="Votre Nom">
                     <label for="pwdInp">Password</label>
@@ -35,7 +36,6 @@
                     <button type="submit" id="submitLogin">Submit</button>
                 </form>
             </div>
-            <?php if(isset($errorMessage)) echo $errorMessage;    //  IF d'une ligne, courte et efficace ?>
                 <div class="mapAndList">
                     <div id="map" class="theMap">
                         <!-- La carte, et rien que la carte, va ici -->
@@ -59,7 +59,7 @@
                     </div>  <!-- end cineList -->
                 </div>    <!-- end mapAndList -->
         </main>
-
+    <?php if(isset($errorMessage)) echo $errorMessage;    //  IF d'une ligne, courte et efficace ?>
         </div> <!-- end global -->
     
     

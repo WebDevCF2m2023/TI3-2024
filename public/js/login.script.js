@@ -6,10 +6,11 @@ const nomInp        = document.getElementById("nomInp");
 const pwdInp        = document.getElementById("pwdInp");
 
 loginCall.addEventListener("click", showLogin);
+/*
 loginForm.addEventListener("submit", function (form) {
     form.preventDefault();
 });
-
+*/
 function showLogin () {
     loginCall.disabled = true;
     normalHead.className = "";
