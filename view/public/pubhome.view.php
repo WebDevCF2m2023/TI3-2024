@@ -48,7 +48,7 @@
                             }else{
                         ?>
                         <h4>Choisis parmi ces <?=$cineCount?> cinémas.</h4>
-                        <div class="cineHomeIcon">
+                        <div class="cineHomeIconHolder">
                             <div class="cineHomeIcon">
                                 <img src="img/film.svg" alt="">
                                     <p>Cinéma</p>

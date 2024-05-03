@@ -36,9 +36,19 @@
   }
 
   
-  .loginCall {
-    margin: 1vh 0 2vh;
+  .loginCallButton {
+    margin: 1vh 0 0;
+    background-color: transparent;
+    border-radius: 20px;
+    border-color: black;
+    padding: 0 5px;
 }
+
+.loginCallButton:hover {
+  border-color: slategrey;
+}
+
+
 
 footer {
   display: flex;
@@ -111,7 +121,7 @@ main h2, main h3 {
   font-size: small;
 }
 
-.cineHomeIcon {
+.cineHomeIcon, .cineHomeIconHolder {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -198,3 +208,41 @@ main h2, main h3 {
 }
 
 
+@media screen and (max-width: 640px) {
+  .global {
+      padding: 0;
+  }
+
+
+  .mapAndList {
+      margin-top: 5vh;
+      width: 100vw;
+      display: grid;   
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: 
+      "mapGrid"
+      "listGrid";
+
+  }
+
+  .theMap {
+    margin: 0 auto;
+    width: 90vw;
+  }
+
+  .cineList {
+    width: 90vw;
+    font-size: small;
+  }
+
+  .cineHomeIconHolder {
+    margin-left: 20%;
+  }
+
+  header h1 {
+    text-align: center;
+    font-size: small;
+  }
+
+}

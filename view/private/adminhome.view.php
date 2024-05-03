@@ -14,17 +14,31 @@
 <body>
     <div class="container-fluid px-5 text-center"> <!-- global container -->
 
-    <div class="container h-25"> <!-- main container -->
+    <div class="container"> <!-- main container -->
+    <?php
+        include ("inc/header.php");
+    ?>
     <?php
       if(isset($errorMessage)): ?>
                 <h4 class="text-danger"><?=$errorMessage?></h4>
                 <?php endif ?>
     <?php
-        if (!isset($_SESSION["id"]) || $_SESSION["id"] !== session_id()) {
+        if ($_SESSION["pageCount"] === 0) {
+            $_SESSION["pageCount"]++;
             include("inc/welcome-message.php");
+        }else {
+            ?>
+        <?php
+
+// PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   
+
         }
         ?> 
         </div> <!-- end main container -->
+
+        <?php
+            include ("inc/footer.php");
+        ?>
 
     </div>  <!-- end global container -->
     <?php 
@@ -33,6 +47,7 @@
             include_once ("../view/shared/leaf.js.php");
             ?>
       <script src="js/cine.script.js"></script>
+      <script src="js/colour-script.js"></script>
     </body>
     
     </html
