@@ -20,10 +20,21 @@
             <?php
                 include "inc/header.public.php";
                 ?>
-
+  
         <main>
-            <h2>Carte Interactive</h2>
-            <h3>Parcours Ciné à Bruxelles</h3>   
+            <div class="normalHead">
+                <h2>Carte Interactive</h2>
+                <h3>Parcours Ciné à Bruxelles</h3>   
+            </div>
+            <div class="hideLogin">
+                <form action="" method="POST" id = "loginForm">
+                    <label for="nomInp">Nom</label>
+                        <input type="text" name="userNameInp" id="nomInp" aria-describedby="userNameField" placeholder="Votre Nom">
+                    <label for="pwdInp">Password</label>
+                        <input type="password" name="userPassInp" id="pwdInp" placeholder="Password">
+                    <button type="submit" id="submitLogin">Submit</button>
+                </form>
+            </div>
                 <div class="mapAndList">
                     <div id="map" class="theMap">
                         <!-- La carte, et rien que la carte, va ici -->
@@ -56,5 +67,6 @@
             include_once ("../view/shared/leaf.js.php");
             ?> 
         <script src="js/cine.script.js"></script>
+        <script src="js/login.script.js"></script>
 </body>
 </html>

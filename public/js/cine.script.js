@@ -72,11 +72,11 @@ function createListForHomepage(data){
                 // Ajout du HTML nécessaire (Éducation de l'enfant ;-D )
             LI.innerHTML = `<span class = "PUTOTHERCLASSHERE">
                                 <span class="PUTCLASSHERE">${item.nom},</span>
-                                <span class="PUTCLASSHERE">${item.adresse},</span>
-                                <span class="PUTCLASSHERE">${item.codepostal},</span>
+                                <span class="PUTCLASSHERE">${item.add},</span>
+                                <span class="PUTCLASSHERE">${item.code},</span>
                                 <span class="PUTCLASSHERE">${item.ville}.</span>
                                 <span class="PUTCLASSHERE">
-                                    <a href="${item.url}" target="_blank">Visite</a>
+                                <a href="${item.url}" target="_blank"><img src="img/link.svg" alt=""></a>
                                 </span>
                             </span>`;
 

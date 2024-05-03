@@ -6,9 +6,7 @@
     src: url("../assets/helvetica-neue-5/HelveticaNeueRoman.otf");
   }
 
-.global {
-    display: grid;
-}
+
 
   header {
     display: flex;
@@ -17,6 +15,7 @@
     
     width: 90vw;
     margin: 0 auto;
+    padding-bottom: 2vh;
 
     border: 1px solid black;
     border-radius: 20px;
@@ -42,5 +41,86 @@ main h2, main h3 {
 
 .theMap {
     height: 600px;
-    width: 1000px;
+    width: 600px;
+    grid-area: mapGrid;
+}
+
+.cineList {
+  grid-area: listGrid;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+#cineJSON ul {
+  list-style: none;
+}
+
+.hideLogin {
+  display: none;
+}
+
+.showLogin {
+  animation-name: fadeIn;
+  animation-duration: 2s;  
+}
+
+@keyframes fadeIn {    /*  Petit animation qui fait transformer le main header  */
+
+  0% {display: block; opacity: 0;}
+  25% {opacity: 0.25;}
+  50% {opacity: 0.50;}
+  75% {opacity: 0.75;}
+  100% {opacity: 1;}
+}   
+
+
+.normalHead {
+  display: block;
+  opacity: 1;
+  padding: 2vh 0;
+}
+
+.fadingHead {
+  animation-name: fadeOut;
+  animation-duration: 2s;
+}
+
+.goneHead {
+  display: none;
+}
+
+@keyframes fadeOut {    /*  Petit animation qui fait transformer le main header  */
+
+  0% {opacity: 0.75; padding: 2vh 0;}
+  25% {opacity: 0.50; padding: 2vh 0;}
+  50% {opacity: 0.25; padding: 2vh 0;}
+  75% {opacity: 0; padding: 2vh 0;}
+  100% {display: none;};
+}   
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#loginForm label, #loginForm input {
+  font-size: small;
+}
+
+.mapAndList {
+  display: grid;
+  
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 600px;
+  grid-template-areas: 
+  "mapGrid listGrid";
+  
+  align-items: start;
+  justify-content: center;
+
+  width: 80%;
 }
