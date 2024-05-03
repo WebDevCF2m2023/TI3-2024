@@ -41,14 +41,41 @@ function makeMarkersForMap(datas){
 function makeMarkersForMap (datas) {
 const markers = L.markerClusterGroup();
 const markerTable = [];
+let greenIcon = L.icon({
+    iconUrl: 'img/link.svg',
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+let blueIcon = L.icon({
+    iconUrl: 'img/pencil.svg',
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+let redIcon = L.icon({
+    iconUrl: 'img/trash.svg',
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
 for (let data in datas){
 
 // change what's displayed on the icons
+datas[data].type === "cinéma" ? 
+    mapMarker = L.marker([datas[data].lat, datas[data].lon],{icon: greenIcon}) :
+datas[data].type === "ciné-club" ?     
+    mapMarker = L.marker([datas[data].lat, datas[data].lon],{icon: redIcon}) :
+    mapMarker = L.marker([datas[data].lat, datas[data].lon],{icon: blueIcon});
 
-    let mapMarker = L.marker([datas[data].lat, datas[data].lon]);
-
-    mapMarker.bindPopup(`<h3>${datas[data].nom}</h3><p>${datas[data].add}</p>`);
+    mapMarker.bindPopup(`<h4>${datas[data].nom}</h4><p>${datas[data].add}</p>`);
 markers.addLayer(mapMarker);
 markerTable.push(mapMarker);
 }
