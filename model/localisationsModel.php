@@ -1,5 +1,11 @@
 <?php
 
+// J'ai ajouté la capture des erreurs à chaque fonction. 
+// En général, si true ou un tableau est renvoyé, tout va bien.
+// Si false est renvoyé, alors quelque chose s'est mal passé du côté SQL.
+// Si une chaîne est renvoyée, quelque chose ne va pas avec le PHP.
+
+
 //Prépare toutes les emplacements pour la vue.
 function getAllCinemas (PDO $cine) : array | bool | string {
     // Comme cela sera utilisé pour la plupart de l'affichage des emplacements, j'ai pris le temps de donner des alias à ceux qui en avaient besoin.
@@ -12,9 +18,8 @@ function getAllCinemas (PDO $cine) : array | bool | string {
                    
             FROM `localisations`
             ORDER BY `id` DESC";
-
-    try{
-
+    try{        
+        // Pas besoin d'utiliser un prepare ici car il n'y a pas de saisie utilisateur
         $query = $cine->query($sql);
             if($query->rowCount()===0) return false;
         $result = $query->fetchAll();
@@ -26,6 +31,7 @@ function getAllCinemas (PDO $cine) : array | bool | string {
     }
 }
 
+// Sélectionnez un seul cinéma en prévision d'une mise à jour ou d'une suppression.
 function getOneCinema (PDO $del, $id) : array | string {
     $sql = "SELECT `id`, `nom`, `type`, 
                     `adresse`   AS `add`,              
@@ -37,7 +43,8 @@ function getOneCinema (PDO $del, $id) : array | string {
             WHERE `id` = :id";
 
     $stmt = $del->prepare($sql);
-    $stmt->bindParam(":id", $id);
+    // Ici, j'utilise des marqueurs nommés pour l'instruction préparée
+    $stmt->bindParam(":id", $id);   
     try {
         $stmt->execute();
         $result = $stmt->fetch(); 
@@ -53,6 +60,7 @@ function deleteCinemaFromList (PDO $db, $id) : bool | string {
             WHERE `id` = ?";
 
     $stmt = $db->prepare($sql);
+    // Et ici, j'ai utilisé des marqueurs ? pour l'instruction.
     $stmt->bindParam(1, $id);
     try {
         $stmt->execute();
@@ -64,28 +72,3 @@ function deleteCinemaFromList (PDO $db, $id) : bool | string {
     } 
 }
 
-/*
-function getCinemasByType (PDO $cine, $type) : array | bool | string {
-    // Comme cela sera utilisé pour la plupart de l'affichage des emplacements, j'ai pris le temps de donner des alias à ceux qui en avaient besoin.
-    $sql = "SELECT `id`, `nom`, `type`, 
-                    `adresse` AS `add`,              
-                   `codepostal` AS `code`, 
-                   `ville`, `url`, 
-                   `latitude` AS `lat`, 
-                   `longitude` AS `lon`
-                   
-            FROM `localisations`
-            WHERE `type` = ?";
-
-    $stmt = $cine->prepare($sql);
-    try{
-        $stmt->execute([$type]);
-        $result = $stmt->fetchAll();
-        return $result;
-    }catch(Exception) {
-        $errorMessage = "Sorry, couldn't get cinemas by type";
-        return $errorMessage;
-    }
-}
-
-*/

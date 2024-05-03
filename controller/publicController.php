@@ -1,12 +1,4 @@
 <?php
-/*
-if (isset($_GET["login"])) {
-    //  if -------LOGIN POSTS HERE
-        $title = "Connexion d'utilisateur";
-        include "../view/public/login.view.php";
-    die();
-}
-*/
 
 if (isset($_POST["userNameInp"], $_POST["userPassInp"])) {
     

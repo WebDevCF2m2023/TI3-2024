@@ -16,7 +16,7 @@ if ($cinemas === false) {
 }
 
 
-
+// Si la suppression d'une entrée a été confirmée
 if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
     $id = standardClean($_GET["item"]);    
     $deleteCine = deleteCinemaFromList ($db, $id);
@@ -32,6 +32,7 @@ if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
             header ("Location: ./");
             die();
         }
+// Preparation d'une entrée pour suppression        
 }else if (isset($_GET["delete"], $_GET["item"]) && ctype_digit($_GET["item"])) {
     $id = standardClean($_GET["item"]);
     $cineDelete = getOneCinema ($db, $id);
@@ -44,7 +45,7 @@ if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
 
 
 
+// Appel du page d'accueil Admin
 $title = 'Bienvenue Admin à ma nouvelle version de TI3';
 $cineCount = count($cinemas);
-// Appel du page d'accueil Admin
 include "../view/private/adminhome.view.php";
