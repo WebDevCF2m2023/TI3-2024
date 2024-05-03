@@ -75,7 +75,7 @@ datas[data].type === "ciné-club" ?
     mapMarker = L.marker([datas[data].lat, datas[data].lon],{icon: redIcon}) :
     mapMarker = L.marker([datas[data].lat, datas[data].lon],{icon: blueIcon});
 
-    mapMarker.bindPopup(`<h4>${datas[data].nom}</h4><p>${datas[data].add}</p>`);
+    mapMarker.bindPopup(`<span class = "cineIconBox"><a href = "${datas[data].url}" target="_blank"><h4>${datas[data].nom}</h4></a><p>${datas[data].add}</p></span>`);
 markers.addLayer(mapMarker);
 markerTable.push(mapMarker);
 }
@@ -96,13 +96,13 @@ function createListForHomepage(data){
             let LI = document.createElement("li");  // Création de l'enfant <li>
 
                 // Ajout du HTML nécessaire (Éducation de l'enfant ;-D )
-            LI.innerHTML = `<span class = "PUTOTHERCLASSHERE">
+            LI.innerHTML = `<span>
                                 <span class="PUTCLASSHERE">${item.nom},</span>
                                 <span class="PUTCLASSHERE">${item.add},</span>
                                 <span class="PUTCLASSHERE">${item.code},</span>
                                 <span class="PUTCLASSHERE">${item.ville}.</span>
-                                <span class="PUTCLASSHERE">
-                                <a href="${item.url}" target="_blank"><img src="img/link.svg" alt=""></a>
+                                <span>
+                                <a href="${item.url}" target="_blank"><img src="img/link.svg" alt="cinema link" class="cineLinkIcon"></a>
                                 </span>
                             </span>`;
 
@@ -128,7 +128,7 @@ function itemClick () {
 
    // let marqueur = markerTable[id];
    // marqueur.togglePopup();
-    map.flyTo([latitude,longitude],17);
+    map.flyTo([latitude,longitude],18);
 }
 
 
