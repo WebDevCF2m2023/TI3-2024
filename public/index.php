@@ -31,39 +31,5 @@ if(isset($_SESSION['username'])){
 }
 
 
-if (isset($_GET["page"])) {
-    switch ($_GET["page"]) {
-        case "accueil" :
-            include ("../view/public/homepage.view.html.php");
-            break;
-    
- 
-    }
-
-}else if (isset($_GET["connect"])) {
-    include ("../view/public/connect.view.html.php");
-
-}else if (isset($_GET["bienvenue"])) {
-    include ("../view/private/admin.homepage.html.php");
-
-}else if (isset($_GET["update"])) {
-    include ("../view/private/admin.update.html.php");
-
-}else if 
-        (isset($_GET["delete"])) {
-    include ("../view/private/admin.delete.html.php");
-
-}else if 
-        (isset($_GET["insert"])) {
-    include ("../view/private/admin.insert.html.php");
-
-
-
-
-}else{
-
-include ("../view/public/homepage.view.html.php");
-}
-
 $db = null;
     

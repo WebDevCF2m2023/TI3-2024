@@ -115,4 +115,4 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
 
 $ourDatas = getAllOurdatas($db); 
 
-    include "../view/private/admin.delete.view.html.php";
+    include "../view/private/admin.homepage.html.php";
