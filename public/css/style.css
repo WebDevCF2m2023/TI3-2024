@@ -6,7 +6,9 @@
     src: url("../assets/helvetica-neue-5/HelveticaNeueRoman.otf");
   }
 
-
+.errorMessage {
+  color: red;
+}
 
   header {
     display: flex;

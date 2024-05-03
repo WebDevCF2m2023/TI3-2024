@@ -11,7 +11,7 @@ if (isset($_GET["login"])) {
 if (isset($_POST["userNameInp"], $_POST["userPassInp"])) {
     
     $nom = standardClean($_POST["userNameInp"]);
-    $pwd = standardClean($_POST["userPassInp"]);
+    $pwd = simpleTrim($_POST["userPassInp"]);
 
     $login = attemptUserLogin ($db, $nom, $pwd);
 

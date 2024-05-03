@@ -35,7 +35,6 @@
                     <button type="submit" id="submitLogin">Submit</button>
                 </form>
             </div>
-            <?php if(isset($errorMessage)) echo $errorMessage;    //  IF d'une ligne, courte et efficace ?>
                 <div class="mapAndList">
                     <div id="map" class="theMap">
                         <!-- La carte, et rien que la carte, va ici -->
