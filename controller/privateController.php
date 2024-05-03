@@ -1,10 +1,19 @@
 <?php
+if (isset($_GET["page"])) {
+    switch ($_GET["page"]) {
+        case "accueil" :
+            include ("../view/public/homepage.view.html.php");
+            break;
+    
+ 
+    }
+} 
 
-$ourDatas = getAllOurdatas($db); 
 
 if(isset($_GET['disconnect'])){
 
      disconnectAdministrator();
+     header("Location: ?accueil")
      die();
 
 }
@@ -70,7 +79,7 @@ if(isset($_GET['insert'])){
         $insert = addNewDatas($db,$title,$description,$ville,$codepostal,$latitude,$longitude);
 
         if($insert === true){
-            header("Location: ?insert");
+            header("Location: ?bienvenue");
             exit();
            }
     
@@ -102,6 +111,8 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
 
     include "../view/private/admin.delete.view.html.php";
     
-    die();
-
 }
+
+$ourDatas = getAllOurdatas($db); 
+
+    include "../view/private/admin.delete.view.html.php";

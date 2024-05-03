@@ -1,6 +1,6 @@
 <?php
 
-
+if (isset($_GET['connect'])) {
 
     if(isset($_POST['username'],$_POST['passwd'])){
 
@@ -16,4 +16,10 @@
         }
     }
 
+    include "../view/public/connect.view.html.php";
+    die();
+}
+
 $ourDatas = getAllOurdatas($db);
+
+include "..view/public/homepage.view.html.php";
