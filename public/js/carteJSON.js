@@ -5,7 +5,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-fetch("apicarte.php")
+fetch("?json")
     .then(function (response) {
         response.json().then(function (data) {
             console.log(data);

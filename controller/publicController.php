@@ -22,4 +22,4 @@ if (isset($_GET['connect'])) {
 
 $ourDatas = getAllOurdatas($db);
 
-include "..view/public/homepage.view.html.php";
+include "../view/public/homepage.view.html.php";

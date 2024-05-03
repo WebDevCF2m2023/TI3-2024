@@ -1,11 +1,10 @@
 <?php
 if (isset($_GET["page"])) {
     switch ($_GET["page"]) {
+        
         case "accueil" :
             include ("../view/public/homepage.view.html.php");
             break;
-    
- 
     }
 } 
 
@@ -13,7 +12,7 @@ if (isset($_GET["page"])) {
 if(isset($_GET['disconnect'])){
 
      disconnectAdministrator();
-     header("Location: ?accueil")
+     header("Location: ?accueil");
      die();
 
 }
