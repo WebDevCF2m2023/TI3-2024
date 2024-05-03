@@ -1,6 +1,6 @@
 <hr class="border border-secondary border-1 opacity-25">
 <div class="text-center">
-    <p class="h1">Bienvenue Dans Ma Nouvelle Expérience</p>
+    <p class="h1">Bienvenue À Mon Nouveau TI3</p>
 </div>
 <nav class="navbar">
 <div class="container-fluid">

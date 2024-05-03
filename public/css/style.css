@@ -37,11 +37,12 @@
 
   
   .loginCallButton {
+    width: 12vw;
     margin: 1vh 0 0;
     background-color: transparent;
     border-radius: 20px;
     border-color: black;
-    padding: 0 5px;
+    padding: 1vh 5px;
 }
 
 .loginCallButton:hover {
@@ -75,11 +76,15 @@ footer a {
 
 @keyframes footerIn {    /*  Petit animation qui fait transformer le main header  */
 
-  0% { opacity: 0;}
-  25% {opacity: 0.25;}
-  50% {opacity: 0.50;}
-  75% {opacity: 0.75;}
-  100% {opacity: 1;}
+  0%    {opacity: 0;}
+  12.5% {opacity: 0.10;}
+  25%   {opacity: 0.25;}
+  37.5% {opacity: 0.4;}
+  50%   {opacity: 0.50;}
+  62.5% {opacity: 0.65;}
+  75%   {opacity: 0.75;}
+  87.5% { opacity: 0.90;}
+  100%  {opacity: 1;}
 }   
 
 main {
@@ -161,10 +166,14 @@ main h2, main h3 {
 @keyframes fadeIn {    /*  Petit animation qui fait transformer le main header  */
 
   0% {display: block; opacity: 0;}
-  25% {opacity: 0.25;}
-  50% {opacity: 0.50;}
-  75% {opacity: 0.75;}
-  100% {opacity: 1;}
+  12.5% {opacity: 0.10;}
+  25%   {opacity: 0.25;}
+  37.5% {opacity: 0.4;}
+  50%   {opacity: 0.50;}
+  62.5% {opacity: 0.65;}
+  75%   {opacity: 0.75;}
+  87.5% { opacity: 0.90;}
+  100%  {opacity: 1;}
 }   
 
 

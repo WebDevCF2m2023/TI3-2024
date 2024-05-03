@@ -15,12 +15,36 @@ if ($cinemas === false) {
     $errorMessage = $e;
 }
 
+
+
+if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
+    $id = standardClean($_GET["item"]);    
+    $deleteCine = deleteCinemaFromList ($db, $id);
+        if ($deleteCine === true) {
+            header ("Location: ./");
+            die();
+        }else if (is_string(($deleteCine))) {
+            $errorMessage = "Something went wrong with PHP";
+            header ("Location: ./");
+            die();
+        }else {
+            $errorMessage = "Something went wrong with SQL";
+            header ("Location: ./");
+            die();
+        }
+}else if (isset($_GET["delete"], $_GET["item"]) && ctype_digit($_GET["item"])) {
+    $id = standardClean($_GET["item"]);
+    $cineDelete = getOneCinema ($db, $id);
+    $title = "Préparation de Suppression";
+    include ("../view/private/delete.view.php");
+    die();
+}
+
+
+
+
+
 $title = 'Bienvenue Admin à ma nouvelle version de TI3';
 $cineCount = count($cinemas);
 // Appel du page d'accueil Admin
 include "../view/private/adminhome.view.php";
-
-
-
-
-

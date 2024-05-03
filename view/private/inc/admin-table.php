@@ -1,7 +1,17 @@
 
 <div class="container-fluid my-3 border border-secondary rounded-3 pt-3">
     <div class="container-fluid">
-
+        <?php 
+            if ($cineCount > 1) {
+                ?>
+                <p class="h4">Il y a <?=$cineCount?> cinémas</p>
+                <?php
+                }else {
+                    ?>
+                <p class="h4">Il n'y a que <?=$cineCount?> cinéma</p>
+                    <?php
+                }
+                ?>
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped animate__animated animate__zoomIn" data-toggle="table" data-show-columns="true" data-search="true"data-pagination="true" data-checkbox-header="true">
                             <!-- J'ai ajouté l'animation ici car sinon, BS fait un bizarre effet -->
@@ -32,8 +42,8 @@
                                         <td><?=$cinema["ville"]?></td>
                                         <td><?=$cinema["lat"]?></td>
                                         <td><?=$cinema["lon"]?></td>
-                                        <td><a href="?page=adminHome&action=update&item=<?=$cinema["id"]?>"><img src="img/pencil.svg" alt="update"></a></td>
-                                        <td><a href="?page=adminHome&action=delete&item=<?=$cinema["id"]?>"><img src="img/trash.svg" alt="delete"></a></td>
+                                        <td><a href="?update&item=<?=$cinema["id"]?>"><img src="img/pencil.svg" alt="update"></a></td>
+                                        <td><a href="?delete&item=<?=$cinema["id"]?>"><img src="img/trash.svg" alt="delete"></a></td>
                                     </tr>
                                     <?php
                                     }
