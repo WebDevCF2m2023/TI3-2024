@@ -28,17 +28,13 @@
       if(isset($errorMessage)): ?>
                 <h4 class="text-danger"><?=$errorMessage?></h4>
                 <?php endif ?>
-                <div class="container text-center w-25">
-                    <p class="h4">Êtes-vous sur vous voulez supprimer ce lieu?</p>
-                    <div class="border border-warning rounded-5">
-                        <p><?=$cineDelete["id"]?></p>
-                        <p><?=$cineDelete["nom"]?></p>
-                    </div>
-                    <div class="mt-2">
-                        <a href="?delete&item=<?=$cineDelete["id"]?>&confirm=ok"><span class="btn btn-danger mx-3">Oui</span></a>
-                        <a href="./"><span class="btn btn-info mx-3">Non</span></a>
-                    </div>
-                </div>
+               
+            <?php
+                // Afin de garder les pages plus propres, j'utilise des inclusions pour les éléments plus volumineux (comme les tableaux, les formulaires, etc.)
+                // Ou pour les éléments qui sont répétés sur plusieurs pages (en-tête, pied de page, barre de navigation, etc.)
+                include ("inc/insert-form.php");
+            ?>
+
         </div> <!-- end main container -->
 
         <?php
@@ -51,7 +47,7 @@
             include_once ("inc/jsBS.php");
             include_once ("../view/shared/leaf.js.php");
             ?>
-      <script src="js/cine.script.js"></script>
+      <script src="js/insert.script.js"></script>
       <script src="js/colour.script.js"></script>
     </body>
     

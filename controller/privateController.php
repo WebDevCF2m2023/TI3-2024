@@ -42,6 +42,14 @@ if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
 }
 
 
+// INSERTION
+if (isset($_GET["create"])) {
+    $title = "Insértion d'une Lieux";
+    include ("../view/private/insert.view.php");
+    die();
+}
+
+
 
 
 

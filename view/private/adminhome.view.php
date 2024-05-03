@@ -49,7 +49,7 @@
             include_once ("../view/shared/leaf.js.php");
             ?>
       <script src="js/cine.script.js"></script>
-      <script src="js/colour-script.js"></script>
+      <script src="js/colour.script.js"></script>
     </body>
     
     </html
