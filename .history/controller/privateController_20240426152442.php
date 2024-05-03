@@ -30,20 +30,18 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
     // si le formulaire est envoyé
     if(isset(
-        $_POST['id'],
-        $_POST['nom'],
-        $_POST['adresse'],
-        $_POST['codepostal'],
+        $_POST['idourdatas'],
+        $_POST['title'],
+        $_POST['ourdesc'],
         $_POST['latitude'],
         $_POST['longitude']
     )){
-        $idourdatas = (int) $_POST['id'];
-        $title = htmlspecialchars(strip_tags(trim($_POST['nom'])),ENT_QUOTES);
-        $adresse = htmlspecialchars(trim($_POST['adresse']),ENT_QUOTES);
-        $latitude = (float) $_POST['codepostal'];
+        $idourdatas = (int) $_POST['idourdatas'];
+        $title = htmlspecialchars(strip_tags(trim($_POST['title'])),ENT_QUOTES);
+        $ourdesc = htmlspecialchars(trim($_POST['ourdesc']),ENT_QUOTES);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
-        $update = updateOurdatasByID($connect,$id,$nom,$adresse, $codepostal,$latitude,$longitude);
+        $update = updateOurdatasByID($connect,$idourdatas,$title,$ourdesc,$latitude,$longitude);
         if($update===true){
             // redirection
             header("Location: ./");
@@ -65,22 +63,19 @@ if(isset($_GET['insert'])){
 
     // si le formulaire est envoyé
     if(isset(
-        $_POST['id'],
-        $_POST['nom'],
-        $_POST['adresse'],
-        $_POST['codepostal'],
+        $_POST['title'],
+        $_POST['ourdesc'],
         $_POST['latitude'],
         $_POST['longitude']
     )){
-        $idl = (int) $_POST['id'];
-        $nom = strip_tags(trim($_POST['nom']));
-        $adresse = trim($_POST['adresse']);
-        $codepostal = (int) $_POST['codepostal'];
+
+        $title = strip_tags(trim($_POST['title']));
+        $oudesc = trim($_POST['ourdesc']);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
 
         // si on récupère true, à cette fonction, il faut rédiriger vers l'accueil de l'admin, sinon affichage d'une erreur
-        $insert = addOurdatas($connect,$id,$nom,$adresse ,$codepostal,$latitude,$longitude);
+        $insert = addOurdatas($connect,$title,$oudesc,$latitude,$longitude);
 
         if($insert===true):
             header("Location: ./?zut"); 
