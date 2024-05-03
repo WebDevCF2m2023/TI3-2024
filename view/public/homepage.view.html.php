@@ -10,7 +10,9 @@
      crossorigin=""/>
 </head>
 <body>
+<div id="content">
     <h1>Accueil</h1>
+
     <nav>
         <ul>
             <li>Accueil</li>
@@ -18,12 +20,14 @@
             <li><a href="?connect">Connexion</a></li>
         </ul>
     </nav>
-    <div id="content">
+    
         <h3>Liste de nos lieux</h3>
+</div>
+    <div id="resultat">
         <div id="map"></div>
         <div id="liste"></div>
-        
     </div>
+    
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
