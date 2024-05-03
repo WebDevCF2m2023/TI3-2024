@@ -15,7 +15,7 @@ fetch("?json")
 // Et, bien sûr, nous allons avoir besoin d'ajouter la carte.
 const map = L.map('map').setView([52.825, -4.338], 17);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
+        maxZoom: 21,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
@@ -62,8 +62,7 @@ map.fitBounds(groupe.getBounds(), {padding:[10,10]});
 function createListForHomepage(data){
     
     const cineJSON = document.getElementById("cineJSON");   // Rencontrez le grand-père !
-
-    const UL = document.createElement("ul");  // Création du parent <ul>
+    const UL       = document.createElement("ul");  // Création du parent <ul>
 
         data.forEach(function(item){
 
@@ -80,17 +79,29 @@ function createListForHomepage(data){
                                 </span>
                             </span>`;
 
-      //      LI.addEventListener('click', itemClick);    // Écoute pour des clics
+            LI.addEventListener('click', itemClick);    // Écoute pour des clics
                 // Préparation pour le "flyTo"
             LI.setAttribute("id",`${item.id}`);
-            LI.setAttribute("lat",`${item.latitude}`);
-            LI.setAttribute("lon",`${item.longitude}`);
+            LI.setAttribute("lat",`${item.lat}`);
+            LI.setAttribute("lon",`${item.lon}`);
 
             UL.appendChild(LI); // Maintenant qu'ils ont été créés, ajoutez les enfants à leurs parents.
             
         });
         // Et enfin, présentez-les à leurs grands-parents
     cineJSON.appendChild(UL);
+}
+
+function itemClick () {
+    let id          = this.getAttribute("id");
+    let latitude    = this.getAttribute("lat");
+    let longitude   = this.getAttribute("lon");
+
+    console.log('item cliqué : ' + id);
+
+   // let marqueur = markerTable[id];
+   // marqueur.togglePopup();
+    map.flyTo([latitude,longitude],17);
 }
 
 

@@ -64,6 +64,10 @@ main h2, main h3 {
   display: none;
 }
 
+#loginError {
+  color: yellow;
+}
+
 .showLogin {
   animation-name: fadeIn;
   animation-duration: 2s;  
@@ -83,6 +87,7 @@ main h2, main h3 {
   display: block;
   opacity: 1;
   padding: 2vh 0;
+  text-align: center;
 }
 
 .fadingHead {
