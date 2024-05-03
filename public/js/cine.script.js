@@ -106,10 +106,6 @@ function itemClick () {
     let latitude    = this.getAttribute("lat");
     let longitude   = this.getAttribute("lon");
 
-    console.log('item cliqué : ' + id);
-
-   // let marqueur = markerTable[id];
-   // marqueur.togglePopup();
     map.flyTo([latitude,longitude],18);
 }
 

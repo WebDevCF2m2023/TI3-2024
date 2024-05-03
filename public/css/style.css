@@ -80,6 +80,21 @@ main h2, main h3 {
   margin: 1vh 0;
 }
 
+.mapAndList {
+  display: grid;
+  
+  grid-template-columns: 5fr 3fr;
+  grid-template-rows: 600px;
+  grid-template-areas: 
+  "mapGrid listGrid";
+  
+  align-items: start;
+  justify-content: center;
+
+  width: 80%;
+  margin-top: 3vh;
+}
+
 .theMap {
     width: 48vw;
     height: 90vh;
@@ -181,18 +196,5 @@ main h2, main h3 {
 #submitLogin {
   margin-top: 5px;
 }
-.mapAndList {
-  display: grid;
-  
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 600px;
-  grid-template-areas: 
-  "mapGrid listGrid";
-  
-  align-items: start;
-  justify-content: center;
 
-  width: 80%;
-  margin-top: 3vh;
-}
 
