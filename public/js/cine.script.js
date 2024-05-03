@@ -19,56 +19,38 @@ const map = L.map('map').setView([52.825, -4.338], 17);
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-/*
-    const markerTable = [];
 
-function makeMarkersForMap(datas){
-    for (let data in datas){
-        let mapMarker = L.marker([datas[data].lat, datas[data].lon]).addTo(map);
-        /* mettre le nom de l'item dans un popup */
- //       mapMarker.bindPopup(`<h3>${datas[data].nom}</h3><p>${datas[data].add}</p>`);
-
-        /* ajouter ce marqueur au tableau */
-   //     markerTable.push(mapMarker);
- //   }
-
-// placer le tableau de marqueurs dans le featureGroup */
-// const markerGroup = new L.featureGroup(markerTable);
-
-// adapter l'affichage de ma carte en fonction de la position des marqueurs */
-// map.fitBounds(markerGroup.getBounds(),{padding:[10,10]});
-// }
 function makeMarkersForMap (datas) {
-const markers = L.markerClusterGroup();
-const markerTable = [];
-let greenIcon = L.icon({
-    iconUrl: 'img/link.svg',
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});
-let blueIcon = L.icon({
-    iconUrl: 'img/pencil.svg',
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});
-let redIcon = L.icon({
-    iconUrl: 'img/trash.svg',
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});
+    const markers = L.markerClusterGroup();
+    const markerTable = [];
+        // Création et positionnement des icônes
+        let greenIcon = L.icon({
+            iconUrl: 'img/film.svg',
+            iconSize:     [38, 95], 
+            shadowSize:   [50, 64], 
+            iconAnchor:   [22, 94], 
+            shadowAnchor: [4, 62],  
+            popupAnchor:  [-3, -76] 
+        });
+        let blueIcon = L.icon({
+            iconUrl: 'img/camera.svg',
+            iconSize:     [38, 95], 
+            shadowSize:   [50, 64], 
+            iconAnchor:   [22, 94], 
+            shadowAnchor: [4, 62],  
+            popupAnchor:  [-3, -76] 
+        });
+        let redIcon = L.icon({
+            iconUrl: 'img/person.svg',
+            iconSize:     [38, 95], 
+            shadowSize:   [50, 64], 
+            iconAnchor:   [22, 94], 
+            shadowAnchor: [4, 62],  
+            popupAnchor:  [-3, -76] 
+        });
 
 for (let data in datas){
-
-// change what's displayed on the icons
+// Sélection d'icônes pour chaque catégorie
 datas[data].type === "cinéma" ? 
     mapMarker = L.marker([datas[data].lat, datas[data].lon],{icon: greenIcon}) :
 datas[data].type === "ciné-club" ?     
