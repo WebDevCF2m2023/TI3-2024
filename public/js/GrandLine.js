@@ -8,7 +8,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(carte);
 
 /* Récuperation des données */
-fetch("carteJSON.php")
+fetch("?json")
     .then(function(response){
         response.json().then(function(data){
             console.log(data);
@@ -27,9 +27,9 @@ function afficheMarqueurs(liste){
 /* Boucle pour créer les marqueurs de la liste */
 for (let item in liste){
     /* créer un marqueur pour chaque élément de la liste */
-    let unMarqueur = L.marker([liste[item].lat, liste[item].long]).addTo(carte);
+    let unMarqueur = L.marker([liste[item].latitude, liste[item].longitude]).addTo(carte);
     /* mettre le nom de l'item dans un popup */
-    unMarqueur.bindPopup(`<h3>${liste[item].name}</h3><p>${liste[item].adresse}</p><img class='photo' src='${liste[item].img_url}' >`);
+    unMarqueur.bindPopup(`<h3>${liste[item].nom}</h3><p>${liste[item].adresse}${liste[item].codepostal}</p>`);
 
     /* ajouter ce marqueur au tableau */
     markerTable.push(unMarqueur);
@@ -52,14 +52,14 @@ function afficheListe(liste){
         // créer l'élément de type <li>
         let LI = document.createElement('li');
         // remplir le <li>
-        LI.innerHTML = `${item.name} | ${item.adresse}`;
+        LI.innerHTML = `${item.nom} | ${item.adresse}`;
         // ajouter un eventListener sur le clic
         LI.addEventListener('click', itemClick);
         // ajouter un attribut à cet item LI pour l'identifier
         LI.setAttribute('id',`${item.id}`);
         // ajouter des attributs à cet item LI pour stocker les coordonnées
-        LI.setAttribute('latitude',`${item.lat}`);
-        LI.setAttribute('longitude',`${item.long}`);
+        LI.setAttribute('latitude',`${item.latitude}`);
+        LI.setAttribute('longitude',`${item.longitude}`);
         // attacher ce <li> au <ul>
         UL.appendChild(LI);
     });
@@ -76,6 +76,6 @@ function itemClick() {
     console.log('item cliqué : ' + id );
 
     let marqueur = markerTable[id-1];
-    marqueur.togglePopup();
+    marqueur.openPopup();
     carte.flyTo([latitude,longitude],17);
 }

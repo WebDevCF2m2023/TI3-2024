@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
 </head>
 <body>
     <h1>Accueil</h1>
@@ -17,42 +20,13 @@
     </nav>
     <div id="content">
         <h3>Liste de nos lieux</h3>
-        <?php
-        // datas est une chaîne de caractère : erreur SQL !
-        if(is_string($datas)):
-        ?>
-            <h3 id="alert"><?=$datas?></h3>
-        <?php
-        // Pas encore de `geoloc`
-        elseif(empty($datas)):
-        ?>
-            <h3 id="comment">Pas encore de lieu.</h3>
-        <?php
-        // Nous avons des lieux
-        else:
-            // on compte le nombre de données 
-            $nb = count($datas);
-        ?>
-            <h3>Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
-
-            <?php
-            // tant qu'on a des données
-            // var_dump($datas);
-            foreach($datas as $data):
-            ?>
-            <thead>
-                <tr>
-            <th><?=$data['nom']?></th>
-            <th><?=$data['adresse']?></th>
-            <th><?=$data['codepostal']?></th>
-            <th><?=$data['latitude']?> | <?=$data['longitude']?></th>
-                </tr>
-            </thead>
-            <hr>
-        <?php
-            endforeach;
-        endif;
-        ?>   
+        <div id="map"></div>
+        <div id="liste"></div>
+        
     </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+     <script src="js\GrandLine.js"></script>
 </body>
 </html>
