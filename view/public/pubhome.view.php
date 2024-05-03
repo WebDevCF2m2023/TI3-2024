@@ -49,18 +49,18 @@
                         ?>
                         <h4>Choisis parmi ces <?=$cineCount?> cinémas.</h4>
                         <div class="cineHomeIcon">
-                        <div class="cineHomeIcon">
-                            <img src="img/film.svg" alt="">
-                                <p>Cinéma</p>
-                        </div>
                             <div class="cineHomeIcon">
-                            <img src="img/camera.svg" alt="">
-                                <p>Ciné-Club</p>
-                        </div>
+                                <img src="img/film.svg" alt="">
+                                    <p>Cinéma</p>
+                            </div>
                             <div class="cineHomeIcon">
-                            <img src="img/person.svg" alt="">
-                                <p>Centre Culturel</p>
-                        </div>
+                                <img src="img/camera.svg" alt="">
+                                    <p>Ciné-Club</p>
+                            </div>
+                            <div class="cineHomeIcon">
+                                <img src="img/person.svg" alt="">
+                                    <p>Centre Culturel</p>
+                            </div>
                         </div>
                         <?php
                             }
@@ -72,7 +72,9 @@
                     </div>  <!-- end cineList -->
                 </div>    <!-- end mapAndList -->
         </main>
-
+        <?php
+                include "inc/footer.public.php";
+                ?>
         </div> <!-- end global -->
     
     

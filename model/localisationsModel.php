@@ -24,3 +24,28 @@ function getAllCinemas (PDO $cine) : array | bool | string {
         return $e->getMessage();
     }
 }
+/*
+function getCinemasByType (PDO $cine, $type) : array | bool | string {
+    // Comme cela sera utilisé pour la plupart de l'affichage des emplacements, j'ai pris le temps de donner des alias à ceux qui en avaient besoin.
+    $sql = "SELECT `id`, `nom`, `type`, 
+                    `adresse` AS `add`,              
+                   `codepostal` AS `code`, 
+                   `ville`, `url`, 
+                   `latitude` AS `lat`, 
+                   `longitude` AS `lon`
+                   
+            FROM `localisations`
+            WHERE `type` = ?";
+
+    $stmt = $cine->prepare($sql);
+    try{
+        $stmt->execute([$type]);
+        $result = $stmt->fetchAll();
+        return $result;
+    }catch(Exception) {
+        $errorMessage = "Sorry, couldn't get cinemas by type";
+        return $errorMessage;
+    }
+}
+
+*/

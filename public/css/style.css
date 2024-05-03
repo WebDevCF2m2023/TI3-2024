@@ -8,6 +8,9 @@
 
 .global {
   font-family: HVNRoman;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .errorMessage {
@@ -37,6 +40,37 @@
     margin: 1vh 0 2vh;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 90vw;
+  margin-top: 10vh auto 0;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0px 2px 4px black, 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px darkgray;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+.footerLink {
+  animation-name: footerIn;
+  animation-duration: 4s;
+}
+
+@keyframes footerIn {    /*  Petit animation qui fait transformer le main header  */
+
+  0% { opacity: 0;}
+  25% {opacity: 0.25;}
+  50% {opacity: 0.50;}
+  75% {opacity: 0.75;}
+  100% {opacity: 1;}
+}   
+
 main {
     display: flex;
     flex-direction: column;
@@ -47,18 +81,19 @@ main h2, main h3 {
 }
 
 .theMap {
-    height: 600px;
-    width: 600px;
+    width: 48vw;
+    height: 90vh;
     grid-area: mapGrid;
     box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
 }
 
 .cineList {
   grid-area: listGrid;
-  width: 600px;
+  width: 48vw;
   display: flex;
   flex-direction: column;
   align-items: center; 
+  font-size: small;
 }
 
 .cineHomeIcon {
