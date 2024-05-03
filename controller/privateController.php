@@ -3,7 +3,8 @@
 
 
 if (isset($_GET["logout"])) {
-    include_once("../model/logoutModel.php");    
+    include_once("../model/logoutModel.php"); 
+    die();   
 }
 
 // Comme pour public.view, avant d'afficher la page, prépare les informations nécessaires

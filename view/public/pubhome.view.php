@@ -71,10 +71,10 @@
 
                     </div>  <!-- end cineList -->
                 </div>    <!-- end mapAndList -->
-        </main>
         <?php
                 include "inc/footer.public.php";
                 ?>
+        </main>
         </div> <!-- end global -->
     
     

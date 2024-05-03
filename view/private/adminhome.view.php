@@ -14,9 +14,15 @@
 <body>
     <div class="container-fluid px-5 text-center"> <!-- global container -->
 
-    <div class="container"> <!-- main container -->
+    <div class="container-fluid"> <!-- main container -->
     <?php
-        include ("inc/header.php");
+    var_dump($_SESSION["pageCount"]);
+        if ($_SESSION["pageCount"] < 2) {    
+            $_SESSION["pageCount"]++;
+            include ("inc/header.php");
+        }else {
+            include ("inc/header-static.php");
+        }
     ?>
     <?php
       if(isset($errorMessage)): ?>
@@ -24,16 +30,13 @@
                 <?php endif ?>
     <?php
         if ($_SESSION["pageCount"] === 0) {
-            $_SESSION["pageCount"]++;
+            
             include("inc/welcome-message.php");
         }else {
-            ?>
-        <?php
-
-// PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   // PUT STUFF HERE   
-
+            include("inc/admin-table.php");
         }
-        ?> 
+            ?>
+         
         </div> <!-- end main container -->
 
         <?php
