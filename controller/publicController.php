@@ -22,7 +22,6 @@ if (isset($_POST["userNameInp"], $_POST["userPassInp"])) {
 }
 }
 
-
 $cinemas = getAllCinemas($db);  // Avant d'afficher la page, prépare les informations nécessaires.
     if ($cinemas === false) {
         $errorMessage = "Impossible d'obtenir les informations de la base de données en raison d'une erreur dans le SQL.";
