@@ -13,8 +13,17 @@ loginForm.addEventListener("submit", function (form) {
     validateInputsForLogin();
 });
 
+
+let buttonFlash = setInterval(() => {
+        loginCall.classList.add ("tryThis");
+        setTimeout(() => {
+            loginCall.classList.remove("tryThis");
+        }, 1500);
+    }, 3000);
+
 function showLogin () {
     loginCall.disabled = true;
+    clearInterval(buttonFlash);
     normalHead.className = "";
     normalHead.classList.add('fadingHead');
     setTimeout(() => {
