@@ -17,21 +17,22 @@
     <div class="container-fluid"> <!-- main container -->
     <?php
 //    var_dump($_SESSION["pageCount"]);
-        if ($_SESSION["pageCount"] < 2) {    
-            $_SESSION["pageCount"]++;
-            include ("inc/header.php");
-        }else {
-            include ("inc/header-static.php");
-        }
-    ?>
+if ($_SESSION["pageCount"] < 2) {    
+    $_SESSION["pageCount"]++;
+    include ("inc/header.php");
+}else {
+    include ("inc/header-static.php");
+}
+?>
     <?php
       if(isset($errorMessage)): ?>
                 <h4 class="text-danger"><?=$errorMessage?></h4>
                 <?php endif ?>
-    <?php
+                <?php
         if ($_SESSION["pageCount"] < 2) {
             include("inc/welcome-message.php");
         }else {
+            $cineCount = count($cinemas);
             include("inc/admin-table.php");
         }
             ?>
@@ -48,7 +49,7 @@
             include_once ("inc/jsBS.php");
             include_once ("../view/shared/leaf.js.php");
             ?>
-      <script src="js/cine.script.js"></script>
+      
       <script src="js/colour.script.js"></script>
     </body>
     

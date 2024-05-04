@@ -36,7 +36,7 @@
                     </div>
                     <div class="mt-2">
                         <a href="?delete&item=<?=$cineDelete["id"]?>&confirm=ok"><span class="btn btn-danger mx-3">Oui</span></a>
-                        <a href="./"><span class="btn btn-info mx-3">Non</span></a>
+                        <a href="?home"><span class="btn btn-info mx-3">Non</span></a>
                     </div>
                 </div>
         </div> <!-- end main container -->

@@ -8,7 +8,7 @@ if (isset($_POST["userNameInp"], $_POST["userPassInp"])) {
     $login = attemptUserLogin ($db, $nom, $pwd);
 
     if ($login === true) {
-        header ("Location: ./");
+        header("Location: ?home");
     }else if (is_string($login)) {
         $errorMessage = "Problem with attemptUserLogin SQL";
     }else {

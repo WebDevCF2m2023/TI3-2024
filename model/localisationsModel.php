@@ -55,6 +55,7 @@ function getOneCinema (PDO $del, $id) : array | string {
     } 
 }
 
+// DELETE
 function deleteCinemaFromList (PDO $db, $id) : bool | string {
     $sql = "DELETE FROM `localisations`
             WHERE `id` = ?";
@@ -71,4 +72,47 @@ function deleteCinemaFromList (PDO $db, $id) : bool | string {
         return $e->getMessage();
     } 
 }
+
+// INSERT 
+
+function insertCinemaIntoList (PDO $db,
+                              string $nom,
+                              string $type, 
+                              string $add, 
+                              int $code, 
+                              string $ville, 
+                              string $url, 
+                              float $lat, 
+                              float $lon) : bool | string {
+
+    $sql = "INSERT INTO `localisations`
+                        (`nom`,
+                        `type`, 
+                        `adresse`, 
+                        `codepostal`, 
+                        `ville`, 
+                        `url`, 
+                        `latitude`, 
+                        `longitude`) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            
+            $stmt = $db->prepare($sql);
+            $stmt->bindValue(1, $nom);
+            $stmt->bindValue(2, $type);
+            $stmt->bindValue(3, $add);
+            $stmt->bindValue(4, $code);
+            $stmt->bindValue(5, $ville);
+            $stmt->bindValue(6, $url);
+            $stmt->bindValue(7, $lat);
+            $stmt->bindValue(8, $lon);
+
+            try {
+                $stmt->execute();
+                if($stmt->rowCount()===0) return false;
+        
+                    return true;
+            }catch(Exception $e) {
+                return $e->getMessage();
+            } 
+                              }
 

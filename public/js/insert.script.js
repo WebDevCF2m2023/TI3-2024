@@ -1,6 +1,8 @@
 // Ça peut sembler fou, mais je suis vraiment en train d'écrire tout cela à partir de zéro. 
 // Copier/coller est utile, mais taper ces choses de manière répétée peut aussi être bénéfique.
 
+// La preuve ? En retapant tous les getElementById nécessaires, j'ai pensé à une manière bien meilleure de le faire.
+
 const insertForm    = document.getElementById("insertForm");
 const insertFloat   = document.querySelectorAll(".insertFloat");
 const insertButton  = document.getElementById("insertButton");
@@ -77,6 +79,8 @@ function validateInputsForInsert () {
             console.log(checkInputCount);
         if (checkInputCount === 8) {
                 // Tout est bon, soumettez le formulaire.
-            insertForm.submit();
+                console.log("ALL GOOD");                    
+                    insertForm.submit();
+ 
         }
     }
