@@ -1,4 +1,3 @@
-
 const updateForm    = document.getElementById("updateForm");
 const updateFloat   = document.querySelectorAll(".updateFloat");
 const updateButton  = document.getElementById("updateButton");
