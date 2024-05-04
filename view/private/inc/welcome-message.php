@@ -8,7 +8,7 @@
       <li class="list-group-item bg-transparent border-bottom border-secondary">Comme il n'y avait pas d'exigence particulière de la part d'André, et que c'est sa dernière TI, j'ai ajouté l'option de changement de couleur &lpar;stockage de session, ahoy&rpar;.</li>
     <!-- <li class="list-group-item bg-transparent border-bottom border-secondary">And a fifth one</li> -->
     </ul>
-    <a href="?home" class="btn btn-transparent border border-1 border-secondary rounded-pill mt-3">Dismiss this Message</a>
+    <a href="./" class="btn btn-transparent border border-1 border-secondary rounded-pill mt-3">Dismiss this Message</a>
 </div>
 
 

@@ -26,9 +26,9 @@
     ?>
     <?php
       if(isset($errorMessage)): ?>
-                <h4 class="text-danger"><?=$errorMessage?></h4>
+                <p class=" h4 text-danger"><?=$errorMessage?></p>
                 <?php endif ?>
-                <div class="container text-center w-25">
+                <div class="container text-center w-50">
                     <p class="h4">Êtes-vous sur vous voulez supprimer ce lieu?</p>
                     <div class="border border-warning rounded-5">
                         <p><?=$cineDelete["id"]?></p>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="mt-2">
                         <a href="?delete&item=<?=$cineDelete["id"]?>&confirm=ok"><span class="btn btn-danger mx-3">Oui</span></a>
-                        <a href="?home"><span class="btn btn-info mx-3">Non</span></a>
+                        <a href="./"><span class="btn btn-info mx-3">Non</span></a>
                     </div>
                 </div>
         </div> <!-- end main container -->

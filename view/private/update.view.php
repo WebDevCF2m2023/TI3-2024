@@ -47,7 +47,7 @@
             include_once ("inc/jsBS.php");
             include_once ("../view/shared/leaf.js.php");
             ?>
-      <script src="js/insert.script.js"></script>
+      <script src="js/update.script.js"></script>
       <script src="js/colour.script.js"></script>
     </body>
     

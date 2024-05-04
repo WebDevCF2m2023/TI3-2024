@@ -39,6 +39,6 @@
                 <div class="form-group text-center">
                 <button type="submit" class="btn btn-dark rounded-pill mt-3" id="insertButton">Ajouter</button> 
                 </div>
-                </form>
                 <p class="h3 text-center text-warning" id="insertError"></p>
-            </div>
+              </div>
+            </form>
