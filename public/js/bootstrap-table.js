@@ -7145,6 +7145,10 @@
             order: params.sortOrder
           };
           if (this.options.pagination && this.options.sidePagination === 'server') {
+            if(this.options.hasOwnProperty("pageSizeServer")){
+              this.options.pageSize = this.options.pageSizeServer; // reset pageSize
+              delete this.options.pageSizeServer;
+            }
             params.offset = this.options.pageSize === this.options.formatAllRows() ? 0 : this.options.pageSize * (this.options.pageNumber - 1);
             params.limit = this.options.pageSize;
             if (params.limit === 0 || this.options.pageSize === this.options.formatAllRows()) {
@@ -7677,11 +7681,7 @@
         if (!removed) {
           return;
         }
-        if (this.options.sidePagination === 'server') {
-          this.options.totalRows -= removed;
-          this.options.pageSize -= removed;
-          this.data = _toConsumableArray(this.options.data);
-        }
+        this.updateServerPagination(-removed);
         this.initSearch();
         this.initPagination();
         this.initSort();
@@ -7704,11 +7704,7 @@
           return;
         }
         this.options.data.splice(params.index, 0, params.row);
-        if (this.options.sidePagination === 'server') {
-          this.options.totalRows += 1;
-          this.options.pageSize += 1;
-          this.data = [...this.options.data];
-        }
+        this.updateServerPagination(1);
         this.initSearch();
         this.initPagination();
         this.initSort();
@@ -7818,11 +7814,7 @@
         if (len === this.options.data.length) {
           return;
         }
-        if (this.options.sidePagination === 'server') {
-          this.options.totalRows -= 1;
-          this.options.pageSize -= 1;
-          this.data = _toConsumableArray(this.options.data);
-        }
+        this.updateServerPagination(-1);
         this.initSearch();
         this.initPagination();
         this.initBody(true);
@@ -8517,7 +8509,19 @@
         this.initPagination();
         this.initBody();
       }
-    }]);
+    }, {
+      key: "updateServerPagination",
+      value: function updateServerPagination(rowChange){
+        if (this.options.sidePagination === 'server') {
+          this.options.totalRows += rowChange;
+          if(this.options.hasOwnProperty("pageSizeServer") === false)
+            this.options.pageSizeServer = this.options.pageSize;
+          this.options.pageSize += rowChange;
+          this.data = [...this.options.data];
+        }
+      }
+    }
+  ]);
   }();
   BootstrapTable.VERSION = Constants.VERSION;
   BootstrapTable.DEFAULTS = Constants.DEFAULTS;
