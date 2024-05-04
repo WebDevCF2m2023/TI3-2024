@@ -79,8 +79,6 @@ function validateInputsForInsert () {
             console.log(checkInputCount);
         if (checkInputCount === 8) {
                 // Tout est bon, soumettez le formulaire.
-                console.log("ALL GOOD");                    
-                    insertForm.submit();
- 
+            insertForm.submit();
         }
     }

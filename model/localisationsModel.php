@@ -55,6 +55,24 @@ function getOneCinema (PDO $del, $id) : array | string {
     } 
 }
 
+// Sélection des cinémas par catégorie pour l'insertion/mise à jour.
+function getTypesOfCinema (PDO $db) : array | bool | string {
+    $sql = "SELECT DISTINCT `type`
+            FROM `localisations`";
+    try{        
+        // Encore, pas besoin d'utiliser un prepare ici car il n'y a pas de saisie utilisateur
+        $query = $db->query($sql);
+            if($query->rowCount()===0) return false;
+        $result = $query->fetchAll();
+            $query->closeCursor();
+        return $result;
+
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+
+}
+
 // DELETE
 function deleteCinemaFromList (PDO $db, $id) : bool | string {
     $sql = "DELETE FROM `localisations`

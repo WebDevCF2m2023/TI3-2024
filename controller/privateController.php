@@ -42,6 +42,14 @@ if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
     die();
 }
 
+if (isset($_GET["update"], $_GET["item"]) && ctype_digit($_GET["item"])) {
+    $id = standardClean($_GET["item"]);
+    $cineUpdate = getOneCinema($db, $id);
+    $title = "Préparation pour mise à jour";
+    include ("../view/private/update.view.php");
+    die();
+}
+
 
 
 // Plus il y a d'entrées, plus cette ligne de code devient longue. 
