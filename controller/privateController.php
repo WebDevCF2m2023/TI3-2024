@@ -16,6 +16,12 @@ if ($cinemas === false) {
     $errorMessage = $e;
 }
 
+if (isset($_GET["carte"])) {
+    $title = 'La Carte!';
+    include "../view/private/map.view.php";
+    die();
+}
+
 
 // Si la suppression d'une entrée a été confirmée
 if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
@@ -129,7 +135,7 @@ if (isset (
         die();
     }
 
-    
+
     // Appel du page d'accueil Admin
     $title = 'Bienvenue Admin à ma nouvelle version de TI3';
     
