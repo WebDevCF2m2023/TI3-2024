@@ -42,6 +42,43 @@ if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
     die();
 }
 
+// UPDATE
+
+if (isset (
+    $_POST["updateNameInp"],
+    $_POST["updateTypeInp"],
+    $_POST["updateAddInp"],
+    $_POST["updateCodeInp"],
+    $_POST["updateVilleInp"],
+    $_POST["updateUrlInp"],
+    $_POST["updateLatInp"],
+    $_POST["updateLonInp"],
+    $_GET["item"]
+))
+{
+
+        $nom    = standardClean($_POST["updateNameInp"]);
+        $type   = standardClean($_POST["updateTypeInp"]);
+        $add    = standardClean($_POST["updateAddInp"]);
+        $code   = simpleTrim($_POST["updateCodeInp"]);
+        $ville  = standardClean($_POST["updateVilleInp"]);
+        $url    = urlClean($_POST["updateUrlInp"]);
+        $lat    = simpleTrim($_POST["updateLatInp"]);
+        $lon    = simpleTrim($_POST["updateLonInp"]);
+        $id     = simpleTrim($_GET["item"]);
+
+    $updateCine = updateCinemaInList ($db, $nom, $type, $add, $code, $ville, $url, $lat, $lon, $id);
+
+    if ($updateCine === false) {
+        $errorMessage = "Problem with the SQL for insertion";
+    } elseif (is_string($updateCine)) {
+        $errorMessage = "Problem with the PHP for insertion";
+    } 
+    $title = "Mise à Jour Réussi";
+    header("Location: ./");
+    die();
+
+}
 if (isset($_GET["update"], $_GET["item"]) && ctype_digit($_GET["item"])) {
     $id = standardClean($_GET["item"]);
     $cineUpdate = getOneCinema($db, $id);
@@ -49,9 +86,7 @@ if (isset($_GET["update"], $_GET["item"]) && ctype_digit($_GET["item"])) {
     include ("../view/private/update.view.php");
     die();
 }
-
-
-
+// INSERTION
 // Plus il y a d'entrées, plus cette ligne de code devient longue. 
 // La présenter de cette manière augmente grandement la clarté.
 if (isset (
@@ -87,7 +122,7 @@ if (isset (
             die();
         
     }
-    // INSERTION
+    
     if (isset($_GET["create"])) {
         $title = "Insértion d'une Lieux";
         include ("../view/private/insert.view.php");

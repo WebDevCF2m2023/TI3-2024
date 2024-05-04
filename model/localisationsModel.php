@@ -134,3 +134,50 @@ function insertCinemaIntoList (PDO $db,
             } 
                               }
 
+// UPDATE
+
+function updateCinemaInList (PDO $db,
+                              string $nom,
+                              string $type, 
+                              string $add, 
+                              int $code, 
+                              string $ville, 
+                              string $url, 
+                              float $lat, 
+                              float $lon,
+                              int $id) : bool | string {
+                               
+                               
+        $sql = "UPDATE `localisations` 
+                SET `nom`= ?,
+                    `type`= ?,
+                    `adresse`= ?,
+                    `codepostal`= ?,
+                    `ville`= ?,
+                    `url`= ?,
+                    `latitude`= ?,
+                    `longitude`= ?
+                WHERE `id` = ?";
+
+            $stmt = $db->prepare($sql);
+
+
+            $stmt->bindValue(1, $nom);
+            $stmt->bindValue(2, $type);
+            $stmt->bindValue(3, $add);
+            $stmt->bindValue(4, $code);
+            $stmt->bindValue(5, $ville);
+            $stmt->bindValue(6, $url);
+            $stmt->bindValue(7, $lat);
+            $stmt->bindValue(8, $lon);
+            $stmt->bindValue(9, $id);
+
+            try {
+                $stmt->execute();
+                if($stmt->rowCount()===0) return false;
+        
+                    return true;
+            }catch(Exception $e) {
+                return $e->getMessage();
+            } 
+                              }
