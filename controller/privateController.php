@@ -16,6 +16,14 @@ if ($cinemas === false) {
     $errorMessage = $e;
 }
 
+$cineCount = count($cinemas);
+if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])) {
+    $page = (int) $_GET[PAGINATION_GET_NAME];
+} else {
+    $page = 1;
+}
+$pagination = paginationModel("./", PAGINATION_GET_NAME, $cineCount, $page, PAGINATION_NB_PAGE);
+
 if (isset($_GET["carte"])) {
     $title = 'La Carte!';
     include "../view/private/map.view.php";
