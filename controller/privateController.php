@@ -115,7 +115,7 @@ if (isset (
             $_POST["itemCodeInp"],
             $_POST["itemVilleInp"],
             $_POST["itemUrlInp"],
-            $_POST["itemLonInp"],
+            $_POST["itemLatInp"],
             $_POST["itemLonInp"]
         ))
     {
@@ -126,7 +126,7 @@ if (isset (
         $code   = intClean($_POST["itemCodeInp"]);
         $ville  = standardClean($_POST["itemVilleInp"]);
         $url    = urlClean($_POST["itemUrlInp"]);
-        $lat    = floatClean($_POST["itemLonInp"]);
+        $lat    = floatClean($_POST["itemLatInp"]);
         $lon    = floatClean($_POST["itemLonInp"]);
 
             $insertCine = insertCinemaIntoList ($db, $nom, $type, $add, $code, $ville, $url, $lat, $lon);
