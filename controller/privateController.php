@@ -14,7 +14,7 @@ if ($cinemas === false) {
     $errorMessage = "Impossible d'obtenir les informations de la base de données en raison d'une erreur dans le SQL.";
 }else if (is_string($cinemas)) {
     $errorMessage = $e;
-}
+} 
 
 $cineCount = count($cinemas);
 if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])) {
@@ -23,13 +23,18 @@ if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME]
     $page = 1;
 }
 $pagination = paginationModel("./", PAGINATION_GET_NAME, $cineCount, $page, PAGINATION_NB_PAGE);
-
+$flicks = getPaginationInformations($db, $page, PAGINATION_NB_PAGE);
 if (isset($_GET["carte"])) {
     $title = 'La Carte!';
     include "../view/private/map.view.php";
     die();
 }
 
+if (isset($_GET["cartePagi"])) {
+    $title = 'La Carte avec Pagination!';
+    include "../view/private/map.pagi.view.php";
+    die();
+}
 
 // Si la suppression d'une entrée a été confirmée
 if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {

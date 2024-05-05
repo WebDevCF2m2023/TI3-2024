@@ -1,6 +1,16 @@
 <hr class="border border-secondary border-1 opacity-25">
 <div class="text-center">
+  <?php
+      if (isset($_GET["cartePagi"])) {
+  ?>
+    <p class="h1 animate__animated animate__zoomInUp">Carte Avec Pagination</p>
+  <?php
+      }else {
+  ?>
     <p class="h1 animate__animated animate__zoomInUp">Bienvenue À Mon Nouveau TI3</p>
+    <?php
+      }
+    ?>
 </div>
 <nav class="navbar">
 <div class="container-fluid">

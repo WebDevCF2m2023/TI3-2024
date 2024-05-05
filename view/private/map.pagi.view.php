@@ -29,19 +29,22 @@
             <div class="col-3">
                 
                 <div class="container text-center"> 
-                <p class="h4">Cliquez sur un nom pour le voir sur la carte</p>
-                <p class="h6 animate__animated animate__delay-5s animate__fadeIn">Ou, <a href="?cartePagi">ici</a>, si tu t'appelles Michaël</p>                   
+                <p class="h4">Cliquez sur un nom pour le voir sur la carte</p>                   
                 <div class="d-flex flex-row">
-                    <div class="list-group" id = 'BSListLeft'>
-   
-                            </div>
-                    <div class="list-group" id = 'BSListRight'>
-   
-                            </div>  
-                </div>                  
+                  
                     </div>
                 </div>
             </div>
+</div>
+<div class="container">
+    <?php 
+        foreach ($flicks as $flick) {
+    ?>
+        <p><?=$flick["nom"]?></p>
+    <?php
+}
+if (isset($pagination)) {echo "<p>$pagination</p>"; }
+    ?>
 </div>
 <?php
         include("inc/footer.php");
@@ -52,6 +55,7 @@
         ?>
 <!--  Script Perso  -->
 <script src="js/colour.script.js"></script>
-<script src="js/map.script.js"></script>
+<script src="js/map.pagi.
+script.js"></script>
 </body>
-</html>
+</html> 
