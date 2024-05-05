@@ -7131,6 +7131,10 @@
         if (this.header.sortNames[index]) {
           params.sortName = this.header.sortNames[index];
         }
+        if(this.options.hasOwnProperty("backUpPageSizeServer")){
+          this.options.pageSize = this.options.backUpPageSizeServer; // reset pageSize
+          delete this.options.backUpPageSizeServer;
+        }
         if (this.options.pagination && this.options.sidePagination === 'server') {
           params.pageSize = this.options.pageSize === this.options.formatAllRows() ? this.options.totalRows : this.options.pageSize;
           params.pageNumber = this.options.pageNumber;
@@ -7145,10 +7149,6 @@
             order: params.sortOrder
           };
           if (this.options.pagination && this.options.sidePagination === 'server') {
-            if(this.options.hasOwnProperty("pageSizeServer")){
-              this.options.pageSize = this.options.pageSizeServer; // reset pageSize
-              delete this.options.pageSizeServer;
-            }
             params.offset = this.options.pageSize === this.options.formatAllRows() ? 0 : this.options.pageSize * (this.options.pageNumber - 1);
             params.limit = this.options.pageSize;
             if (params.limit === 0 || this.options.pageSize === this.options.formatAllRows()) {
@@ -8514,8 +8514,9 @@
       value: function updateServerPagination(rowChange){
         if (this.options.sidePagination === 'server') {
           this.options.totalRows += rowChange;
-          if(this.options.hasOwnProperty("pageSizeServer") === false)
-            this.options.pageSizeServer = this.options.pageSize;
+          if(this.options.hasOwnProperty("backUpPageSizeServer") === false) {
+            this.options.backUpPageSizeServer = this.options.pageSize;
+          }
           this.options.pageSize += rowChange;
           this.data = [...this.options.data];
         }
