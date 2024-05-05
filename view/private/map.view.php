@@ -36,7 +36,7 @@
                 
                 <div class="container text-center"> 
                 <p class="h4">Cliquez sur un nom pour le voir sur la carte</p>
-                <p class="h6 animate__animated animate__delay-5s animate__fadeIn">Ou, <a href="?cartePagi">ici</a>, si tu t'appelles Michaël</p>                   
+                <p class="h6 animate__animated animate__delay-5s animate__fadeIn">Ou, <a href="?cartePagi" class="text-danger">ICI</a>, si tu t'appelles Michaël</p>                   
                 <div class="d-flex flex-row">
                     <div class="list-group" id = 'BSListLeft'>
    
