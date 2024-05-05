@@ -25,7 +25,7 @@ if (isset($_GET["carte"])) {
 
 // Si la suppression d'une entrée a été confirmée
 if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
-    $id = standardClean($_GET["item"]);    
+    $id = intClean($_GET["item"]);    
     $deleteCine = deleteCinemaFromList ($db, $id);
         if ($deleteCine === true) {
             header ("Location: ./");
@@ -41,7 +41,7 @@ if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
         }
 // Preparation d'une entrée pour suppression        
 }else if (isset($_GET["delete"], $_GET["item"]) && ctype_digit($_GET["item"])) {
-    $id = standardClean($_GET["item"]);
+    $id = intClean($_GET["item"]);
     $cineDelete = getOneCinema ($db, $id);
     $title = "Préparation de Suppression";
     include ("../view/private/delete.view.php");
@@ -66,12 +66,12 @@ if (isset (
         $nom    = standardClean($_POST["updateNameInp"]);
         $type   = standardClean($_POST["updateTypeInp"]);
         $add    = standardClean($_POST["updateAddInp"]);
-        $code   = simpleTrim($_POST["updateCodeInp"]);
+        $code   = intClean($_POST["updateCodeInp"]);
         $ville  = standardClean($_POST["updateVilleInp"]);
         $url    = urlClean($_POST["updateUrlInp"]);
-        $lat    = simpleTrim($_POST["updateLatInp"]);
-        $lon    = simpleTrim($_POST["updateLonInp"]);
-        $id     = simpleTrim($_GET["item"]);
+        $lat    = floatClean($_POST["updateLatInp"]);
+        $lon    = floatClean($_POST["updateLonInp"]);
+        $id     = intClean($_GET["item"]);
 
     $updateCine = updateCinemaInList ($db, $nom, $type, $add, $code, $ville, $url, $lat, $lon, $id);
 
@@ -110,11 +110,11 @@ if (isset (
         $nom    = standardClean($_POST["itemNameInp"]);
         $type   = standardClean($_POST["itemTypeInp"]);
         $add    = standardClean($_POST["itemAddInp"]);
-        $code   = simpleTrim($_POST["itemCodeInp"]);
+        $code   = intClean($_POST["itemCodeInp"]);
         $ville  = standardClean($_POST["itemVilleInp"]);
         $url    = urlClean($_POST["itemUrlInp"]);
-        $lat    = simpleTrim($_POST["itemLonInp"]);
-        $lon    = simpleTrim($_POST["itemLonInp"]);
+        $lat    = floatClean($_POST["itemLonInp"]);
+        $lon    = floatClean($_POST["itemLonInp"]);
 
             $insertCine = insertCinemaIntoList ($db, $nom, $type, $add, $code, $ville, $url, $lat, $lon);
 

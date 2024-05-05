@@ -22,17 +22,15 @@ function urlClean ($cleanThisUrl) : string | bool {
 
 function intClean ($cleanThisInt) : int | bool {
     $cleanedInt = filter_var($cleanThisInt, FILTER_SANITIZE_NUMBER_INT,         // applique de sanitisation
-                                            FILTER_FLAG_ALLOW_FRACTION,         // permettre l'usage des . comme dans 1.25
-                                            FILTER_FLAG_ALLOW_THOUSAND);        // permettre l'usage des , comme dans 1,000,000
+                                            FILTER_FLAG_ALLOW_FRACTION);         // permettre l'usage des . comme dans 1.25
+        
     $cleanedInt = intval($cleanedInt);                                          // Convertit le résultat en entier - Supprimez cette ligne si ce n'est pas nécessaire
         return $cleanedInt;
 }
 
 function floatClean ($cleanThisFloat) : float | bool {                          // Presque la même chose que la fonction précédente.
     $cleanedFloat = filter_var($cleanThisFloat, FILTER_SANITIZE_NUMBER_FLOAT, 
-                                                FILTER_FLAG_ALLOW_FRACTION, 
-                                                FILTER_FLAG_ALLOW_THOUSAND, 
-                                                FILTER_FLAG_ALLOW_SCIENTIFIC);
+                                                FILTER_FLAG_ALLOW_FRACTION);
     $cleanedFloat = floatval($cleanedFloat);
         return $cleanedFloat;
 }
