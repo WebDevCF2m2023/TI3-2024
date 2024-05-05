@@ -13,9 +13,15 @@
     </head>
     <body>
         <div class="container-fluid px-5 mt-2 h-auto">
-            <?php
-           include("inc/header.php");
-           ?>
+        <?php
+
+        if ($_SESSION["pageCount"] < 2) {    
+            $_SESSION["pageCount"]++;
+            include ("inc/header.php");
+        }else {
+            include ("inc/header-static.php");
+        }
+    ?>
         <div class="container text-center">
             <p class="h2">La Carte</p>
 

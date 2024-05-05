@@ -13,9 +13,15 @@
     </head>
     <body>
         <div class="container-fluid px-5 mt-2 h-auto">
-            <?php
-           include("inc/header.php");
-           ?>
+        <?php
+
+        if ($_SESSION["pageCount"] < 4) {    
+            $_SESSION["pageCount"]++;
+            include ("inc/header.php");
+        }else {
+            include ("inc/header-static.php");
+        }
+    ?>
         <div class="container text-center">
             <p class="h2">La Carte</p>
 
@@ -28,24 +34,28 @@
             </div>
             <div class="col-3">
                 
-                <div class="container text-center"> 
-                <p class="h4">Cliquez sur un nom pour le voir sur la carte</p>                   
-                <div class="d-flex flex-row">
-                  
+                    <div class="container text-center"> 
+                    <p class="h4">Cliquez sur un nom pour le voir sur la carte</p>                   
+                    <div class="d-flex flex-row">
+            <div class="col">
+                <ul class="list-group">
+                    <?php 
+                        foreach ($flicks as $flick) {
+                    ?>
+                        <li class="list-group-item" id="<?=$flick["id"]?>" lat = "<?=$flick["lat"]?>" lon = "<?=$flick["lon"]?>"><?=$flick["nom"]?> | <?=$flick["add"]?> | <?=$flick["code"]?> | <?=$flick["ville"]?> | <a href="<?=$flick["url"]?>" target="_blank"><img src="img/link.svg" alt="link to cinema"></a></li>
+                    <?php
+                    }
+                    ?>
+                    </ul>
+                    <?php
+                    if (isset($pagination)) echo "<p>$pagination</p>"; 
+                    ?>
+            </div>                
                     </div>
                 </div>
             </div>
 </div>
-<div class="container">
-    <?php 
-        foreach ($flicks as $flick) {
-    ?>
-        <p><?=$flick["nom"]?></p>
-    <?php
-}
-if (isset($pagination)) {echo "<p>$pagination</p>"; }
-    ?>
-</div>
+
 <?php
         include("inc/footer.php");
         ?>
@@ -55,7 +65,6 @@ if (isset($pagination)) {echo "<p>$pagination</p>"; }
         ?>
 <!--  Script Perso  -->
 <script src="js/colour.script.js"></script>
-<script src="js/map.pagi.
-script.js"></script>
+<script src="js/map.pagi.script.js"></script>
 </body>
 </html> 

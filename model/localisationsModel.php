@@ -205,10 +205,10 @@ function paginationModel(string $url,
         $sortie.= "<< <";
     }elseif ($currentPage===2) {
         // liens vers l'accueil sans duplicate content (./ = ./?pg=1)
-        $sortie.= "<a href='$url?carte'><<</a> <a href='$url?carte'><</a>";
+        $sortie.= "<a href='$url?cartePagi'><<</a> <a href='$url?cartePagi'><</a>";
     }else{
         // liens vers l'accueil et la page précédente
-        $sortie.= "<a href='$url?carte'><<</a> <a href='$url?carte&$getName=".($currentPage-1)."'><</a>";
+        $sortie.= "<a href='$url?cartePagi'><<</a> <a href='$url?cartePagi&$getName=".($currentPage-1)."'><</a>";
     }
 
     for($i=1;$i<=$nbPage;$i++)
@@ -216,12 +216,12 @@ function paginationModel(string $url,
         // si on est sur la page en cours, on affiche un texte
         if($i===$currentPage) $sortie.= " $i ";
         // sinon si on affiche la page 1, on évite le duplicate content
-        else if($i===1) $sortie.= " <a href='$url?carte'>$i</a> ";
+        else if($i===1) $sortie.= " <a href='$url?cartePagi'>$i</a> ";
         // sinon on affiche un lien
-        else $sortie.= " <a href='$url?carte&$getName=$i'>$i</a> ";
+        else $sortie.= " <a href='$url?cartePagi&$getName=$i'>$i</a> ";
     }
     // on termine par le bouton suivant
-    $sortie.= $currentPage === $nbPage ? "> >>" : "<a href='$url?carte&$getName=".($currentPage+1)."'>></a> <a href='$url?carte&$getName=$nbPage'>>></a>";
+    $sortie.= $currentPage === $nbPage ? "> >>" : "<a href='$url?cartePagi&$getName=".($currentPage+1)."'>></a> <a href='$url?cartePagi&$getName=$nbPage'>>></a>";
 
     return $sortie;
 }                              

@@ -16,7 +16,7 @@
 
     <div class="container-fluid"> <!-- main container -->
     <?php
-//    var_dump($_SESSION["pageCount"]);
+
         if ($_SESSION["pageCount"] < 2) {    
             $_SESSION["pageCount"]++;
             include ("inc/header.php");

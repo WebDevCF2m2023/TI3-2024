@@ -54,7 +54,7 @@ const map = L.map('map').setView([50.825, -4.338], 17);
         mapMarker = L.marker([datas[data].lat, datas[data].lon],{icon: redIcon}) :
         mapMarker = L.marker([datas[data].lat, datas[data].lon],{icon: blueIcon});
     
-        mapMarker.bindPopup(`<span class = "cineIconBox"><a href = "${datas[data].url}" target="_blank"><h4>${datas[data].nom}</h4></a><p>${datas[data].add}</p></span>`);
+        mapMarker.bindPopup(`<span class = "cineIconBox text-center"><a href = "${datas[data].url}" target="_blank"><h4>${datas[data].nom}</h4></a><p>${datas[data].add}</p></span>`);
     markers.addLayer(mapMarker);
     markerTable.push(mapMarker);
     }
