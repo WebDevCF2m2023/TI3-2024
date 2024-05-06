@@ -121,7 +121,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                            <span class="d-none d-lg-inline-flex">Notification</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
@@ -163,7 +163,7 @@
                     <div class="d-flex align-items-center justify-content-between mb-1">
                         
                     </div>
-                    <h2 class="mb-2">Administration de nos datas</h2>
+                    <h2 class="mb-4">Administration de nos datas</h2>
 
         <?php if(isset($_GET['co'])): ?>
             <h2 id="title" class=" mb-3 display-4 text-success fst-italic animate__animated animate__zoomIn  ">Bienvenue <?=$_SESSION['login']?></h2>
@@ -190,12 +190,18 @@
                         data-toggle="table"
                         data-click-to-select="true"
                         data-pagination="true"
-                        data-page-list="[2,4,6,8]"
+                        data-page-list="[2,4,6]"
                         data-show-pagination-switch="true"
                         data-minimum-count-columns="2"
                         data-show-columns="true"
                         data-show-columns-toggle-all="true"
-
+                        data-key-events="true"
+                        data-search="true"
+                        data-show-refresh="true"
+                        data-show-toggle="true"
+                        data-resizable="true"
+                        data-show-print="true"
+                        data-show-copy-rows="true"
                         data-resizable="true" class="table text-start align-middle table-bordered table-hover mb-0">
 
 
@@ -212,13 +218,7 @@
                 </a>
             </div>
 
-                        data-key-events="true"
-                        data-search="true"
-                        data-show-refresh="true"
-                        data-show-toggle="true"
-                        data-resizable="true"
-                        data-show-print="true"
-                        data-show-copy-rows="true">
+
 
                             <thead>
                                 <tr>
