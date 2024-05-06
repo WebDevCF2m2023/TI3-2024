@@ -47,14 +47,13 @@ function addAllToListe(localisations) {
     liste.appendChild(ul);
 }
 
-
 function addAllMarkersByLocations(localisations){
     localisations.forEach(information => {
         const marker = L.marker([information.latitude, information.longitude]).addTo(map);
         markers[information.id] = marker;
+        bounds.extend(marker.getLatLng()); // Extend the bounds
         marker.bindPopup(`<b>${information.nom}</b><br><p>${information.adresse}, ${information.codepostal} ${information.ville}</p><p>Nombre des velos: ${information.nb_velos}</p>`);
     });
-
 }
 
 function onClickLI(e){
