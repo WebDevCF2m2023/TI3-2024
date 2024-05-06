@@ -24,7 +24,7 @@ try{
 
 
 if(isset($_GET['json'])){
-    $ourDatas = getAllOurdatas($connect,"ASC");
+    $ourDatas = getAllOurdatas($connect,"DESC");
     echo json_encode($ourDatas);
     exit();
 }

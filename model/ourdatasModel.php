@@ -1,9 +1,9 @@
 <?php
 // Sélectionnez toutes les données
-function getAllOurdatas(PDO $db, $order = "DESC"): array|string
+function getAllOurdatas(PDO $db, $order = "ASC"): array|string
 {
     // l'ordre ne peut être que ASC ou DESC
-    $order = (in_array($order,['DESC','ASC'],true))? $order: "DESC";
+    $order = (in_array($order,['DESC','ASC'],true))? $order: "ASC";
     $sql ="SELECT * FROM localisations ORDER BY id $order;";
     try{
         $query = $db->query($sql);

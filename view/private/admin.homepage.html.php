@@ -9,7 +9,11 @@
     <meta content="" name="description">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/bootstrap-table.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-resizable-columns@0.2.3/dist/jquery.resizableColumns.min.css">
+    
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   
@@ -179,16 +183,19 @@
                 <h3 class="error"><?=$error?></h3>
         
         <?php else: ?>
+            
                     <div class="table-responsive{-sm|-md|-lg|-xl|-xxl}">
                         <table  id="table"
-                        class="table table-striped"
+                        class="table text-start align-middle table-bordered table-hover mb-0"
                         data-toggle="table"
                         data-click-to-select="true"
                         data-pagination="true"
                         data-page-list="[2,4,6,8]"
+                        data-show-pagination-switch="true"
                         data-minimum-count-columns="2"
                         data-show-columns="true"
                         data-show-columns-toggle-all="true"
+
                         data-resizable="true" class="table text-start align-middle table-bordered table-hover mb-0">
 
 
@@ -204,15 +211,24 @@
                     </button>
                 </a>
             </div>
+
+                        data-key-events="true"
+                        data-search="true"
+                        data-show-refresh="true"
+                        data-show-toggle="true"
+                        data-resizable="true"
+                        data-show-print="true"
+                        data-show-copy-rows="true">
+
                             <thead>
                                 <tr>
                                   <th data-checkbox="true" data-field="state"></th>
-                                  <th class="text-success">ID</th>
+                                  <th data-sortable="true" class="text-success">ID</th>
                                   <th class="text-success">Nom</th>
                                   <th class="text-success">Adresse</th>
                                   <th class="text-success">Numero</th>
-                                  <th class="text-success">Ville</th>
-                                  <th class="text-success">Codepostal</th>
+                                  <th data-sortable="true" class="text-success">Ville</th>
+                                  <th data-sortable="true" class="text-success">Codepostal</th>
                                   <th class="text-success">latitude</th>
                                   <th class="text-success">Longitude</th>
                                   <th class="text-success" data-switchable="false">Modifier</th>
@@ -307,13 +323,21 @@
 
     <!--leaflet-->
 
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.28.0/tableExport.min.js"></script>
         <script src="https://unpkg.com/bootstrap-table@1.22.4/dist/bootstrap-table.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.4/dist/bootstrap-table-locale-all.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.4/dist/extensions/export/bootstrap-table-export.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/bootstrap-table.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/extensions/key-events/bootstrap-table-key-events.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/extensions/print/bootstrap-table-print.min.js"></script>
         <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/locale/bootstrap-table-fr-FR.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-resizable-columns@0.2.3/dist/jquery.resizableColumns.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/extensions/resizable/bootstrap-table-resizable.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/extensions/copy-rows/bootstrap-table-copy-rows.min.js"></script>
+       
+
    
 
 
@@ -328,6 +352,26 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/map.js"></script>
+
+    <script>
+  $(function() {
+    $('#table').bootstrapTable()
+  })
+</script>
+
+<script>
+  var $table = $('#table')
+
+  $(function() {
+    $table.bootstrapTable({
+      printStyles: ['https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css']
+    })
+  })
+</script>
+
+
+
+
 
    <!-- <script>
         const title = document.querySelector('#title');
@@ -361,3 +405,4 @@
 </body>
 
 </html>
+
