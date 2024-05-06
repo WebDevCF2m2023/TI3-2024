@@ -55,7 +55,8 @@ include "../view/inc/connect.php";
             <table class="table table-bordered" data-toggle="table" data-show-columns="true" data-search="false" data-pagination="true" data-checkbox-header="true">
             <thead class="">
             <tr>
-            <th class="bg-secondary" data-checkbox="true" data-click-to-select="true">ID</th>
+            <th class="bg-secondary" data-checkbox="true"></th>
+                <th class="text-center text-white bg-secondary" data-click-to-select="true">ID</th>
                 <th class="text-center bg-light">PLACE</th>
                 <th class="text-center text-white bg-secondary">ADRESS</th>
                 <th class="text-center bg-light">POSTCODE</th>
@@ -69,6 +70,7 @@ include "../view/inc/connect.php";
             <tbody>
                 <?php foreach($ourDatas as $item): ?>
                     <tr>
+                <td></td>        
                 <td><?=$item['id']?></td>
                 <td><?=$item['nom']?></td>
                 <td><?=$item['adresse']?></td>
