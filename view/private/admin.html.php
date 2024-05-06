@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/bootstrap-table.min.css">
+    <link rel="shortcut icon" href="/img/favicon-32x32.png" type="image/x-icon">
     <title>Administration</title>
 </head>
 <body>
@@ -52,7 +54,15 @@
             </div>
 
             <div class="table-responsive">
-            <table class="table table-bordered border-success table-success table-striped table-hover ">
+            <h1 id="listeCentres" class="text-success">Liste des Centres Culturels à Bruxelles</h1>
+            <table class="table table-bordered border-success table-success table-striped table-hover " 
+            data-toggle="table" 
+            data-show-columns="true" 
+            data-search="true" 
+            data-pagination="true" 
+            data-checkbox-header="false"
+            data-page-list="[5,10,20,25,50]"
+            data-resizable="true">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -76,7 +86,7 @@
                                  <td><?= $location['ville'] ?></td>
                                 <td><?= $location['latitude'] ?></td>
                                 <td><?= $location['longitude'] ?></td>
-                                 <td class="ps-4"><a href="?update=<?= $location['id'] ?>"><img src="img/update.png" alt="Icone modifier" width="30"></a></td>
+                                 <td class="ps-4"><a href="?update=<?= $location['id'] ?>"><img src="img/edit.png" alt="Icone modifier" width="30"></a></td>
                                 <td class="ps-4"><a href="?delete=<?= $location['id'] ?>"><img src="img/delete.png" alt="Icone supprimer" width="30"></a></td>
                             </tr>
                         <?php endforeach ?>
@@ -85,8 +95,13 @@
            <?php endif ?>
         </div>        
     </div>
-    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/locale/bootstrap-table-fr-FR.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/bootstrap-table.min.js"></script>
 </body>
 </html>
