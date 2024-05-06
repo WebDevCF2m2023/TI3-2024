@@ -44,9 +44,8 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <div class="container">
-
     <div class="text-center">
-        <h1 class="ms-5">Admin Homepage</h1>
+        <h1 class=" display-5">Admin Homepage</h1>
       </div>
 </div>
 <body>
