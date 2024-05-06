@@ -1,6 +1,7 @@
 <?php
 
 function sanitizeInput($input) {
+    $input = strip_tags($input);
     return htmlspecialchars(trim($input), ENT_QUOTES, 'UTF-8');
 }
 
