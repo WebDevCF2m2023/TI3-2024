@@ -26,7 +26,7 @@
             <?php if(isset($error)): ?>
                     <h2 class="text-center mb-4 text-danger"><?= $error ?></h2>
             <?php endif; ?>
-                <h2 class="text-center mb-4 text-primary">Modifier la localisation avec comme ID <?= $update['id'] ?></h2>
+                <h2 class="text-center mb-4 display-4 text-info">Modifier la localisation avec comme ID <?= $update['id'] ?></h2>
                 <form class="w-50 m-auto" method="POST">
     <div class="form-group">
         <label for="nom">Name</label>
@@ -56,7 +56,7 @@
         <label for="longitude">Longitude</label>
         <input type="number" class="form-control" name="longitude" id="longitude" step="0.0000001" required value="<?= $update['longitude'] ?>">
     </div>
-    <button type="submit" class="btn btn-primary mt-3 w-50 d-block m-auto">Modifier</button>
+    <button type="submit" class="btn btn-info mt-3 w-50 d-block m-auto">Modifier</button>
 </form>
         <?php endif ?>
     </div>

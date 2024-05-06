@@ -21,7 +21,7 @@
         <?php if(isset($error)): ?>
                 <h2 class="text-center mb-4 text-danger"><?= $error ?></h2>
         <?php endif; ?>
-        <h2 class="text-center mb-4 text-primary">Ajouter une nouvelle location.</h2>
+        <h2 class="text-center display-4 mb-4 text-info">Ajouter une nouvelle location.</h2>
         <form class="w-50 m-auto" method="POST">
     <div class="form-group">
         <label for="nom">Name</label>
@@ -51,7 +51,7 @@
         <label for="longitude">Longitude</label>
         <input type="number" class="form-control" name="longitude" id="longitude" step="0.0000001" required>
     </div>
-    <button type="submit" class="btn btn-primary mt-3 w-50 d-block m-auto">Ajouter</button>
+    <button type="submit" class="btn btn-info mt-3 w-50 d-block m-auto">Ajouter</button>
 </form>
     </div>
     

@@ -26,7 +26,7 @@
             <?php if(isset($error)): ?>
                     <h2 class="text-center mb-4 text-danger"><?= $error ?></h2>
             <?php endif; ?>
-                <h2 class="text-center mb-4 text-primary">Supprimer la localisation avec comme ID <?= $delete['id'] ?></h2>
+                <h2 class="text-center mb-4 text-info">Supprimer la localisation avec comme ID <?= $delete['id'] ?></h2>
                 <form class="w-50 m-auto" method="GET">
     <div class="form-group">
         <label for="nom">Name</label>
@@ -59,7 +59,7 @@
     <input type="hidden" name="delete" value="<?= $delete['id'] ?>">
     <div class="">
         <button type="submit" class="btn btn-danger mt-3" name="ok">Supprimer</button>
-        <button type="submit" class="btn btn-primary mt-3 ms-2" name="ko">Ne pas supprimer</button>
+        <button type="submit" class="btn btn-info mt-3 ms-2" name="ko">Ne pas supprimer</button>
     </div>
 </form>
         <?php endif ?>
