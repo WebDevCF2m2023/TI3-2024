@@ -148,7 +148,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Mon Profile</a>
-                            <a href="#" class="dropdown-item">Setting</a>
+                            <a href="#" class="dropdown-item">Parametre</a>
                             <a href="?disconnect" class="dropdown-item">deconnecter</a>
                         </div>
                     </div>
@@ -196,7 +196,7 @@
                         data-show-columns-toggle-all="true"
                         data-key-events="true"
                         data-search="true"
-                        data-show-refresh="true"
+                        data-show-refresh=""
                         data-show-toggle="true"
                         data-resizable="true"
                         data-show-print="true"
@@ -221,8 +221,8 @@
 
                             <thead>
                                 <tr>
-                                  <th data-checkbox="true" data-field="state"></th>
-                                  <th data-sortable="true" class="text-success">ID</th>
+                                  <th data-checkbox="true" data-field="state" data-print-ignore="true"></th>
+                                  <th data-sortable="true" class="text-success" data-print-ignore="true">ID</th>
                                   <th class="text-success">Nom</th>
                                   <th class="text-success">Adresse</th>
                                   <th class="text-success">Numéro</th>
@@ -230,8 +230,8 @@
                                   <th data-sortable="true" class="text-success">Code postal</th>
                                   <th class="text-success">Latitude</th>
                                   <th class="text-success">Longitude</th>
-                                  <th class="text-success" data-switchable="false">Modifier</th>
-                                  <th class="text-success" data-switchable="false">Supprimer</th>
+                                  <th class="text-success" data-switchable="false" data-print-ignore="true">Modifier</th>
+                                  <th class="text-success" data-switchable="false" data-print-ignore="true">Supprimer</th>
                                 </tr>
                               </thead>
                        <tbody>
