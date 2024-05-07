@@ -11,8 +11,8 @@
 </head>
 <body>
 <header>
-    <h1>carte interactive</h1><br>
-    <h2>les stations Cambio 🚗</h2>
+    <h1 id="titre">Carte interactive</h1>
+    <h2>les stations Cambio🚗</h2><br>
     <a href="./?connect"><button>connection a <br> l'administration</button></a>
 </header>
         <div id="container">

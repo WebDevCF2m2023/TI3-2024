@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+#titre{
+ font-size: 5rem;
+}
+
 #container{
     display: grid;
     width: 80%;

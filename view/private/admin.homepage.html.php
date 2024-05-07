@@ -75,7 +75,7 @@
                     <i class="fa fa-bars"></i>
                 </a>
                 <form class="d-none d-md-flex ms-4">
-                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+                    <input class="form-control bg-dark border-0" type="search" placeholder="Recherche">
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
@@ -88,7 +88,7 @@
                                 <div class="d-flex align-items-center">
                                     <img class="rounded-circle" src="img/seb.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">seb send you a message</h6>
+                                        <h6 class="fw-normal mb-0">seb vous à envoyer un message</h6>
                                         <small>15 minutes ago</small>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@
                                 <div class="d-flex align-items-center">
                                     <img class="rounded-circle" src="img/seb.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">seb send you a message</h6>
+                                        <h6 class="fw-normal mb-0">seb vous à envoyer un message</h6>
                                         <small>15 minutes ago</small>
                                     </div>
                                 </div>
@@ -108,37 +108,37 @@
                                 <div class="d-flex align-items-center">
                                     <img class="rounded-circle" src="img/seb.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">seb send you a message</h6>
+                                        <h6 class="fw-normal mb-0">seb vous à envoyer un message</h6>
                                         <small>15 minutes ago</small>
                                     </div>
                                 </div>
                             </a>
                             <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
+                            <a href="#" class="dropdown-item text-center">voir tout</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notification</span>
+                            <span class="d-none d-lg-inline-flex">Notifications</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <h6 class="fw-normal mb-0">Profile update</h6>
                                 <small>15 minutes ago</small>
                             </a>
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <h6 class="fw-normal mb-0">nouvelle utulisateur</h6>
                                 <small>15 minutes ago</small>
                             </a>
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <h6 class="fw-normal mb-0">Password changer</h6>
                                 <small>15 minutes ago</small>
                             </a>
                             <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                            <a href="#" class="dropdown-item text-center"> notifications</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -147,9 +147,9 @@
                             <span class="d-none d-lg-inline-flex">struys sebastien</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="?disconnect" class="dropdown-item">Log Out</a>
+                            <a href="#" class="dropdown-item">Mon Profile</a>
+                            <a href="#" class="dropdown-item">Setting</a>
+                            <a href="?disconnect" class="dropdown-item">deconnecter</a>
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
                         data-toggle="table"
                         data-click-to-select="true"
                         data-pagination="true"
-                        data-page-list="[2,4,6]"
+                        data-page-list="[2,4,6,10]"
                         data-show-pagination-switch="true"
                         data-minimum-count-columns="2"
                         data-show-columns="true"
@@ -225,10 +225,10 @@
                                   <th data-sortable="true" class="text-success">ID</th>
                                   <th class="text-success">Nom</th>
                                   <th class="text-success">Adresse</th>
-                                  <th class="text-success">Numero</th>
+                                  <th class="text-success">Numéro</th>
                                   <th data-sortable="true" class="text-success">Ville</th>
-                                  <th data-sortable="true" class="text-success">Codepostal</th>
-                                  <th class="text-success">latitude</th>
+                                  <th data-sortable="true" class="text-success">Code postal</th>
+                                  <th class="text-success">Latitude</th>
                                   <th class="text-success">Longitude</th>
                                   <th class="text-success" data-switchable="false">Modifier</th>
                                   <th class="text-success" data-switchable="false">Supprimer</th>
@@ -263,15 +263,15 @@
                 <div class="row g-4">
                     <div class="col-sm-12 col-md-6 col-xl-4">
                         <div class="h-100 bg-secondary rounded p-4">
-                        <h6 class="mb-0">Map</h6>
+                        <h6 class="mb-0">Carte</h6>
                         <div id="map" class="h-100"></div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-xl-4">
                         <div class="h-100 bg-secondary rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">station cambio</h6>
-                                <a href="#">Show All</a>
+                                <h6 class="mb-0">Stations Cambio</h6>
+                                <a href="#"></a>
                             </div>
                             <div id="liste" style="max-height: 250px;overflow-y: scroll;"></div>
                         </div>
@@ -279,8 +279,8 @@
                     <div class="col-sm-12 col-md-6 col-xl-4">
                         <div class="h-100 bg-secondary rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Calender</h6>
-                                <a href="#">Show All</a>
+                                <h6 class="mb-0">Calendrier</h6>
+                                <a href="#"></a>
                             </div>
                             <div id="calender"></div>
                         </div>

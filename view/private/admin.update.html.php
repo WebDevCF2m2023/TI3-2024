@@ -46,14 +46,14 @@
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c"><A></A>dresse</label>
+                                      <label class="form-label" for="form3Example3c">Adresse</label>
                                       <input type="text" name="adresse" placeholder="Adresse" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['adresse']?>" required>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">Numero</label>
-                                      <input type="number" name="numero" placeholder="Numero" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['numero']?>" required>
+                                      <label class="form-label" for="form3Example3c">Numéro</label>
+                                      <input type="number" name="numero" placeholder="Numéro" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['numero']?>" required>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
@@ -64,8 +64,8 @@
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">Codepostal</label>
-                                      <input type="number" name="codepostal" placeholder="Codepostal" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['codepostal']?>" required>
+                                      <label class="form-label" for="form3Example3c">Code postal</label>
+                                      <input type="number" name="codepostal" placeholder="Code postal" class="form-control border border-primary border-2 Regular shadow" value="<?=$update['codepostal']?>" required>
                                     </div>
                                   </div>
 

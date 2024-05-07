@@ -51,8 +51,8 @@
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">Numero</label>
-                                      <input type="number" name="numero" class="form-control border border-primary border-2 Regular shadow" placeholder="numero" value="<?=$delete['numero']?>" disabled>
+                                      <label class="form-label" for="form3Example3c">Numéro</label>
+                                      <input type="number" name="numero" class="form-control border border-primary border-2 Regular shadow" placeholder="numéro" value="<?=$delete['numero']?>" disabled>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
@@ -63,8 +63,8 @@
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">Codepostal</label>
-                                      <input type="number" name="codepostal" class="form-control border border-primary border-2 Regular shadow" placeholder="codepostal" value="<?=$delete['codepostal']?>" disabled>
+                                      <label class="form-label" for="form3Example3c">Code postal</label>
+                                      <input type="number" name="codepostal" class="form-control border border-primary border-2 Regular shadow" placeholder="code postal" value="<?=$delete['codepostal']?>" disabled>
                                     </div>
                                   </div>
                              

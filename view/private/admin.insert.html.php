@@ -51,8 +51,8 @@
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example3c">Numero</label>
-                                      <input type="number" name="numero" placeholder="Numero" class="form-control border border-primary border-2 Regular shadow" required>
+                                      <label class="form-label" for="form3Example3c">Numéro</label>
+                                      <input type="number" name="numero" placeholder="Numéro" class="form-control border border-primary border-2 Regular shadow" required>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
@@ -63,8 +63,8 @@
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example4c">Codepostal</label>
-                                      <input type="number"  name="codepostal" placeholder="Codepostal" class="form-control border border-primary border-2 Regular shadow" required>
+                                      <label class="form-label" for="form3Example4c">Code postal</label>
+                                      <input type="number"  name="codepostal" placeholder="Code postal" class="form-control border border-primary border-2 Regular shadow" required>
                                     </div>
                                   </div>
                                   <div class="d-flex flex-row align-items-center ">
@@ -75,7 +75,7 @@
                                   </div>
                                   <div class="d-flex flex-row align-items-center mb-5 ">
                                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                                      <label class="form-label" for="form3Example4c">longitude</label>
+                                      <label class="form-label" for="form3Example4c">Longitude</label>
                                       <input type="number" step="0.0000001" name="longitude" placeholder="Longitude" class="form-control border border-primary border-2 Regular shadow" required>
                                     </div>
                                   </div>
