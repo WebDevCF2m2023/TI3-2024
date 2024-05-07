@@ -41,6 +41,7 @@
                     </div>
                     <div class="cineList">
                         <?php
+                        if (isset($cineCount) && is_array($cineCount)) {
                             if ($cineCount === 1) {
                         ?>
                         <h4>Il n'y a pas beaucoup de choix, je crains. Il n'y a qu'un seul cinéma!</h4>
@@ -64,6 +65,11 @@
                         </div>
                         <?php
                             }
+                        }else {
+                            ?>
+                            <h4>Désolé, il n'y a pas des Cinémas</h4>
+                        <?php
+                        }
                         ?>
                             <div id="cineJSON">
                                 <!-- Tout est créé dans le fichier js.script -->

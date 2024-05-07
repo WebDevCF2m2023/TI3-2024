@@ -1,16 +1,16 @@
 
 // Pour commencer, nous devrons obtenir le JSON.
 fetch("?json")
-    .then(function(response){
-        response.json().then(function(data){
-            makeMarkersForMap(data);
-            createListForHomepage(data);
-        });
-
-        })
-        .catch(function(error){
-            console.log(error.message);
+.then(function(response){
+    response.json().then(function(data){
+        makeMarkersForMap(data);
+        createListForHomepage(data);
     });
+    
+})
+.catch(function(error){
+    console.log(error.message);
+});
 
 // Et, bien sûr, nous allons avoir besoin d'ajouter la carte.
 const map = L.map('map').setView([52.825, -4.338], 17);
@@ -50,6 +50,7 @@ function makeMarkersForMap (datas) {
         });
 
 for (let data in datas){
+    console.log(data);
 // Sélection d'icônes pour chaque catégorie
 datas[data].type === "cinéma" ? 
     mapMarker = L.marker([datas[data].lat, datas[data].lon],{icon: greenIcon}) :
