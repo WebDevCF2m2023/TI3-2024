@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-success mb-4 sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand ms-3text-light link-dark link-offset-2 link-underline-opacity-10 link-underline-opacity-100-hover">Centres culturels</a>
+            <a class="navbar-brand ms-3 text-light link-dark link-offset-2 link-underline-opacity-10 link-underline-opacity-100-hover">Centres culturels</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

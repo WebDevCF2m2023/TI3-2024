@@ -17,7 +17,7 @@
             <div class="collapse navbar-collapse" name="name" name="name" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-dark link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" aria-current="page" href="/?administration">Panel Administration</a>
+                    <a class="nav-link text-dark link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" aria-current="page" href="/?admin">Panel Administration</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="/?disconnect">Se deconnecter</a>
@@ -54,7 +54,7 @@
                 <input type="number" class="form-control border-success mb-2" name="latitude" id="latitude" step="0.0000001" required>
             </div>
             <div class="form-group">
-                <label for="longitude">longitude</label>
+                <label for="longitude">Longitude</label>
                 <input type="number" class="form-control border-success mb-2" name="longitude" id="longitude" step="0.0000001" require>
             </div>
             <button type="submit" class="btn btn-success mt-5 w-50 d-block m-auto">Ajouter</button>

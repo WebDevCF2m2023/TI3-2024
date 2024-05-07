@@ -25,8 +25,8 @@
     width:140px;
     height:50px;
     border-width:1px;
-    color:#306108;
-    border-color:#268a16;
+    color: black;
+    border-color:#052500;
     font-weight:bold;
     border-top-left-radius:6px;
     border-top-right-radius:6px;
@@ -34,7 +34,7 @@
     border-bottom-right-radius:6px;
     box-shadow:inset 0px 1px 0px 0px #caefab;
     text-shadow:inset 0px 1px 0px #aade7c;
-    background:linear-gradient(#77d42a, #5cb811);
+    background:linear-gradient(#198754, #00ad5f);
     margin: 40px;
 }
 
@@ -65,6 +65,7 @@
     border: 1px solid black;
     max-height: 800px;
     overflow-y: scroll;
+    font-weight: 600;
 }
 #h1Liste{
     font-family: 'Montserrat', sans-serif;
@@ -95,6 +96,14 @@
 
 #liste ul li:hover{
     background-color: rgba(9, 112, 9, 0.205);
+}
+.footer{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+.pagination .page-item.active .page-link {
+    border-color: #198754;
 }
 
 @media screen and (width <= 640px) {
