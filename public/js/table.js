@@ -48,7 +48,7 @@ window.operateEvents = {
             $table.bootstrapTable('refresh');
             $remove.prop('disabled', true);
             lastValueRow = {};
-        });
+        }).catch(error=>popup(error, false));
     },'click .validInsert': function (e, value, row, index) {
         if(!apiMode){
             window.location = `?addLocation`;
@@ -74,7 +74,7 @@ window.operateEvents = {
             else popup(`La localisation ${data.add} a bien été crée.`);
             $table.bootstrapTable('refresh');
             $remove.prop('disabled', true);
-        });
+        }).catch(error=>popup(error, false));
     },
     'click .cancelEdit': function (e, value, row, index) {
         resetRowWithLastValue();
@@ -102,7 +102,7 @@ window.operateEvents = {
         lastValueRow.index = index;
         
         newValueEdit.nom = row.nom;
-        newValueEdit.type = row.type;
+        newValueEdit.type = ""+TYPES_CATEGORIES.findIndex(v=>v===row.type);
         newValueEdit.adresse = row.adresse;
         newValueEdit.codepostal = row.codepostal;
         newValueEdit.ville = row.ville;
@@ -409,7 +409,7 @@ function onValideDelete(e){
             $table.bootstrapTable('refresh');
             $remove.prop('disabled', true);
             toDelete = [];
-        });
+        }).catch(error=>popup(error, false));
     }else if(toDelete.length > 2){
         postData(`?delete=1&multiple=${selections.join(",")}`, {
             bootstraptable: 1
@@ -418,7 +418,7 @@ function onValideDelete(e){
             else popup(`Les localisations ${data.multiple} ont bien été supprimé`)
             $table.bootstrapTable('refresh');
             $remove.prop('disabled', true);
-        });
+        }).catch(error=>popup(error, false));
     }
 }
 
