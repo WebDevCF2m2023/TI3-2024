@@ -110,11 +110,18 @@ window.operateEvents = {
         newValueEdit.latitude = row.latitude;
         newValueEdit.longitude = row.longitude;
 
+        let selectType = `
+            <select name="typeEdit" class="form-select is-valid" onchange="setValueInput(event)">
+                <option value="">Selectionnez la catégorie</option>
+        `;
+        TYPES_CATEGORIES.forEach((value, index)=>selectType += `<option value="${index}" ${row.type === value ? "selected" : ""}>${value}</option>`);
+        selectType += "</select>";
+
         $table.bootstrapTable('updateRow', {
             index: index,
             row: {
                 nom: `<input type="text" value="${row.nom}" class="form-control is-valid" name="nomEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checknomEdit"></div><div class="valid-feedback">Correct 😊</div>`,
-                type: `<input type="text" value="${row.type}" class="form-control is-valid" name="typeEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checktypeEdit"></div><div class="valid-feedback">Correct 😊</div>`,
+                type: selectType + `<div class="invalid-feedback checktypeEdit"></div><div class="valid-feedback">Correct 😊</div>`,
                 adresse: `<input type="text" value="${row.adresse}" class="form-control is-valid" name="adresseEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checkadresseEdit"></div><div class="valid-feedback">Correct 😊</div>`,
                 codepostal: `<input type="text" value="${row.codepostal}" class="form-control is-valid" name="codepostalEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checkcodepostalEdit"></div><div class="valid-feedback">Correct 😊</div>`,
                 ville: `<input type="text" value="${row.ville}" class="form-control is-valid" name="villeEdit" oninput="setValueInput(event)"/><div class="invalid-feedback checkvilleEdit"></div><div class="valid-feedback">Correct 😊</div>`,
@@ -141,12 +148,19 @@ $add.click(function () {
     if(newValueInsert.id !== undefined)
         cancelInsert();
     
+    let selectType = `
+        <select name="typeInsert" class="form-select is-invalid" onchange="setValueInput(event)">
+            <option value="" selected>Selectionnez la catégorie</option>
+    `;
+    TYPES_CATEGORIES.forEach((value, index)=>selectType += `<option value="${index}">${value}</option>`);
+    selectType += "</select>";
+
     $table.bootstrapTable('insertRow', {
         index: 0,
         row: {
             id: -1,
             nom: `<input type="text" class="form-control is-invalid" name="nomInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checknomInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
-            type: `<input type="text" class="form-control is-invalid" name="typeInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checktypeInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
+            type: selectType + `<div class="invalid-feedback checktypeInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
             adresse: `<input type="text" class="form-control is-invalid" name="adresseInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checkadresseInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
             codepostal: `<input type="text" class="form-control is-invalid" name="codepostalInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checkcodepostalInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
             ville: `<input type="text" class="form-control is-invalid" name="villeInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checkvilleInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
@@ -281,9 +295,9 @@ function checkNewValueInputByName(name, objectToCheck){
             return true;
         case "type":
             if(objectToCheck.type.trim().length === 0)
-                return "Ne dois pas être vide";
-            if(objectToCheck.type.trim().length > 20)
-                return "Ne dois pas dépasser 20 caractères";
+                return "Veuillez choisir un type";
+            if(isNaN(objectToCheck.type))
+                return "La valeur doit être un nombre";
             return true;
         case "adresse":
             if(objectToCheck.adresse.trim().length === 0)

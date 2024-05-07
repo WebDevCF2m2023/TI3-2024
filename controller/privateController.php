@@ -1,5 +1,4 @@
 <?php
-
 function formIsSet():bool{
     return isset(
         $_POST['name'], 
@@ -16,7 +15,6 @@ function formIsSet():bool{
  */
 function secureValueFromForm() : bool{
     $_POST['name'] =  htmlspecialchars(strip_tags(trim($_POST['name']), ENT_QUOTES));
-    $_POST['type'] = htmlspecialchars(strip_tags(trim($_POST['type']), ENT_QUOTES));
     $_POST['adresse'] = htmlspecialchars(strip_tags(trim($_POST['adresse']), ENT_QUOTES));
     $_POST['codePostal'] = htmlspecialchars(strip_tags(trim($_POST['codePostal']), ENT_QUOTES));
     $_POST['country'] = htmlspecialchars(strip_tags(trim($_POST['country']), ENT_QUOTES));
@@ -28,9 +26,8 @@ function secureValueFromForm() : bool{
     }
     
     $type = $_POST['type'];
-    if(strlen($type) === 0 || strlen($type) > 20){
+    if(!ctype_digit($type) || ((int) $type) >= count(TYPES_CATEGORIES))
         return false;
-    }
 
     $adresse = $_POST['adresse'];
     if(strlen($adresse) === 0 || strlen($adresse) > 100){
@@ -84,7 +81,7 @@ if(isset($_GET['disconnect'])){
         if($secure === true){
             $successUpdate = updateLocation($db, $id, 
                                 $_POST['name'], 
-                                $_POST['type'], 
+                                TYPES_CATEGORIES[$_POST['type']], 
                                 $_POST['adresse'], 
                                 $_POST['codePostal'], 
                                 $_POST['country'], 
@@ -96,7 +93,7 @@ if(isset($_GET['disconnect'])){
                     'success' => true, 
                     'update' => $id, 
                     'name' => $_POST['name'], 
-                    'type' => $_POST['type'], 
+                    'type' => TYPES_CATEGORIES[$_POST['type']], 
                     'adresse' => $_POST['adresse'], 
                     'codepostal' => $_POST['codePostal'], 
                     'ville' => $_POST['country'], 
@@ -133,6 +130,7 @@ if(isset($_GET['disconnect'])){
     }
 
     $update = getLocationByID($db, $id);
+    $update['type'] = "".array_search($update['type'], TYPES_CATEGORIES);
     require("../view/private/administration.update.html.php");
 }elseif(isset($_GET['delete']) && ctype_digit($_GET['delete'])){
     $id = (int) $_GET['delete'];
@@ -174,7 +172,7 @@ if(isset($_GET['disconnect'])){
         if($secure === true){
             $successAdd = addLocation($db, 
                                 $_POST['name'], 
-                                $_POST['type'], 
+                                TYPES_CATEGORIES[$_POST['type']], 
                                 $_POST['adresse'], 
                                 $_POST['codePostal'], 
                                 $_POST['country'], 
@@ -187,7 +185,7 @@ if(isset($_GET['disconnect'])){
                     'success' => true, 
                     'add' => $successAdd,
                     'name' => $_POST['name'], 
-                    'type' => $_POST['type'], 
+                    'type' => TYPES_CATEGORIES[$_POST['type']], 
                     'adresse' => $_POST['adresse'], 
                     'codepostal' => $_POST['codePostal'], 
                     'ville' => $_POST['country'], 
