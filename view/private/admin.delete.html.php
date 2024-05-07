@@ -48,7 +48,7 @@
             <p class="text-2xl">Longitude : <?=$data['longitude']?></p>
             <hr>
             <h2 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">Voulez-vous vraiment supprimer cette data ?</h2>
-            <a  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" href="?delete=<?=$data['idourdatas']?>&confirm">Oui</a> <a class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"  class="text-2xl" href="./">Non</a>
+            <a  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" href="?delete=<?=$data['id']?>&confirm">Oui</a> <a class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"  class="text-2xl" href="./">Non</a>
         </div>
         <?php endif; ?>
 

@@ -11,7 +11,7 @@
 <div class="antialiased text-gray-900 px-6">
     <div class="max-w-xl mx-auto py-12 divide-y md:max-w-8xl">
         <div class="py-8">
-            <h1 class="text-4xl font-bold">Admin Insertion</h1>
+            <h1 class="text-4xl font-bold">Carte interactive</h1>
             <p class="mt-2 text-lg text-gray-800">
                 Insertion d'un nouveau lieu dans la DB.
             </p>
@@ -43,11 +43,11 @@
                 <div class="grid grid-cols-1 gap-6">
                     <label class="block">
                         <span class="text-gray-700">Nom</span>
-        <input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="title" placeholder="title" required>
+        <input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="nom" placeholder="Nom" required>
                     </label>
                     <label class="block">
                         <span class="text-gray-700">Adresse</span>
-            <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" rows="3" name="ourdesc" placeholder="Descrition" required></textarea>
+            <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" rows="3" name="adresse" placeholder="Description" required></textarea>
                     </label>
                     <label class="block">
                         <span class="text-gray-700">Latitude</span>

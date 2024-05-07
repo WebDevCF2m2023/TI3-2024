@@ -12,11 +12,12 @@
           <!-- ma CSS -->
 </head>
 <body>
-    <h1>Welcome</h1>
+    <h1>Carte interactive</h1>
+    
     <nav>
         <ul>
-            <li><a href="./">Accueil</a></li>
-            <li><a href="?connect">Connexion</a>
+            <li><a href="./">Accueil</a></style></li>
+            <li><button><a href="?connect" style="text-align: center;">Connexion</a></button>
         </ul>
     </nav>
     <div class="content">
@@ -53,11 +54,17 @@
     </div>
     
 </div>
+
+
+
+
+
     <!-- JS de Leaflet -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
             crossorigin=""></script>
     <!-- monJS -->
     <script src="js/carteJSON.js"></script>
+ 
 </body>
 </html>

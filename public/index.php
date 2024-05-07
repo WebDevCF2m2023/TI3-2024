@@ -32,3 +32,7 @@ if(isset($_SESSION['myID']) && $_SESSION['myID'] == session_id()){
 }
 
 $connect = null;
+
+
+
+

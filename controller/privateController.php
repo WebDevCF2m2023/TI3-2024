@@ -4,6 +4,7 @@
 if(isset($_GET['disconnect'])) administratorDisconnect();
 
 if(isset($_GET['insert'])){
+    var_dump($_POST);
 
     // si le formulaire est envoyé
     if(isset(
@@ -13,8 +14,9 @@ if(isset($_GET['insert'])){
         $_POST['longitude']
     )){
 
-        $title = strip_tags(trim($_POST['nom']));
-        $oudesc = trim($_POST['adresse']);
+
+        $nom = strip_tags(trim($_POST['nom']));
+        $adresse = trim($_POST['adresse']);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
 
@@ -47,8 +49,8 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
         $_POST['id']
     )){
 
-        $title = strip_tags(trim($_POST['nom']));
-        $oudesc = trim($_POST['adresse']);
+        $nom = strip_tags(trim($_POST['nom']));
+        $adresse = trim($_POST['adresse']);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
         $id = (int) $_POST['id'];

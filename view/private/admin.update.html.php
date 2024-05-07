@@ -44,11 +44,11 @@
        <form action="" name="adresse" method="POST">
            <label class="block">
                <span class="text-gray-700">Nom</span>
-        <input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="title" placeholder="title" value="<?=$data['title']?>" required>
+        <input class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="nom" placeholder="nom" value="<?=$data['nom']?>" required>
            </label>
            <label class="block">
                <span class="text-gray-700">Adresse</span>
-        <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="ourdesc" placeholder="Descrition" required><?=$data['ourdesc']?></textarea>
+        <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="adresse" placeholder="Descrition" required><?=$data['adresse']?></textarea>
            </label>
            <label class="block">
                <span class="text-gray-700">latitude</span>

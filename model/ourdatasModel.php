@@ -2,7 +2,7 @@
 // Sélectionnez toutes les données
 function getAllOurdatas(PDO $db): array|string
 {
-    $sql ="SELECT * FROM localisations ORDER BY id DESC;";
+    $sql ="SELECT * FROM localisations ORDER BY id ASC;";
     try{
         $query = $db->query($sql);
         if($query->rowCount()===0) return "Pas encore de datas";
