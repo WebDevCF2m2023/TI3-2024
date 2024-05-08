@@ -258,8 +258,13 @@ function setValueInput(e){
 }
 
 function resetRowWithLastValue(){
+    let index = 0;
+    const data = $table.bootstrapTable('getData');
+    for(;index < data.length; ++index)
+         if(data[index].id === lastValueRow.id) break;
+    
     $table.bootstrapTable('updateRow', {
-        index: lastValueRow.index,
+        index: index,
         row: {
             nom: lastValueRow.nom,
             type: lastValueRow.type,
