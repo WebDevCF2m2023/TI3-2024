@@ -130,7 +130,8 @@ if(isset($_GET['disconnect'])){
     }
 
     $update = getLocationByID($db, $id);
-    $update['type'] = "".array_search($update['type'], TYPES_CATEGORIES);
+    if(!is_string($update))
+        $update['type'] = "".array_search($update['type'], TYPES_CATEGORIES);
     require("../view/private/administration.update.html.php");
 }elseif(isset($_GET['delete']) && ctype_digit($_GET['delete'])){
     $id = (int) $_GET['delete'];

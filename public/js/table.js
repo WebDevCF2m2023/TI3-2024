@@ -11,6 +11,9 @@ let newValueEdit = {};
 let newValueInsert = {};
 let apiMode;
 
+// TODO : Debug insert/edit
+// Lors de la modification si j'ajoute une ligne et que j'annule l'édit, l'index est mal compris
+
 let toDelete;
 window.operateEvents = {
     'click .remove': function (e, value, row, index) {
@@ -147,7 +150,7 @@ $add.click(function () {
     }
     if(newValueInsert.id !== undefined)
         cancelInsert();
-    
+
     let selectType = `
         <select name="typeInsert" class="form-select is-invalid" onchange="setValueInput(event)">
             <option value="" selected>Selectionnez la catégorie</option>
@@ -160,7 +163,7 @@ $add.click(function () {
         row: {
             id: -1,
             nom: `<input type="text" class="form-control is-invalid" name="nomInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checknomInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
-            type: selectType + `<div class="invalid-feedback checktypeInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
+            type: selectType + `<div class="invalid-feedback checktypeInsert">Veuillez choisir un type</div><div class="valid-feedback">Correct 😊</div>`,
             adresse: `<input type="text" class="form-control is-invalid" name="adresseInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checkadresseInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
             codepostal: `<input type="text" class="form-control is-invalid" name="codepostalInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checkcodepostalInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
             ville: `<input type="text" class="form-control is-invalid" name="villeInsert" oninput="setValueInput(event)"/><div class="invalid-feedback checkvilleInsert">Ne doit pas être vide</div><div class="valid-feedback">Correct 😊</div>`,
