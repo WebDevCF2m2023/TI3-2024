@@ -6,24 +6,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Admin Update</title>
 </head>
-<body>
+<body style="background-color: #f0f6ff;">
 <div class="container py-4">
-    <h1 class="text-center text-4xl font-bold mb-8">Admin Update</h1>
-    <p class="text-center text-lg text-gray-800">Mettre à jour un lieu dans la DB.</p>
+    <h1 class="text-center text-4xl font-bold mb-8" style="color: #007bff;">Admin Update</h1>
+    <p class="text-center text-lg text-muted">Mettre à jour un lieu dans la DB.</p>
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-light my-4">
+    <nav class="navbar navbar-expand-lg navbar-light  my-4" style="background-color: #007bff;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./">Accueil Admin</a>
+            <a class="navbar-brand" href="./" style="color: white;">Accueil Admin</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="?insert">Ajouter une data</a>
+                        <a class="nav-link" href="?insert" style="color: white;">Ajouter une data</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?disconnect">Déconnexion</a>
+                        <a class="nav-link" href="?disconnect" style="color: white;">Déconnexion</a>
                     </li>
                 </ul>
             </div>
@@ -31,18 +31,18 @@
     </nav>
 
     <div class="py-12">
-        <h2 class="text-2xl font-bold">Update d'une adresse</h2>
-        <?php if(isset($error)) echo "<h3>$error</h3>"; ?>
+        <h2 class="text-2xl font-bold" style="color: #007bff;">Update d'une adresse</h2>
+        <?php if(isset($error)) echo "<h3 class='error'>$error</h3>"; ?>
         <br>
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <form action="" name="id" method="POST">
                     <div class="mb-3">
-                        <label for="nom" class="form-label">Title</label>
+                        <label for="nom" class="form-label">Nom</label>
                         <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" value="<?=$data['nom']?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="adresse" class="form-label">Description</label>
+                        <label for="adresse" class="form-label">Adresse</label>
                         <textarea class="form-control" id="adresse" name="adresse" rows="3" placeholder="adresse" required><?=$data['adresse']?></textarea>
                     </div>
                     <div class="mb-3">
