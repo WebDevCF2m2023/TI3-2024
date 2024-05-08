@@ -93,9 +93,9 @@ function clicItem() {
     let id = this.getAttribute('id');
     console.log(`${latitude} ${longitude}`);
 
-    let marqueur = lesMarqueurs[id];
+    let marqueur = lesMarqueurs[id-1];
 
     carte.flyTo([latitude, longitude], 17);
 
-    marqueur.togglePopup();
+    marqueur.openPopup();
 }
