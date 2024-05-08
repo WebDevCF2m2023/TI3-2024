@@ -70,7 +70,7 @@ function updateOneGeolocByID(PDO $db, int $idgeoloc, string $nom, string $adress
 function insertOneGeolocByID(PDO $db, string $nom, string $adresse, int $codepostal, float $lat, float $lon):
 bool|string
 {
-    $sql = "INSERT INTO `localisations` (`nom`,`adresse`,`codepostal`,`latitude`, `longitude`) VALUES (?,?,?,?);";
+    $sql = "INSERT INTO `localisations` (`nom`,`adresse`,`codepostal`,`latitude`, `longitude`) VALUES (?,?,?,?,?);";
     $prepare = $db->prepare($sql);
     try{
         $prepare->execute([

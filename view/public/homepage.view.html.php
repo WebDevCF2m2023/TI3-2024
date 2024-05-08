@@ -13,13 +13,8 @@
 <div id="content">
     <h1>Accueil</h1>
 
-    <nav>
-        <ul>
-            <li>Accueil</li>
-            <li><a href="?json" target="_blank">API</a> format JSON</li>
-            <li><a href="?connect">Connexion</a></li>
-        </ul>
-    </nav>
+            <p><a href="?json" target="_blank">API</a> format JSON</p>
+            <p><a href="?connect">Connexion</a></p>
     
         <h3>Liste de nos lieux</h3>
 </div>

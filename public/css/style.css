@@ -3,12 +3,9 @@ div h4 {
     display: inline;
 }
 
-#accueil {
+#accueil, #api, #hacheUn  {
     margin: 30px; 
-}
-
-#api {
-    margin: 30px;
+    padding: auto;
 }
 
 h3 {
@@ -21,13 +18,11 @@ h3 {
     color: rgb(4, 71, 15);
 }   
 
-
 #resultat {
      
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-
 }
 
 #map {
@@ -37,5 +32,4 @@ h3 {
 
 #content {
     text-align: center;
-   
 }

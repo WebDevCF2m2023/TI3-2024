@@ -10,20 +10,24 @@
 </head>
 <body>
 
-<section class="vh-100" style="background-color: #9A616D;">
+<section class="vh-100" style="background-color: #524661;">
 
-<div>
-    <h4 id="accueil"><a href="./">Accueil</a></h4>
-    <h4 id="api"><a href="?json" target="_blank">API format JSON</a></h4>
+<div class="container text-center">
+  <br>
+  <h1>Connexion à l'administration</h1>
+  <br>
+  <br>
+  <h5 id="accueil"><a href="./">Accueil</a></h5>
+  <h5 id="api"><a href="?json" target="_blank">API format JSON</a></h5>
 </div>
 
-  <div class="container py-5 h-100">
+  <div class="container py-5 h-50">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-12">
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="img/sticker214.png"/>
+              <img src="img/sticker214.png" width="400px"/>
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
@@ -35,11 +39,6 @@
                 <?php endif ?>
 
                 <form action="" method="POST" name="connexion">
-
-                    <div class="d-flex align-items-center mb-3 pb-1">
-                        <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                        <span class="h1 fw-bold mb-">Connexion à notre administration</span>
-                    </div>
 
                     <div data-mdb-input-init class="form-outline mb-4">
                         <input type="text" name="username" placeholder="Login" id="form2Example17" class="form-control form-control-lg" required />
@@ -55,7 +54,6 @@
                     </div>
                     </form>
                 </div>
-
               </div>
             </div>
           </div>
@@ -64,10 +62,6 @@
     </div>
   </div>
 </section>
-
-<footer>
-
-</footer>
     
 </body>
 </html>
