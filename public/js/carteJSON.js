@@ -29,7 +29,7 @@ function afficheMarqueurs(liste){
         /* créer un marqueur pour chaque élément de la liste */
         let unMarqueur = L.marker([liste[item].latitude, liste[item].longitude]).addTo(carte);
         /* mettre le nom de l'item dans un popup */
-        unMarqueur.bindPopup(`<h3>${liste[item].nom}</h3><p>${liste[item].adresse}</p><p>${liste[item].codepostal}</p><p>${liste[item].ville}</p><p>${liste[item].nb_velos}</p>`);
+        unMarqueur.bindPopup(`<h3>${liste[item].nom}</h3><p>${liste[item].adresse}</p><p>${liste[item].codepostal}</p><p>${liste[item].ville}</p><p>Nombre de vélos : ${liste[item].nb_velos}</p>`);
 
         /* ajouter ce marqueur au tableau */
         markerTable.push(unMarqueur);
