@@ -9,22 +9,12 @@
 </head>
 <body>
 <div class="container py-4">
-    <h1 class="text-center" style="color: #007bff;">Connexion</h1>
-    <nav class="navbar navbar-expand-lg navbar-light my-4" style="background-color: #2b7cfe;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="./">Accueil</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="?connect">Connexion</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                 class="img-fluid" alt="Phone image">
         </div>
-    </nav>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form action="" method="POST" name="connexion">
@@ -36,12 +26,15 @@
                     <label for="passwd" class="form-label">Votre mot de passe</label>
                     <input type="password" class="form-control" id="passwd" name="passwd" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Connexion</button>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-primary me-md-2">Connexion</button>
+                    <a class="btn btn-primary" href="./">Accueil</a>
+                </div>
             </form>
         </div>
     </div>
     <?php
-     //var_dump($_POST);
+    //var_dump($_POST);
     ?>
 </div>
 
