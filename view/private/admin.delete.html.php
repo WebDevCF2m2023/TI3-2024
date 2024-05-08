@@ -36,7 +36,7 @@
             <div class="col-md-8">
                 <div class="card shadow-sm">
                     <div class="card-header bg-danger">
-                        <h1 class="card-title mb-0 text-light">Admin Supprimer</h1>
+                        <h1 class="card-title mb-0 text-light">ADMIN SUPRIMER</h1>
                         <p class="card-text text-warning">NOTE : DELETE d'un lieu dans la DB.</p>
                     </div>
                     <div class="card-body">

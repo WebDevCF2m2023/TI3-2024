@@ -36,7 +36,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-8 col-sm-12 card shadow-sm">
                 <div class="card-header bg-dark bg-gradient text-light">
-                    <h1 class="card-title">Admin Update</h1>
+                    <h1 class="card-title">ADMIN UPDATE</h1>
                     <p class="card-text text-warning">NOTE: mis à jour de la DB.</p>
                 </div>
                 <div class="card-body">

@@ -37,7 +37,7 @@
             <div class="col-md-8">
                 <div class="card shadow-sm">
                     <div class="card-header bg-dark bg-gradient">
-                        <h1 class="card-title mb-0 text-light">Admin Insertion</h1>
+                        <h1 class="card-title mb-0 text-light">ADMIN INSERTION</h1>
                         <p style="color: orange;" class="card-text">NOTE : Insertion d'un nouveau lieu dans la DB.</p>
                     </div>
                     <div class="card-body">

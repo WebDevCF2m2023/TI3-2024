@@ -35,9 +35,9 @@
   <div class="container py-6">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <div class="card">
+        <div class="card col-sm-12 col-md-12 col-12">
           <div class="card-header bg-dark bg-gradient">
-            <h1 class="text-light">Admin Editor</h1>
+            <h1 class="text-light">ADMIN EDITOR</h1>
             <p class="card-text text-warning">NOTE : Ici vous pouvez editer les lieux maps de GeoMapper.</p>
           </div>
           <div class="card-body">
@@ -51,14 +51,17 @@
                 <?= $error ?>
               </div>
             <?php else : ?>
-              <div class="table-responsive">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
+              <div class="table-responsive col-12">
+                <table class="table table-bordered"
+                data-toggle="table"
+                data-search="true">
+
+                  <thead class="">
+                    <tr id="rami" class="col-12">
                       <th scope="col">ID</th>
                       <th scope="col">Nom</th>
                       <th scope="col">Adresse</th>
-                      <th scope="col">Code postal</th>
+                      <th scope="col">Code&nbsppostal</th>
                       <th scope="col">Ville</th>
                       <th scope="col">Latitude</th>
                       <th scope="col">Longitude</th>
@@ -91,7 +94,7 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+  
 </body>
 
 </html>
