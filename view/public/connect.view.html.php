@@ -41,8 +41,8 @@
                 <div class="col m-5">
             <form class="d-flex flex-column align-items-center justify-content-center" method="POST" action="">
                  <div class="form-group">
-            <input type="text" class="form-control text-center bg-light" name="username" placeholder="Votre login" required><br>
-            <input type="password" class="form-control text-center text-alert bg-light" name="passwd" placeholder="Votre mot de passe" required><br>
+            <input type="text" class="form-control text-center bg-light" name="username" placeholder="Your login" required><br>
+            <input type="password" class="form-control text-center text-alert bg-light" name="passwd" placeholder="Your password" required><br>
                 </div>
                 <div class="form-group">
             <input type="submit" class="form-control text-center text-white bg-success" value="connexion">
