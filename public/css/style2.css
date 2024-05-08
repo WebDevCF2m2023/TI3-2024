@@ -11,8 +11,8 @@ body {
     max-width: 1200px;
     margin: 20px auto;
     background-color: #f8fafc;
-    border-radius: 15px; 
-    border: 2px solid #007bff; 
+    border-radius: 15px; /* Bordures arrondies */
+    border: 2px solid #007bff; /* Bordure bleue */
     box-shadow: 0 0 10px rgba(2, 107, 254, 0.9);
     overflow: hidden;
 }
@@ -69,7 +69,7 @@ h1 {
     color: #0056b3;
 }
 #map { width: 50%; height: 600px; }
-#map { box-shadow: 0 0 10px #007bff; border: solid rgb(248, 232, 233);}
+#map { box-shadow: 0 0 10px rgb(43, 119, 226); border: solid rgb(248, 232, 233);}
 .rouge, .rouge a {color:red;}
 h3, h1 {text-align: center;}
 .photo {width:100px;}

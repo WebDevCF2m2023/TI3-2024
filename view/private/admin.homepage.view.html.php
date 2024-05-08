@@ -76,6 +76,50 @@
             <?php endif; ?>
         </div>
     </div>
+<!---Footer--->
+<div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(114,137,218,0.7)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(114,137,218,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(114,137,218,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#7289da" />
+            </g>
+        </svg>
+    </div>
+
+<footer class="page-footer font-small unique-color-dark pt-4">
+  <div class="container">
+    <ul class="list-unstyled list-inline text-center py-2">
+		
+	      <li class="list-inline-item">
+	      </li><br>
+		  <br>
+    </ul>
+  </div>
+  <div class="footer-copyright text-center py-3"><h7>© 2024 Copyright:</h7>
+    <h7 href="https://discord.gg/uRqH5UT"> Baris</h7>
+  </div>
+</footer>
+</div>
+
+</div>
+    <?php
+    //var_dump($_POST);
+    ?>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
