@@ -18,7 +18,6 @@
     <h1>Carte interactive</h1>
     <nav id="nav1">
         <ul>
-            <li><a href="./">Accueil</a></li>
             <li><a href="?connect">Connexion</a></li>
         </ul>
     </nav>
