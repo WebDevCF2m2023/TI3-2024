@@ -10,27 +10,7 @@
     <title>Administration</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg mb-4 bg-dark sticky-top" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="./">TI3_2024</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="./">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="./?administration">Panel administration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./?disconnect">Se deconnecter</a>
-                </li>
-            </ul>
-            </div>
-        </div>
-    </nav>
+    <?php require "include/bootstrap.nav.html.php"; ?>
 
     <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -126,6 +106,7 @@
         // Injection PHP
         const TYPES_CATEGORIES = <?= json_encode(TYPES_CATEGORIES) ?>;
     </script>
+    <script src="js/popup.js"></script>
     <script src="js/table.js"></script>
    </body>
 </html>

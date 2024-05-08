@@ -11,9 +11,6 @@ let newValueEdit = {};
 let newValueInsert = {};
 let apiMode;
 
-// TODO : Debug insert/edit
-// Lors de la modification si j'ajoute une ligne et que j'annule l'édit, l'index est mal compris
-
 let toDelete;
 window.operateEvents = {
     'click .remove': function (e, value, row, index) {
@@ -367,24 +364,6 @@ async function postData(url = '', data = {}) {
         body: formData, // Le type de données du corps doit correspondre à l'en-tête "Content-Type"
     });
     return response.json(); // Convertit la réponse JSON en objets JavaScript natifs
-}
-
-/**
- * 
- * @param {string} message
- */
-function popup(message, success = true){
-    const div = document.createElement("div");
-    div.className = "popup d-flex justify-content-center rounded fw-bold text-light align-items-start position-fixed py-2 px-4 top-0 end-0 me-3 " + (success ? "bg-success border border-success" : "bg-danger border border-danger");
-    div.style.minWidth = "300px";
-    div.style.maxWidth = "600px";
-    div.textContent = message;
-
-    document.body.appendChild(div);
-
-    setTimeout(() => {
-        document.body.removeChild(div);
-    }, 5 * 1000 /* 5s */);
 }
 
 function selectMode(e){
