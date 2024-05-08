@@ -17,7 +17,7 @@
         <h3 class="titreHomepage">Théâtres à Bruxelles</h3>
 
         <div>
-            <a href="?connect"> <button class="btn"><i class="animation"></i>Connexion à l'administration<i class="animation"></i>
+            <a href="?connect"> <button class="btnConnect"><i class="animation"></i>Connexion à l'administration<i class="animation"></i>
                 </button></a>
         </div>
         </a>
