@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/table.css">
     <title>Administration</title>
 </head>
-<body>
+<body class="bg-light">
     <?php require "include/bootstrap.nav.html.php"; ?>
 
     <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete" aria-hidden="true">

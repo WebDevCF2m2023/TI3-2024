@@ -9,7 +9,7 @@
      <link rel="stylesheet" href="css/home.css">
     <title>Carte interactive</title>
 </head>
-<body>
+<body class="bg-light">
     <div id="container">
         <header>
             <h1>Carte interactive</h1>

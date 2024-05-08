@@ -9,7 +9,7 @@
      <link rel="stylesheet" href="css/home.css">
     <title>Carte interactive Admin</title>
 </head>
-<body>
+<body class="bg-light">
     <nav>
         <a href="./">TI3_2024</a>
         <ul>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/administration.css">
     <title>Administration Insertion</title>
 </head>
-<body>
+<body class="bg-light">
     <?php require "include/bootstrap.nav.html.php"; ?>
     <div class="container">
         <?php if(isset($error)): ?>
