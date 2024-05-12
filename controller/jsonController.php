@@ -8,3 +8,4 @@ if (isset($_GET['json'])) {
     }
     exit();
 }
+
