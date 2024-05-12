@@ -5,7 +5,7 @@
         <?php
         }else{
             ?>
-        <h1>Bienvenue, ceci est une refonte complète du TI</h1>
+        <h1>Bienvenue, je suis heureux de vous présenter mon TI-3</h1>
     <?php
         }
         ?>

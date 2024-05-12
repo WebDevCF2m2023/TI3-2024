@@ -11,12 +11,15 @@ if (isset($_GET["logout"])) {
 $cinemas = getAllCinemas($db);
 // $getTypes = getTypesOfCinema($db); // Ceci est utilisé en cas d'insertion ou de mise à jour.
 if ($cinemas === false) {
-    $errorMessage = "Impossible d'obtenir les informations de la base de données en raison d'une erreur dans le SQL.";
+    $errorMessage = "Impossible d'obtenir les informations de la base de données en raison d'une erreur dans le SQL.</br>
+                     Cliquez <a href='?create'>ici</a> pour ajouter un cinéma";
 }else if (is_string($cinemas)) {
     $errorMessage = $e;
+}else {
+    $cineCount = count($cinemas);
 } 
 
-$cineCount = count($cinemas);
+if ($cinemas) {
 if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])) {
     $page = (int) $_GET[PAGINATION_GET_NAME];
 } else {
@@ -24,6 +27,8 @@ if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME]
 }
 $pagination = paginationModel("./", PAGINATION_GET_NAME, $cineCount, $page, PAGINATION_NB_PAGE);
 $flicks = getPaginationInformations($db, $page, PAGINATION_NB_PAGE);
+}
+
 if (isset($_GET["carte"])) {
     $title = 'La Carte!';
     include "../view/private/map.view.php";

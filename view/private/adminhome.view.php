@@ -31,7 +31,7 @@ if ($_SESSION["pageCount"] < 2) {
                 <?php
         if ($_SESSION["pageCount"] < 2) {
             include("inc/welcome-message.php");
-        }else {
+        }else if($cinemas){
             $cineCount = count($cinemas);
             include("inc/admin-table.php");
         }

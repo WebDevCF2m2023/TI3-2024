@@ -19,6 +19,7 @@
         <div class="global">
             <?php
                 include "inc/header.public.php";
+               
                 ?>
   
         <main>
@@ -41,7 +42,10 @@
                     </div>
                     <div class="cineList">
                         <?php
-                        if (isset($cineCount) && is_array($cineCount)) {
+
+                        if (!isset($cineCount)) {
+                            $cineCount = "Désolé, il n'y a pas des Cinémas";
+                        }else if (isset($cineCount) && is_int($cineCount)) {
                             if ($cineCount === 1) {
                         ?>
                         <h4>Il n'y a pas beaucoup de choix, je crains. Il n'y a qu'un seul cinéma!</h4>
