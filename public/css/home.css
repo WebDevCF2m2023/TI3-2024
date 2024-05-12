@@ -88,7 +88,7 @@ nav ul.collapse{
     background-color: rgb(33, 37, 41);
     flex-direction: column;
     padding-left: 4px;
-    transition: max-height 0.75s ease-in-out;
+    transition: max-height 0.25s ease-in-out;
 }
 
 nav ul{
