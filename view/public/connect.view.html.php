@@ -10,15 +10,15 @@
 </head>
 <body>
 
-<section class="vh-100" style="background-color: #524661;">
+<section class="vh-100" style="background-color: rgb(131, 194, 162);">
 
 <div class="container text-center">
   <br>
-  <h1>Connexion à l'administration</h1>
+  <h1 id="titre">Connexion à l'administration</h1>
   <br>
   <br>
   <h5 id="accueil"><a href="./">Accueil</a></h5>
-  <h5 id="api"><a href="?json" target="_blank">API format JSON</a></h5>
+  <h5 id="api"><a class="" href="?json" target="_blank">API format JSON</a></h5>
 </div>
 
   <div class="container py-5 h-50">
@@ -62,6 +62,9 @@
     </div>
   </div>
 </section>
-    
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+crossorigin="anonymous"></script>
 </body>
 </html>
