@@ -12,6 +12,9 @@
 <body class="bg-light">
     <nav>
         <a href="./">TI3_2024</a>
+        <button class="navbar-toggler" onclick="collapsing()">
+            <div class="navbar-toggler-icon"></div>
+        </button>
         <ul>
             <li>
                 <a class="active" href="./">Accueil</a>
@@ -40,5 +43,6 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
         crossorigin=""></script>
     <script src="js/home.js"></script>
+    <script src="js/home-navbar-toggler.js"></script>
 </body>
 </html>
