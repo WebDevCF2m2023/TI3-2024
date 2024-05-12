@@ -91,6 +91,20 @@ function deleteCinemaFromList (PDO $db, $id) : bool | string {
     } 
 }
 
+// DELETE ALL
+function deleteEverythingFromLoc (PDO $db) : bool | string {
+    
+    $sql = "TRUNCATE TABLE `ti3_2024`.`localisations`";
+    try{        
+        $query = $db->query($sql);
+        
+        return true;
+
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+}
+
 // INSERT 
 
 function insertCinemaIntoList (PDO $db,

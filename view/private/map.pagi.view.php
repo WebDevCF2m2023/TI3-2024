@@ -59,6 +59,9 @@
 <?php
         include("inc/footer.php");
         ?>
+        <form action="" method="POST">
+        <button class="btn" name="deleteAll" style="opacity: 0;" >Parce qu'il demandera</button>
+    </form>
 <?php
         include("inc/jsBS.php");
         include("../view/shared/leaf.js.php");

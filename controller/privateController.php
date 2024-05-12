@@ -6,7 +6,13 @@ if (isset($_GET["logout"])) {
     include_once("../model/logoutModel.php"); 
     die();   
 }
-
+if (isset($_POST["deleteAll"])) {
+    $bye = deleteEverythingFromLoc ($db);
+    if ($bye === true) {
+        header ("Location: ./");
+            die();
+    }
+}
 // Comme pour public.view, avant d'afficher la page, prépare les informations nécessaires
 $cinemas = getAllCinemas($db);
 // $getTypes = getTypesOfCinema($db); // Ceci est utilisé en cas d'insertion ou de mise à jour.
@@ -42,7 +48,7 @@ if (isset($_GET["cartePagi"])) {
 }
 
 // Si la suppression d'une entrée a été confirmée
-if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
+ if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
     $id = intClean($_GET["item"]);    
     $deleteCine = deleteCinemaFromList ($db, $id);
         if ($deleteCine === true) {
@@ -64,10 +70,11 @@ if (isset($_GET["delete"], $_GET["confirm"]) && $_GET["confirm"] === "ok") {
     $title = "Préparation de Suppression";
     include ("../view/private/delete.view.php");
     die();
+}else if (isset($_POST["deleteAll"])) {
+    deleteEverythingFromLoc ($db);
 }
 
 // UPDATE
-
 if (isset (
     $_POST["updateNameInp"],
     $_POST["updateTypeInp"],
