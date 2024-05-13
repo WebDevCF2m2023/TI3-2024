@@ -42,11 +42,33 @@
                     <?php 
                         foreach ($flicks as $flick) {
                     ?>
-                        <li class="list-group-item" id="<?=$flick["id"]?>" lat = "<?=$flick["lat"]?>" lon = "<?=$flick["lon"]?>"><?=$flick["nom"]?> | <?=$flick["add"]?> | <?=$flick["code"]?> | <?=$flick["ville"]?> | <a href="<?=$flick["url"]?>" target="_blank"><img src="img/link.svg" alt="link to cinema"></a></li>
+                        <li class="list-group-item" 
+                            id="<?=$flick["id"]?>" 
+                            lat = "<?=$flick["lat"]?>" 
+                            lon = "<?=$flick["lon"]?>">
+                            <?=$flick["nom"]?> | 
+                            <?=$flick["add"]?> | 
+                            <?=$flick["code"]?> | 
+                            <?=$flick["ville"]?> | 
+                             <a href="<?=$flick["url"]?>" 
+                                target="_blank">
+                                 <img src="img/link.svg" alt="link to cinema">
+                             </a>
+                        </li>
                     <?php
                     }
                     ?>
                     </ul>
+                    <form method="POST" id="pgAmount">
+                    <select name="pageAmount" class="d-flex align-self-start" onchange='document.getElementById("pgAmount").submit()'>
+                        <option label="Montant">
+                        <option value="2">2</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="255">Tout</option>
+                    </optgroup>    
+                    </select>
+                    </form>
                     <?php
                     if (isset($pagination)) echo "<p>$pagination</p>"; 
                     ?>

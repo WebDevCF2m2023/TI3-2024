@@ -31,8 +31,13 @@ if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME]
 } else {
     $page = 1;
 }
+if (isset($_POST["pageAmount"])) {
+    $pagination = paginationModel("./", PAGINATION_GET_NAME, $cineCount, $page, $_POST["pageAmount"]);
+    $flicks = getPaginationInformations($db, $page, $_POST["pageAmount"]);    
+}else {
 $pagination = paginationModel("./", PAGINATION_GET_NAME, $cineCount, $page, PAGINATION_NB_PAGE);
 $flicks = getPaginationInformations($db, $page, PAGINATION_NB_PAGE);
+}
 }
 
 if (isset($_GET["carte"])) {
