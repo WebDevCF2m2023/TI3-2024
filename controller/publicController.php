@@ -5,7 +5,7 @@ if(isset($_GET['login'])){
 
     if(isset($_POST['user'], $_POST['password'])){
       
-        $error = administratorConnect($connect, $_POST['user'], $_POST['passwd']);
+        $error = administratorConnect($connect, $_POST['user'], $_POST['password']);
     }
 
     require("../view/public/connection.html.php");
