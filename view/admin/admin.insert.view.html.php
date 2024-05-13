@@ -10,6 +10,7 @@
 </head>
 <body>
 
+<section class="vh-100" style="background-color: rgb(131, 194, 162);" >
     <div class="container text-center">
 
         <h1 id="hacheUn">Insertion d'un lieu</h1>
