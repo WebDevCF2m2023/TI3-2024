@@ -19,7 +19,7 @@ if(isset($_GET['connect'])){
     }
 
     // appel de la vue
-    require "../view/public/connect.html.php";
+    require "./view/public/connect.html.php";
     exit();
 }
 
@@ -39,4 +39,4 @@ elseif(isset($ourDatas['error'])) $error = $ourDatas['error'];
 
 
 // chargement de la vue de l'accueil
-require "../view/public/homepage.html.php";
+include ('../view/view/public/home.html.php');

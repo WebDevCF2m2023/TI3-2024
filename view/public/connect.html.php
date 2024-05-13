@@ -13,13 +13,30 @@
             <li><a href="?connect">Connexion</a>
         </ul>
     </nav>
-    <form action="" method="POST" name="connexion">
-        <input type="text" name="username" placeholder="Votre login" required><br>
-        <input type="password" name="passwd" placeholder="Votre mot de passe" required><br>
-        <input type="submit" value="connexion">
+        
+
+    <form action="" method="POST">
+        <label>Login</label>
+        <input
+        name="username"
+          type="text"
+          id="username"
+          placeholder="Enter your Login"
+        />
+        
+        <label>Password</label>
+        <input
+        name="passwd"
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+        />
+        
+      
+      <button>submit</button>
     </form>
-    <?php
-    // var_dump($_POST);
-    ?>
+  </div>
+  <!-- script / js -->
+  <script src="./script.js"></script>
 </body>
 </html>

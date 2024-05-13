@@ -7,7 +7,12 @@
 </head>
 <body>
     <h1>Admin Insertion</h1>
-    <nav>
+    <div class="container">
+      <div class="header">
+        <h2>Create Account</h2>
+      </div>
+      <form class="form" id="form">
+        <div class="form-control"><nav>
         <ul>
             <li><a href="./">Accueil Admin</a></li>
             <li><a href="?insert">Ajouter une data</a></li>
@@ -19,15 +24,14 @@
         <?php if(isset($error)): ?>
                 <h3 class="error"><?=$error?></h3>
         <?php endif ?>
-       <form action="" name="ourdatas" method="POST">
-       <input type="number"  name="id" placeholder="id" required><br>
+       <form action="" name="Nosdatas" method="POST">
         <input type="text" name="nom" placeholder="nom" required><br>
         <input name="adresse" placeholder="adressse" required><br>
         <input type="number"  name="codepostal" placeholder="codepostal" required><br>
         <input type="number" step="0.0000001" name="latitude" placeholder="latitude" required><br>
         <input type="number" step="0.0000001" name="longitude" placeholder="longitude" required><br>
         <input type="submit" value="Insérer" />
-       </form>
-    </div>
-</body>
+
+        <script src="./script.js"></script>
+  </body>
 </html>
