@@ -1,0 +1,291 @@
+@font-face {
+    font-family: HVNThin;
+    src: url("../assets/helvetica-neue-5/HelveticaNeueThin.otf");
+
+    font-family: HVNRoman;
+    src: url("../assets/helvetica-neue-5/HelveticaNeueRoman.otf");
+  }
+
+.global {
+  font-family: HVNRoman;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.errorMessage {
+  color: red;
+}
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 90vw;
+    margin: 5vh auto 2vh;
+    padding-bottom: 2vh;
+
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px black, 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px darkgray;
+  }
+
+  header h1 {
+    margin: 2vh 0;
+  }
+
+  
+  .loginCallButton {
+    width: 12vw;
+    margin: 1vh 0 0;
+    background-color: transparent;
+    border-radius: 20px;
+    border-color: black;
+    padding: 1vh 5px;
+}
+
+.loginCallButton:hover {
+  border-color: slategrey;
+
+}
+
+.tryThis {
+  animation-name: buttonFlash;
+  animation-duration: 1000ms;
+}
+
+@keyframes buttonFlash {    /*  Petit animation qui fait transformer le main header  */
+
+  0%    {opacity: 1; border-color: slategray;}
+  12.5% {opacity: 0.9; border-color: yellow;}
+  25%   {opacity: 0.75; border-color: orange;}
+  37.5% {opacity: 0.6; border-color: orangered;}
+  48.5% {color: red; border-color: red;}
+  50%   {opacity: 0.50;}
+  51.5% {color: "";border-color: orangered;}
+  62.5% {opacity: 0.65;border-color: greenyellow;}
+  75%   {opacity: 0.75;border-color: lawngreen;}
+  87.5% { opacity: 0.90;border-color: slategray;}
+  100%  {opacity: 1;border-color: slategray;}
+} 
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 90vw;
+  margin: 35vh auto 0;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0px 2px 4px black, 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px darkgray;
+}
+
+footer a {
+  font-size: large;
+  text-decoration: none;
+  color: black;
+}
+
+.footerLink {
+  animation-name: footerIn;
+  animation-duration: 4s;
+}
+
+@keyframes footerIn {    /*  Petit animation qui fait transformer le main header  */
+
+  0%    {opacity: 0;}
+  12.5% {opacity: 0.10;}
+  25%   {opacity: 0.25;}
+  37.5% {opacity: 0.4;}
+  50%   {opacity: 0.50;}
+  62.5% {opacity: 0.65;}
+  75%   {opacity: 0.75;}
+  87.5% { opacity: 0.90;}
+  100%  {opacity: 1;}
+}   
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main h2, main h3 {
+  margin: 1vh 0;
+}
+
+.mapAndList {
+  display: grid;
+  
+  grid-template-columns: 5fr 3fr;
+  grid-template-rows: 600px;
+  grid-template-areas: 
+  "mapGrid listGrid";
+  
+  align-items: start;
+  justify-content: center;
+
+  width: 80%;
+  margin-top: 3vh;
+}
+
+.theMap {
+    width: 40vw;
+    height: 75vh;
+    grid-area: mapGrid;
+    box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
+}
+
+.cineList {
+  grid-area: listGrid;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  font-size: 22px;
+  margin-left: 5vw;
+  
+}
+.cineHomeIconHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+.cineHomeIcon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.cineHomeIcon img {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5vw;
+}
+
+.cineIconBox * {
+  text-align: center;
+  margin: 0px !important;
+  padding: 0px;
+}
+
+#cineJSON ul {
+  text-align: center;
+  list-style: none;
+}
+
+.hideLogin {
+  display: none;
+}
+
+#loginError {
+  color: yellow;
+}
+
+.showLogin {
+  animation-name: fadeIn;
+  animation-duration: 2s;  
+}
+
+@keyframes fadeIn {    /*  Petit animation qui fait transformer le main header  */
+
+  0% {display: block; opacity: 0;}
+  12.5% {opacity: 0.10;}
+  25%   {opacity: 0.25;}
+  37.5% {opacity: 0.4;}
+  50%   {opacity: 0.50;}
+  62.5% {opacity: 0.65;}
+  75%   {opacity: 0.75;}
+  87.5% { opacity: 0.90;}
+  100%  {opacity: 1;}
+}   
+
+
+.normalHead {
+  display: block;
+  opacity: 1;
+  padding: 2vh 0;
+  text-align: center;
+}
+
+.fadingHead {
+  text-align: center;
+  animation-name: fadeOut;
+  animation-duration: 2s;
+}
+
+.goneHead {
+  display: none;
+}
+
+@keyframes fadeOut {    /*  Petit animation qui fait transformer le main header  */
+
+  0% {opacity: 0.75; padding: 2vh 0;}
+  25% {opacity: 0.50; padding: 2vh 0;}
+  50% {opacity: 0.25; padding: 2vh 0;}
+  75% {opacity: 0; padding: 2vh 0;}
+  100% {display: none;};
+}   
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#loginForm label, #loginForm input {
+  font-size: small;
+}
+
+#submitLogin {
+  margin-top: 5px;
+}
+
+
+@media screen and (max-width: 640px) {
+  .global {
+      padding: 0;
+  }
+
+
+  .mapAndList {
+      margin-top: 5vh;
+      width: 100vw;
+      display: grid;   
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: 
+      "mapGrid"
+      "listGrid";
+
+  }
+
+  .theMap {
+    margin: 0 auto;
+    width: 90vw;
+  }
+
+  .cineList {
+    width: 90vw;
+    font-size: small;
+  }
+
+  .cineHomeIconHolder {
+    margin-left: 20%;
+  }
+
+  header h1 {
+    text-align: center;
+    font-size: small;
+  }
+
+  .loginCallButton {
+    width: 25vw;
+}
+
+}

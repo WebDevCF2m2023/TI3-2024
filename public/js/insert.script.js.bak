@@ -1,0 +1,25 @@
+const insertForm    = document.getElementById("insertForm"),
+      itemNameInp   = document.getElementById("itemNameInp"),
+      itemAddInp    = document.getElementById("itemAddInp"),  
+      itemCodeInp   = document.getElementById("itemCodeInp"),
+      itemVilleInp  = document.getElementById("itemVilleInp"),
+      itemUrlInp    = document.getElementById("itemUrlInp"),
+      itemLatInp    = document.getElementById("itemLatInp"),
+      itemLonInp    = document.getElementById("itemLonInp"),
+      insertError   = document.getElementById("insertError");
+
+insertForm.addEventListener("submit", function (form) {
+    form.preventDefault()
+    validateInputsForInsert();
+});
+
+
+function validateInputsForInsert () {
+    let nom     = itemNameInp.value;
+    let add     = itemAddInp.value;
+    let code    = itemCodeInp.value;
+    let ville   = itemVilleInp.value;
+    let url     = itemUrlInp.value;
+    let lat     = itemLatInp.value;
+    let lon     = itemLonInp.value;
+}
