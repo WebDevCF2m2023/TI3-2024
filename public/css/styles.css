@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#title-conatiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px;
+  gap: 10px;
+  h1 {
+    font-family: "Montserrat", sans-serif;
+  }
+  h2 {
+    font-family: "Hind Vadodara", sans-serif;
+  }
+}
+#btnConnectHome {
+  cursor: pointer;
+  font-size: 15px;
+  font-family: Arial;
+  width: 140px;
+  height: 50px;
+  border-width: 1px;
+  color: black;
+  border-color: #052500;
+  font-weight: bold;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: inset 0px 1px 0px 0px #caefab;
+  text-shadow: inset 0px 1px 0px #aade7c;
+  background: linear-gradient(#198754, #00ad5f);
+  margin: 40px;
+}
+
+#btnConnectHome:hover {
+  background: linear-gradient(#5cb811, #77d42a);
+}
+
+#main-container {
+  display: grid;
+  width: 80%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  grid-template-areas: "map liste";
+  margin-bottom: 100px;
+}
+
+#map {
+  grid-area: map;
+  height: 800px;
+  border: 1px solid black;
+}
+
+#liste {
+  grid-area: liste;
+  padding: 5px;
+  border: 1px solid black;
+  max-height: 800px;
+  overflow-y: scroll;
+}
+#h1Liste {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
+#h2Liste {
+  font-family: "Hind Vadodara", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+#liste ul {
+  padding: 0;
+  margin: 0;
+}
+
+#liste ul li {
+  cursor: pointer;
+  list-style: none;
+  padding: 5px 10px 5px 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: small;
+  font-weight: 500;
+}
+
+#liste ul li:nth-child(odd) {
+  background-color: rgba(186, 255, 207, 0.247);
+}
+
+#liste ul li:hover {
+  background-color: #198754;
+}
+
+@media screen and (width <= 640px) {
+  #main-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "map"
+      "liste";
+  }
+  #map {
+    margin-bottom: 1rem;
+  }
+}
