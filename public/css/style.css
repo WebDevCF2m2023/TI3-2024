@@ -1,0 +1,158 @@
+@font-face {
+    font-family: HVNThin;
+    src: url("../assets/helvetica-neue-5/HelveticaNeueThin.otf");
+
+    font-family: HVNRoman;
+    src: url("../assets/helvetica-neue-5/HelveticaNeueRoman.otf");
+  }
+
+body, .bodyClassic {
+    background: hsla(197, 14%, 57%, 1);
+    background: linear-gradient(-90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
+    background: -moz-linear-gradient(-90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
+    background: -webkit-linear-gradient(-90deg, hsla(197, 14%, 57%, 1) 0%, hsla(192, 17%, 94%, 1) 100%);
+    background-repeat: repeat-x;
+    height: 300vh;
+}
+
+.bodyGreen {
+    background: hsla(157, 14%, 57%, 1);
+    background: linear-gradient(-90deg, hsla(157, 14%, 57%, 1) 0%, hsla(152, 17%, 94%, 1) 100%);
+    background: -moz-linear-gradient(-90deg, hsla(157, 14%, 57%, 1) 0%, hsla(152, 17%, 94%, 1) 100%);
+    background: -webkit-linear-gradient(-90deg, hsla(157, 14%, 57%, 1) 0%, hsla(152, 17%, 94%, 1) 100%);
+    background-repeat: repeat-x;
+    height: 300vh;
+}
+
+.bodyBlue {
+    background: hsla(217, 14%, 57%, 1);
+    background: linear-gradient(-90deg, hsla(217, 14%, 57%, 1) 0%, hsla(212, 17%, 94%, 1) 100%);
+    background: -moz-linear-gradient(-90deg, hsla(217, 14%, 57%, 1) 0%, hsla(212, 17%, 94%, 1) 100%);
+    background: -webkit-linear-gradient(-90deg, hsla(217, 14%, 57%, 1) 0%, hsla(212, 17%, 94%, 1) 100%);
+    background-repeat: repeat-x;
+    height: 300vh;
+}
+
+.bodyRed {
+    background: hsla(22, 14%, 57%, 1);
+    background: linear-gradient(-90deg, hsla(22, 14%, 57%, 1) 0%, hsla(17, 17%, 94%, 1) 100%);
+    background: -moz-linear-gradient(-90deg, hsla(22, 14%, 57%, 1) 0%, hsla(17, 17%, 94%, 1) 100%);
+    background: -webkit-linear-gradient(-90deg, hsla(22, 14%, 57%, 1) 0%, hsla(17, 17%, 94%, 1) 100%);
+    background-repeat: repeat-x;
+    height: 300vh;
+}
+
+.global {
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: HVNRoman;
+    text-align: center;
+}
+
+.mapDiv {
+    height: 600px;
+    box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
+    margin-right: 50px;
+}
+
+.mainMap {
+    margin-top: 10vh;
+    width: 90vw;
+    display: grid;   
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 600px;
+    grid-template-areas: 
+    "mapGrid listGrid";
+    align-items: center;
+    justify-content: center;
+}
+
+.listDiv {
+    grid-area: listGrid;
+    display: flex;
+    flex-direction: column;
+}
+
+.listDiv ul {
+    list-style: none;
+}
+
+
+
+
+.normalTable {
+    border: 1px solid black;
+    box-shadow: 0px 2px 4px black, 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black;
+    margin-top: 25px;
+    border-collapse: collapse;
+
+}
+
+.normalTable td {
+    border: 1px solid black;
+    padding: 10px;
+}
+.normalTable tr th{
+    border: 2px solid black;
+    background-color: white;
+}
+.normalTable tr:nth-child(even) td:nth-child(even), .normalTable tr:nth-child(odd) td:nth-child(odd) {
+    background-color: hsla(128, 17%, 86%, 1);
+}
+
+.normalTable tr:nth-child(odd) td:nth-child(even), .normalTable tr:nth-child(even) td:nth-child(odd) {
+    background-color: hsla(45, 40%, 94%, 1);
+}
+
+.mapIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mapIcon * {
+    margin: 0;
+}
+
+.listIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+}
+
+.flyMarker {
+    padding: 0 5px ;
+}
+
+
+
+@media screen and (max-width: 640px) {
+    .global {
+        padding: 0;
+    }
+    .mainMap {
+        margin-top: 5vh;
+        width: 80vw;
+        display: grid;   
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "mapGrid"
+        "listGrid";
+        justify-content: center;
+        align-items: center;
+    }
+    .mapDiv {
+        height: 350px;
+        box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
+        margin: 0 0 3vh 0;
+    }
+
+
+
+}
