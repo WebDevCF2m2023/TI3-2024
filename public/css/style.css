@@ -1,0 +1,38 @@
+div h4 {
+    display: inline;
+}
+
+#accueil, #api, #hacheUn  {
+    margin: 30px; 
+    padding: auto;
+}
+
+h3 {
+    text-align: center;
+}
+#alert{
+    color: red;
+}
+#comment{
+    color: rgb(4, 71, 15);
+}   
+
+#resultat {
+     
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+#map {
+    width:100%;
+    height:800px;
+}
+
+#content {
+    text-align: center;
+}
+
+#titre {
+    color: rgb(0, 0, 0);
+}
