@@ -1,0 +1,139 @@
+body{
+    font-size: larger;
+    background-image: url(../img/pexels-alscre-2847648.jpg);
+    
+    
+}
+
+
+#carte {
+    width:100%;
+    height:800px;
+}
+
+.photo {
+    width:100px;
+}
+
+#resultats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+
+
+
+h1{
+    text-align: center;
+    text-decoration: solid;
+    border-radius: 0%;
+    text-shadow: 1px;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    
+}
+
+h2{
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+h3{
+    text-align: center;
+}
+
+container{
+    display: grid;
+    width: 80%;
+    margin: auto;
+    gap: 5px;
+    grid-template-columns: 1fr 0.7fr;
+    grid-template-areas: 
+            "map liste";
+}
+
+liste{
+    grid-area: liste;
+    padding: 5px;
+    border: 1px solid black;
+    max-height: 800px;
+    overflow-y: scroll;
+    grid-area: liste;
+    cursor: pointer;
+}
+
+p{
+    text-align: center;
+}
+
+
+li{
+    text-align: center;
+    display: grid;
+    margin: auto;
+    text-shadow: none;
+    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border:1px solid #e5e6b2;
+  padding: 7px;
+  margin:0px;
+  cursor: pointer;
+  text-wrap: wrap;
+  
+  
+
+
+}
+
+a{
+  text-align:start;
+  margin:0 0 3px 0;
+  padding:0px;
+  display:block;
+  font-weight: bold;
+}
+
+input{
+    text-align: center;
+}
+
+form{
+    text-align: center;
+}
+
+div #liste{
+    overflow-y : scroll;
+    height:800px;
+    cursor: pointer;
+
+    
+}
+
+button{
+  
+  border-color: #e9eb76;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block 3px;
+  
+  margin: 4px auto;
+  width: 15vw;
+  cursor: pointer;
+  text-align:end;
+  
+  
+}
+
+
+
+
+
+@media screen and (width <= 576px) {
+    #resultats{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+                "carte"
+                "liste";
+    }
+}
+
